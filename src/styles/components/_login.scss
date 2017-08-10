@@ -1,0 +1,33 @@
+.login{
+  height: 100%;
+
+  .login-page {
+    display: -webkit-box;      /* OLD - iOS 6-, Safari 3.1-6 */
+    display: -moz-box;         /* OLD - Firefox 19- (buggy but mostly works) */
+    display: -webkit-flex;     /* NEW - Chrome */
+    display: flex;             /* NEW, Spec - Opera 12.1, Firefox 20+ */
+    -webkit-box-flex-direction: row;
+    -moz-box-flex-direction: row;
+    -webkit-flex-direction: row;
+    flex-direction: row;
+    min-height: calc(100vh - 52px);
+    margin: auto;
+    background-color: #eee;
+  }
+
+  .login-form {
+    width: 480px;
+    margin: auto;
+    background: #fff;
+    border-radius: 4px;
+    padding: 20px;
+    input{
+      width: 100%;
+      margin: 5px 0;
+    }
+    .login-buttons{
+      display: flex;
+      justify-content: flex-end;
+    }
+  }
+}
