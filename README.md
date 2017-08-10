@@ -1,8 +1,7 @@
-# hyochan'S express react starter with webpack2
+# hyochan's react starter with webpack2
 
-Express react webpack2 starter
+React webpack2 starter
 
 npm install
 webpack -w
-npm start | npm run dev | npm run production
-
+npm start
