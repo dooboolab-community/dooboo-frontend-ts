@@ -3,5 +3,4 @@
 React webpack2 starter
 
 npm install
-webpack -w
 npm start
