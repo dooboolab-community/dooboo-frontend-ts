@@ -1,8 +1,8 @@
 /**
  * Created by hyochan on 2016. 12. 15..
  */
-import {combineReducers} from 'redux'
-import isLoggedIn from './reducer_login'
+import {combineReducers} from 'redux';
+import isLoggedIn from './reducer_login';
 
 export {
   isLoggedIn,

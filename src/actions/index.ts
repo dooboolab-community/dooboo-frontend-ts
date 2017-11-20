@@ -7,9 +7,9 @@ const LOGGED_IN = 'LOGGED_IN';
 const isLoggedIn = (input) => {
   return {
     type: LOGGED_IN,
-    value: input
-  }
-}
+    value: input,
+  };
+};
 
 export {
   isLoggedIn,

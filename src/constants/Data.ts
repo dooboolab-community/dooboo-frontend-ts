@@ -1,13 +1,13 @@
-const resCode = {
-  NO_DATA : 0,
-  SUCCESS : 1,
-  FAILED : 2,
-  NO_REQ_PARAM : 3,
-  ERR_PARAM : 4, // 정수형이어야 되는데 문자가 들어오는 경우
-  ALREADY_INSERTED : 5,
-  NOT_GRANTED : 6 // 권한이 없음
+const STATUS_CODE = {
+  ERROR: 500, // 500
+  NOT_FOUND: 404, // 404
+  NO_CONTENT: 204, // 204
+  SUCCESS: 200, // 200
+  BAD_REQUEST: 400, // 400
+  CONFLICT: 409, // conflict
+  UNAUTHORIZED: 401, // 401
 };
 
 export {
-  resCode,
+  STATUS_CODE as statusCode,
 };
