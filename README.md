@@ -13,7 +13,7 @@
 3. Open other terminal
   - tsc -w in terminal if you are dynamically developing in typescript 
 
-# React-Native version
+# React version
 16.1.1
 
 # React-Router version
