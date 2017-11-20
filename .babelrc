@@ -1,0 +1,32 @@
+{
+  "presets": ["env"],
+  "env": {
+    "development": {
+      "plugins": [
+        "transform-decorators-legacy",
+        "transform-react-jsx-source"
+      ]
+    }
+  },
+  "plugins": [
+    ["module-resolver", {
+      "root": ["./build/index"],
+      "alias": {
+        "@apis/*": ["./build/apis/"],
+        "@css/*": ["./css/"],
+        "@pages/*": ["./build/components/pages/"],
+        "@navigations/*": ["./build/components/navigations/"],
+        "@models/*": ["./build/models/"],
+        "@actions/*": ["./build/actions/"],
+        "@reducers/*": ["./build/reducers/"],
+        "@utils/*": ["./build/utils/"],
+        "@STRINGS": ["./STRINGS"],
+        "@assets/*": ["./assets/"],
+        "@constants/*" : ["./build/constants/"],
+        "@shared/*": ["./build/components/shared/"],
+        "@App_dev": ["./App_dev"],
+        "@app": ["./build/app"]
+      }
+    }]
+  ]
+}

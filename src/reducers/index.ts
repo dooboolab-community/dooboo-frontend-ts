@@ -4,8 +4,6 @@
 import {combineReducers} from 'redux'
 import isLoggedIn from './reducer_login'
 
-const reducers = {
-    isLoggedIn
+export {
+  isLoggedIn,
 };
-
-export default reducers;

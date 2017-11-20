@@ -1,10 +1,9 @@
-//var Footer = require('Footer');
 import React from 'react';
-import Navigation from 'Navigation';
-import Footer from 'Footer';
+import Navigation from '@navigations/RootStackNavigator';
+import Footer from '@shared/Footer';
 
 class Main extends React.Component {
-  render(){
+  public render() {
     return (
       <div>
         <Navigation/>
@@ -14,6 +13,6 @@ class Main extends React.Component {
       </div>
     );
   }
-};
+}
 
 export default Main;

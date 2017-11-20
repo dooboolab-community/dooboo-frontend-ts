@@ -4,17 +4,17 @@ import { createStore, combineReducers } from 'redux'
 import { Provider } from 'react-redux';
 import { Router, Route, IndexRoute, browserHistory } from 'react-router'
 import { syncHistoryWithStore, routerReducer } from 'react-router-redux'
-import reducers from './reducers';
+import reducers from '@reducers/index';
 
-import Main from 'Main';
-import Login from 'Login';
-import Signup from 'Signup';
+import Main from '@pages/Main';
+import Login from '@pages/Login';
+import Signup from '@pages/Signup';
 
-import { getSessionStorage } from './global/functions';
-import { resCode } from './global/constants';
+import { getSessionStorage } from '@utils/Functions';
+import { resCode } from '@constants/Data';
 
-const scss = require('./styles/app.scss');
-const store = createStore(
+const scss = require('@css/app.scss');
+const store: any = createStore(
   combineReducers({
     ...reducers,
     routing: routerReducer
@@ -22,7 +22,7 @@ const store = createStore(
 );
 
 // Create an enhanced history that syncs navigation events with the store
-const history = syncHistoryWithStore(browserHistory, store);
+const history: any = syncHistoryWithStore(browserHistory, store);
 
 console.log("state : " + JSON.stringify(store.getState()));
 

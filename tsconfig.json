@@ -1,0 +1,57 @@
+{
+  "compilerOptions": {
+    "baseUrl": ".",
+    "outDir": "build",
+    "allowJs": true,
+    "sourceMap": true,
+    "allowSyntheticDefaultImports": true,
+    "experimentalDecorators": true,
+    "forceConsistentCasingInFileNames": true,
+    "importHelpers": true,
+    "jsx": "react-native",
+    "lib": [
+      "dom",
+      "es2015",
+      "es2016",
+      "es2017"
+    ],
+    "skipLibCheck": true,
+    "module": "es2015",
+    "moduleResolution": "node",
+    "noEmitHelpers": true,
+    "noImplicitReturns": true,
+    "noUnusedLocals": false,
+    "noImplicitAny": false,
+    "strictNullChecks": false,
+    "strict": true,
+    "target": "es2017",
+    "paths": {
+      "@apis/*": ["./src/apis/*"],
+      "@css/*": ["./css/*"],
+      "@pages/*": ["./src/components/pages/*"],
+      "@navigations/*": ["./src/components/navigations/*"],
+      "@models/*": ["./src/models/*"],
+      "@actions/*": ["./src/actions/*"],
+      "@reducers/*": ["./src/reducers/*"],
+      "@utils/*": ["./src/utils/*"],
+      "@STRINGS": ["./STRINGS"],
+      "@assets/*": ["./assets/*"],
+      "@constants/*" : ["./src/constants/*"],
+      "@shared/*": ["./src/components/shared/*"],
+      "@App_dev": ["./App_dev"],
+      "@app": ["./src/app"]
+    }
+  },
+  "include": [
+    "src/**/*.ts",
+    "src/**/*.tsx"
+  ],
+  "exclude": [
+    "node_modules",
+    "**/*.spec.ts",
+    "**/*.test.ts",
+  ],
+  "types": [
+    "typePatches"
+  ]
+}

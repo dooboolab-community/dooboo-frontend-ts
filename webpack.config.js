@@ -3,7 +3,7 @@ const path = require('path');
 
 module.exports = {
   entry: {
-    app: './src/app.js'
+    app: './build/index.js'
   },
   output: {
     path: path.resolve(__dirname, './dist'),
@@ -12,14 +12,13 @@ module.exports = {
   resolve: {
     modules: [
       './node_modules',
-      './src/components',
     ],
-    extensions: ['.js', '.jsx']
+    extensions: ['.js', 'jsx'],
   },
   devServer: {
-    contentBase: __dirname + "/dist/",
+    contentBase: __dirname + '/dist/',
     inline: true,
-    host: '0.0.0.0',
+    host: 'localhost',
     port: 8080,
   },
   module: {
@@ -35,5 +34,5 @@ module.exports = {
       }
     ]
   },
-  devtool: 'source-map'
+  devtool: 'inline-source-map'
 };
