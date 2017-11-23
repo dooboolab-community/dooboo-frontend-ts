@@ -7,9 +7,6 @@ class Main extends React.Component {
     return (
       <div>
         <Navigation/>
-        <div>
-          {this.props.children}
-        </div>
       </div>
     );
   }

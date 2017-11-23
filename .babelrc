@@ -17,8 +17,6 @@
         "@pages/*": ["./build/components/pages/"],
         "@navigations/*": ["./build/components/navigations/"],
         "@models/*": ["./build/models/"],
-        "@actions/*": ["./build/actions/"],
-        "@reducers/*": ["./build/reducers/"],
         "@utils/*": ["./build/utils/"],
         "@STRINGS": ["./STRINGS"],
         "@assets/*": ["./assets/"],

@@ -1,7 +1,5 @@
 import React from 'react';
-import { connect } from 'react-redux';
 import { browserHistory } from 'react-router';
-import { isLoggedIn } from '@actions/index';
 import { setSessionStorage } from '@utils/Functions';
 import { statusCode } from '@constants/Data';
 
@@ -110,8 +108,4 @@ class Signup extends React.Component<any, any> {
   }
 }
 
-const mapState = (state) => ({
-  isLoggedIn: state.isLoggedIn,
-});
-
-export default connect(mapState)(Signup);
+export default Signup;

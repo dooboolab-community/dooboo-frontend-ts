@@ -7,7 +7,8 @@ module.exports = {
   },
   output: {
     path: path.resolve(__dirname, './dist'),
-    filename: 'bundle.js'
+    filename: 'bundle.js',
+    publicPath: '/',
   },
   resolve: {
     modules: [
@@ -20,10 +21,37 @@ module.exports = {
     inline: true,
     host: 'localhost',
     port: 8080,
+    historyApiFallback: true,
   },
   module: {
     rules: [
-      { test: /\.scss$/, use: ['style-loader', 'css-loader', 'sass-loader']},
+      {
+        test: /\.css$/,
+        use: [ 
+          'style-loader',
+          { 
+            loader: 'css-loader',
+            options: { 
+              importLoaders: 1,
+              modules: true
+            },
+          },
+          { 
+            loader: 'postcss-loader', 
+            options: {
+              ident: 'postcss',
+              plugins: (loader) => [
+                require('postcss-import')({ root: loader.resourcePath }),
+                require('postcss-cssnext')(),
+              ]
+            }
+          },
+        ],
+        query: {
+          modules: true,
+          localIdentName: '[name]__[local]___[hash:base64:5]'
+        }
+      }, 
       {
         test: /\.jsx?$/,
         use: [{

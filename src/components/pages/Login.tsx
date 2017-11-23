@@ -1,7 +1,5 @@
 import React from 'react';
-import { connect } from 'react-redux';
 import { browserHistory } from 'react-router';
-import { isLoggedIn } from '@actions/index';
 import { getSessionStorage, setSessionStorage } from '@utils/Functions';
 import { statusCode } from '@constants/Data';
 
@@ -87,7 +85,7 @@ class Login extends React.Component<any, any> {
       <div className='login'>
         <div className='login-page'>
           <form className='login-form'>
-            <h1 style={{marginBottom:'5px'}}>Login</h1>
+            <h1 style={{marginBottom: '5px'}}>Login</h1>
             <p className='control'>
               <input className='input is-primary' type='email' placeholder='이메일' ref={(v) => this.email = v}/>
             </p>
@@ -114,7 +112,4 @@ class Login extends React.Component<any, any> {
   }
 }
 
-const mapState = (state) => ({
-    isLoggedIn: state.isLoggedIn,
-});
-export default connect(mapState)(Login);
+export default Login;

@@ -4,11 +4,11 @@ const getWorldTime = (tzOffset) => {
   now.setTime(tz);
 
   const leadingZeros = function(n, digits) {
-    const zero = '';
+    let zero = '';
     n = n.toString();
 
     if (n.length < digits) {
-      for (const i = 0; i < digits - n.length; i++) {
+      for (let i = 0; i < digits - n.length; i++) {
         zero += '0';
       }
     }
