@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "starting react express app with me!",
   "scripts": {
-    "start": "webpack-dev-server & tsc -w",
+    "start": "webpack-dev-server",
     "prod": "webpack -p",
     "test": "karma start"
   },
@@ -16,6 +16,8 @@
     "react-router-dom": "^4.2.2"
   },
   "devDependencies": {
+    "@types/css": "0.0.30",
+    "@types/inline-style-prefixer": "^3.0.1",
     "@types/node": "^8.0.53",
     "@types/react": "^16.0.25",
     "@types/react-dom": "^16.0.3",
@@ -30,13 +32,10 @@
     "babel-preset-env": "^1.6.1",
     "babel-preset-react": "^6.24.1",
     "babel-preset-stage-0": "^6.24.1",
-    "browserslist": [
-      "> 1%",
-      "last 2 versions"
-    ],
     "css-loader": "^0.28.4",
     "expect": "^21.2.1",
     "history": "^4.7.2",
+    "inline-style-prefixer": "^3.0.8",
     "jquery": "^3.2.1",
     "karma": "^1.7.1",
     "karma-chrome-launcher": "^2.2.0",
@@ -48,6 +47,7 @@
     "postcss-cssnext": "^3.0.2",
     "postcss-import": "^11.0.0",
     "postcss-loader": "^2.0.8",
+    "radium": "^0.19.6",
     "script-loader": "^0.7.2",
     "style-loader": "^0.19.0",
     "ts-loader": "^3.1.1",
@@ -57,5 +57,9 @@
     "typescript": "^2.6.1",
     "webpack": "^3.8.1",
     "webpack-dev-server": "^2.9.4"
-  }
+  },
+  "browserslist": [
+    "> 1%",
+    "last 2 versions"
+  ]
 }

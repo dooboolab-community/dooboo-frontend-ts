@@ -14,7 +14,7 @@ module.exports = {
     modules: [
       './node_modules',
     ],
-    extensions: ['.js', 'jsx'],
+    extensions: ['.ts', '.tsx', '.js', 'jsx'],
   },
   devServer: {
     contentBase: __dirname + '/dist/',
@@ -33,24 +33,20 @@ module.exports = {
             loader: 'css-loader',
             options: { 
               importLoaders: 1,
-              modules: true
-            },
+              modules: true,
+            }
           },
           { 
             loader: 'postcss-loader', 
             options: {
               ident: 'postcss',
-              plugins: (loader) => [
-                require('postcss-import')({ root: loader.resourcePath }),
+              plugins: [
+                require('postcss-import')(),
                 require('postcss-cssnext')(),
               ]
             }
-          },
-        ],
-        query: {
-          modules: true,
-          localIdentName: '[name]__[local]___[hash:base64:5]'
-        }
+          }
+        ]
       }, 
       {
         test: /\.jsx?$/,
@@ -62,5 +58,5 @@ module.exports = {
       }
     ]
   },
-  devtool: 'inline-source-map'
+  devtool: 'inline-source-map',
 };

@@ -43,13 +43,13 @@
     }
   },
   "include": [
-    "src/**/*.ts",
-    "src/**/*.tsx"
+    // "src/**/*.ts",
+    // "src/**/*.tsx",
+    "./src/**/*"
   ],
   "exclude": [
-    "node_modules",
-    "**/*.spec.ts",
-    "**/*.test.ts",
+    // "node_modules",
+    // "**/*.spec.ts",
   ],
   "types": [
     "typePatches"
