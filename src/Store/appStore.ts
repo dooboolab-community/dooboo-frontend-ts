@@ -7,7 +7,6 @@ class Store {
   @observable grey: boolean = false;
 
   appColorChange() {
-    console.log(this);
     this.grey = !this.grey;
   }
 }

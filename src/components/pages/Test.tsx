@@ -7,6 +7,18 @@ const modularStyle: any = {
   container: {
     display: 'flex',
     flexDirection: 'column',
+    margin: 'auto',
+    alignItems: 'center'
+  },
+  storeShowingDiv: {
+    fontSize: '20px',
+    marginBottom: '20px'
+  },
+  spanStyle: {
+    height: '30px',
+    fontSize: '20px',
+    lineHeight: '30px',
+    border: '2px solid #b2b2b2'
   },
   modularColor: {
     color: 'rgb(13, 157, 197)',
@@ -31,8 +43,16 @@ const prefixedStyle = prefixer.prefix(modularStyle);
 class Test extends Component<any> {
   public render() {
     return (
-      <div style={prefixedStyle.container} onClick={this.props.store.appColorChange}>
-        {<span style={this.props.store.grey ? prefixedStyle.greyColor : prefixedStyle.modularColor}>click here</span>}
+      <div style={prefixedStyle.container}>
+        <div style={prefixedStyle.storeShowingDiv}>appStore grey property: {this.props.store.grey? 'true' : 'false'}</div>
+        <span 
+          style={
+            [ prefixedStyle.spanStyle, this.props.store.grey ? prefixedStyle.greyColor : prefixedStyle.modularColor]
+          }
+          onClick={this.props.store.appColorChange}
+        >
+          click here
+        </span>
       </div>
     );
   }
