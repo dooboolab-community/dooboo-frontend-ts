@@ -1,9 +1,13 @@
 import { observable, action } from 'mobx';
+import autobind from 'autobind-decorator';
 
+@autobind
 class Store {
-  @observable public grey: boolean = false;
 
-  @action public appDevChange(): any {
+  @observable grey: boolean = false;
+
+  appColorChange() {
+    console.log(this);
     this.grey = !this.grey;
   }
 }

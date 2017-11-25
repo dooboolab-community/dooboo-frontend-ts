@@ -11,11 +11,14 @@ const modularStyle: any = {
   modularColor: {
     color: 'rgb(13, 157, 197)',
     ':hover': {
-        color: 'red',
+        color: 'blue',
     },
   },
   greyColor: {
     color: '#d2d2d2',
+    ':hover': {
+      color: '#bbb',
+    },
   },
 };
 
@@ -25,12 +28,11 @@ const prefixedStyle = prefixer.prefix(modularStyle);
 @inject('store')
 @observer
 @Radium
-class Test extends Component {
+class Test extends Component<any> {
   public render() {
-    console.log(prefixedStyle);
     return (
-      <div style={prefixedStyle.container}>
-        <span style={this.props.store.grey ? prefixedStyle.greyColor : prefixedStyle.modularColor}>modularColor</span>
+      <div style={prefixedStyle.container} onClick={this.props.store.appColorChange}>
+        {<span style={this.props.store.grey ? prefixedStyle.greyColor : prefixedStyle.modularColor}>click here</span>}
       </div>
     );
   }

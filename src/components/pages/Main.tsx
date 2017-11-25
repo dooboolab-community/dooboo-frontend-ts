@@ -1,12 +1,14 @@
 import React from 'react';
-import Navigation from '@navigations/RootStackNavigator';
-import Footer from '@shared/Footer';
+import { Route, NavLink } from 'react-router-dom';
+import Header from '../shared/Header';
+import Test from './Test';
+import Readme from './Readme';
 
 class Main extends React.Component {
   public render() {
     return (
       <div>
-        <Navigation/>
+        Hello World!
       </div>
     );
   }
