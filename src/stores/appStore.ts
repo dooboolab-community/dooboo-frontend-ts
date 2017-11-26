@@ -3,10 +3,9 @@ import autobind from 'autobind-decorator';
 
 @autobind
 class Store {
+  @observable public grey: boolean = false;
 
-  @observable grey: boolean = false;
-
-  appColorChange() {
+  public appColorChange() {
     this.grey = !this.grey;
   }
 }
