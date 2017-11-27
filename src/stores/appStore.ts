@@ -22,7 +22,7 @@ class Store {
   }
 
   public appColorChange() {
-    this.grey = !this.grey;
+    return this.grey = !this.grey;
   }
 }
 
