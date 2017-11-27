@@ -8,5 +8,5 @@
 
 .container {
     display: flex;
-    background: var(--cooniGrey);
+    background-color: 'red';
 }
