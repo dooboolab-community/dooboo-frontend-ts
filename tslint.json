@@ -8,6 +8,7 @@
      * Any rules specified here will override those from the base config we are extending.
      */
     "ordered-imports": false,
+    "object-literal-key-quotes": [true, "as-needed"],
     "curly": true,
     "no-var-keyword": true,
     "no-duplicate-variable": true,

@@ -1,15 +1,20 @@
 import React from 'react';
 import { Route, Link } from 'react-router-dom';
-import Header from '../shared/Header';
-import Test from './Test';
-import Readme from './Readme';
+import { inject, observer } from 'mobx-react';
 
-class Main extends React.Component {
+@inject('store')
+@observer
+class Main extends React.Component<any> {
   public render() {
     return (
-      <Link to='/helloworld' style={{textDecoration: 'none', color: 'rgb(13, 157, 197)'}}>
-        Hello World!
-      </Link>
+      <div>
+        <div onClick={this.props.store.logOut}>
+          log out
+        </div>
+        <Link to='/helloworld' style={{textDecoration: 'none', color: 'rgb(13, 157, 197)'}}>
+          Hello World!
+        </Link>
+      </div>
     );
   }
 }

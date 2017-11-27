@@ -1,70 +1,33 @@
 import React, { Component } from 'react';
-import { NavLink } from 'react-router-dom';
+import { Route, Redirect } from 'react-router-dom';
+import { inject, observer } from 'mobx-react';
 import Radium from 'radium';
 import Prefixer from 'inline-style-prefixer';
 
-const headerStyle: any = {
-  container: {
-    marginTop: '-8px',
-    marginLeft: '-8px',
-    width: '100vw',
-    height: '50px',
-    display: 'flex',
-    justifyContent: 'space-around',
-    backgroundColor: '#d2d2d2',
-    alignItems: 'stretch',
-  },
-  tab: {
-    width: '33vw',
-    textAlign: 'center',
-    color: '#fff',
-    fontSize: '20px',
-    pointer: 'cursor',
-    lineHeight: '50px',
-    textDecoration: 'none',
-    ':hover': {
-      backgroundColor: 'rgb(13, 157, 197)',
-    },
+import Header from '@shared/Header';
+import Main from '@pages/Main';
+import Test from '@pages/Test';
+import Readme from '@pages/Readme';
 
-    active: {
-      background: 'rgb(13, 157, 197)',
-    },
-  },
-}
-
-const prefixer = new Prefixer();
-const styles = prefixer.prefix(headerStyle);
-
+@inject('store')
+@observer
 @Radium
 class Navigation extends Component<any> {
   public render() {
     return (
-      <div style={styles.container}>
-          <NavLink
-            exact
-            to='/'
-            key={0}
-            style={styles.tab}
-            activeStyle={styles.tab.active}
-          >
-            Main
-          </NavLink>
-          <NavLink
-            to='/readme'
-            key={1}
-            style={styles.tab}
-            activeStyle={styles.tab.active}
-          >
-            Read Me
-          </NavLink>
-          <NavLink
-            to='/test'
-            key={2}
-            style={styles.tab}
-            activeStyle={styles.tab.active}
-          >
-            Test Page
-          </NavLink>
+      <div>
+        {
+          this.props.store.loggedIn
+          ? <div>
+              <Header />
+              <div style={{ marginTop: '20px' }}>
+                <Route exact={true} path='/root' component={Main} />
+                <Route path='/root/test' component={Test} />
+                <Route path='/root/readme' component={Readme} />
+              </div>
+            </div>
+          : <Redirect to='/' />
+        }
       </div>
     );
   }
