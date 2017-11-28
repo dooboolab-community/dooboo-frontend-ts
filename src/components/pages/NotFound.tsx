@@ -1,9 +1,9 @@
 import React from 'react';
 
-const ErrorPage: React.StatelessComponent<{}> = () => {
+const NotFound: React.StatelessComponent<{}> = () => {
   return (
     <span> Error page. Check the URL please.</span>
   );
 };
 
-export default ErrorPage;
+export default NotFound;

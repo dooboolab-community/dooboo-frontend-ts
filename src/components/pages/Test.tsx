@@ -1,9 +1,8 @@
 import React, { Component } from 'react';
 import { inject, observer } from 'mobx-react';
 import Radium from 'radium';
-import Prefixer from 'inline-style-prefixer';
 
-const modularStyle: any = {
+const styles: any = {
   container: {
     display: 'flex',
     flexDirection: 'column',
@@ -33,9 +32,6 @@ const modularStyle: any = {
     },
   },
 };
-
-const prefixer = new Prefixer();
-const styles = prefixer.prefix(modularStyle);
 
 @inject('store')
 @observer

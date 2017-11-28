@@ -1,9 +1,8 @@
 import React, { Component } from 'react';
 import { NavLink } from 'react-router-dom';
 import Radium from 'radium';
-import Prefixer from 'inline-style-prefixer';
 
-const headerStyle: any = {
+const styles: any = {
   container: {
     marginTop: '-8px',
     marginLeft: '-8px',
@@ -25,15 +24,11 @@ const headerStyle: any = {
     ':hover': {
       backgroundColor: 'rgb(13, 157, 197)',
     },
-
     active: {
       background: 'rgb(13, 157, 197)',
     },
   },
 };
-
-const prefixer = new Prefixer();
-const styles = prefixer.prefix(headerStyle);
 
 @Radium
 class Header extends Component<any> {
@@ -42,7 +37,7 @@ class Header extends Component<any> {
       <div style={styles.container}>
           <NavLink
             exact={true}
-            to='/root'
+            to='/tab'
             key={0}
             style={styles.tab}
             activeStyle={styles.tab.active}
@@ -50,7 +45,7 @@ class Header extends Component<any> {
             Main
           </NavLink>
           <NavLink
-            to='/root/readme'
+            to='/tab/readme'
             key={1}
             style={styles.tab}
             activeStyle={styles.tab.active}
@@ -58,7 +53,7 @@ class Header extends Component<any> {
             Read Me
           </NavLink>
           <NavLink
-            to='/root/test'
+            to='/tab/test'
             key={2}
             style={styles.tab}
             activeStyle={styles.tab.active}

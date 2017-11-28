@@ -2,17 +2,18 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import { Provider } from 'mobx-react';
 
-import Routes from './routes/Routes';
+import RootStackNavigator from '@navigations/RootStackNavigator';
 import Store from './stores/appStore';
 
-import '../css/app.css';
+// tslint:disable-next-line:no-var-requires
+require('@css/app.css');
 
 const store = new Store();
 store.checkLoginStatus();
 
 ReactDOM.render(
   <Provider store={store}>
-    <Routes />
+    <RootStackNavigator />
   </Provider>,
   document.getElementById('app'),
 );

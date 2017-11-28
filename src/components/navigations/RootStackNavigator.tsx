@@ -1,36 +1,29 @@
-import React, { Component } from 'react';
-import { Route, Redirect } from 'react-router-dom';
-import { inject, observer } from 'mobx-react';
-import Radium from 'radium';
-import Prefixer from 'inline-style-prefixer';
+import React from 'react';
+import { BrowserRouter, Route, Switch } from 'react-router-dom';
 
-import Header from '@shared/Header';
+import Login from '@pages/Login';
+import TabNavigator from '@navigations/TabNavigator';
 import Main from '@pages/Main';
 import Test from '@pages/Test';
 import Readme from '@pages/Readme';
+import HelloWorld from '@pages/HelloWorld';
+import NotFound from '@pages/NotFound';
+import Splash from '@pages/Splash';
 
-@inject('store')
-@observer
-@Radium
-class Navigation extends Component<any> {
-  public render() {
-    return (
-      <div>
-        {
-          this.props.store.loggedIn
-          ? <div>
-              <Header />
-              <div style={{ marginTop: '20px' }}>
-                <Route exact={true} path='/root' component={Main} />
-                <Route path='/root/test' component={Test} />
-                <Route path='/root/readme' component={Readme} />
-              </div>
-            </div>
-          : <Redirect to='/' />
-        }
+const RootStackNavigator: React.StatelessComponent<{}> = () => {
+  return (
+    <BrowserRouter>
+      <div style={{textAlign: 'center'}}>
+        <Switch>
+          <Route exact={true} path='/' component={Login} />
+          <Route path='/tab' component={TabNavigator} />
+          <Route path='/helloworld' component={HelloWorld} />
+          <Route path='/splash' component={Splash} />
+          <Route component={NotFound} />
+        </Switch>
       </div>
-    );
-  }
-}
+    </BrowserRouter>
+  );
+};
 
-export default Navigation;
+export default RootStackNavigator;
