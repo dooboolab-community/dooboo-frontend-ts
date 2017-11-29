@@ -6,8 +6,6 @@ import { globalColors } from '@utils/styles';
 const styles: any = {
   container: {
     position: 'absolute',
-    marginTop: '-60px',
-    marginLeft: '-8px',
     width: '100%',
     height: '100%',
     display: 'flex',
@@ -23,7 +21,7 @@ class Splash extends Component<any> {
   public render() {
     return(
       <div style={styles.container}>
-        <span>COONI</span>
+        <span style={{color: '#fff'}}>SPLASH</span>
       </div>
     );
   }

@@ -1,6 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { Provider } from 'mobx-react';
+import { StyleRoot } from 'radium';
 
 import RootStackNavigator from '@navigations/RootStackNavigator';
 import Store from './stores/appStore';
@@ -13,7 +14,9 @@ store.checkLoginStatus();
 
 ReactDOM.render(
   <Provider store={store}>
-    <RootStackNavigator />
+    <StyleRoot>
+      <RootStackNavigator />
+    </StyleRoot>
   </Provider>,
   document.getElementById('app'),
 );

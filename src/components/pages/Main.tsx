@@ -8,6 +8,11 @@ class Main extends React.Component<any> {
   public render() {
     return (
       <div>
+        <div>
+          username: {this.props.store.userNickname}<br/>
+          job: {this.props.store.userJob}<br/>
+          introduction: {this.props.store.userIntroduction}<br/>
+        </div>
         <div onClick={this.props.store.logOut}>
           log out
         </div>

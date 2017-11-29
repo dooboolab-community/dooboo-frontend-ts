@@ -4,8 +4,8 @@ import Radium from 'radium';
 
 const styles: any = {
   container: {
-    marginTop: '-8px',
-    marginLeft: '-8px',
+    position: 'absolute',
+    bottom: 0,
     width: '100vw',
     height: '50px',
     display: 'flex',
@@ -17,7 +17,7 @@ const styles: any = {
     width: '33vw',
     textAlign: 'center',
     color: '#fff',
-    fontSize: '20px',
+    fontSize: '15px',
     pointer: 'cursor',
     lineHeight: '50px',
     textDecoration: 'none',
@@ -59,6 +59,24 @@ class Header extends Component<any> {
             activeStyle={styles.tab.active}
           >
             Test Page
+          </NavLink>
+          <NavLink
+            exact={true}
+            to='/tab/fourth'
+            key={3}
+            style={styles.tab}
+            activeStyle={styles.tab.active}
+          >
+            tab 4
+          </NavLink>
+          <NavLink
+            exact={true}
+            to='/tab/fifth'
+            key={4}
+            style={styles.tab}
+            activeStyle={styles.tab.active}
+          >
+            tab 5
           </NavLink>
       </div>
     );
