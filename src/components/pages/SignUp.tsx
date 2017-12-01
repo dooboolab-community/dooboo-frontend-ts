@@ -64,7 +64,10 @@ class SignUp extends Component<any> {
 
     return (
       <div>
-          <div>
+        {
+          this.props.store.loggedIn
+          ? <Redirect to='tab/tab1' />
+          : <div>
             <NavBar {...navbarProps} />
             <div style={styles.profileInputBox}>
                 <div key={0} style={styles.profileEachCategory}>
@@ -109,6 +112,7 @@ class SignUp extends Component<any> {
                 </div>
             </div>
           </div>
+        }
       </div>
     );
   }

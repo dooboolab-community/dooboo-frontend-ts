@@ -25,27 +25,31 @@ class Intro extends Component<any> {
     return(
       <div>
         {
-            this.props.store.loggedIn
-            ? <Redirect to='/tab/tab1' />
-            : <div style={styles.container}>
-                <div style={styles.introContainer}>
+          this.props.store.loggedIn
+          ? <Redirect to='/tab/tab1' />
+          : <div style={styles.container}>
+              <div style={styles.introContainer}>
                 <div style={styles.oauthBox}>
-                    <div style={styles.oauthBtn} key={0} onClick={() => this.login()}>
+                    <div style={styles.oauthBtn} key={0} onClick={() => this.signUp()}>
+                        <span style={styles.oauthTxt}>회원가입</span>
+                    </div>
+                    <div style={styles.oauthBtn} key={1} onClick={() => this.login()}>
                         <img
                           style={styles.googleLogoImg}
-                          src='http://cfile9.uf.tistory.com/image/240F4547562909D4245E90'
+                          src='https://icdn6.digitaltrends.com/image/google_icon-377x372.jpg'
                         />
                         <span style={styles.oauthTxt}>구글으로 로그인</span>
                     </div>
-                    <div style={styles.oauthBtn} key={1} onClick={() => this.signUp()}>
+                    <div style={styles.oauthBtn} key={2} onClick={() => this.login()}>
                         <img
-                          style={styles.fbLogoImg}
-                          src='http://cfile9.uf.tistory.com/image/240F4547562909D4245E90'
+                          style={styles.googleLogoImg}
+                          // tslint:disable-next-line:max-line-length
+                          src='https://media4.s-nbcnews.com/j/streams/2013/december/131203/2d9840012-facebooklogo.nbcnews-fp-360-360.jpg'
                         />
-                        <span style={styles.oauthTxt}>회원가입</span>
+                        <span style={styles.oauthTxt}>페이스북으로 로그인</span>
                     </div>
                 </div>
-                </div>
+              </div>
             </div>
         }
       </div>
