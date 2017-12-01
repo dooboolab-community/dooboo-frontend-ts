@@ -37,46 +37,46 @@ class Header extends Component<any> {
       <div style={styles.container}>
           <NavLink
             exact={true}
-            to='/tab'
+            to='/tab/tab1'
             key={0}
             style={styles.tab}
             activeStyle={styles.tab.active}
           >
-            Main
+            Tab1
           </NavLink>
           <NavLink
-            to='/tab/readme'
+            to='/tab/tab2'
             key={1}
             style={styles.tab}
             activeStyle={styles.tab.active}
           >
-            Read Me
+            Tab2
           </NavLink>
           <NavLink
-            to='/tab/test'
+            to='/tab/tab3'
             key={2}
             style={styles.tab}
             activeStyle={styles.tab.active}
           >
-            Test Page
+            Tab3
           </NavLink>
           <NavLink
             exact={true}
-            to='/tab/fourth'
+            to='/tab/tab4'
             key={3}
             style={styles.tab}
             activeStyle={styles.tab.active}
           >
-            tab 4
+            Tab4
           </NavLink>
           <NavLink
             exact={true}
-            to='/tab/fifth'
+            to='/tab/tab5'
             key={4}
             style={styles.tab}
             activeStyle={styles.tab.active}
           >
-            tab 5
+            Tab 5
           </NavLink>
       </div>
     );

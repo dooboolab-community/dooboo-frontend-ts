@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-class FourthTab extends Component {
+class Tab4 extends Component {
   public render() {
     return (
       <div>Nothing</div>
@@ -8,4 +8,4 @@ class FourthTab extends Component {
   }
 }
 
-export default FourthTab;
+export default Tab4;

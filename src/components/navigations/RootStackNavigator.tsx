@@ -9,7 +9,7 @@ import Readme from '@pages/Readme';
 import HelloWorld from '@pages/HelloWorld';
 import NotFound from '@pages/NotFound';
 import Splash from '@pages/Splash';
-import ProfileStart from '@pages/ProfileStart';
+import SignUp from '@pages/SignUp';
 
 const RootStackNavigator: React.StatelessComponent<{}> = () => {
   return (
@@ -20,7 +20,7 @@ const RootStackNavigator: React.StatelessComponent<{}> = () => {
           <Route path='/tab' component={TabNavigator} />
           <Route path='/helloworld' component={HelloWorld} />
           <Route path='/splash' component={Splash} />
-          <Route path='/profile_start' component={ProfileStart} />
+          <Route path='/signup' component={SignUp} />
           <Route component={NotFound} />
         </Switch>
       </div>

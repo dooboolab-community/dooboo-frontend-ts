@@ -6,15 +6,13 @@ import { setSessionStorage, getSessionStorage } from '@utils/Functions';
 class Store {
   @observable public loggedIn: boolean;
   @observable public grey: boolean = false;
-  @observable public userNickname: string;
-  @observable public userJob: string;
-  @observable public userIntroduction: string;
+  @observable public userId: string;
+  @observable public userPwd: string;
 
   public checkLoginStatus() {
     this.loggedIn = getSessionStorage('loggedIn') === 'true' ? true : false ;
-    this.userNickname = getSessionStorage('userNickname');
-    this.userJob = getSessionStorage('userJob');
-    this.userIntroduction = getSessionStorage('userIntroduction');
+    this.userId = getSessionStorage('userId');
+    this.userPwd = getSessionStorage('userPwd');
   }
 
   public logIn() {
@@ -27,10 +25,9 @@ class Store {
     return this.checkLoginStatus();
   }
 
-  public saveProfile(name: string, job: string, introduction: string) {
-    setSessionStorage('userNickname', name);
-    setSessionStorage('userJob', job);
-    setSessionStorage('userIntroduction', introduction);
+  public saveProfile(id: string, password: string) {
+    setSessionStorage('userDd', id);
+    setSessionStorage('userPwd', password);
     return this.checkLoginStatus();
   }
 

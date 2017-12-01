@@ -9,13 +9,13 @@ class Main extends React.Component<any> {
     return (
       <div>
         <div>
-          username: {this.props.store.userNickname}<br/>
-          job: {this.props.store.userJob}<br/>
-          introduction: {this.props.store.userIntroduction}<br/>
+          id: {this.props.store.userId}<br/>
+          password: {this.props.store.userPwd}<br/>
         </div>
+        <br/>
         <div onClick={this.props.store.logOut}>
-          log out
-        </div>
+          [log out]
+        </div><br/>
         <Link to='/helloworld' style={{textDecoration: 'none', color: 'rgb(13, 157, 197)'}}>
           Hello World!
         </Link>

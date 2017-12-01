@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-class FifthTab extends Component {
+class Tab5 extends Component {
   public render() {
     return (
       <div>Nothing</div>
@@ -8,4 +8,4 @@ class FifthTab extends Component {
   }
 }
 
-export default FifthTab;
+export default Tab5;

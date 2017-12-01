@@ -17,8 +17,7 @@ class Intro extends Component<any> {
   }
 
   public signUp() {
-    this.props.store.logIn();
-    this.props.history.push('/profile_start');
+    this.props.history.push('/signup');
   }
 
   public render() {
@@ -27,7 +26,7 @@ class Intro extends Component<any> {
       <div>
         {
             this.props.store.loggedIn
-            ? <Redirect to='/tab' />
+            ? <Redirect to='/tab/tab1' />
             : <div style={styles.container}>
                 <div style={styles.introContainer}>
                 <div style={styles.oauthBox}>
