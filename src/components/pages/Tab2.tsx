@@ -2,6 +2,32 @@ import React, { Component } from 'react';
 import { inject, observer } from 'mobx-react';
 import Radium from 'radium';
 
+@inject('store')
+@observer
+@Radium
+class Tab2 extends Component<any> {
+  public render() {
+    return (
+      <div style={styles.container}>
+        <div style={styles.storeShowingDiv}>
+          appStore grey property: {this.props.store.grey ? 'true' : 'false'}
+        </div>
+        <span
+          style={
+            [
+              styles.spanStyle,
+              this.props.store.grey ? styles.greyColor : styles.modularColor,
+            ]
+          }
+          onClick={this.props.store.appColorChange}
+        >
+          click here
+        </span>
+      </div>
+    );
+  }
+}
+
 const styles: any = {
   container: {
     display: 'flex',
@@ -32,31 +58,5 @@ const styles: any = {
     },
   },
 };
-
-@inject('store')
-@observer
-@Radium
-class Tab2 extends Component<any> {
-  public render() {
-    return (
-      <div style={styles.container}>
-        <div style={styles.storeShowingDiv}>
-          appStore grey property: {this.props.store.grey ? 'true' : 'false'}
-        </div>
-        <span
-          style={
-            [
-              styles.spanStyle,
-              this.props.store.grey ? styles.greyColor : styles.modularColor,
-            ]
-          }
-          onClick={this.props.store.appColorChange}
-        >
-          click here
-        </span>
-      </div>
-    );
-  }
-}
 
 export default Tab2;

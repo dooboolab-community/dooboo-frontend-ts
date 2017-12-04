@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import Radium from 'radium';
 
-import { globalColors, globalEffects, globalMediaQueries } from '@utils/styles';
+import { globalColors, globalEffects, } from '@utils/styles';
 
 @Radium
 class NavBar extends Component<any> {

@@ -4,7 +4,7 @@ import { Redirect } from 'react-router-dom';
 import Radium from 'radium';
 
 import NavBar from '@shared/NavBar';
-import { globalColors, globalEffects, globalMediaQueries } from '@utils/styles';
+import { globalColors, globalEffects, } from '@utils/styles';
 
 @inject('store')
 @observer
@@ -29,8 +29,8 @@ class SignUp extends Component<any> {
   }
 
   public inputValueHandler(inputId) {
-    var e = document.getElementById(inputId) as HTMLInputElement;
-    var v = e.value;
+    let e = document.getElementById(inputId) as HTMLInputElement;
+    let v = e.value;
     if (inputId === 'idInput') {
       return v.length > 0 ? this.state.idDone = true : this.state.idDone = false;
     }

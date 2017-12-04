@@ -3,9 +3,6 @@ import { BrowserRouter, Route, Switch } from 'react-router-dom';
 
 import Intro from '@pages/Intro';
 import TabNavigator from '@navigations/TabNavigator';
-import Main from '@pages/Main';
-import Test from '@pages/Test';
-import Readme from '@pages/Readme';
 import HelloWorld from '@pages/HelloWorld';
 import NotFound from '@pages/NotFound';
 import Splash from '@pages/Splash';

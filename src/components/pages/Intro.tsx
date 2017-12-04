@@ -4,7 +4,8 @@ import { inject, observer } from 'mobx-react';
 import autobind from 'autobind-decorator';
 import Radium from 'radium';
 
-import { globalColors, globalEffects, globalMediaQueries } from '@utils/styles';
+import { globalColors, globalEffects, } from '@utils/styles';
+import CooniBtn from '@shared/CooniBtn';
 
 @autobind
 @inject('store')
@@ -30,24 +31,23 @@ class Intro extends Component<any> {
           : <div style={styles.container}>
               <div style={styles.introContainer}>
                 <div style={styles.oauthBox}>
-                    <div style={styles.oauthBtn} key={0} onClick={() => this.signUp()}>
-                        <span style={styles.oauthTxt}>회원가입</span>
-                    </div>
-                    <div style={styles.oauthBtn} key={1} onClick={() => this.login()}>
-                        <img
-                          style={styles.googleLogoImg}
-                          src='https://icdn6.digitaltrends.com/image/google_icon-377x372.jpg'
-                        />
-                        <span style={styles.oauthTxt}>구글으로 로그인</span>
-                    </div>
-                    <div style={styles.oauthBtn} key={2} onClick={() => this.login()}>
-                        <img
-                          style={styles.googleLogoImg}
-                          // tslint:disable-next-line:max-line-length
-                          src='https://media4.s-nbcnews.com/j/streams/2013/december/131203/2d9840012-facebooklogo.nbcnews-fp-360-360.jpg'
-                        />
-                        <span style={styles.oauthTxt}>페이스북으로 로그인</span>
-                    </div>
+                    <CooniBtn
+                      clickHandler={() => this.signUp()}
+                      white={true}
+                      btnTxt='회원가입'
+                    />
+                    <CooniBtn
+                      clickHandler={() => this.login()}
+                      white={true}
+                      btnTxt='구글으로 로그인'
+                      imgSrc='https://icdn6.digitaltrends.com/image/google_icon-377x372.jpg'
+                    />
+                    <CooniBtn
+                      clickHandler={() => this.login()}
+                      white={true}
+                      btnTxt='페이스북으로 로그인'
+                      imgSrc='https://media4.s-nbcnews.com/j/streams/2013/december/131203/2d9840012-facebooklogo.nbcnews-fp-360-360.jpg'
+                    />
                 </div>
               </div>
             </div>

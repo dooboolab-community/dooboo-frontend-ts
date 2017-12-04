@@ -13,6 +13,7 @@ class Store {
     this.loggedIn = getSessionStorage('loggedIn') === 'true' ? true : false ;
     this.userId = getSessionStorage('userId');
     this.userPwd = getSessionStorage('userPwd');
+    // console.log(this.userId, this.userPwd);
   }
 
   public logIn() {
