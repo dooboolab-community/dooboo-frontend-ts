@@ -4,13 +4,13 @@ import { inject, observer } from 'mobx-react';
 
 @inject('store')
 @observer
-class Main extends React.Component<any> {
+class Tab1 extends React.Component<any> {
   public render() {
     return (
       <div>
         <div>
-          id: {this.props.store.userId}<br/>
-          password: {this.props.store.userPwd}<br/>
+          {/* id: {this.props.store.userId}<br/>
+          password: {this.props.store.userPwd}<br/> */}
         </div>
         <br/>
         <div onClick={this.props.store.logOut}>
@@ -24,4 +24,4 @@ class Main extends React.Component<any> {
   }
 }
 
-export default Main;
+export default Tab1;

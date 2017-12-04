@@ -36,7 +36,7 @@ const styles: any = {
 @inject('store')
 @observer
 @Radium
-class Test extends Component<any> {
+class Tab2 extends Component<any> {
   public render() {
     return (
       <div style={styles.container}>
@@ -59,4 +59,4 @@ class Test extends Component<any> {
   }
 }
 
-export default Test;
+export default Tab2;

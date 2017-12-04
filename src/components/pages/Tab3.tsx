@@ -13,7 +13,7 @@ const styles: any = {
 };
 
 @Radium
-class Readme extends Component<any> {
+class Tab3 extends Component<any> {
   public render() {
     return (
       <div>
@@ -44,4 +44,4 @@ class Readme extends Component<any> {
   }
 }
 
-export default Readme;
+export default Tab3;
