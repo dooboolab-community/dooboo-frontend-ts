@@ -22,7 +22,6 @@ class Intro extends Component<any> {
   }
 
   public render() {
-    console.log(this.props.store);
     return(
       <div>
         {
