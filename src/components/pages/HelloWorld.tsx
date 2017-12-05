@@ -5,7 +5,7 @@ class HelloWorld extends Component<any> {
     return (
       <div
         onClick={() => this.props.history.goBack()}
-        style={{ cursor: 'pointer', color: 'tomato'}}
+        style={{ cursor: 'pointer', color: 'tomato', marginTop: '20px'}}
       >
         GO BACK TO MAIN PAGE!
       </div>

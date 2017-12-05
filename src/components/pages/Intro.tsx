@@ -45,6 +45,7 @@ class Intro extends Component<any> {
                       clickHandler={() => this.login()}
                       white={true}
                       btnTxt='페이스북으로 로그인'
+                      // tslint:disable-next-line:max-line-length
                       imgSrc='https://media4.s-nbcnews.com/j/streams/2013/december/131203/2d9840012-facebooklogo.nbcnews-fp-360-360.jpg'
                     />
                 </div>

@@ -29,8 +29,8 @@ class SignUp extends Component<any> {
   }
 
   public inputValueHandler(inputId) {
-    let e = document.getElementById(inputId) as HTMLInputElement;
-    let v = e.value;
+    const e = document.getElementById(inputId) as HTMLInputElement;
+    const v = e.value;
     if (inputId === 'idInput') {
       return v.length > 0 ? this.state.idDone = true : this.state.idDone = false;
     }
