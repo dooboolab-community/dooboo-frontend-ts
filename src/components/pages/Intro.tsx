@@ -4,7 +4,7 @@ import { inject, observer } from 'mobx-react';
 import autobind from 'autobind-decorator';
 import Radium from 'radium';
 
-import { globalColors, globalEffects, } from '@utils/styles';
+import { globalColors, globalEffects } from '@utils/styles';
 import CooniBtn from '@shared/CooniBtn';
 
 @autobind

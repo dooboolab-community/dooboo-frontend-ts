@@ -1,28 +1,24 @@
-import React, { Component } from 'react';
+import React from 'react';
+import { Route, Link } from 'react-router-dom';
 import { inject, observer } from 'mobx-react';
 import Radium from 'radium';
+
+import CooniBtn from '@shared/CooniBtn';
 
 @inject('store')
 @observer
 @Radium
-class Tab2 extends Component<any> {
+class Tab2 extends React.Component<any> {
   public render() {
     return (
       <div style={styles.container}>
-        <div style={styles.storeShowingDiv}>
-          appStore grey property: {this.props.store.grey ? 'true' : 'false'}
-        </div>
-        <span
-          style={
-            [
-              styles.spanStyle,
-              this.props.store.grey ? styles.greyColor : styles.modularColor,
-            ]
-          }
-          onClick={this.props.store.appColorChange}
-        >
-          click here
-        </span>
+        <Link to='/helloworld' style={styles.helloWorld}>
+          Hello World!
+        </Link>
+        <CooniBtn
+          clickHandler={this.props.store.logOut}
+          btnTxt='로그아웃'
+        />
       </div>
     );
   }
@@ -32,30 +28,14 @@ const styles: any = {
   container: {
     display: 'flex',
     flexDirection: 'column',
-    margin: 'auto',
     alignItems: 'center',
   },
-  storeShowingDiv: {
-    fontSize: '20px',
-    marginBottom: '20px',
-  },
-  spanStyle: {
-    height: '30px',
-    fontSize: '20px',
-    lineHeight: '30px',
-    border: '2px solid #b2b2b2',
-  },
-  modularColor: {
+
+  helloWorld: {
+    textDecoration: 'none',
     color: 'rgb(13, 157, 197)',
-    ':hover': {
-        color: 'blue',
-    },
-  },
-  greyColor: {
-    color: '#d2d2d2',
-    ':hover': {
-      color: '#bbb',
-    },
+    height: '35vh',
+    marginTop: 'calc(35vh - 7px)',
   },
 };
 

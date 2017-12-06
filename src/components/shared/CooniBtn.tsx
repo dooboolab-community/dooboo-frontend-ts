@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import Radium from 'radium';
+import Radium, { StyleRoot } from 'radium';
 
 import { globalEffects } from '@utils/styles';
 
@@ -7,23 +7,24 @@ import { globalEffects } from '@utils/styles';
 class CooniBtn extends Component<any> {
   public render() {
     return (
-      <div
-        style={[
-          styles.authBtn,
-          this.props.white 
-            ? {borderColor: '#fff', color: '#fff'}
-            : {borderColor: '#000', color: '#000'}]}
-        onClick={this.props.clickHandler}
-      >
-        {this.props.imgSrc 
-          ? <img src={this.props.imgSrc} style={styles.logoImg}/> 
-          : undefined }
-        <span style={styles.authTxt}>{this.props.btnTxt}</span>
-      </div>
+      <StyleRoot>
+        <div
+          style={[
+            styles.authBtn,
+            this.props.white
+              ? {borderColor: '#fff', color: '#fff'}
+              : {borderColor: '#000', color: '#000'}]}
+          onClick={() => this.props.clickHandler()}
+        >
+          {this.props.imgSrc
+            ? <img src={this.props.imgSrc} style={styles.logoImg}/>
+            : undefined }
+          <span style={styles.authTxt}>{this.props.btnTxt}</span>
+        </div>
+      </StyleRoot>
     );
   }
 }
-
 
 const styles: any = {
   authBtn: {
