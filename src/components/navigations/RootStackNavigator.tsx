@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
 
 import { inject, observer } from 'mobx-react';
-import autobind from 'autobind-decorator';
 import Radium from 'radium';
 
 import { colors, effects } from '@utils/styles';
@@ -15,7 +14,6 @@ import NotFound from '@pages/NotFound';
 import Splash from '@pages/Splash';
 import SignUp from '@pages/SignUp';
 
-@autobind
 @inject('store')
 class RootStackNavigator extends Component<any> {
   public componentDidMount() {
