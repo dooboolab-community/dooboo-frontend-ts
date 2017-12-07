@@ -4,7 +4,8 @@ import { Provider } from 'mobx-react';
 import { StyleRoot } from 'radium';
 
 import RootStackNavigator from '@navigations/RootStackNavigator';
-import Store from './stores/appStore';
+import Store from '@stores/appStore';
+import Localization from '@models/Localization';
 
 // tslint:disable-next-line:no-var-requires
 require('@css/app.css');
@@ -14,7 +15,9 @@ store.checkLoginStatus();
 
 if (navigator) {
   const userLang: string = navigator.language;
-  store.setLocale(userLang);
+  const localization = new Localization();
+  localization.setLocale(userLang);
+  store.setLocale(localization);
 }
 
 ReactDOM.render(

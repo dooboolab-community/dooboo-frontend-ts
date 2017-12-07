@@ -19,7 +19,7 @@ import SignUp from '@pages/SignUp';
 @inject('store')
 class RootStackNavigator extends Component<any> {
   public componentDidMount() {
-    console.log(`userLang: ${this.props.store.getLocale()}`);
+    console.log(`userLang: ${this.props.store.locale.getLocale()}`);
   }
 
   public render() {

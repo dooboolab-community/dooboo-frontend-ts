@@ -16,9 +16,11 @@ class CooniBtn extends Component<any> {
               : {borderColor: '#000', color: '#000'}]}
           onClick={() => this.props.clickHandler()}
         >
-          {this.props.imgSrc
-            ? <img src={this.props.imgSrc} style={styles.logoImg}/>
-            : undefined }
+          {
+            this.props.imgSrc
+              ? <img src={this.props.imgSrc} style={styles.logoImg}/>
+              : null
+          }
           <span style={styles.authTxt}>{this.props.btnTxt}</span>
         </div>
       </StyleRoot>
