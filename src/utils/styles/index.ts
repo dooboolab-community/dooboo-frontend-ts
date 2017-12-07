@@ -1,2 +1,2 @@
-export { default as globalColors } from './globalColors.css';
-export { default as globalEffects }  from './globalEffects.css';
+export { default as colors } from './colors.css';
+export { default as effects }  from './effects.css';

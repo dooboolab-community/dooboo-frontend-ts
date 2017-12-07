@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import Radium from 'radium';
 
-import { globalColors, globalEffects, } from '@utils/styles';
+import { colors, effects } from '@utils/styles';
 
 @Radium
 class NavBar extends Component<any> {
@@ -49,7 +49,7 @@ const styles: any = {
     },
 
     leftBtn: {
-      ...globalEffects.btnEffect,
+      ...effects.btnEffect,
       width: '23px',
       height: '18px',
       position: 'fixed',
@@ -57,14 +57,14 @@ const styles: any = {
       fontSize: '12px',
       lineHeight: '18px',
       paddingTop: '12px',
-      color: globalColors.cooniBtnGrey,
+      color: colors.cooniBtnGrey,
       ':hover': {
-        ...globalEffects.btnEffectHover,
+        ...effects.btnEffectHover,
       },
     },
 
     rightBtn: {
-      ...globalEffects.btnEffect,
+      ...effects.btnEffect,
       width: '23px',
       height: '18px',
       position: 'fixed',
@@ -72,9 +72,9 @@ const styles: any = {
       fontSize: '12px',
       lineHeight: '18px',
       paddingTop: '12px',
-      color: globalColors.cooniBtnGrey,
+      color: colors.cooniBtnGrey,
       ':hover': {
-        ...globalEffects.btnEffectHover,
+        ...effects.btnEffectHover,
       },
     },
 };

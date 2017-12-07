@@ -4,7 +4,7 @@ import { inject, observer } from 'mobx-react';
 import autobind from 'autobind-decorator';
 import Radium from 'radium';
 
-import { globalColors, globalEffects } from '@utils/styles';
+import { colors, effects } from '@utils/styles';
 import CooniBtn from '@shared/CooniBtn';
 
 @autobind
@@ -66,7 +66,7 @@ const styles: any = {
     flexDirection: 'column',
     justifyContent: 'center',
     alignItems: 'center',
-    background: globalColors.cooniGradient,
+    background: colors.cooniGradient,
   },
 
   introContainer: {
@@ -96,10 +96,10 @@ const styles: any = {
     justifyContent: 'center',
     alignItems: 'center',
 
-    ...globalEffects.btnEffect,
+    ...effects.btnEffect,
 
     ':hover': {
-      ...globalEffects.btnEffectHover,
+      ...effects.btnEffectHover,
     },
     ':active': {
       opacity: 0.5,

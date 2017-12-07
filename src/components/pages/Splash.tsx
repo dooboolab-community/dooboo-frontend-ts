@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import Radium from 'radium';
 
-import { globalColors } from '@utils/styles';
+import { colors } from '@utils/styles';
 
 const styles: any = {
   container: {
@@ -12,7 +12,7 @@ const styles: any = {
     flexDirection: 'column',
     justifyContent: 'center',
     alignItems: 'center',
-    background: globalColors.cooniGradient,
+    background: colors.cooniGradient,
   },
 };
 

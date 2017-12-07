@@ -3,10 +3,10 @@
   "version": "1.0.0",
   "description": "starting react express app with me!",
   "scripts": {
-    "start": "webpack-dev-server",
+    "start": "rm -rf ./build && tsc && webpack-dev-server",
+    "build": "rm -rf ./build && tsc",
     "prod": "webpack -p",
-    "test": "karma start",
-    "jest": "jest"
+    "test": "rm -rf ./build && tsc && jest"
   },
   "author": "hyochan",
   "license": "MIT",
@@ -42,13 +42,6 @@
     "expect": "^21.2.1",
     "history": "^4.7.2",
     "jest": "^21.2.1",
-    "jquery": "^3.2.1",
-    "karma": "^1.7.1",
-    "karma-chrome-launcher": "^2.2.0",
-    "karma-mocha": "^1.3.0",
-    "karma-mocha-reporter": "^2.2.5",
-    "karma-sourcemap-loader": "^0.3.7",
-    "karma-webpack": "^2.0.6",
     "node-sass": "^4.7.1",
     "postcss-cssnext": "^3.0.2",
     "postcss-import": "^11.0.0",

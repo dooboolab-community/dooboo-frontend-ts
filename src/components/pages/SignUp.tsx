@@ -4,7 +4,7 @@ import { Redirect } from 'react-router-dom';
 import Radium from 'radium';
 
 import NavBar from '@shared/NavBar';
-import { globalColors, globalEffects, } from '@utils/styles';
+import { colors, effects, } from '@utils/styles';
 
 @inject('store')
 @observer
@@ -170,15 +170,15 @@ const styles: any = {
       borderLeft: 'none',
       borderRight: 'none',
       borderBottom: '2px',
-      borderColor: globalColors.cooniGrey,
+      borderColor: colors.cooniGrey,
       ':focus': {
         outline: 'none',
-        borderImageSource: globalColors.cooniGradientHorizontal,
+        borderImageSource: colors.cooniGradientHorizontal,
         borderImageSlice: 1,
       },
     },
     labelColored: {
-      color: globalColors.cooniTxtColor,
+      color: colors.cooniTxtColor,
     },
 };
 

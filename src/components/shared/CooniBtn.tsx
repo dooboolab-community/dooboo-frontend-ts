@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import Radium, { StyleRoot } from 'radium';
 
-import { globalEffects } from '@utils/styles';
+import { effects } from '@utils/styles';
 
 @Radium
 class CooniBtn extends Component<any> {
@@ -39,10 +39,10 @@ const styles: any = {
     justifyContent: 'center',
     alignItems: 'center',
 
-    ...globalEffects.btnEffect,
+    ...effects.btnEffect,
 
     ':hover': {
-      ...globalEffects.btnEffectHover,
+      ...effects.btnEffectHover,
     },
     ':active': {
       opacity: 0.5,

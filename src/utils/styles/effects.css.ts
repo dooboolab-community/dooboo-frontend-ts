@@ -1,4 +1,4 @@
-const globalEffects: any = {
+const effects: any = {
   btnEffect: {
     cursor: 'pointer',
     opacity: 1,
@@ -10,4 +10,4 @@ const globalEffects: any = {
   },
 };
 
-export default globalEffects;
+export default effects;
