@@ -1,15 +1,19 @@
 const webpack = require('webpack');
 const path = require('path');
+const DashboardPlugin = require('webpack-dashboard/plugin');
 
 module.exports = {
   entry: {
-    app: './build/index.js'
+    app: './build/index.js',
   },
   output: {
     path: path.resolve(__dirname, './dist'),
     filename: 'bundle.js',
     publicPath: '/',
   },
+  plugins: [
+    new DashboardPlugin(),
+  ],
   resolve: {
     modules: [
       './node_modules',

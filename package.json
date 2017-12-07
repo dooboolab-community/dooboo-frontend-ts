@@ -4,7 +4,8 @@
   "description": "starting react express app with me!",
   "postinstall": "tsc",
   "scripts": {
-    "start": "webpack-dev-server",
+    "dev": "webpack-dev-server",
+    "start": "webpack-dashboard -- webpack-dev-server -d --hot --config webpack.config.js --watch",
     "build": "rm -rf ./build && tsc",
     "prod": "webpack -p",
     "test": "rm -rf ./build && tsc && jest"
@@ -57,6 +58,7 @@
     "tslint-react": "^3.2.0",
     "typescript": "^2.6.1",
     "webpack": "^3.8.1",
+    "webpack-dashboard": "^1.0.2",
     "webpack-dev-server": "^2.9.4"
   },
   "browserslist": [
