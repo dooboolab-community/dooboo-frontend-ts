@@ -1,18 +1,15 @@
 import React, { Component } from 'react';
 import { Redirect } from 'react-router-dom';
 import { inject, observer } from 'mobx-react';
-import autobind from 'autobind-decorator';
 import Radium from 'radium';
 
 import { colors, effects } from '@utils/styles';
 import CooniBtn from '@shared/CooniBtn';
 
-@autobind
 @inject('store')
 @observer
 @Radium
 class Intro extends Component<any> {
-
   public login() {
     this.props.store.logIn();
   }
@@ -22,6 +19,7 @@ class Intro extends Component<any> {
   }
 
   public render() {
+    const { getString } = this.props.store.locale;
     return(
       <div>
         {
@@ -33,18 +31,18 @@ class Intro extends Component<any> {
                     <CooniBtn
                       clickHandler={() => this.signUp()}
                       white={true}
-                      btnTxt='회원가입'
+                      btnTxt={getString('SIGNUP')}
                     />
                     <CooniBtn
                       clickHandler={() => this.login()}
                       white={true}
-                      btnTxt='구글으로 로그인'
+                      btnTxt={getString('GOOGLE_LOGIN')}
                       imgSrc='https://icdn6.digitaltrends.com/image/google_icon-377x372.jpg'
                     />
                     <CooniBtn
                       clickHandler={() => this.login()}
                       white={true}
-                      btnTxt='페이스북으로 로그인'
+                      btnTxt={getString('FACEBOOK_LOGIN')}
                       // tslint:disable-next-line:max-line-length
                       imgSrc='https://media4.s-nbcnews.com/j/streams/2013/december/131203/2d9840012-facebooklogo.nbcnews-fp-360-360.jpg'
                     />

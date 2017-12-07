@@ -1,13 +1,22 @@
 import { observable, action } from 'mobx';
 import autobind from 'autobind-decorator';
 import { setSessionStorage, getSessionStorage } from '@utils/Functions';
+import Localization from '@models/Localization';
 
-@autobind
 class Store {
   @observable public loggedIn: boolean;
   @observable public grey: boolean = false;
   @observable public userId: string;
   @observable public userPwd: string;
+  @observable private locale: Localization;
+
+  public setLocale(param: Localization) {
+    this.locale = param;
+  }
+
+  public getString(param: string) {
+    return this.locale.getString(param);
+  }
 
   public checkLoginStatus() {
     this.loggedIn = getSessionStorage('loggedIn') === 'true' ? true : false ;

@@ -2,11 +2,14 @@
   "name": "react-webpack2-starter",
   "version": "1.0.0",
   "description": "starting react express app with me!",
+  "postinstall": "tsc",
   "scripts": {
-    "start": "rm -rf ./build && tsc && webpack-dev-server",
+    "dev": "webpack-dev-server",
+    "start": "webpack-dashboard -- webpack-dev-server -d --hot --config webpack.config.js --watch",
     "build": "rm -rf ./build && tsc",
+    "test": "rm -rf ./build && tsc && jest",
     "prod": "webpack -p",
-    "test": "rm -rf ./build && tsc && jest"
+    "production": "NODE_ENV=production webpack -p"
   },
   "author": "hyochan",
   "license": "MIT",
@@ -56,6 +59,7 @@
     "tslint-react": "^3.2.0",
     "typescript": "^2.6.1",
     "webpack": "^3.8.1",
+    "webpack-dashboard": "^1.0.2",
     "webpack-dev-server": "^2.9.4"
   },
   "browserslist": [
