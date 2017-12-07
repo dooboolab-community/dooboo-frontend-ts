@@ -11,6 +11,12 @@
     "prod": "webpack -p",
     "production": "NODE_ENV=production webpack -p"
   },
+  "jest": {
+    "setupFiles": ["./test/jestSetup.js"],
+    "snapshotSerializers": [
+      "<rootDir>/node_modules/enzyme-to-json/serializer"
+    ]
+  },
   "author": "hyochan",
   "license": "MIT",
   "dependencies": {
