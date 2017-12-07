@@ -18,7 +18,7 @@ class Tab1 extends Component<any> {
           clickHandler={this.props.store.logOut}
           btnTxt='로그아웃'
         />
-        <div style={{fontSize: '20px', marginTop: '50px'}}>
+        <div style={{fontSize: '20px', marginTop: '1050px'}}>
           boilerplate of <span style={{fontWeight: 'bold'}}>React</span> with
         </div><br/>
         <a key={0} style={styles.hyperLink} href='https://github.com/ReactTraining/react-router'>

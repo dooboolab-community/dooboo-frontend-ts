@@ -20,7 +20,7 @@ class TabNavigator extends Component<any> {
           !this.props.store.loggedIn
           ? <Redirect to='/' />
           : <div style={styles.container}>
-              <div style={{ marginTop: '20px' }}>
+              <div style={styles.content}>
                 <Switch>
                   <Route path='/tab/tab1' component={Tab1} />
                   <Route path='/tab/tab2' component={Tab2} />
@@ -83,19 +83,24 @@ class TabNavigator extends Component<any> {
 
 const styles: any = {
   container: {
+    display: 'flex',
+    height: '100vh',
     alignSelf: 'stretch',
-    alignItems: 'flex-start',
+    alignItems: 'center',
     justifyContent: 'flex-start',
     flexDirection: 'column',
+  },
+  content: {
+    flex: 1,
+    alignSelf: 'stretch',
+    overflow: 'scroll',
   },
   tabContainer: {
     position: 'absolute',
     bottom: 0,
-    margin: 0,
-    padding: 0,
+    display: 'flex',
     width: '100vw',
     height: '50px',
-    display: 'flex',
     justifyContent: 'space-around',
     backgroundColor: '#d2d2d2',
     alignItems: 'stretch',
