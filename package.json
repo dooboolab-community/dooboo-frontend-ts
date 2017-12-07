@@ -42,6 +42,8 @@
     "babel-preset-react": "^6.24.1",
     "babel-preset-stage-0": "^6.24.1",
     "css-loader": "^0.28.4",
+    "enzyme": "^3.2.0",
+    "enzyme-to-json": "^3.2.2",
     "expect": "^21.2.1",
     "history": "^4.7.2",
     "jest": "^21.2.1",

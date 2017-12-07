@@ -1,15 +1,25 @@
 import React, { Component } from 'react';
+import Radium from 'radium';
+
+import CooniBtn from '@shared/CooniBtn';
 
 class HelloWorld extends Component<any> {
   public render() {
     return (
-      <div
-        onClick={() => this.props.history.goBack()}
-        style={{ cursor: 'pointer', color: 'tomato', marginTop: '20px'}}
-      >
-        GO BACK TO MAIN PAGE!
+      <div style={styles.container}>
+        <CooniBtn
+          clickHandler={() => this.props.history.goBack()}
+          btnTxt='back to main page'
+        />
       </div>
     );
+  }
+}
+
+const styles: any = {
+  container: {
+    display: 'flex',
+    justifyContent: 'center'
   }
 }
 
