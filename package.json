@@ -7,8 +7,9 @@
     "dev": "webpack-dev-server",
     "start": "webpack-dashboard -- webpack-dev-server -d --hot --config webpack.config.js --watch",
     "build": "rm -rf ./build && tsc",
+    "test": "rm -rf ./build && tsc && jest",
     "prod": "webpack -p",
-    "test": "rm -rf ./build && tsc && jest"
+    "production": "NODE_ENV=production webpack -p"
   },
   "author": "hyochan",
   "license": "MIT",
