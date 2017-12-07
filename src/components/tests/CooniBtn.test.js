@@ -1,11 +1,14 @@
 import React from 'react';
 import renderer from 'react-test-renderer';
+import { StyleRoot } from 'radium';
 
 import CooniBtn from '@shared/CooniBtn';
 
 test('CooniBtn changes border color when it is clicked', () => {
   const cooniBtn = renderer.create(
-    <CooniBtn white={true} clickHandler={props => props.white = !props.white} btnTxt='jest is awesome' />
+    <StyleRoot>
+      <CooniBtn white={true} clickHandler={props => props.white = !props.white} btnTxt='jest is awesome' />
+    </StyleRoot>
   );
   let tree = cooniBtn.toJSON();
   expect(tree).toMatchSnapshot();

@@ -5,39 +5,50 @@ exports[`CooniBtn changes border color when it is clicked 1`] = `
   data-radium={true}
 >
   <div
-    className="rmq-315f75c1"
     data-radium={true}
-    onClick={[Function]}
-    onKeyDown={[Function]}
-    onKeyUp={[Function]}
-    onMouseDown={[Function]}
-    onMouseEnter={[Function]}
-    onMouseLeave={[Function]}
-    style={
-      Object {
-        "alignItems": "center",
-        "borderColor": "#fff",
-        "borderRadius": "3px",
-        "borderStyle": "solid",
-        "borderWidth": "2px",
-        "color": "#fff",
-        "cursor": "pointer",
-        "display": "flex",
-        "flexDirection": "row",
-        "height": "28px",
-        "justifyContent": "center",
-        "margin": "8px 0",
-        "opacity": 1,
-        "transition": "opacity 0.2s ease-in-out",
-        "width": "320px",
-      }
-    }
   >
-    <span
-      style={undefined}
+    <div
+      className="rmq-315f75c1"
+      data-radium={true}
+      onClick={[Function]}
+      onKeyDown={[Function]}
+      onKeyUp={[Function]}
+      onMouseDown={[Function]}
+      onMouseEnter={[Function]}
+      onMouseLeave={[Function]}
+      style={
+        Object {
+          "alignItems": "center",
+          "borderColor": "#fff",
+          "borderRadius": "3px",
+          "borderStyle": "solid",
+          "borderWidth": "2px",
+          "color": "#fff",
+          "cursor": "pointer",
+          "display": "flex",
+          "flexDirection": "row",
+          "height": "28px",
+          "justifyContent": "center",
+          "margin": "8px 0",
+          "opacity": 1,
+          "transition": "opacity 0.2s ease-in-out",
+          "width": "320px",
+        }
+      }
     >
-      jest is awesome
-    </span>
+      <span
+        style={undefined}
+      >
+        jest is awesome
+      </span>
+    </div>
+    <style
+      dangerouslySetInnerHTML={
+        Object {
+          "__html": "",
+        }
+      }
+    />
   </div>
   <style
     dangerouslySetInnerHTML={
