@@ -8,6 +8,15 @@ class Store {
   @observable public grey: boolean = false;
   @observable public userId: string;
   @observable public userPwd: string;
+  @observable private locale: string = 'ko';
+
+  public getLocale() {
+    return this.locale;
+  }
+
+  public setLocale(lang: string) {
+    this.locale = lang;
+  }
 
   public checkLoginStatus() {
     this.loggedIn = getSessionStorage('loggedIn') === 'true' ? true : false ;

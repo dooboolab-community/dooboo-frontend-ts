@@ -12,6 +12,11 @@ require('@css/app.css');
 const store = new Store();
 store.checkLoginStatus();
 
+if (navigator) {
+  const userLang: string = navigator.language;
+  store.setLocale(userLang);
+}
+
 ReactDOM.render(
   <Provider store={store}>
     <StyleRoot>
