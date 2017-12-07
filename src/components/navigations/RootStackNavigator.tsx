@@ -11,7 +11,7 @@ import SignUp from '@pages/SignUp';
 const RootStackNavigator: React.StatelessComponent<{}> = () => {
   return (
     <BrowserRouter>
-      <div style={{textAlign: 'center', margin: '-8px -8px'}}>
+      <div style={{textAlign: 'center'}}>
         <Switch>
           <Route exact={true} path='/' component={Intro} />
           <Route path='/tab' component={TabNavigator} />
