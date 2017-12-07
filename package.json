@@ -2,8 +2,9 @@
   "name": "react-webpack2-starter",
   "version": "1.0.0",
   "description": "starting react express app with me!",
+  "postinstall": "tsc",
   "scripts": {
-    "start": "rm -rf ./build && tsc && webpack-dev-server",
+    "start": "webpack-dev-server",
     "build": "rm -rf ./build && tsc",
     "prod": "webpack -p",
     "test": "rm -rf ./build && tsc && jest"
