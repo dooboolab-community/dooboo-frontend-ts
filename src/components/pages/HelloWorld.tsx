@@ -8,7 +8,7 @@ class HelloWorld extends Component<any> {
     return (
       <div style={styles.container}>
         <CooniBtn
-          clickHandler={() => this.props.history.goBack()}
+          onClick={() => this.props.history.goBack()}
           btnTxt='back to main page'
         />
       </div>
@@ -19,8 +19,8 @@ class HelloWorld extends Component<any> {
 const styles: any = {
   container: {
     display: 'flex',
-    justifyContent: 'center'
-  }
-}
+    justifyContent: 'center',
+  },
+};
 
 export default HelloWorld;

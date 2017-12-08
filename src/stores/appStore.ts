@@ -3,24 +3,11 @@ import { setSessionStorage, getSessionStorage } from '@utils/Functions';
 import Localization from '@models/Localization';
 
 class Store {
+  // todo - make variable properties in the class to private and add getter and setter for those
   @observable public loggedIn: boolean;
-  @observable public userId: string;
-  @observable public userPwd: string;
+  @observable private userId: string;
+  @observable private userPwd: string;
   @observable private locale: Localization;
-
-  constructor() {
-    this.loggedIn;
-    this.userId;
-    this.userPwd;
-    this.locale;
-
-    this.setLocale = this.setLocale.bind(this);
-    this.getString = this.getString.bind(this);
-    this.checkLoginStatus = this.checkLoginStatus.bind(this);
-    this.logIn = this.logIn.bind(this);
-    this.logOut = this.logOut.bind(this);
-    this.saveProfile = this.saveProfile.bind(this);
-  }
 
   public setLocale(param: Localization) {
     this.locale = param;

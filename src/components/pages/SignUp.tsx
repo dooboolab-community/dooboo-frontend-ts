@@ -4,17 +4,13 @@ import { Redirect } from 'react-router-dom';
 import Radium from 'radium';
 
 import NavBar from '@shared/NavBar';
-import { colors, effects, } from '@utils/styles';
+import { colors, effects } from '@utils/styles';
 
-@inject('store')
-@observer
-@Radium
-class SignUp extends Component<any> {
+export class SignUp extends Component<any> {
 
   public state: any = {
     idDone: false,
     pwdDone: false,
-    introductionDone: false,
     allDone: false,
   };
 
@@ -72,7 +68,7 @@ class SignUp extends Component<any> {
             <NavBar {...navbarProps} />
             <div style={styles.profileInputBox}>
                 <div key={0} style={styles.profileEachCategory}>
-                    <input
+                  <input
                     key='idInput'
                     type='text'
                     style={[
@@ -82,34 +78,35 @@ class SignUp extends Component<any> {
                     id='idInput'
                     placeholder='ID'
                     onInput={() => this.inputValueHandler('idInput')}
-                    />
-                    <label
+                  />
+                  <label
                     htmlFor='idInput'
                     key={1}
                     style={[
-                    styles.profCategoryTxt,
-                    Radium.getState(this.state, 'idInput', ':focus')
-                    ? styles.labelColored
-                    : undefined,
-                    this.state.idDone ? styles.labelDone : styles.labelInit]}
-                    >아이디
-                    </label>
+                      styles.profCategoryTxt,
+                      this.state.idDone ? styles.labelDone : styles.labelInit,
+                    ]}
+                  >아이디
+                  </label>
                 </div>
                 <div key={2} style={styles.profileEachCategory}>
-                    <input
+                  <input
                     key='passwordInput'
                     type='password'
                     style={[styles.profInput, this.state.pwdDone ? styles.borderDone : styles.borderInit]}
                     id='passwordInput'
                     placeholder='PASSWORD'
                     onInput={() => this.inputValueHandler('passwordInput')}
-                    />
-                    <label
+                  />
+                  <label
                     htmlFor='passwordInput'
                     key={4}
-                    style={[styles.profCategoryTxt, this.state.pwdDone ? styles.labelDone : styles.labelInit]}
-                    >비밀번호
-                    </label>
+                    style={[
+                      styles.profCategoryTxt,
+                      this.state.pwdDone ? styles.labelDone : styles.labelInit,
+                    ]}
+                  >비밀번호
+                  </label>
                 </div>
             </div>
           </div>
@@ -182,4 +179,6 @@ const styles: any = {
     },
 };
 
-export default SignUp;
+const styledSignUp: any = inject('store')(observer(Radium(SignUp)));
+
+export default styledSignUp;

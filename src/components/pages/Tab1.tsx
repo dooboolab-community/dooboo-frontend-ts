@@ -33,11 +33,11 @@ class Tab1 extends Component<any> {
         </a><br/>
         <br/>
         <CooniBtn
-          clickHandler={() => this.props.history.push('/helloworld')}
+          onClick={() => this.props.history.push('/helloworld')}
           btnTxt='none tab page'
         />
         <CooniBtn
-          clickHandler={this.props.store.logOut}
+          onClick={this.props.store.logOut}
           btnTxt={getString('LOGOUT')}
         />
       </div>

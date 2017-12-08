@@ -1,29 +1,28 @@
 import React, { Component } from 'react';
-import Radium, { StyleRoot } from 'radium';
+import Radium from 'radium';
 
 import { effects } from '@utils/styles';
 
-@Radium
-class CooniBtn extends Component<any> {
+export class CooniBtn extends Component<any> {
   public render() {
     return (
-      <StyleRoot>
-        <div
-          style={[
-            styles.authBtn,
-            this.props.white
-              ? {borderColor: '#fff', color: '#fff'}
-              : {borderColor: '#000', color: '#000'}]}
-          onClick={() => this.props.clickHandler()}
-        >
-          {
-            this.props.imgSrc
-              ? <img src={this.props.imgSrc} style={styles.logoImg}/>
-              : null
-          }
-          <span style={styles.authTxt}>{this.props.btnTxt}</span>
-        </div>
-      </StyleRoot>
+      <div
+        className='hi'
+        style={[
+          styles.authBtn,
+          this.props.white
+            ? {borderColor: '#fff', color: '#fff'}
+            : {borderColor: '#000', color: '#000'},
+        ]}
+        onClick={() => this.props.onClick()}
+      >
+        {
+          this.props.imgSrc
+            ? <img src={this.props.imgSrc} style={styles.logoImg}/>
+            : null
+        }
+        <span style={styles.authTxt}>{this.props.btnTxt}</span>
+      </div>
     );
   }
 }
@@ -65,4 +64,4 @@ const styles: any = {
   },
 };
 
-export default CooniBtn;
+export default Radium(CooniBtn);

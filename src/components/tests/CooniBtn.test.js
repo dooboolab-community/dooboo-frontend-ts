@@ -1,25 +1,31 @@
 import React from 'react';
-import renderer from 'react-test-renderer';
-import { StyleRoot } from 'radium';
 
-import CooniBtn from '@shared/CooniBtn';
+import { CooniBtn } from '@shared/CooniBtn';
 
-test('CooniBtn changes border color when it is clicked', () => {
-  const cooniBtn = renderer.create(
-    <StyleRoot>
-      <CooniBtn white={true} clickHandler={props => props.white = !props.white} btnTxt='jest is awesome' />
-    </StyleRoot>
+// const component = shallow(
+//     <CooniBtn white={true} btnTxt='CooniBtn 1st test' />
+//   );
+
+// test for the pure component
+describe('CooniBtn shared component test', () => {
+  const component = shallow(
+    <CooniBtn white={true} btnTxt='CooniBtn 2nd test' />
   );
-  let tree = cooniBtn.toJSON();
-  expect(tree).toMatchSnapshot();
-  console.log(tree);
-  console.log(tree.props);
-//   console.log(tree.children);
-//   console.log(tree.children[0]);
-//   console.log(tree.children[0].props.onClick);
-//   console.log(tree.children[0].props.onClick[0]);
 
-//   tree.props.clickHandler();
-//   tree = cooniBtn.toJSON();
-//   expect(tree).toMatchSnapshot();
+  it('component and snapshot matches', () => {
+    expect(component).toMatchSnapshot();
+  });
+
+  it('component onClick function has to be added and work to make the count 2', () => {
+    let count = 1;
+    const onClick = () => {
+      count++;
+    }
+
+    component.setProps({ onClick: () => onClick() });
+    expect(component).toMatchSnapshot();
+
+    component.find('div').simulate('click');
+    expect(count).toBe(2);
+  });
 });

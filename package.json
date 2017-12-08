@@ -7,14 +7,17 @@
     "dev": "webpack-dev-server",
     "start": "webpack-dashboard -- webpack-dev-server -d --hot --config webpack.config.js --watch",
     "build": "rm -rf ./build && tsc",
-    "test": "rm -rf ./build && tsc && jest",
+    "test": "rm -rf ./build && tsc && jest -u",
     "prod": "webpack -p",
     "production": "NODE_ENV=production webpack -p"
   },
   "jest": {
-    "setupFiles": ["./test/jestSetup.js"],
+    "setupFiles": [
+      "./test/shimSetup.js",
+      "./test/jestSetup.js"
+    ],
     "snapshotSerializers": [
-      "<rootDir>/node_modules/enzyme-to-json/serializer"
+      "./node_modules/enzyme-to-json/serializer"
     ]
   },
   "author": "hyochan",
@@ -49,6 +52,7 @@
     "babel-preset-stage-0": "^6.24.1",
     "css-loader": "^0.28.4",
     "enzyme": "^3.2.0",
+    "enzyme-adapter-react-16": "^1.1.0",
     "enzyme-to-json": "^3.2.2",
     "expect": "^21.2.1",
     "history": "^4.7.2",

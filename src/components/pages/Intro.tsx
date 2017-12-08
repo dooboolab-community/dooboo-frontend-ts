@@ -29,18 +29,18 @@ class Intro extends Component<any> {
               <div style={styles.introContainer}>
                 <div style={styles.oauthBox}>
                     <CooniBtn
-                      clickHandler={() => this.signUp()}
+                      onClick={() => this.signUp()}
                       white={true}
                       btnTxt={getString('SIGNUP')}
                     />
                     <CooniBtn
-                      clickHandler={() => this.login()}
+                      onClick={() => this.login()}
                       white={true}
                       btnTxt={getString('GOOGLE_LOGIN')}
                       imgSrc='https://icdn6.digitaltrends.com/image/google_icon-377x372.jpg'
                     />
                     <CooniBtn
-                      clickHandler={() => this.login()}
+                      onClick={() => this.login()}
                       white={true}
                       btnTxt={getString('FACEBOOK_LOGIN')}
                       // tslint:disable-next-line:max-line-length
