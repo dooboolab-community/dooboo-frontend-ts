@@ -6,7 +6,8 @@
     --cooniBtnGrey: rgba(0, 0, 0, 0.4);
 }
 
+/* postcss will autoprefix the css properties */
 .container {
-    display: flex;
-    background-color: 'red';
+  display: flex;
+  background: var(--cooniGradient);
 }

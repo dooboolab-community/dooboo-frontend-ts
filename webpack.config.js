@@ -37,7 +37,6 @@ module.exports = {
             loader: 'css-loader',
             options: { 
               importLoaders: 1,
-              modules: true,
             }
           },
           { 
@@ -49,7 +48,7 @@ module.exports = {
                 require('postcss-cssnext')(),
               ]
             }
-          }
+          },
         ]
       }, 
       {
@@ -59,6 +58,15 @@ module.exports = {
           options: { presets: ['react', 'env', 'stage-0'] },
         }],
         exclude: [/node_modules/]
+      },
+      {
+        test: /\.(png|jpg|gif)$/,
+        use: [
+          {
+            loader: 'file-loader',
+            options: {}  
+          }
+        ]
       }
     ]
   },

@@ -37,7 +37,7 @@ class Tab1 extends Component<any> {
           btnTxt='none tab page'
         />
         <CooniBtn
-          onClick={this.props.store.logOut}
+          onClick={() => this.props.store.logOut()}
           btnTxt={getString('LOGOUT')}
         />
       </div>

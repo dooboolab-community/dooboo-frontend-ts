@@ -19,9 +19,8 @@ class Store {
 
   public checkLoginStatus() {
     this.loggedIn = getSessionStorage('loggedIn') === 'true' ? true : false ;
-    this.userId = getSessionStorage('userId');
-    this.userPwd = getSessionStorage('userPwd');
-    // console.log(this.userId, this.userPwd);
+    // this.userId = getSessionStorage('userId');
+    // this.userPwd = getSessionStorage('userPwd');
   }
 
   public logIn() {
@@ -31,6 +30,7 @@ class Store {
 
   public logOut() {
     setSessionStorage('loggedIn', false);
+    console.log('log out called');
     return this.checkLoginStatus();
   }
 

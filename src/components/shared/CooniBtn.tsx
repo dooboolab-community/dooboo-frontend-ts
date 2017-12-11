@@ -18,7 +18,11 @@ export class CooniBtn extends Component<any> {
       >
         {
           this.props.imgSrc
-            ? <img src={this.props.imgSrc} style={styles.logoImg}/>
+            ? <img
+                src={this.props.imgSrc}
+                srcSet={this.props.srcset}
+                style={styles.logoImg}
+              />
             : null
         }
         <span style={styles.authTxt}>{this.props.btnTxt}</span>
