@@ -1,6 +1,7 @@
 import React from 'react';
+import { shallow } from 'enzyme';
 
-import { CooniBtn } from '@shared/CooniBtn';
+import { CooniBtn } from '../shared/CooniBtn';
 
 // const component = shallow(
 //     <CooniBtn white={true} btnTxt='CooniBtn 1st test' />
@@ -20,7 +21,7 @@ describe('CooniBtn shared component test', () => {
     let count = 1;
     const onClick = () => {
       count++;
-    }
+    };
 
     component.setProps({ onClick: () => onClick() });
     expect(component).toMatchSnapshot();
