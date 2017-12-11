@@ -10,20 +10,22 @@
   },
   "plugins": [
     ["module-resolver", {
-      "root": ["./build/index"],
+      "root": ["./src/index"],
       "alias": {
-        "@apis/*": ["./build/apis/"],
+        "@apis/*": ["./src/apis/"],
         "@css/*": ["./css/"],
-        "@pages/*": ["./build/components/pages/"],
-        "@navigations/*": ["./build/components/navigations/"],
-        "@models/*": ["./build/models/"],
-        "@stores/*": ["./build/stores/"],
-        "@utils/*": ["./build/utils/"],
+        "@pages/*": ["./src/components/pages/"],
+        "@navigations/*": ["./src/components/navigations/"],
+        "@models/*": ["./src/models/"],
+        "@stores/*": ["./src/stores/"],
+        "@utils/*": ["./src/utils/"],
         "@assets/*": ["./assets/"],
-        "@constants/*" : ["./build/constants/"],
-        "@shared/*": ["./build/components/shared/"],
+        "@constants/*" : ["./src/constants/"],
+        "@shared/*": ["./src/components/shared/"],
         "@App_dev": ["./App_dev"],
-        "@app": ["./build/app"]
+        "@app": ["./src/app"],
+        "@css": ["./css"],
+        "@icons": ["./asset/icons"]
       }
     }]
   ]

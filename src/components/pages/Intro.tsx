@@ -29,7 +29,7 @@ class Intro extends Component<any> {
         {
           this.props.store.loggedIn
           ? <Redirect to='/tab/tab1' />
-          : <div className='container' style={styles.container}>
+          : <div className='gradientContainer' style={styles.container}>
               <div style={styles.introContainer}>
                 <div style={styles.oauthBox}>
                     <CooniBtn

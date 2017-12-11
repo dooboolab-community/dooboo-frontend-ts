@@ -24,7 +24,7 @@ export class SignUp extends Component<any> {
     return this.props.history.push('/tab/tab1');
   }
 
-  public inputValueHandler(inputId) {
+  public inputValueHandler(inputId: string) {
     const e = document.getElementById(inputId) as HTMLInputElement;
     const v = e.value;
     if (inputId === 'idInput') {

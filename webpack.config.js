@@ -4,7 +4,7 @@ const DashboardPlugin = require('webpack-dashboard/plugin');
 
 module.exports = {
   entry: {
-    app: './build/index.js',
+    app: './src/index.tsx',
   },
   output: {
     path: path.resolve(__dirname, './dist'),
@@ -30,6 +30,29 @@ module.exports = {
   module: {
     rules: [
       {
+        test: /\.ts(x?)$/,
+        use: [
+          {
+            loader: 'babel-loader',
+            options: { presets: ['react', 'env', 'stage-0'] },
+          },
+          {
+            loader: 'ts-loader',
+          },
+        ],
+        exclude: [/node_modules/]
+      },
+      {
+        test: /\.js(x?)$/,
+        use: [
+          {
+            loader: 'babel-loader',
+            options: { presets: ['react', 'env', 'stage-0'] },
+          },
+        ],
+        exclude: [/node_modules/]
+      },
+      {
         test: /\.css$/,
         use: [ 
           'style-loader',
@@ -37,6 +60,8 @@ module.exports = {
             loader: 'css-loader',
             options: { 
               importLoaders: 1,
+              // module: true,
+              // you can remove the comment in above code if you wanna uglify css classnames to scope to specific component
             }
           },
           { 
@@ -50,21 +75,13 @@ module.exports = {
             }
           },
         ]
-      }, 
-      {
-        test: /\.jsx?$/,
-        use: [{
-          loader: 'babel-loader',
-          options: { presets: ['react', 'env', 'stage-0'] },
-        }],
-        exclude: [/node_modules/]
       },
       {
         test: /\.(png|jpg|gif)$/,
         use: [
           {
             loader: 'file-loader',
-            options: {}  
+            options: {}
           }
         ]
       }

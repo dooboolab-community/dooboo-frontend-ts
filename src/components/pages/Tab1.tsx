@@ -3,6 +3,7 @@ import React, { Component } from 'react';
 import Radium from 'radium';
 import { Route, Link } from 'react-router-dom';
 import CooniBtn from '@shared/CooniBtn';
+import './tab1.css';
 
 @inject('store')
 @observer
@@ -33,7 +34,7 @@ class Tab1 extends Component<any> {
         </a><br/>
         <br/>
         <CooniBtn
-          onClick={() => this.props.history.push('/helloworld')}
+          onClick={() => this.props.history.push('/none_tab')}
           btnTxt='none tab page'
         />
         <CooniBtn

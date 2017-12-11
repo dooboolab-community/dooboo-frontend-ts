@@ -34,11 +34,11 @@ export class CooniBtn extends Component<any> {
 const styles: any = {
   authBtn: {
     width: '320px',
-    height: '28px',
+    height: '50px',
     borderRadius: '3px',
     borderStyle: 'solid',
     borderWidth: '2px',
-    margin: '8px 0',
+    margin: '10px 0',
     display: 'flex',
     flexDirection: 'row',
     justifyContent: 'center',

@@ -9,7 +9,7 @@ import CooniBtn from '@shared/CooniBtn';
 
 import Intro from '@pages/Intro';
 import TabNavigator from '@navigations/TabNavigator';
-import HelloWorld from '@pages/HelloWorld';
+import NoneTab from '@pages/NoneTab';
 import NotFound from '@pages/NotFound';
 import Splash from '@pages/Splash';
 import SignUp from '@pages/SignUp';
@@ -27,7 +27,7 @@ class RootStackNavigator extends Component<any> {
           <Switch>
             <Route exact={true} path='/' component={Intro} />
             <Route path='/tab' component={TabNavigator} />
-            <Route path='/helloworld' component={HelloWorld} />
+            <Route path='/none_tab' component={NoneTab} />
             <Route path='/splash' component={Splash} />
             <Route path='/signup' component={SignUp} />
             <Route component={NotFound} />
