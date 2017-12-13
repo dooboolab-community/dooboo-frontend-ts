@@ -1,0 +1,70 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Tab1 page DOM rendering test Tab1 page has to be matched to snapshot 1`] = `
+<div>
+  <div
+    style={
+      Object {
+        "fontSize": "20px",
+        "marginTop": "30px",
+      }
+    }
+  >
+    boilerplate of 
+    <span
+      style={
+        Object {
+          "fontWeight": "bold",
+        }
+      }
+    >
+      React
+    </span>
+     with
+  </div>
+  <br />
+  <a
+    href="https://github.com/ReactTraining/react-router"
+    key="0"
+  >
+    react-router v4
+  </a>
+  <br />
+  <a
+    href="https://www.typescriptlang.org/docs/home.html"
+    key="1"
+  >
+    typescript
+  </a>
+  <br />
+  <a
+    href="https://github.com/mobxjs/mobx"
+    key="2"
+  >
+    mobx
+  </a>
+  <br />
+  <a
+    href="https://github.com/FormidableLabs/radium"
+    key="3"
+  >
+    modular style with radium
+  </a>
+  <br />
+  <a
+    href="https://github.com/rofrischmann/inline-style-prefixer/commit/bc71fd88a96497164e5e1f4a291301722428f780"
+    key="4"
+  >
+    inline-style-prefixer
+  </a>
+  <br />
+  <br />
+  <CooniBtn
+    btnTxt="none tab page"
+  />
+  <CooniBtn
+    btnTxt="로그아웃"
+    onClick={[Function]}
+  />
+</div>
+`;

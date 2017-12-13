@@ -6,7 +6,7 @@ import CooniBtn from '@shared/CooniBtn';
 
 export class Tab1 extends Component<any> {
   public render() {
-    const { getString } = this.props.store;
+    const { getString } = this.props.store.locale;
     const styles: any =
     this.props.test
     ? {}

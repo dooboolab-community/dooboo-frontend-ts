@@ -16,10 +16,14 @@ describe('SignUp page DOM rendering test', () => {
     );
   });
 
-  it('it mounts and get store props made of store class in appStore', () => {
+  it('the component input event is triggered with a mock argument and the state will be changed', () => {
     const element = page.find('[id="emailInput"]');
-    console.log(element);
     element.simulate('change', { target: {id: 'emailInput', value: 'email' }});
     expect(page.state().idDone).toEqual(true);
+  });
+
+  it('testStore is sent as props and its user property has to be defined', () => {
+    const pageStore = page.instance().props.store;
+    expect(pageStore.user).toBeDefined();
   });
 });
