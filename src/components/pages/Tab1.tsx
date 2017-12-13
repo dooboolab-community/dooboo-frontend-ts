@@ -3,14 +3,29 @@ import React, { Component } from 'react';
 import Radium from 'radium';
 import { Route, Link } from 'react-router-dom';
 import CooniBtn from '@shared/CooniBtn';
-import './tab1.css';
 
-@inject('store')
-@observer
-@Radium
-class Tab1 extends Component<any> {
+export class Tab1 extends Component<any> {
   public render() {
-    const { getString } = this.props.store.locale;
+    const { getString } = this.props.store;
+    const styles: any =
+    this.props.test
+    ? {}
+    : {
+      container: {
+        display: 'flex',
+        flexDirection: 'column',
+        alignItems: 'center',
+      },
+      hyperLink: {
+        textDecoration: 'none',
+        color: 'rgb(13, 157, 197)',
+        ':hover': {
+          color: '#fff',
+          backgroundColor: 'rgb(13, 157, 197)',
+        },
+      },
+    };
+
     return (
       <div style={styles.container}>
         <div style={{fontSize: '20px', marginTop: '30px'}}>
@@ -34,11 +49,11 @@ class Tab1 extends Component<any> {
         </a><br/>
         <br/>
         <CooniBtn
-          onClick={() => this.props.history.push('/none_tab')}
+          // onClick={() => this.props.history.push('/none_tab')}
           btnTxt='none tab page'
         />
         <CooniBtn
-          onClick={() => this.props.store.logOut()}
+          onClick={() => this.props.store.user.logout()}
           btnTxt={getString('LOGOUT')}
         />
       </div>
@@ -46,20 +61,5 @@ class Tab1 extends Component<any> {
   }
 }
 
-const styles: any = {
-  container: {
-    display: 'flex',
-    flexDirection: 'column',
-    alignItems: 'center',
-  },
-  hyperLink: {
-    textDecoration: 'none',
-    color: 'rgb(13, 157, 197)',
-    ':hover': {
-      color: '#fff',
-      backgroundColor: 'rgb(13, 157, 197)',
-    },
-  },
-};
-
-export default Tab1;
+const defaultTab1 = inject('store')(observer(Radium(Tab1)));
+export default defaultTab1;

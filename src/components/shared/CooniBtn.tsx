@@ -1,11 +1,12 @@
 import React, { Component } from 'react';
-import Radium from 'radium';
+import Radium, { StyleRoot } from 'radium';
 
 import { effects } from '@utils/styles';
 
 export class CooniBtn extends Component<any> {
   public render() {
     return (
+      <StyleRoot>
       <div
         className='hi'
         style={[
@@ -27,6 +28,7 @@ export class CooniBtn extends Component<any> {
         }
         <span style={styles.authTxt}>{this.props.btnTxt}</span>
       </div>
+      </StyleRoot>
     );
   }
 }

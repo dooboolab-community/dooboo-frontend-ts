@@ -14,11 +14,11 @@ import {
 @observer
 @Radium
 class Intro extends Component<any> {
-  public login() {
-    this.props.store.logIn();
+  public login(oauth: string) {
+    this.props.store.user.login(`user from ${oauth}`);
   }
 
-  public signUp() {
+  public goToSignUp() {
     this.props.history.push('/signup');
   }
 
@@ -27,25 +27,25 @@ class Intro extends Component<any> {
     return(
       <div>
         {
-          this.props.store.loggedIn
+          this.props.store.user.loggedIn
           ? <Redirect to='/tab/tab1' />
           : <div className='gradientContainer' style={styles.container}>
               <div style={styles.introContainer}>
                 <div style={styles.oauthBox}>
                     <CooniBtn
-                      onClick={() => this.signUp()}
+                      onClick={() => this.goToSignUp()}
                       white={true}
                       btnTxt={getString('SIGNUP')}
                     />
                     <CooniBtn
-                      onClick={() => this.login()}
+                      onClick={() => this.login('google')}
                       white={true}
                       btnTxt={getString('GOOGLE_LOGIN')}
                       imgSrc={google_logo_1x}
                       srcset={`${google_logo_1x} 1x, ${google_logo_2x} 2x, ${google_logo_3x} 3x`}
                     />
                     <CooniBtn
-                      onClick={() => this.login()}
+                      onClick={() => this.login('facebook')}
                       white={true}
                       btnTxt={getString('FACEBOOK_LOGIN')}
                       imgSrc={facebook_logo_2x}

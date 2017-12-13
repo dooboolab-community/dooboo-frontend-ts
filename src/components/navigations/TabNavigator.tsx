@@ -17,7 +17,7 @@ class TabNavigator extends Component<any> {
     return (
       <div>
         {
-          !this.props.store.loggedIn
+          !this.props.store.user.loggedIn
           ? <Redirect to='/' />
           : <div style={styles.container}>
               <div style={styles.content}>
