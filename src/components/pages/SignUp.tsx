@@ -36,9 +36,10 @@ export class SignUp extends Component<any, any> {
     return this.props.history.push('/tab/tab1');
   }
 
-  public inputValueHandler(inputId: string) {
-    const e = document.getElementById(inputId) as HTMLInputElement;
-    const v = e.value;
+  public inputValueHandler(event) {
+    const inputId = event.target.id;
+    const v = event.target.value;
+    console.log(v);
     if (inputId === 'emailInput') {
       return v.length > 0 ? this.setState({idDone: true}) : this.setState({idDone: false});
     }
@@ -90,7 +91,7 @@ export class SignUp extends Component<any, any> {
                     ]}
                     id='emailInput'
                     placeholder='ID'
-                    onInput={() => this.inputValueHandler('emailInput')}
+                    onChange={(e) => this.inputValueHandler(e)}
                   />
                   <label
                     htmlFor='emailInput'
@@ -109,7 +110,7 @@ export class SignUp extends Component<any, any> {
                     style={[styles.profInput, this.state.pwdDone ? styles.borderDone : styles.borderInit]}
                     id='passwordInput'
                     placeholder='PASSWORD'
-                    onInput={() => this.inputValueHandler('passwordInput')}
+                    onChange={(e) => this.inputValueHandler(e)}
                   />
                   <label
                     htmlFor='passwordInput'

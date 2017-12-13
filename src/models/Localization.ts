@@ -1,4 +1,4 @@
-import STRINGS from '@utils/STRINGS';
+import { default as STRINGS } from '@utils/STRINGS';
 
 class Localization {
   private LANG: string = 'ko';
