@@ -12,7 +12,6 @@ require('@css/app.css');
 
 const store = new Store();
 store.user.checkLoginStatus();
-console.log(store.user.loggedIn);
 
 if (navigator) {
   const userLang: string = navigator.language;

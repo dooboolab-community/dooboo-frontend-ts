@@ -61,6 +61,7 @@ exports[`Tab1 page DOM rendering test Tab1 page has to be matched to snapshot 1`
   <br />
   <CooniBtn
     btnTxt="none tab page"
+    onClick={[Function]}
   />
   <CooniBtn
     btnTxt="로그아웃"

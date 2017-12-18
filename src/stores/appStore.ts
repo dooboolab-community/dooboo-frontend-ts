@@ -21,23 +21,6 @@ class Store {
   public getString = (param: string) => {
     return this.locale.getString(param);
   }
-
-  // public checkLoginStatus() {
-  //   this.loggedIn = getSessionStorage('loggedIn') === 'true' ? true : false ;
-  //   // this.userId = getSessionStorage('userId');
-  //   // this.userPwd = getSessionStorage('userPwd');
-  // }
-
-  // public logIn() {
-  //   setSessionStorage('loggedIn', true);
-  //   return this.checkLoginStatus();
-  // }
-
-  // public logOut() {
-  //   setSessionStorage('loggedIn', false);
-  //   console.log('log out called');
-  //   return this.checkLoginStatus();
-  // }
 }
 
 export default Store;

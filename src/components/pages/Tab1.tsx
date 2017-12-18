@@ -11,20 +11,20 @@ export class Tab1 extends Component<any> {
     this.props.test
     ? {}
     : {
-      container: {
-        display: 'flex',
-        flexDirection: 'column',
-        alignItems: 'center',
-      },
-      hyperLink: {
-        textDecoration: 'none',
-        color: 'rgb(13, 157, 197)',
-        ':hover': {
-          color: '#fff',
-          backgroundColor: 'rgb(13, 157, 197)',
+        container: {
+          display: 'flex',
+          flexDirection: 'column',
+          alignItems: 'center',
         },
-      },
-    };
+        hyperLink: {
+          textDecoration: 'none',
+          color: 'rgb(13, 157, 197)',
+          ':hover': {
+            color: '#fff',
+            backgroundColor: 'rgb(13, 157, 197)',
+          },
+        },
+      };
 
     return (
       <div style={styles.container}>
@@ -49,7 +49,7 @@ export class Tab1 extends Component<any> {
         </a><br/>
         <br/>
         <CooniBtn
-          // onClick={() => this.props.history.push('/none_tab')}
+          onClick={() => this.props.history.push('/none_tab')}
           btnTxt='none tab page'
         />
         <CooniBtn
