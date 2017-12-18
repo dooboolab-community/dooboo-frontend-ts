@@ -1,0 +1,30 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`StyledInput component test component matches with its snapshot 1`] = `
+<div>
+  <input
+    id="emailInput"
+    key="emailInput"
+    onChange={[Function]}
+    placeholder="email"
+    style={
+      Array [
+        undefined,
+        undefined,
+      ]
+    }
+    type="email"
+  />
+  <label
+    htmlFor="emailInput"
+    style={
+      Array [
+        undefined,
+        undefined,
+      ]
+    }
+  >
+    email
+  </label>
+</div>
+`;

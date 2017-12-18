@@ -3,26 +3,31 @@ import Radium, { StyleRoot } from 'radium';
 
 import { effects } from '@utils/styles';
 
-@Radium
-class CooniBtn extends Component<any> {
+export class CooniBtn extends Component<any> {
   public render() {
     return (
       <StyleRoot>
-        <div
-          style={[
-            styles.authBtn,
-            this.props.white
-              ? {borderColor: '#fff', color: '#fff'}
-              : {borderColor: '#000', color: '#000'}]}
-          onClick={() => this.props.clickHandler()}
-        >
-          {
-            this.props.imgSrc
-              ? <img src={this.props.imgSrc} style={styles.logoImg}/>
-              : null
-          }
-          <span style={styles.authTxt}>{this.props.btnTxt}</span>
-        </div>
+      <div
+        className='hi'
+        style={[
+          styles.authBtn,
+          this.props.white
+            ? {borderColor: '#fff', color: '#fff'}
+            : {borderColor: '#000', color: '#000'},
+        ]}
+        onClick={() => this.props.onClick()}
+      >
+        {
+          this.props.imgSrc
+            ? <img
+                src={this.props.imgSrc}
+                srcSet={this.props.srcset}
+                style={styles.logoImg}
+              />
+            : null
+        }
+        <span style={styles.authTxt}>{this.props.btnTxt}</span>
+      </div>
       </StyleRoot>
     );
   }
@@ -31,11 +36,11 @@ class CooniBtn extends Component<any> {
 const styles: any = {
   authBtn: {
     width: '320px',
-    height: '28px',
+    height: '50px',
     borderRadius: '3px',
     borderStyle: 'solid',
     borderWidth: '2px',
-    margin: '8px 0',
+    margin: '10px 0',
     display: 'flex',
     flexDirection: 'row',
     justifyContent: 'center',
@@ -65,4 +70,4 @@ const styles: any = {
   },
 };
 
-export default CooniBtn;
+export default Radium(CooniBtn);

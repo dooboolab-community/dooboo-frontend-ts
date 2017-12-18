@@ -5,16 +5,20 @@ import Radium from 'radium';
 
 import { colors, effects } from '@utils/styles';
 import CooniBtn from '@shared/CooniBtn';
+import {
+  google_logo_1x, google_logo_2x, google_logo_3x,
+  facebook_logo_1x, facebook_logo_2x, facebook_logo_3x,
+} from '@utils/Icons';
 
 @inject('store')
 @observer
 @Radium
 class Intro extends Component<any> {
-  public login() {
-    this.props.store.logIn();
+  public login(oauth: string) {
+    this.props.store.user.login(`user from ${oauth}`);
   }
 
-  public signUp() {
+  public goToSignUp() {
     this.props.history.push('/signup');
   }
 
@@ -23,28 +27,29 @@ class Intro extends Component<any> {
     return(
       <div>
         {
-          this.props.store.loggedIn
+          this.props.store.user.loggedIn
           ? <Redirect to='/tab/tab1' />
-          : <div style={styles.container}>
+          : <div className='gradientContainer' style={styles.container}>
               <div style={styles.introContainer}>
                 <div style={styles.oauthBox}>
                     <CooniBtn
-                      clickHandler={() => this.signUp()}
+                      onClick={() => this.goToSignUp()}
                       white={true}
                       btnTxt={getString('SIGNUP')}
                     />
                     <CooniBtn
-                      clickHandler={() => this.login()}
+                      onClick={() => this.login('google')}
                       white={true}
                       btnTxt={getString('GOOGLE_LOGIN')}
-                      imgSrc='https://icdn6.digitaltrends.com/image/google_icon-377x372.jpg'
+                      imgSrc={google_logo_1x}
+                      srcset={`${google_logo_1x} 1x, ${google_logo_2x} 2x, ${google_logo_3x} 3x`}
                     />
                     <CooniBtn
-                      clickHandler={() => this.login()}
+                      onClick={() => this.login('facebook')}
                       white={true}
                       btnTxt={getString('FACEBOOK_LOGIN')}
-                      // tslint:disable-next-line:max-line-length
-                      imgSrc='https://media4.s-nbcnews.com/j/streams/2013/december/131203/2d9840012-facebooklogo.nbcnews-fp-360-360.jpg'
+                      imgSrc={facebook_logo_2x}
+                      srcset={`${facebook_logo_1x} 1x, ${facebook_logo_2x} 2x, ${facebook_logo_3x} 3x`}
                     />
                 </div>
               </div>
@@ -57,14 +62,15 @@ class Intro extends Component<any> {
 
 const styles: any = {
   container: {
+    // display: 'flex',
+    // background: colors.cooniGradient,
+    // above properties are in defined in css file out of the src/ directory to show users that postcss works
     position: 'absolute',
     width: '100%',
     height: '100%',
-    display: 'flex',
     flexDirection: 'column',
     justifyContent: 'center',
     alignItems: 'center',
-    background: colors.cooniGradient,
   },
 
   introContainer: {

@@ -11,7 +11,7 @@ import Localization from '@models/Localization';
 require('@css/app.css');
 
 const store = new Store();
-store.checkLoginStatus();
+store.user.checkLoginStatus();
 
 if (navigator) {
   const userLang: string = navigator.language;

@@ -2,48 +2,37 @@ import React, { Component } from 'react';
 import { inject, observer } from 'mobx-react';
 import { Redirect } from 'react-router-dom';
 import Radium from 'radium';
+import Store from '../../stores/appStore';
 
 import NavBar from '@shared/NavBar';
-import { colors, effects, } from '@utils/styles';
+import StyledInput from '@shared/StyledInput';
+import { colors, effects } from '@utils/styles';
 
-@inject('store')
-@observer
-@Radium
-class SignUp extends Component<any> {
+import User from '@models/User';
 
-  public state: any = {
-    idDone: false,
-    pwdDone: false,
-    introductionDone: false,
-    allDone: false,
-  };
+export class SignUp extends Component<any, any> {
+  private styles: any;
 
   public goBack() {
-    this.props.store.logOut();
     this.props.history.goBack();
   }
 
-  public saveProfile() {
-    this.props.store.logIn();
+  public signup() {
+    const emailInput = document.getElementById('emailInput') as HTMLInputElement;
+    const email = emailInput.value;
+    const passwordInput = document.getElementById('passwordInput') as HTMLInputElement;
+    const password = passwordInput.value;
+
+    this.props.store.user.signup(email, password);
     return this.props.history.push('/tab/tab1');
   }
 
-  public inputValueHandler(inputId) {
-    const e = document.getElementById(inputId) as HTMLInputElement;
-    const v = e.value;
-    if (inputId === 'idInput') {
-      return v.length > 0 ? this.state.idDone = true : this.state.idDone = false;
-    }
-    if (inputId === 'passwordInput') {
-      return v.length > 0 ? this.state.pwdDone = true : this.state.pwdDone = false;
-    }
-    return console.log('input id is wrong : ' + inputId);
-  }
-
   public render() {
+    const { getString } = this.props.store.locale;
+    const styles: any = this.props.test ? {} : staticStyle;
 
     const navbarProps: any = {
-        title: '회원가입',
+        title: getString('SIGNUP'),
         leftBtn: {
           txt: 'back',
           handler: () => {
@@ -51,9 +40,9 @@ class SignUp extends Component<any> {
           },
         },
         rightBtn: {
-          txt: '완료',
+          txt: getString('COMPLETE'),
           handler: () => {
-            this.saveProfile();
+            this.signup();
             return this.props.history.push('/tab/tab1');
           },
         },
@@ -66,51 +55,25 @@ class SignUp extends Component<any> {
     return (
       <div>
         {
-          this.props.store.loggedIn
+          this.props.store.user.loggedIn
           ? <Redirect to='tab/tab1' />
           : <div>
             <NavBar {...navbarProps} />
             <div style={styles.profileInputBox}>
-                <div key={0} style={styles.profileEachCategory}>
-                    <input
-                    key='idInput'
-                    type='text'
-                    style={[
-                    styles.profInput,
-                    this.state.idDone ? styles.borderDone : styles.borderInit,
-                    ]}
-                    id='idInput'
-                    placeholder='ID'
-                    onInput={() => this.inputValueHandler('idInput')}
-                    />
-                    <label
-                    htmlFor='idInput'
-                    key={1}
-                    style={[
-                    styles.profCategoryTxt,
-                    Radium.getState(this.state, 'idInput', ':focus')
-                    ? styles.labelColored
-                    : undefined,
-                    this.state.idDone ? styles.labelDone : styles.labelInit]}
-                    >아이디
-                    </label>
-                </div>
-                <div key={2} style={styles.profileEachCategory}>
-                    <input
-                    key='passwordInput'
-                    type='password'
-                    style={[styles.profInput, this.state.pwdDone ? styles.borderDone : styles.borderInit]}
-                    id='passwordInput'
-                    placeholder='PASSWORD'
-                    onInput={() => this.inputValueHandler('passwordInput')}
-                    />
-                    <label
-                    htmlFor='passwordInput'
-                    key={4}
-                    style={[styles.profCategoryTxt, this.state.pwdDone ? styles.labelDone : styles.labelInit]}
-                    >비밀번호
-                    </label>
-                </div>
+              <StyledInput
+                type='text'
+                test={this.props.test}
+                keyString='emailInput'
+                placeholder='email'
+                labelTxt={getString('EMAIL')}
+              />
+              <StyledInput
+                type='password'
+                test={this.props.test}
+                keyString='passwordInput'
+                placeholder='password'
+                labelTxt={getString('PASSWORD')}
+              />
             </div>
           </div>
         }
@@ -119,67 +82,19 @@ class SignUp extends Component<any> {
   }
 }
 
-const styles: any = {
-    profileInputBox: {
-      width: '335px',
-      margin: 'auto',
-      paddingTop: '46px',
+const staticStyle: any = {
+  profileInputBox: {
+    width: '335px',
+    margin: 'auto',
+    paddingTop: '46px',
 
-      '@media (max-width: 335px)': {
-        paddingRight: '8px',
-        width: '100vw',
-      },
+    '@media (max-width: 335px)': {
+      paddingRight: '8px',
+      width: '100vw',
     },
-
-    profileEachCategory: {
-      paddingTop: '28px',
-      width: '100%',
-      display: 'flex',
-      flexDirection: 'column-reverse',
-    },
-
-    labelInit: {
-        color: 'rgb(74, 74, 74)',
-    },
-
-    labelDone: {
-      color: '#000',
-      fontWeight: 'bold',
-    },
-
-    borderInit: {
-      borderBottom: '2px solid rgb(227, 227, 227)',
-    },
-
-    borderDone: {
-      borderBottom: '2px solid rgb(0, 0, 0)',
-    },
-
-    profCategoryTxt: {
-        fontSize: '14px',
-        lineHeight: '20px',
-        textAlign: 'left',
-    },
-
-    profInput: {
-      paddingRight: '12px',
-      height: '44px',
-      fontSize: '18px',
-      lineHeight: '27px',
-      borderTop: 'none',
-      borderLeft: 'none',
-      borderRight: 'none',
-      borderBottom: '2px',
-      borderColor: colors.cooniGrey,
-      ':focus': {
-        outline: 'none',
-        borderImageSource: colors.cooniGradientHorizontal,
-        borderImageSlice: 1,
-      },
-    },
-    labelColored: {
-      color: colors.cooniTxtColor,
-    },
+  },
 };
 
-export default SignUp;
+const styledSignUp: any = inject('store')(observer(Radium(SignUp)));
+
+export default styledSignUp;
