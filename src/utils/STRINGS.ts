@@ -5,6 +5,9 @@ const STRINGS = {
     LOGOUT: '로그아웃',
     GOOGLE_LOGIN: '구글 로그인',
     FACEBOOK_LOGIN: '페이스북 로그인',
+    EMAIL: '이메일',
+    PASSWORD: '패스워드',
+    COMPLETE: '완료',
   },
   en: { // English
   },

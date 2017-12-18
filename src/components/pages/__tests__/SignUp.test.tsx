@@ -2,8 +2,8 @@ import React from 'react';
 import { mount, render, shallow } from 'enzyme';
 import { StyleRoot } from 'radium';
 
-import Store from '../../stores/appStore';
-import { SignUp } from '../pages/SignUp';
+import Store from '@stores/appStore';
+import { SignUp } from '@pages/SignUp';
 
 // test for the container page in dom
 describe('SignUp page DOM rendering test', () => {

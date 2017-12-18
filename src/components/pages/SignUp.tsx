@@ -28,10 +28,11 @@ export class SignUp extends Component<any, any> {
   }
 
   public render() {
+    const { getString } = this.props.store.locale;
     const styles: any = this.props.test ? {} : staticStyle;
 
     const navbarProps: any = {
-        title: '회원가입',
+        title: getString('SIGNUP'),
         leftBtn: {
           txt: 'back',
           handler: () => {
@@ -39,7 +40,7 @@ export class SignUp extends Component<any, any> {
           },
         },
         rightBtn: {
-          txt: '완료',
+          txt: getString('COMPLETE'),
           handler: () => {
             this.signup();
             return this.props.history.push('/tab/tab1');
@@ -64,14 +65,14 @@ export class SignUp extends Component<any, any> {
                 test={this.props.test}
                 keyString='emailInput'
                 placeholder='email'
-                labelTxt='이메일'
+                labelTxt={getString('EMAIL')}
               />
               <StyledInput
                 type='password'
                 test={this.props.test}
                 keyString='passwordInput'
                 placeholder='password'
-                labelTxt='비밀번호'
+                labelTxt={getString('PASSWORD')}
               />
             </div>
           </div>

@@ -3,7 +3,7 @@ import { shallow, render } from 'enzyme';
 import { StyleRoot } from 'radium';
 
 import Store from '@stores/appStore';
-import { Tab1 } from '../pages/Tab1';
+import { Tab1 } from '@pages/Tab1';
 
 // test for the container page in dom
 describe('Tab1 page DOM rendering test', () => {
