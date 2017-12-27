@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { inject, observer } from 'mobx-react';
 import { Redirect } from 'react-router-dom';
 import Radium from 'radium';
-import Store from '../../stores/appStore';
+import Store from '@stores/appStore';
 
 import NavBar from '@shared/NavBar';
 import StyledInput from '@shared/StyledInput';
