@@ -1,5 +1,4 @@
 # React Typescript Starter
-# Helpful starter project for react with typescript
 
 # Gain points
 ```
