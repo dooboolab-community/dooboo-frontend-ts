@@ -35,44 +35,34 @@ class TabNavigator extends Component<any> {
                   to='/tab/tab1'
                   key={0}
                   className={styles.tab}
-                  activeclassname={styles.tabActive}
-                >
-                  Tab1
-                </NavLink>
+                  activeClassName={styles.active}
+                >Tab1</NavLink>
                 <NavLink
                   to='/tab/tab2'
                   key={1}
                   className={styles.tab}
-                  activeclassname={styles.tabActive}
-                >
-                  Tab2
-                </NavLink>
+                  activeClassName={styles.active}
+                >Tab2</NavLink>
                 <NavLink
                   to='/tab/tab3'
                   key={2}
                   className={styles.tab}
-                  activeclassname={styles.tabActive}
-                >
-                  Tab3
-                </NavLink>
+                  activeClassName={styles.active}
+                >Tab3</NavLink>
                 <NavLink
                   exact={true}
                   to='/tab/tab4'
                   key={3}
                   className={styles.tab}
-                  activeclassname={styles.tabActive}
-                >
-                  Tab4
-                </NavLink>
+                  activeClassName={styles.active}
+                >Tab4</NavLink>
                 <NavLink
                   exact={true}
                   to='/tab/tab5'
                   key={4}
                   className={styles.tab}
-                  activeclassname={styles.tabActive}
-                >
-                  Tab 5
-                </NavLink>
+                  activeClassName={styles.active}
+                >Tab 5</NavLink>
               </div>
             </div>
         }
