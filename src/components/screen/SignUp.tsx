@@ -5,7 +5,6 @@ import Store from '@stores/appStore';
 
 import NavBar from '@shared/NavBar';
 import StyledInput from '@shared/StyledInput';
-import { colors, effects } from '@utils/styles';
 import User from '@models/User';
 
 const styles = require('./SignUp.css');

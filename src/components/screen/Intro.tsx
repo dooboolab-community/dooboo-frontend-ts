@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import { Redirect } from 'react-router-dom';
 import { inject, observer } from 'mobx-react';
 
-import { colors, effects } from '@utils/styles';
 import CooniBtn from '@shared/CooniBtn';
 import {
   google_logo_1x, google_logo_2x, google_logo_3x,

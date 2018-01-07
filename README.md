@@ -2,10 +2,15 @@
 # Helpful starter project for react with typescript
 
 # Gain points
-1. Typescript support. Run tsc -w while developing which will create files in build folder.
-2. Sample of redux and action.
-3. Able to learn how to structure react app with typescript.
-4. Shared components are in components/shared folder.
+1. Typescript support. No need to run tsc because webpack is doing it for you with ts-loader.
+2. Sample of react-router-dom v4.
+3. Able to learn how to structure react app with typescript and mobx with jest-ts.
+4. Structured files
+  - components: navigation, screen, shared.
+  - models
+  - stores
+  - utils
+  - test
 
 # INSTALL
 1. npm install
