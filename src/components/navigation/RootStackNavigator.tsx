@@ -19,7 +19,7 @@ class RootStackNavigator extends Component<any> {
   public render() {
     return (
       <BrowserRouter>
-        <div style={{textAlign: 'center'}}>
+        <div style={{ textAlign: 'center' }}>
           <Switch>
             <Route exact={true} path='/' component={Intro} />
             <Route path='/tab' component={TabNavigator} />
