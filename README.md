@@ -1,4 +1,13 @@
 # React Typescript Starter
+> Specification
+* postcss
+* typescript
+* react-router-dom v4
+* test jest with typescript
+* import css as module
+* localization
+* mobx
+* data models
 
 # Gain points
 ```
@@ -12,8 +21,6 @@
 ```
 1. npm install
 2. npm start
-3. Open other terminal
-  - tsc -w in terminal if you are dynamically developing in typescript
 ```
 
 # Structures
@@ -162,9 +169,3 @@ In `index.tsx` when app starts it search for navigator's locale and set mobx sta
 
 # react-router-dom version
 4.2.2
-
-# Specification
-* postcss support
-* typescript support
-* jest-ts support
-* import css support in jest-ts
