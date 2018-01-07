@@ -1,0 +1,38 @@
+.container {
+  display: flex;
+  height: 100vh;
+  align-self: stretch;
+  align-items: center;
+  justify-content: flex-start;
+  flex-direction: column;
+}
+.content {
+  flex: 1;
+  align-self: stretch;
+  overflow: scroll;
+}
+.tabContainer {
+  position: absolute;
+  bottom: 0;
+  display: flex;
+  width: 100vw;
+  height: 50px;
+  justify-content: space-around;
+  background-color: #d2d2d2;
+  align-items: stretch;
+}
+.tab {
+  width: 33vw;
+  text-align: center;
+  color: #fff;
+  font-size: 15px;
+  cursor: pointer;
+  line-height: 50px;
+  text-decoration: none;
+  &:hover {
+    background-color: rgb(13, 157, 197);
+  }
+  &:active {
+    background: rgb(13, 157, 197);
+  }
+}

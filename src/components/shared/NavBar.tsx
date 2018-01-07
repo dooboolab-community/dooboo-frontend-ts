@@ -1,17 +1,15 @@
 import React, { Component } from 'react';
-import Radium from 'radium';
 
-import { colors, effects } from '@utils/styles';
+const styles = require('./NavBar.css');
 
-@Radium
 class NavBar extends Component<any> {
   public render() {
     return (
-      <div style={styles.navbar}>
-        <span style={styles.navbarTxt}>{ this.props.title }</span>
+      <div className={styles.navbar}>
+        <span className={styles.navbarTxt}>{ this.props.title }</span>
         {this.props.leftBtn
           ? <div>
-              <div key={0} style={styles.leftBtn} onClick={this.props.leftBtn.handler}>
+              <div key={0} className={styles.leftBtn} onClick={this.props.leftBtn.handler}>
                 {this.props.leftBtn.txt}
               </div>
             </div>
@@ -19,7 +17,7 @@ class NavBar extends Component<any> {
         }
         {this.props.rightBtn
           ? <div>
-              <div key={1} style={styles.rightBtn} onClick={this.props.rightBtn.handler}>
+              <div key={1} className={styles.rightBtn} onClick={this.props.rightBtn.handler}>
                 {this.props.rightBtn.txt}
               </div>
             </div>
@@ -29,54 +27,5 @@ class NavBar extends Component<any> {
     );
   }
 }
-
-const styles: any = {
-    navbar: {
-      position: 'fixed',
-      left: 0,
-      right: 0,
-      height: '44px',
-      borderBottom: '1px solid rgba(0, 0, 0, 0.2)',
-    },
-
-    navbarTxt: {
-      position: 'fixed',
-      left: 0,
-      right: 0,
-      fontSize: '14px',
-      lineHeight: '20px',
-      paddingTop: '11px',
-    },
-
-    leftBtn: {
-      ...effects.btnEffect,
-      width: '23px',
-      height: '18px',
-      position: 'fixed',
-      left: '19px',
-      fontSize: '12px',
-      lineHeight: '18px',
-      paddingTop: '12px',
-      color: colors.cooniBtnGrey,
-      ':hover': {
-        ...effects.btnEffectHover,
-      },
-    },
-
-    rightBtn: {
-      ...effects.btnEffect,
-      width: '23px',
-      height: '18px',
-      position: 'fixed',
-      right: '19px',
-      fontSize: '12px',
-      lineHeight: '18px',
-      paddingTop: '12px',
-      color: colors.cooniBtnGrey,
-      ':hover': {
-        ...effects.btnEffectHover,
-      },
-    },
-};
 
 export default NavBar;

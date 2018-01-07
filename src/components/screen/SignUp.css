@@ -1,0 +1,10 @@
+.profileInputBox {
+  width: 335px;
+  margin: auto;
+  padding-top: 46px;
+
+  @media (max-width: 335px) {
+    padding-right: 8px;
+    width: 100vw;
+  };
+}

@@ -1,12 +1,13 @@
 import React, { Component } from 'react';
-import Radium from 'radium';
 
 import CooniBtn from '@shared/CooniBtn';
+
+const styles = require('./NoneTab.css');
 
 class NoneTab extends Component<any> {
   public render() {
     return (
-      <div style={styles.container}>
+      <div className={styles.container}>
         <CooniBtn
           onClick={() => this.props.history.goBack()}
           btnTxt='back to tab page'
@@ -15,12 +16,5 @@ class NoneTab extends Component<any> {
     );
   }
 }
-
-const styles: any = {
-  container: {
-    display: 'flex',
-    justifyContent: 'center',
-  },
-};
 
 export default NoneTab;

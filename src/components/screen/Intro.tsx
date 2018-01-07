@@ -9,7 +9,7 @@ import {
   facebook_logo_1x, facebook_logo_2x, facebook_logo_3x,
 } from '@utils/Icons';
 
-const styles = require('./style.css');
+const styles = require('./Intro.css');
 
 @inject('store')
 @observer

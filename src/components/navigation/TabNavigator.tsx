@@ -1,17 +1,17 @@
 import React, { Component } from 'react';
 import { Switch, Route, Redirect, NavLink } from 'react-router-dom';
 import { inject, observer } from 'mobx-react';
-import Radium from 'radium';
 
-import Tab1 from '@pages/Tab1';
-import Tab2 from '@pages/Tab2';
-import Tab3 from '@pages/Tab3';
-import Tab4 from '@pages/Tab4';
-import Tab5 from '@pages/Tab5';
+import Tab1 from '@screen/Tab1';
+import Tab2 from '@screen/Tab2';
+import Tab3 from '@screen/Tab3';
+import Tab4 from '@screen/Tab4';
+import Tab5 from '@screen/Tab5';
+
+const styles = require('./TabNavigator.css');
 
 @inject('store')
 @observer
-@Radium
 class TabNavigator extends Component<any> {
   public render() {
     return (
@@ -19,8 +19,8 @@ class TabNavigator extends Component<any> {
         {
           !this.props.store.user.loggedIn
           ? <Redirect to='/' />
-          : <div style={styles.container}>
-              <div style={styles.content}>
+          : <div className={styles.container}>
+              <div className={styles.content}>
                 <Switch>
                   <Route path='/tab/tab1' component={Tab1} />
                   <Route path='/tab/tab2' component={Tab2} />
@@ -29,29 +29,29 @@ class TabNavigator extends Component<any> {
                   <Route path='/tab/tab5' component={Tab5} />
                 </Switch>
               </div>
-              <div style={styles.tabContainer}>
+              <div className={styles.tabContainer}>
                 <NavLink
                   exact={true}
                   to='/tab/tab1'
                   key={0}
-                  style={styles.tab}
-                  activeStyle={styles.tab.active}
+                  className={styles.tab}
+                  activeclassname={styles.tabActive}
                 >
                   Tab1
                 </NavLink>
                 <NavLink
                   to='/tab/tab2'
                   key={1}
-                  style={styles.tab}
-                  activeStyle={styles.tab.active}
+                  className={styles.tab}
+                  activeclassname={styles.tabActive}
                 >
                   Tab2
                 </NavLink>
                 <NavLink
                   to='/tab/tab3'
                   key={2}
-                  style={styles.tab}
-                  activeStyle={styles.tab.active}
+                  className={styles.tab}
+                  activeclassname={styles.tabActive}
                 >
                   Tab3
                 </NavLink>
@@ -59,8 +59,8 @@ class TabNavigator extends Component<any> {
                   exact={true}
                   to='/tab/tab4'
                   key={3}
-                  style={styles.tab}
-                  activeStyle={styles.tab.active}
+                  className={styles.tab}
+                  activeclassname={styles.tabActive}
                 >
                   Tab4
                 </NavLink>
@@ -68,8 +68,8 @@ class TabNavigator extends Component<any> {
                   exact={true}
                   to='/tab/tab5'
                   key={4}
-                  style={styles.tab}
-                  activeStyle={styles.tab.active}
+                  className={styles.tab}
+                  activeclassname={styles.tabActive}
                 >
                   Tab 5
                 </NavLink>
@@ -80,46 +80,5 @@ class TabNavigator extends Component<any> {
     );
   }
 }
-
-const styles: any = {
-  container: {
-    display: 'flex',
-    height: '100vh',
-    alignSelf: 'stretch',
-    alignItems: 'center',
-    justifyContent: 'flex-start',
-    flexDirection: 'column',
-  },
-  content: {
-    flex: 1,
-    alignSelf: 'stretch',
-    overflow: 'scroll',
-  },
-  tabContainer: {
-    position: 'absolute',
-    bottom: 0,
-    display: 'flex',
-    width: '100vw',
-    height: '50px',
-    justifyContent: 'space-around',
-    backgroundColor: '#d2d2d2',
-    alignItems: 'stretch',
-  },
-  tab: {
-    width: '33vw',
-    textAlign: 'center',
-    color: '#fff',
-    fontSize: '15px',
-    pointer: 'cursor',
-    lineHeight: '50px',
-    textDecoration: 'none',
-    ':hover': {
-      backgroundColor: 'rgb(13, 157, 197)',
-    },
-    active: {
-      background: 'rgb(13, 157, 197)',
-    },
-  },
-};
 
 export default TabNavigator;

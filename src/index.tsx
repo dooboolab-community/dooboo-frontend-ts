@@ -1,9 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { Provider } from 'mobx-react';
-import { StyleRoot } from 'radium';
 
-import RootStackNavigator from '@navigations/RootStackNavigator';
+import RootStackNavigator from '@navigation/RootStackNavigator';
 import Store from '@stores/appStore';
 import Localization from '@models/Localization';
 
@@ -20,9 +19,7 @@ if (navigator) {
 
 ReactDOM.render(
   <Provider store={store}>
-    <StyleRoot>
-      <RootStackNavigator />
-    </StyleRoot>
+    <RootStackNavigator />
   </Provider>,
   document.getElementById('app'),
 );

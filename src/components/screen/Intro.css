@@ -44,9 +44,9 @@
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  cursor: 'pointer';
+  cursor: pointer;
   opacity: 1;
-  transition: 'opacity 0.2s ease-in-out';
+  transition: opacity 0.2s ease-in-out;
 
   &:hover {
     opacity: 0.5;

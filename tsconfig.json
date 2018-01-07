@@ -28,8 +28,8 @@
     "paths": {
       "@apis/*": ["./src/apis/*"],
       "@css/*": ["./css/*"],
-      "@pages/*": ["./src/components/pages/*"],
-      "@navigations/*": ["./src/components/navigations/*"],
+      "@screen/*": ["./src/components/screen/*"],
+      "@navigation/*": ["./src/components/navigation/*"],
       "@models/*": ["./src/models/*"],
       "@stores/*": ["./src/stores/*"],
       "@utils/*": ["./src/utils/*"],

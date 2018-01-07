@@ -1,18 +1,16 @@
 import React, { Component } from 'react';
 import { inject, observer } from 'mobx-react';
 import { Redirect } from 'react-router-dom';
-import Radium from 'radium';
 import Store from '@stores/appStore';
 
 import NavBar from '@shared/NavBar';
 import StyledInput from '@shared/StyledInput';
 import { colors, effects } from '@utils/styles';
-
 import User from '@models/User';
 
-export class SignUp extends Component<any, any> {
-  private styles: any;
+const styles = require('./SignUp.css');
 
+export class SignUp extends Component<any, any> {
   public goBack() {
     this.props.history.goBack();
   }
@@ -29,7 +27,6 @@ export class SignUp extends Component<any, any> {
 
   public render() {
     const { getString } = this.props.store.locale;
-    const styles: any = this.props.test ? {} : staticStyle;
 
     const navbarProps: any = {
         title: getString('SIGNUP'),
@@ -48,10 +45,6 @@ export class SignUp extends Component<any, any> {
         },
     };
 
-    const labelStateStyle: any = Radium.getState(this.state, 'idInput', ':focus')
-      ? 'labelColored'
-      : '';
-
     return (
       <div>
         {
@@ -59,7 +52,7 @@ export class SignUp extends Component<any, any> {
           ? <Redirect to='tab/tab1' />
           : <div>
             <NavBar {...navbarProps} />
-            <div style={styles.profileInputBox}>
+            <div className={styles.profileInputBox}>
               <StyledInput
                 type='text'
                 test={this.props.test}
@@ -82,19 +75,6 @@ export class SignUp extends Component<any, any> {
   }
 }
 
-const staticStyle: any = {
-  profileInputBox: {
-    width: '335px',
-    margin: 'auto',
-    paddingTop: '46px',
-
-    '@media (max-width: 335px)': {
-      paddingRight: '8px',
-      width: '100vw',
-    },
-  },
-};
-
-const styledSignUp: any = inject('store')(observer(Radium(SignUp)));
+const styledSignUp: any = inject('store')(observer(SignUp));
 
 export default styledSignUp;

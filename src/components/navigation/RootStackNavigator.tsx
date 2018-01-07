@@ -2,17 +2,13 @@ import React, { Component } from 'react';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
 
 import { inject, observer } from 'mobx-react';
-import Radium from 'radium';
 
-import { colors, effects } from '@utils/styles';
-import CooniBtn from '@shared/CooniBtn';
-
-import Intro from '@pages/Intro';
-import TabNavigator from '@navigations/TabNavigator';
-import NoneTab from '@pages/NoneTab';
-import NotFound from '@pages/NotFound';
-import Splash from '@pages/Splash';
-import SignUp from '@pages/SignUp';
+import Intro from '@screen/Intro';
+import TabNavigator from '@navigation/TabNavigator';
+import NoneTab from '@screen/NoneTab';
+import NotFound from '@screen/NotFound';
+import Splash from '@screen/Splash';
+import SignUp from '@screen/SignUp';
 
 @inject('store')
 class RootStackNavigator extends Component<any> {
