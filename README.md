@@ -14,12 +14,13 @@
   - tsc -w in terminal if you are dynamically developing in typescript 
 
 # React version
-16.1.1
+16.2.0
 
-# React-Router version
-3.0.5
+# react-router-dom version
+4.2.2
 
-# TODO
-1. postcss support
-2. modular styles
-3. migrate to react-router-v4
+# Specification
+* postcss support
+* typescript support
+* jest-ts support
+* import css support in jest-ts
