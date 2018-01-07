@@ -24,7 +24,7 @@
     "noImplicitAny": false,
     "strictNullChecks": false,
     "strict": true,
-    "target": "es2017",
+    "target": "es5",
     "paths": {
       "@apis/*": ["./src/apis/*"],
       "@css/*": ["./css/*"],

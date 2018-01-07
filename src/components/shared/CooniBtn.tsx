@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import { effects } from '@utils/styles';
 
 const styles = require('./CooniBtn.css');
 
@@ -24,7 +23,9 @@ export class CooniBtn extends Component<any, any> {
               />
             : null
         }
-        <span style={styles.authTxt}>{this.props.btnTxt}</span>
+        <span
+          className={styles.authTxt}
+          >{this.props.btnTxt}</span>
       </div>
     );
   }

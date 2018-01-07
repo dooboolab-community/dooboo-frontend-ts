@@ -1,93 +1,39 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`CooniBtn shared component test component and snapshot matches 1`] = `
-<StyleRoot>
-  <div
-    className="hi"
-    onClick={[Function]}
-    style={
-      Array [
-        Object {
-          ":active": Object {
-            "opacity": 0.5,
-          },
-          ":hover": Object {
-            "opacity": 0.5,
-          },
-          "@media (max-width: 740px)": Object {
-            "height": "8vh",
-            "width": "85vw",
-          },
-          "alignItems": "center",
-          "borderRadius": "3px",
-          "borderStyle": "solid",
-          "borderWidth": "2px",
-          "cursor": "pointer",
-          "display": "flex",
-          "flexDirection": "row",
-          "height": "50px",
-          "justifyContent": "center",
-          "margin": "10px 0",
-          "opacity": 1,
-          "transition": "opacity 0.2s ease-in-out",
-          "width": "320px",
-        },
-        Object {
-          "borderColor": "#fff",
-          "color": "#fff",
-        },
-      ]
+<div
+  className="authBtn"
+  onClick={[Function]}
+  style={
+    Object {
+      "borderColor": "#fff",
+      "color": "#fff",
     }
+  }
+>
+  <span
+    className="authTxt"
   >
-    <span>
-      CooniBtn 2nd test
-    </span>
-  </div>
-</StyleRoot>
+    CooniBtn 2nd test
+  </span>
+</div>
 `;
 
 exports[`CooniBtn shared component test component onClick function has to be added and work to make the count 2 1`] = `
-<StyleRoot>
-  <div
-    className="hi"
-    onClick={[Function]}
-    style={
-      Array [
-        Object {
-          ":active": Object {
-            "opacity": 0.5,
-          },
-          ":hover": Object {
-            "opacity": 0.5,
-          },
-          "@media (max-width: 740px)": Object {
-            "height": "8vh",
-            "width": "85vw",
-          },
-          "alignItems": "center",
-          "borderRadius": "3px",
-          "borderStyle": "solid",
-          "borderWidth": "2px",
-          "cursor": "pointer",
-          "display": "flex",
-          "flexDirection": "row",
-          "height": "50px",
-          "justifyContent": "center",
-          "margin": "10px 0",
-          "opacity": 1,
-          "transition": "opacity 0.2s ease-in-out",
-          "width": "320px",
-        },
-        Object {
-          "borderColor": "#fff",
-          "color": "#fff",
-        },
-      ]
+<div
+  className="authBtn"
+  onClick={[Function]}
+  style={
+    Object {
+      "borderColor": "#fff",
+      "color": "#fff",
     }
+  }
+>
+  <span
+    className="authTxt"
   >
-    <span>
-      CooniBtn 2nd test
-    </span>
-  </div>
-</StyleRoot>
+    CooniBtn 2nd test
+  </span>
+</div>
 `;

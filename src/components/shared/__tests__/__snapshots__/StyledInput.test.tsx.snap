@@ -1,27 +1,29 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`StyledInput component test component matches with its snapshot 1`] = `
-<div>
+<div
+  className="profileEachCategory"
+>
   <input
+    className="profInput"
     id="emailInput"
     key="emailInput"
     onChange={[Function]}
     placeholder="email"
     style={
-      Array [
-        undefined,
-        undefined,
-      ]
+      Object {
+        "borderBottom": "2px solid rgb(0, 0, 0)",
+      }
     }
     type="email"
   />
   <label
-    htmlFor="emailInput"
+    className="profCategoryTxt"
     style={
-      Array [
-        undefined,
-        undefined,
-      ]
+      Object {
+        "color": "#000",
+        "fontWeight": "bold",
+      }
     }
   >
     email

@@ -7,12 +7,16 @@
     "dev": "webpack-dev-server",
     "start": "webpack-dashboard -- webpack-dev-server -d --hot --config webpack.config.js --watch",
     "build": "rm -rf ./dist && tsc",
-    "test": "jest",
+    "test": "jest -u",
     "prod": "webpack -p",
     "production": "NODE_ENV=production webpack -p",
     "lint": "tslint -c tslint.json 'src/**/*.{ts,tsx}'"
   },
   "jest": {
+    "moduleNameMapper": { // for css import
+      "\\.(jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$": "<rootDir>/__mocks__/fileMock.js",
+      "\\.(css|less)$": "identity-obj-proxy"
+    },
     "moduleDirectories": [
       "node_modules",
       "src"
@@ -80,6 +84,7 @@
     "expect": "^21.2.1",
     "file-loader": "^1.1.6",
     "history": "^4.7.2",
+    "identity-obj-proxy": "^3.0.0",
     "jest": "^21.2.1",
     "node-sass": "^4.7.2",
     "postcss-cssnext": "^3.0.2",

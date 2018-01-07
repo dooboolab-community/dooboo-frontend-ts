@@ -1,7 +1,9 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Tab1 page DOM rendering test Tab1 page has to be matched to snapshot 1`] = `
-<div>
+<div
+  className="container"
+>
   <div
     style={
       Object {
@@ -24,6 +26,7 @@ exports[`Tab1 page DOM rendering test Tab1 page has to be matched to snapshot 1`
   </div>
   <br />
   <a
+    className="hyperLink"
     href="https://github.com/ReactTraining/react-router"
     key="0"
   >
@@ -31,6 +34,7 @@ exports[`Tab1 page DOM rendering test Tab1 page has to be matched to snapshot 1`
   </a>
   <br />
   <a
+    className="hyperLink"
     href="https://www.typescriptlang.org/docs/home.html"
     key="1"
   >
@@ -38,6 +42,7 @@ exports[`Tab1 page DOM rendering test Tab1 page has to be matched to snapshot 1`
   </a>
   <br />
   <a
+    className="hyperLink"
     href="https://github.com/mobxjs/mobx"
     key="2"
   >
@@ -45,15 +50,9 @@ exports[`Tab1 page DOM rendering test Tab1 page has to be matched to snapshot 1`
   </a>
   <br />
   <a
-    href="https://github.com/FormidableLabs/radium"
-    key="3"
-  >
-    modular style with radium
-  </a>
-  <br />
-  <a
+    className="hyperLink"
     href="https://github.com/rofrischmann/inline-style-prefixer/commit/bc71fd88a96497164e5e1f4a291301722428f780"
-    key="4"
+    key="3"
   >
     inline-style-prefixer
   </a>
