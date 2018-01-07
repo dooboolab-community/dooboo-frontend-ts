@@ -5,7 +5,6 @@ import { inject, observer } from 'mobx-react';
 
 import Intro from '@screen/Intro';
 import TabNavigator from '@navigation/TabNavigator';
-import NoneTab from '@screen/NoneTab';
 import NotFound from '@screen/NotFound';
 import Splash from '@screen/Splash';
 import SignUp from '@screen/SignUp';
@@ -23,7 +22,7 @@ class RootStackNavigator extends Component<any> {
           <Switch>
             <Route exact={true} path='/' component={Intro} />
             <Route path='/tab' component={TabNavigator} />
-            <Route path='/none_tab' component={NoneTab} />
+            <Route path='/none_tab' component={NotFound} />
             <Route path='/splash' component={Splash} />
             <Route path='/signup' component={SignUp} />
             <Route component={NotFound} />

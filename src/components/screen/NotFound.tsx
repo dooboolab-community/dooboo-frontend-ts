@@ -1,9 +1,17 @@
-import React from 'react';
+import React, { Component } from 'react';
+import CooniBtn from '@shared/CooniBtn';
 
-const NotFound: React.StatelessComponent<{}> = () => {
-  return (
-    <span> Error page. Check the URL please.</span>
-  );
-};
+class NotFound extends Component<any> {
+  public render() {
+    return (
+      <div style={{ display: 'flex', justifyContent: 'center' }}>
+        <CooniBtn
+          onClick={() => this.props.history.goBack()}
+          btnTxt='back to tab page'
+        />
+      </div>
+    );
+  }
+}
 
 export default NotFound;

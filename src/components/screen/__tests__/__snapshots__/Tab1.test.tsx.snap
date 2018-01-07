@@ -59,11 +59,11 @@ exports[`Tab1 page DOM rendering test Tab1 page has to be matched to snapshot 1`
   <br />
   <br />
   <CooniBtn
-    btnTxt="none tab page"
+    btnTxt="No Page"
     onClick={[Function]}
   />
   <CooniBtn
-    btnTxt="로그아웃"
+    btnTxt="LOGOUT"
     onClick={[Function]}
   />
 </div>

@@ -1,5 +1,16 @@
 const STRINGS = {
-  ko: {
+  en: { // English
+    SIGNUP: 'SIGN UP',
+    LOGIN: 'LOGIN',
+    LOGOUT: 'LOGOUT',
+    GOOGLE_LOGIN: 'LOGIN WITH GOOGLE',
+    FACEBOOK_LOGIN: 'LOGIN WITH FACEBOOK',
+    EMAIL: 'EMAIL',
+    PASSWORD: 'PASSWORD',
+    COMPLETE: 'DONE',
+    GOTO_NOTFOUND: 'No Page',
+  },
+  ko: { // Korean
     SIGNUP: '회원가입',
     LOGIN: '로그인',
     LOGOUT: '로그아웃',
@@ -8,8 +19,7 @@ const STRINGS = {
     EMAIL: '이메일',
     PASSWORD: '패스워드',
     COMPLETE: '완료',
-  },
-  en: { // English
+    GOTO_NOTFOUND: '없는 페이지',
   },
   ja: { // Japanese
   },

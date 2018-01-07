@@ -29,7 +29,7 @@ export class Tab1 extends Component<any> {
         <br/>
         <CooniBtn
           onClick={() => this.props.history.push('/none_tab')}
-          btnTxt='none tab page'
+          btnTxt={getString('GOTO_NOTFOUND')}
         />
         <CooniBtn
           onClick={() => this.props.store.user.logout()}

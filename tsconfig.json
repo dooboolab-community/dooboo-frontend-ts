@@ -47,7 +47,8 @@
   ],
   "exclude": [
     "node_modules",
-    "**/*.spec.ts"
+    "**/*.spec.tsx",
+    "**/*.test.tsx"
   ],
   "types": [
     "typePatches"
