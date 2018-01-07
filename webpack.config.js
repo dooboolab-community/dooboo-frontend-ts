@@ -60,7 +60,7 @@ module.exports = {
             loader: 'css-loader',
             options: { 
               importLoaders: 1,
-              // module: true,
+              modules: true,
               // you can remove the comment in above code if you wanna uglify css classnames to scope to specific component
             }
           },

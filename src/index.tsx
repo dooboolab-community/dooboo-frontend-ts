@@ -8,8 +8,6 @@ import Store from '@stores/appStore';
 import Localization from '@models/Localization';
 
 // tslint:disable-next-line:no-var-requires
-require('@css/app.css');
-
 const store = new Store();
 store.user.checkLoginStatus();
 
