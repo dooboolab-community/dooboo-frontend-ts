@@ -1,0 +1,79 @@
+:root {
+  --cooniGradient: linear-gradient(to bottom right, rgb(12, 157, 197), rgb(201, 109, 216));
+  --cooniGradientHorizontal: linear-gradient(to right, rgb(12, 157, 197), rgb(201, 109, 216));
+  --cooniTxtColor: rgb(13, 157, 197);
+  --cooniGrey: rgb(227, 227, 227);
+  --cooniBtnGrey: rgba(0, 0, 0, 0.4);
+}
+
+/* postcss will autoprefix the css properties */
+.container {
+  display: flex;
+  background: var(--cooniGradient);
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.introContainer {
+  margin: 28px;
+  width: calc(100%-56px);
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+}
+
+.oauthBox {
+  bottom: 0;
+  position: absolute;
+};
+
+.oauthBtn {
+  color: #fff;
+  width: 320px;
+  height: 28px;
+  border-radius: 3px;
+  border: solid 2px #fff;
+  margin: 8px 0;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  cursor: 'pointer';
+  opacity: 1;
+  transition: 'opacity 0.2s ease-in-out';
+
+  &:hover {
+    opacity: 0.5;
+  }
+
+  &:active {
+    opacity: 0.5;
+  };
+
+  @media (max-width: 740px) {
+    width: 85vw;
+    height: 8vh;
+  }
+}
+
+.googleLogoImg {
+  position: absolute;
+  left: 16px;
+  height: 20px;
+  width: 20px;
+  object-fit: cover;
+}
+
+.fbLogoImg {
+  position: absolute;
+  left: 16px;
+  height: 20px;
+  width: 20px;
+  object-fit: cover;
+}
