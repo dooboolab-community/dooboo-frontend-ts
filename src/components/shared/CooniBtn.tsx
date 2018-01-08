@@ -6,7 +6,7 @@ export class CooniBtn extends Component<any, any> {
   public render() {
     return (
       <div
-        className={styles.authBtn}
+        className={styles.btn}
         style={
           this.props.white
             ? { borderColor: '#fff', color: '#fff' }
@@ -24,7 +24,7 @@ export class CooniBtn extends Component<any, any> {
             : null
         }
         <span
-          className={styles.authTxt}
+          className={styles.txt}
           >{this.props.btnTxt}</span>
       </div>
     );
