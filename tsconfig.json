@@ -27,7 +27,6 @@
     "target": "es5",
     "paths": {
       "@apis/*": ["./src/apis/*"],
-      "@css/*": ["./css/*"],
       "@screen/*": ["./src/components/screen/*"],
       "@navigation/*": ["./src/components/navigation/*"],
       "@models/*": ["./src/models/*"],

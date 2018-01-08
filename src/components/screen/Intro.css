@@ -1,10 +1,4 @@
-:root {
-  --cooniGradient: linear-gradient(to bottom right, rgb(12, 157, 197), rgb(201, 109, 216));
-  --cooniGradientHorizontal: linear-gradient(to right, rgb(12, 157, 197), rgb(201, 109, 216));
-  --cooniTxtColor: rgb(13, 157, 197);
-  --cooniGrey: rgb(227, 227, 227);
-  --cooniBtnGrey: rgba(0, 0, 0, 0.4);
-}
+@import '../../root.css';
 
 /* postcss will autoprefix the css properties */
 .container {
@@ -35,8 +29,8 @@
 
 .oauthBtn {
   color: #fff;
-  width: 320px;
-  height: 28px;
+  width: 85vw;
+  height: 8vh;
   border-radius: 3px;
   border: solid 2px #fff;
   margin: 8px 0;
@@ -56,9 +50,9 @@
     opacity: 0.5;
   };
 
-  @media (max-width: 740px) {
-    width: 85vw;
-    height: 8vh;
+  @media (--desktop) {
+    width: 320px;
+    height: 28px;
   }
 }
 

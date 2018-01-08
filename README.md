@@ -27,17 +27,18 @@
 ```text
 app/
 ├─ assets
-│  └─ icons
-│  └─ images
-├─ docs
+│  └─ icons // app icons
+│  └─ images // app images like background images
+├─ docs // explanation for dev stack we used. (Sorry for Korean)
 ├─ node_modules/
-├─ public/
 ├─ src/
 │  └─ apis
 │  └─ components
 │  └─ models
 │  └─ stores
 │  └─ utils
+│  └─ index.tsx
+│  └─ root.css // global variables for css used in compoenents
 ├─ test/
 ├─ .gitignore
 ├─ .babelrc
