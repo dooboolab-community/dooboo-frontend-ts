@@ -2,6 +2,23 @@ import React, { Component } from 'react';
 
 const styles = require('./NavBar.css');
 
+interface IProps {
+  title: string;
+  leftBtn: {
+    handler: any;
+    txt: string;
+  };
+  rightBtn: {
+    handler: any;
+    txt: string;
+  };
+}
+
+interface IState {
+  inputDone: boolean;
+  isFocus: boolean;
+}
+
 class NavBar extends Component<any> {
   public render() {
     return (

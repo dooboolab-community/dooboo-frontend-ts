@@ -8,7 +8,7 @@ import { Tab1 } from '@screen/Tab1';
 describe('Tab1 page DOM rendering test', () => {
   const testStore = new Store();
   const page = shallow(
-    <Tab1 test={true} store={testStore} />,
+    <Tab1 store={testStore} />,
   );
 
   it('Tab1 page has to be matched to snapshot', () => {

@@ -10,23 +10,6 @@ export class Tab1 extends Component<any> {
     const { getString } = this.props.store.locale;
     return (
       <div className={styles.container}>
-        <div style={{ fontSize: '20px', marginTop: '30px' }}>
-          boilerplate of <span style={{ fontWeight: 'bold' }}>React</span> with
-        </div><br/>
-        <a key={0} className={styles.hyperLink} href='https://github.com/ReactTraining/react-router'>
-          react-router v4
-        </a><br/>
-        <a key={1} className={styles.hyperLink} href='https://www.typescriptlang.org/docs/home.html'>
-          typescript
-        </a><br/>
-        <a key={2} className={styles.hyperLink} href='https://github.com/mobxjs/mobx'>
-          mobx
-        </a><br/>
-        <a key={3} className={styles.hyperLink}
-          href='https://github.com/rofrischmann/inline-style-prefixer/commit/bc71fd88a96497164e5e1f4a291301722428f780'>
-          inline-style-prefixer
-        </a><br/>
-        <br/>
         <CooniBtn
           onClick={() => this.props.history.push('/none_tab')}
           btnTxt={getString('GOTO_NOTFOUND')}

@@ -10,7 +10,7 @@ describe('SignUp page DOM rendering test', () => {
   const testStore = new Store();
   beforeEach(() => {
     page = shallow(
-        <SignUp test={true} store={testStore} />,
+        <SignUp store={testStore} />,
     );
   });
 
