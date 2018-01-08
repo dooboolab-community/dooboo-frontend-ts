@@ -7,10 +7,12 @@ describe('InputLabel component test', () => {
   const component = shallow(
     <InputLabel
       type='email'
-      test={true}
-      keyString='emailInput'
       placeholder='email'
       labelTxt='email'
+      containerStyle={{
+        margin: '0 20px',
+      }}
+      onTxtChanged={ () => { return; }}
     />,
   );
 

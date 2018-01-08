@@ -1,0 +1,31 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`InputLabel component test component matches with its snapshot 1`] = `
+<div
+  className="root"
+  style={
+    Object {
+      "margin": "0 20px",
+    }
+  }
+>
+  <label
+    className="labelBefore"
+  >
+    email
+  </label>
+  <input
+    className="input"
+    onBlur={[Function]}
+    onChange={[Function]}
+    onFocus={[Function]}
+    placeholder="email"
+    style={
+      Object {
+        "borderBottom": "2px solid #9b9b9b",
+      }
+    }
+    type="email"
+  />
+</div>
+`;

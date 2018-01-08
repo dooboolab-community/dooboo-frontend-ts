@@ -2,7 +2,7 @@
 
 exports[`CooniBtn shared component test component and snapshot matches 1`] = `
 <div
-  className="authBtn"
+  className="btn"
   onClick={[Function]}
   style={
     Object {
@@ -12,7 +12,7 @@ exports[`CooniBtn shared component test component and snapshot matches 1`] = `
   }
 >
   <span
-    className="authTxt"
+    className="txt"
   >
     CooniBtn 2nd test
   </span>
@@ -21,7 +21,7 @@ exports[`CooniBtn shared component test component and snapshot matches 1`] = `
 
 exports[`CooniBtn shared component test component onClick function has to be added and work to make the count 2 1`] = `
 <div
-  className="authBtn"
+  className="btn"
   onClick={[Function]}
   style={
     Object {
@@ -31,7 +31,7 @@ exports[`CooniBtn shared component test component onClick function has to be add
   }
 >
   <span
-    className="authTxt"
+    className="txt"
   >
     CooniBtn 2nd test
   </span>
