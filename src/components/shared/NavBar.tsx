@@ -6,22 +6,28 @@ class NavBar extends Component<any> {
   public render() {
     return (
       <div className={styles.navbar}>
-        <span className={styles.navbarTxt}>{ this.props.title }</span>
-        {this.props.leftBtn
+        <span
+          className={styles.navbarTxt}
+        >{ this.props.title }</span>
+        {
+          this.props.leftBtn
           ? <div>
-              <div key={0} className={styles.leftBtn} onClick={this.props.leftBtn.handler}>
-                {this.props.leftBtn.txt}
-              </div>
+              <div
+                className={styles.leftBtn}
+                onClick={this.props.leftBtn.handler}
+               >{this.props.leftBtn.txt}</div>
             </div>
-          : undefined
+          : null
         }
-        {this.props.rightBtn
+        {
+          this.props.rightBtn
           ? <div>
-              <div key={1} className={styles.rightBtn} onClick={this.props.rightBtn.handler}>
-                {this.props.rightBtn.txt}
-              </div>
+              <div
+                className={styles.rightBtn}
+                onClick={this.props.rightBtn.handler}
+              >{this.props.rightBtn.txt}</div>
             </div>
-          : undefined
+          : null
         }
       </div>
     );

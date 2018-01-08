@@ -1,10 +1,10 @@
 @import '../../root.css';
 
-.profileInputBox {
+.content {
   padding-right: 8px;
+  padding-top: 36px;
   width: 100vw;
   margin: auto;
-  padding-top: 46px;
 
   @media (--desktop) {
     padding-right: 0px;

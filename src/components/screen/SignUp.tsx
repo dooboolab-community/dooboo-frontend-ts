@@ -9,39 +9,42 @@ import User from '@models/User';
 
 const styles = require('./SignUp.css');
 
-export class SignUp extends Component<any, any> {
-  public goBack() {
-    this.props.history.goBack();
-  }
+interface IProps {
+  store: any;
+  history: any;
+}
 
-  public signup() {
-    const emailInput = document.getElementById('emailInput') as HTMLInputElement;
-    const email = emailInput.value;
-    const passwordInput = document.getElementById('passwordInput') as HTMLInputElement;
-    const password = passwordInput.value;
+interface IState {
+  email: string;
+  pw: string;
+}
 
-    this.props.store.user.signup(email, password);
-    return this.props.history.push('/tab/tab1');
+export class SignUp extends Component<IProps, IState> {
+  constructor(props) {
+    super(props);
+    this.state = {
+      email: '',
+      pw: '',
+    };
   }
 
   public render() {
     const { getString } = this.props.store.locale;
 
     const navbarProps: any = {
-        title: getString('SIGNUP'),
-        leftBtn: {
-          txt: 'back',
-          handler: () => {
-            return this.goBack();
-          },
+      title: getString('SIGNUP'),
+      leftBtn: {
+        txt: getString('BACK'),
+        handler: () => {
+          this.props.history.goBack();
         },
-        rightBtn: {
-          txt: getString('COMPLETE'),
-          handler: () => {
-            this.signup();
-            return this.props.history.push('/tab/tab1');
-          },
+      },
+      rightBtn: {
+        txt: getString('COMPLETE'),
+        handler: () => {
+          this.signup();
         },
+      },
     };
 
     return (
@@ -49,28 +52,52 @@ export class SignUp extends Component<any, any> {
         {
           this.props.store.user.loggedIn
           ? <Redirect to='tab/tab1' />
-          : <div>
+          : <div className={styles.root}>
             <NavBar {...navbarProps} />
-            <div className={styles.profileInputBox}>
+            <div className={styles.content}>
               <InputLabel
+                containerStyle={{
+                  margin: '0 20px',
+                }}
                 type='text'
-                test={this.props.test}
-                keyString='emailInput'
-                placeholder='email'
+                placeholder={getString('EMAIL_HINT')}
                 labelTxt={getString('EMAIL')}
+                onTxtChanged={(val: string) => this.onTxtChanged('email', val)}
               />
               <InputLabel
+                containerStyle={{
+                  margin: '0 20px',
+                }}
                 type='password'
-                test={this.props.test}
-                keyString='passwordInput'
-                placeholder='password'
+                placeholder={getString('PASSWORD_HINT')}
                 labelTxt={getString('PASSWORD')}
+                onTxtChanged={(val: string) => this.onTxtChanged('pw', val)}
               />
             </div>
           </div>
         }
       </div>
     );
+  }
+
+  private onTxtChanged = (type: string, val: string) => {
+    switch (type) {
+      case 'email':
+        this.setState({ email: val });
+        break;
+      case 'pw':
+        this.setState({ pw: val});
+    }
+  }
+
+  private signup = () => {
+    console.log(`email: ${this.state.email}`);
+    console.log(`pw: ${this.state.pw}`);
+
+    if (this.state.email && this.state.pw) {
+      this.props.store.user.signup(this.state.email, this.state.pw);
+      this.props.history.push('/tab/tab1');
+    }
   }
 }
 
