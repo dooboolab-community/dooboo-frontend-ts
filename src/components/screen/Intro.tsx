@@ -8,7 +8,9 @@ import {
   facebook_logo_1x, facebook_logo_2x, facebook_logo_3x,
 } from '@utils/Icons';
 
+import classNames from 'classnames/bind';
 const styles = require('./Intro.css');
+const cx = classNames.bind(styles);
 
 @inject('store')
 @observer
@@ -23,12 +25,16 @@ class Intro extends Component<any> {
 
   public render() {
     const { getString } = this.props.store.locale;
+    const containerClass = cx({
+      container: true,
+      background: true,
+    });
     return(
       <div>
         {
           this.props.store.user.loggedIn
           ? <Redirect to='/tab/tab1' />
-          : <div className={styles.container}>
+          : <div className={containerClass}>
               <div className={styles.oauthBox}>
                   <CooniBtn
                     onClick={() => this.goToSignUp()}

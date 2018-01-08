@@ -2,13 +2,15 @@
 
 /* postcss will autoprefix the css properties */
 .container {
-  background: var(--cooniGradient);
   height: 100%;
 
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+}
+.background {
+  background: var(--cooniGradient);
 }
 
 .oauthBox {
