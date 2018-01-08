@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`StyledInput component test component matches with its snapshot 1`] = `
+exports[`InputLabel component test component matches with its snapshot 1`] = `
 <div
   className="profileEachCategory"
 >

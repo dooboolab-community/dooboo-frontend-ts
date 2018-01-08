@@ -1,19 +1,13 @@
 @import '../../root.css';
 
-.profileEachCategory {
+.root {
   padding-top: 28px;
   width: 100%;
   display: flex;
   flex-direction: column-reverse;
 }
 
-.profCategoryTxt {
-  font-size: 14px;
-  line-height: 20px;
-  text-align: left;
-}
-
-.profInput {
+.input {
   padding-right: 12px;
   height: 44px;
   font-size: 18px;
@@ -21,8 +15,6 @@
   border-top: none;
   border-left: none;
   border-right: none;
-  border-bottom: 2px;
-  border-color: rgba(0, 0, 0, 0.4);
   &:focus {
     outline: none;
     border-image-source: linear-gradient(to right, rgb(12, 157, 197), rgb(201, 109, 216));
@@ -30,6 +22,25 @@
   }
 }
 
-.labelColored {
-  color: rgb(13, 157, 197);
+.label {
+  font-size: 14px;
+  line-height: 20px;
+  text-align: left;
+  font-weight: normal;
+}
+
+.labelBefore {
+  font-size: 14px;
+  line-height: 20px;
+  text-align: left;
+  font-weight: normal;
+  color: #9b9b9b;
+}
+
+.labelAfter {
+  font-size: 14px;
+  line-height: 20px;
+  text-align: left;
+  font-weight: bold;
+  color: #4a4a4a;
 }

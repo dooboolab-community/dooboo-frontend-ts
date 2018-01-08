@@ -4,7 +4,7 @@ import { Redirect } from 'react-router-dom';
 import Store from '@stores/appStore';
 
 import NavBar from '@shared/NavBar';
-import StyledInput from '@shared/StyledInput';
+import InputLabel from '@shared/InputLabel';
 import User from '@models/User';
 
 const styles = require('./SignUp.css');
@@ -52,14 +52,14 @@ export class SignUp extends Component<any, any> {
           : <div>
             <NavBar {...navbarProps} />
             <div className={styles.profileInputBox}>
-              <StyledInput
+              <InputLabel
                 type='text'
                 test={this.props.test}
                 keyString='emailInput'
                 placeholder='email'
                 labelTxt={getString('EMAIL')}
               />
-              <StyledInput
+              <InputLabel
                 type='password'
                 test={this.props.test}
                 keyString='passwordInput'

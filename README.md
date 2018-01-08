@@ -70,7 +70,7 @@ npm test
 > jest -u
 
  PASS  src/components/screen/__tests__/SignUp.test.tsx
- PASS  src/components/shared/__tests__/StyledInput.test.tsx
+ PASS  src/components/shared/__tests__/InputLabel.test.tsx
  PASS  src/components/screen/__tests__/Tab1.test.tsx
  PASS  src/components/shared/__tests__/CooniBtn.test.tsx
 

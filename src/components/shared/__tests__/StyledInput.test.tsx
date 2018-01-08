@@ -1,11 +1,11 @@
 import React from 'react';
 import { shallow } from 'enzyme';
 
-import { StyledInput } from '@shared/StyledInput';
+import { InputLabel } from '@shared/InputLabel';
 
-describe('StyledInput component test', () => {
+describe('InputLabel component test', () => {
   const component = shallow(
-    <StyledInput
+    <InputLabel
       type='email'
       test={true}
       keyString='emailInput'
