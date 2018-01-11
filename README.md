@@ -9,6 +9,8 @@
 * mobx
 * data models
 
+> More example will be found in `desktop` branch.
+
 # Gain points
 ```
 1. Typescript support. No need to run tsc because webpack is doing it for you with ts-loader.
