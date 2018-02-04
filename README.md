@@ -71,15 +71,19 @@ npm test
 ```
 > jest -u
 
- PASS  src/components/screen/__tests__/SignUp.test.tsx
- PASS  src/components/shared/__tests__/InputLabel.test.tsx
- PASS  src/components/screen/__tests__/Tab1.test.tsx
- PASS  src/components/shared/__tests__/CooniBtn.test.tsx
+ PASS  src/components/shared/__tests__/Button.test.tsx
+ › 2 snapshots updated.
+ PASS  src/components/screen/__tests__/Intro.test.tsx
+ › 1 snapshot written.
 
-Test Suites: 4 passed, 4 total
-Tests:       6 passed, 6 total
-Snapshots:   4 passed, 4 total
-Time:        2.209s
+Snapshot Summary
+ › 1 snapshot written in 1 test suite.
+ › 2 snapshots updated in 1 test suite.
+
+Test Suites: 2 passed, 2 total
+Tests:       3 passed, 3 total
+Snapshots:   2 updated, 1 added, 3 total
+Time:        2.745s
 Ran all test suites.
 ```
 

@@ -1,16 +1,16 @@
 import React from 'react';
 import { shallow } from 'enzyme';
 
-import { CooniBtn } from '@shared/CooniBtn';
+import { Button } from '@shared/Button';
 
 // const component = shallow(
-//     <CooniBtn white={true} btnTxt='CooniBtn 1st test' />
+//     <Button white={true} btnTxt='Button 1st test' />
 //   );
 
 // test for the pure component
-describe('CooniBtn shared component test', () => {
+describe('Button shared component test', () => {
   const component = shallow(
-    <CooniBtn white={true} btnTxt='CooniBtn 2nd test' />,
+    <Button white={true} btnTxt='Button 2nd test' />,
   );
 
   it('component and snapshot matches', () => {

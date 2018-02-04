@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 
-const styles = require('./CooniBtn.css');
+const styles = require('./Button.css');
 
-export class CooniBtn extends Component<any, any> {
+export class Button extends Component<any, any> {
   public render() {
     return (
       <div
@@ -25,10 +25,10 @@ export class CooniBtn extends Component<any, any> {
         }
         <span
           className={styles.txt}
-          >{this.props.btnTxt}</span>
+          >{this.props.txt}</span>
       </div>
     );
   }
 }
 
-export default CooniBtn;
+export default Button;

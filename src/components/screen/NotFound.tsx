@@ -1,11 +1,11 @@
 import React, { Component } from 'react';
-import CooniBtn from '@shared/CooniBtn';
+import Button from '@shared/Button';
 
 class NotFound extends Component<any> {
   public render() {
     return (
       <div style={{ display: 'flex', justifyContent: 'center' }}>
-        <CooniBtn
+        <Button
           onClick={() => this.props.history.goBack()}
           btnTxt='back to tab page'
         />

@@ -1,0 +1,17 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Intro page DOM rendering test Tab1 page has to be matched to snapshot 1`] = `
+<div
+  className="container background"
+>
+  <div
+    className="oauthBox"
+  >
+    <Button
+      onClick={[Function]}
+      txt="Button"
+      white={true}
+    />
+  </div>
+</div>
+`;

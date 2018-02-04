@@ -1,5 +1,6 @@
 const STRINGS = {
   en: { // English
+    BUTTON: 'Button',
     SIGNUP: 'SIGN UP',
     LOGIN: 'LOGIN',
     LOGOUT: 'LOGOUT',
@@ -14,6 +15,7 @@ const STRINGS = {
     BACK: 'Back',
   },
   ko: { // Korean
+    BUTTON: '버튼',
     SIGNUP: '회원가입',
     LOGIN: '로그인',
     LOGOUT: '로그아웃',
@@ -27,16 +29,16 @@ const STRINGS = {
     GOTO_NOTFOUND: '없는 페이지',
     BACK: '뒤로',
   },
-  ja: { // Japanese
-  },
-  zh: { // Chinese
-  },
-  es: { // Spanish
-  },
-  fr: { // French
-  },
-  id: { // Indonesian
-  },
+  // ja: { // Japanese
+  // },
+  // zh: { // Chinese
+  // },
+  // es: { // Spanish
+  // },
+  // fr: { // French
+  // },
+  // id: { // Indonesian
+  // },
 };
 
   // pt-pt: { // Portuguese
