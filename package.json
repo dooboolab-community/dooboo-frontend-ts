@@ -7,8 +7,7 @@
     "dev": "webpack-dev-server",
     "start": "webpack-dashboard -- webpack-dev-server -d --hot --config webpack.config.js --watch",
     "test": "jest -u",
-    "prod": "webpack -p",
-    "production": "NODE_ENV=production webpack -p",
+    "production": "NODE_ENV=production webpack -p --config webpack.config.prod.js",
     "lint": "tslint -c tslint.json 'src/**/*.{ts,tsx}'"
   },
   "jest": {
