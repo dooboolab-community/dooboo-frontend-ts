@@ -13,8 +13,8 @@ store.user.checkLoginStatus();
 if (navigator) {
   const userLang: string = navigator.language;
   const localization = new Localization();
-  localization.setLocale(userLang);
-  store.setLocale(localization);
+  localization.$LANG = userLang ? userLang.substring(0, 2) : '';
+  store.$locale = localization;
 }
 
 ReactDOM.render(

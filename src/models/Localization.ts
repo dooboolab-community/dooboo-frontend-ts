@@ -4,12 +4,12 @@ class Localization {
   private LANG: string = 'en';
   private DEFAULT_LANG: string = 'en';
 
-  public getLocale = () => {
+  public get $LANG(): string  {
     return this.LANG;
   }
 
-  public setLocale = (param: string) => {
-    this.LANG = param;
+  public set $LANG(value: string ) {
+    this.LANG = value;
   }
 
   public getString = (param) => {

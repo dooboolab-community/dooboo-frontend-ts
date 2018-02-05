@@ -9,7 +9,7 @@ import NotFound from '@screen/NotFound';
 @inject('store')
 class RootStackNavigator extends Component<any> {
   public componentDidMount() {
-    console.log(`userLang: ${this.props.store.locale.getLocale()}`);
+    console.log(`userLang: ${this.props.store.locale.$LANG}`);
   }
 
   public render() {
