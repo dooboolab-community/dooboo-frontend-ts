@@ -1,11 +1,12 @@
 {
-  "name": "react-webpack3-starter",
+  "name": "react-typescript-webpack-starter",
   "version": "1.0.0",
   "description": "starting react express app with me!",
   "postinstall": "tsc",
   "scripts": {
-    "dev": "webpack-dev-server",
-    "start": "webpack-dashboard -- webpack-dev-server -d --hot --config webpack.config.js --watch",
+    "dev": "tsc && webpack-dev-server",
+    "start": "tsc && webpack-dashboard -- webpack-dev-server -d --hot --config webpack.config.js --watch",
+    "tsc": "tsc",
     "test": "jest -u",
     "production": "NODE_ENV=production webpack -p --config webpack.config.prod.js",
     "lint": "tslint -c tslint.json 'src/**/*.{ts,tsx}'"

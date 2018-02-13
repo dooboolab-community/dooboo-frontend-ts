@@ -8,7 +8,7 @@ import classNames from 'classnames/bind';
 const styles = require('./Intro.css');
 const cx = classNames.bind(styles);
 
-export class Intro extends Component<any> {
+export class Intro extends Component<any, any> {
   public render() {
     const { getString } = this.props.store.locale;
     const containerClass = cx({
