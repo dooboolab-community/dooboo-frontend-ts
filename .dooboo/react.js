@@ -4,3 +4,6 @@
  * https://www.npmjs.com/package/dooboo-cli 
  */
 
+{
+  "name": "react"
+}
