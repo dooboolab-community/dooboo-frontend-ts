@@ -5,8 +5,8 @@ import { inject, observer } from 'mobx-react';
 import Button from '@shared/Button';
 
 import classNames from 'classnames/bind';
-const styles = require('./Intro.css');
-const cx = classNames.bind(styles);
+const classes = require('./Intro.css');
+const cx = classNames.bind(classes);
 
 export class Intro extends Component<any, any> {
   public render() {
@@ -17,7 +17,7 @@ export class Intro extends Component<any, any> {
     });
     return(
       <div className={containerClass}>
-        <div className={styles.oauthBox}>
+        <div className={classes.oauthBox}>
           <Button
             onClick={() => this.onClick()}
             white={true}

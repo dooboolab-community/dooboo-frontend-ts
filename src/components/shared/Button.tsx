@@ -1,12 +1,12 @@
 import React, { Component } from 'react';
 
-const styles = require('./Button.css');
+const classes = require('./Button.css');
 
 export class Button extends Component<any, any> {
   public render() {
     return (
       <div
-        className={styles.btn}
+        className={classes.btn}
         style={
           this.props.white
             ? { borderColor: '#fff', color: '#fff' }
@@ -19,12 +19,12 @@ export class Button extends Component<any, any> {
             ? <img
                 src={this.props.imgSrc}
                 srcSet={this.props.srcset}
-                className={styles.logoImg}
+                className={classes.logoImg}
               />
             : null
         }
         <span
-          className={styles.txt}
+          className={classes.txt}
           >{this.props.txt}</span>
       </div>
     );
