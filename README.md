@@ -47,6 +47,7 @@ app/
 ├─ package.json
 ├─ postcss.config.js
 ├─ README.md
+├─ STRINGS.js
 ├─ tsconfig.json
 ├─ tslint.json
 ├─ typings.d.ts
