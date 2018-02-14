@@ -137,7 +137,7 @@ class Store {
 We've created test examples with jest-ts in `src/components/screen/__tests__` and `src/components/shared/__tests__`. Since react is component oriented, we've designed to focus on writing test in same level of directory with component. You can simply run `npm test` to test if it succeeds and look more closer opening the source.
 
 # Localization
-We've defined Localization class in `src/models/Localization.ts`. This model class is used in mobx store which is `src/stores/appStore.ts`. Localization model imports `src/utils/STRINGS.ts` which handles localized strings.
+We've defined Localization class in `src/models/Localization.ts`. This model class is used in mobx store which is `src/stores/appStore.ts`. Localization model imports `STRINGS.ts` which handles localized strings.
 ```
 const STRINGS = {
   en: { // English

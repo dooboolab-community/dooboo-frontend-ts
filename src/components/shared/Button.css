@@ -3,7 +3,8 @@
 .btn {
   display: flex;
   width: 85vw;
-  height: 8vh;
+  height: 100%;
+  padding: 20px;
   border-radius: 3px;
   border-style: solid;
   border-width: 2px;

@@ -17,7 +17,7 @@ export class Intro extends Component<any, any> {
     });
     return(
       <div className={containerClass}>
-        <div className={classes.oauthBox}>
+        <div className={classes.box}>
           <Button
             onClick={() => this.onClick()}
             white={true}
