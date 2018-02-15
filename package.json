@@ -1,5 +1,5 @@
 {
-  "name": "react-typescript-webpack-starter",
+  "name": "dooboo-starter",
   "version": "1.0.0",
   "description": "starting react express app with me!",
   "postinstall": "tsc",
