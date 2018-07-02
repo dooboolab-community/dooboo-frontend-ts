@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import Button from '@shared/Button';
+import Button from '../shared/Button';
 
 class NotFound extends Component<any, any> {
   public render() {

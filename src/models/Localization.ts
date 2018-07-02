@@ -1,22 +1,22 @@
-import { default as STRINGS } from '@STRINGS';
+import { default as STRINGS } from '../../STRINGS';
 
 class Localization {
-  private LANG: string = 'en';
-  private DEFAULT_LANG: string = 'en';
+  private _LANG: string = 'en';
+  private _DEFAULT: string = 'en';
 
-  public get $LANG(): string  {
-    return this.LANG;
+  public get LANG(): string  {
+    return this._LANG;
   }
 
-  public set $LANG(value: string ) {
-    this.LANG = value;
+  public set LANG(value: string ) {
+    this._LANG = value;
   }
 
   public getString = (param) => {
-    const string: string = STRINGS[this.LANG]
-      ? STRINGS[this.LANG][param.toString()]
-      : STRINGS[this.DEFAULT_LANG][param.toString()]
-        ? STRINGS[this.DEFAULT_LANG][param.toString()]
+    const string: string = STRINGS[this._LANG]
+      ? STRINGS[this._LANG][param.toString()]
+      : STRINGS[this._DEFAULT][param.toString()]
+        ? STRINGS[this._DEFAULT][param.toString()]
         : null;
 
     if (!string) {

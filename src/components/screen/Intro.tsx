@@ -2,13 +2,14 @@ import React, { Component } from 'react';
 import { Redirect } from 'react-router-dom';
 import { inject, observer } from 'mobx-react';
 
-import Button from '@shared/Button';
+import Button from '../shared/Button';
 
 import classNames from 'classnames/bind';
 const classes = require('./Intro.css');
 const cx = classNames.bind(classes);
 
-export class Intro extends Component<any, any> {
+@inject('store') @observer
+class Intro extends Component<any, any> {
   public render() {
     const { getString } = this.props.store.locale;
     const containerClass = cx({
@@ -33,4 +34,4 @@ export class Intro extends Component<any, any> {
   }
 }
 
-export default inject('store')(observer(Intro));
+export default Intro;

@@ -3,13 +3,13 @@ import { BrowserRouter, Route, Switch } from 'react-router-dom';
 
 import { inject, observer } from 'mobx-react';
 
-import Intro from '@screen/Intro';
-import NotFound from '@screen/NotFound';
+import Intro from '../screen/Intro';
+import NotFound from '../screen/NotFound';
 
 @inject('store')
 class RootStackNavigator extends Component<any> {
   public componentDidMount() {
-    console.log(`userLang: ${this.props.store.locale.$LANG}`);
+    console.log(`userLang: ${this.props.store.locale.LANG}`);
   }
 
   public render() {

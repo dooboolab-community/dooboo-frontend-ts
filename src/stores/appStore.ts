@@ -1,15 +1,15 @@
 import { observable, action } from 'mobx';
 
-import { setSessionStorage, getSessionStorage } from '@utils/Functions';
-import Localization from '@models/Localization';
-import User from '@models/User';
+import { setSessionStorage, getSessionStorage } from '../utils/Functions';
+import Localization from '../models/Localization';
+import User from '../models/User';
 
 class Store {
   // todo - make variable properties in the class to private and add getter and setter for those
-  @observable public user: User;
-  @observable private locale: Localization;
-  @observable private isDesktop: boolean;
-  @observable private isOpen: boolean;
+  @observable private _user: User;
+  @observable private _locale: Localization;
+  @observable private _isDesktop: boolean;
+  @observable private _isOpen: boolean;
 
   constructor() {
     this.user = new User();
@@ -18,28 +18,36 @@ class Store {
     this.isOpen = false;
   }
 
-  public get $isDesktop(): boolean {
-    return this.isDesktop;
+  public get user(): User {
+    return this._user;
   }
 
-  public set $isDesktop(value: boolean) {
-    this.isDesktop = value;
+  public set user(value: User) {
+    this._user = value;
   }
 
-  public get $locale(): Localization {
-    return this.locale;
+  public get locale(): Localization {
+    return this._locale;
   }
 
-  public set $locale(value: Localization) {
-    this.locale = value;
+  public set locale(value: Localization) {
+    this._locale = value;
   }
 
-  public get $isOpen(): boolean {
-    return this.isOpen;
+  public get isDesktop(): boolean {
+    return this._isDesktop;
   }
 
-  public set $isOpen(value: boolean) {
-    this.isOpen = value;
+  public set isDesktop(value: boolean) {
+    this._isDesktop = value;
+  }
+
+  public get isOpen(): boolean {
+    return this._isOpen;
+  }
+
+  public set isOpen(value: boolean) {
+    this._isOpen = value;
   }
 
   public getString = (param: string) => {

@@ -1,8 +1,8 @@
 import React from 'react';
 import { shallow, render } from 'enzyme';
 
-import Store from '@stores/appStore';
-import { Intro } from '@screen/Intro';
+import Store from '../../../stores/appStore';
+import { Intro } from '../Intro';
 
 // test for the container page in dom
 describe('Intro page DOM rendering test', () => {
