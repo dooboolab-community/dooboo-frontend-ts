@@ -1,7 +1,7 @@
 import React from 'react';
 import { shallow } from 'enzyme';
 
-import { Button } from '@shared/Button';
+import { Button } from '../Button';
 
 // const component = shallow(
 //     <Button white={true} btnTxt='Button 1st test' />
