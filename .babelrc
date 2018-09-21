@@ -1,4 +1,6 @@
 {
-  "presets": ["env", "es2015", "react"],
-  "plugins": ["transform-decorators-legacy"]
+  "presets": ["@babel/preset-env", "@babel/preset-react"],
+  "plugins": [
+    ["@babel/plugin-proposal-decorators", { "legacy": true }]
+  ]
 }

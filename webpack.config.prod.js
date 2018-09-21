@@ -28,7 +28,13 @@ module.exports = {
         use: [
           {
             loader: 'babel-loader',
-            options: { presets: ['react', 'env', 'stage-0'] },
+            options: {
+              presets: [
+                '@babel/preset-env',
+                '@babel/preset-react',
+                '@babel/preset-flow'
+              ],
+            },
           },
           {
             loader: 'ts-loader',
@@ -41,7 +47,13 @@ module.exports = {
         use: [
           {
             loader: 'babel-loader',
-            options: { presets: ['react', 'env', 'stage-0'] },
+            options: {
+              presets: [
+                '@babel/preset-env',
+                '@babel/preset-react',
+                '@babel/preset-flow'
+              ],
+            },
           },
         ],
         exclude: [/node_modules/]
