@@ -173,10 +173,10 @@ In `index.tsx` when app starts it search for navigator's locale and set mobx sta
 ```
 
 # React version
-16.5.2
+16.0.0
 
 # React-router-dom version
 4.3.1
 
 # Typescript
-3.0.1
+3.1.3
