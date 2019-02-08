@@ -14,7 +14,7 @@ describe('Button shared component test', () => {
   });
 });
 
-describe('Button Interaction', () => {
+describe('WhiteButton Interaction', () => {
   let count = 1;
   const onClick = () => {
     count++;
@@ -23,6 +23,30 @@ describe('Button Interaction', () => {
   let rendered;
   let instance;
   const component = <Button onClick={onClick}/>;
+
+  beforeAll(() => {
+    rendered = renderer.create(component);
+    instance = rendered.root;
+  });
+
+  it('Simulate onClick', () => {
+    const button = instance.find(
+      (el: any) => el.type === 'button',
+    );
+    button.props.onClick();
+    expect(count).toBe(2);
+  });
+});
+
+describe('RedButton Interaction', () => {
+  let count = 1;
+  const onClick = () => {
+    count++;
+  };
+
+  let rendered;
+  let instance;
+  const component = <Button white={true} onClick={onClick}/>;
 
   beforeAll(() => {
     rendered = renderer.create(component);
