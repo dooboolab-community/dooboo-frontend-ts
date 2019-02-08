@@ -1,4 +1,7 @@
-# React Typescript Starter
+# React Typescript Boilerplate
+[![codecov](https://codecov.io/gh/dooboolab/dooboo-frontend-ts/branch/master/graph/badge.svg)](https://codecov.io/gh/dooboolab/dooboo-frontend-ts)
+[![CircleCI](https://circleci.com/gh/dooboolab/dooboo-frontend-ts.svg?style=svg)](https://circleci.com/gh/dooboolab/dooboo-frontend-ts)
+
 > Specification
 * styled-component
 * typescript

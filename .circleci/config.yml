@@ -1,0 +1,71 @@
+version: 2
+jobs:
+  node:
+    working_directory: ~/dooboo
+    docker:
+      - image: circleci/node:8
+    steps:
+      - checkout
+
+      - restore_cache:
+          key: yarn-v1-{{ checksum "yarn.lock" }}-{{ arch }}
+
+      - restore_cache:
+          key: node-v1-{{ checksum "package.json" }}-{{ arch }}
+
+      - run: yarn install
+
+      - save_cache:
+          key: yarn-v1-{{ checksum "yarn.lock" }}-{{ arch }}
+          paths:
+            - ~/.cache/yarn
+
+      - save_cache:
+          key: node-v1-{{ checksum "package.json" }}-{{ arch }}
+          paths:
+            - node_modules
+
+      - run:
+          name: jest tests
+          command: |
+            mkdir -p test-results/jest
+            yarn run test
+          environment:
+            JEST_JUNIT_OUTPUT: test-results/jest/junit.xml
+
+      - persist_to_workspace:
+          root: ~/dooboo
+          paths:
+            - node_modules
+
+      - run:
+          name: Lint Test
+          working_directory: .
+          command: |
+            npm run lint
+
+      - run:
+          name: Typescript Test
+          working_directory: .
+          command: |
+            npm run tsc
+
+      - run:
+          name: Jest Test
+          command: |
+            mkdir -p coverage
+            yarn run test
+          environment:
+            JEST_JUNIT_OUTPUT: test-results/jest/junit.xml
+
+      - store_test_results:
+          path: coverage
+
+      - store_artifacts:
+          path: coverage
+
+workflows:
+  version: 2
+  node-android-ios:
+    jobs:
+      - node
