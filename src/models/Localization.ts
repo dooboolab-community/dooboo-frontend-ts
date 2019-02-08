@@ -12,12 +12,16 @@ class Localization {
     this._LANG = value;
   }
 
-  public getString = (param) => {
-    const string: string = STRINGS[this._LANG]
-      ? STRINGS[this._LANG][param.toString()]
-      : STRINGS[this._DEFAULT][param.toString()]
-        ? STRINGS[this._DEFAULT][param.toString()]
-        : null;
+  public getString = (param: string) => {
+    let string: string = STRINGS[this._LANG] && STRINGS[this._LANG][param]
+      ? STRINGS[this._LANG][param]
+      : null;
+
+    if (!string) {
+      string = STRINGS[this._DEFAULT][param]
+      ? STRINGS[this._DEFAULT][param]
+      : null;
+    }
 
     if (!string) {
       return '...';
