@@ -33,14 +33,14 @@ class User {
   public signup = (email: string, password: string) => {
     setSessionStorage('email', email);
     setSessionStorage('password', password);
-    setSessionStorage('loggedIn', true);
+    setSessionStorage('loggedIn', true.toString());
     return this.checkLoginStatus();
   }
 
   public login = (email: string, password: string) => {
     setSessionStorage('email', email);
     setSessionStorage('password', password);
-    setSessionStorage('loggedIn', true);
+    setSessionStorage('loggedIn', true.toString());
     return this.checkLoginStatus();
   }
 

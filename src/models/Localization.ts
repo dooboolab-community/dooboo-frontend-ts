@@ -15,12 +15,12 @@ class Localization {
   public getString = (param: string) => {
     let string: string = STRINGS[this._LANG] && STRINGS[this._LANG][param]
       ? STRINGS[this._LANG][param]
-      : null;
+      : '';
 
     if (!string) {
       string = STRINGS[this._DEFAULT][param]
       ? STRINGS[this._DEFAULT][param]
-      : null;
+      : '';
     }
 
     if (!string) {

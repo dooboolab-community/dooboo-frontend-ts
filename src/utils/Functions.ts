@@ -1,56 +1,28 @@
-const getWorldTime = (tzOffset) => {
-  const now = new Date();
-  const tz = now.getTime() + (now.getTimezoneOffset() * 60000) + (tzOffset * 3600000);
-  now.setTime(tz);
-
-  const leadingZeros = function(n, digits) {
-    let zero = '';
-    n = n.toString();
-
-    if (n.length < digits) {
-      for (let i = 0; i < digits - n.length; i++) {
-        zero += '0';
-      }
-    }
-    return zero + n;
-  };
-
-  const s =
-    leadingZeros(now.getFullYear(), 4) + '-' +
-    leadingZeros(now.getMonth() + 1, 2) + '-' +
-    leadingZeros(now.getDate(), 2) + ' ' +
-
-    leadingZeros(now.getHours(), 2) + ':' +
-    leadingZeros(now.getMinutes(), 2) ;
-
-  return s;
-};
-
-const getStorage = (key) => {
+const getStorage = (key: string) => {
   return localStorage.getItem(key);
 };
 
-const setStorage = (key, value) => {
+const setStorage = (key: string, value: string) => {
   return localStorage.setItem(key, value);
 };
 
-const destroyStorage = (key) => {
+const destroyStorage = (key: string) => {
   return localStorage.removeItem(key);
 };
 
-const getSessionStorage = (key) => {
+const getSessionStorage = (key: string) => {
   return sessionStorage.getItem(key);
 };
 
-const setSessionStorage = (key, value) => {
+const setSessionStorage = (key: string, value: string) => {
   return sessionStorage.setItem(key, value);
 };
 
-const destroySessionStorage = (key) => {
+const destroySessionStorage = (key: string) => {
   return sessionStorage.removeItem(key);
 };
 
-const checkImageExists = (url, callback) => {
+const checkImageExists = (url: string, callback: (val: boolean) => void) => {
   const img = new Image();
   img.onload = function() {
     callback(true);
@@ -62,7 +34,6 @@ const checkImageExists = (url, callback) => {
 };
 
 export {
-  getWorldTime,
   getStorage,
   setStorage,
   destroyStorage,
