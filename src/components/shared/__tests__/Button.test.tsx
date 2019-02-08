@@ -1,32 +1,39 @@
 import React from 'react';
-import { shallow } from 'enzyme';
-
 import { Button } from '../Button';
 
-// const component = shallow(
-//     <Button white={true} btnTxt='Button 1st test' />
-//   );
+import renderer from 'react-test-renderer';
 
 // test for the pure component
 describe('Button shared component test', () => {
-  const component = shallow(
-    <Button white={true} btnTxt='Button 2nd test' />,
-  );
+  let tree;
+  const component = <Button white={true} txt='Button 2nd test' />;
 
   it('component and snapshot matches', () => {
-    expect(component).toMatchSnapshot();
+    tree = renderer.create(component).toJSON();
+    expect(tree).toMatchSnapshot();
+  });
+});
+
+describe('Button Interaction', () => {
+  let count = 1;
+  const onClick = () => {
+    count++;
+  };
+
+  let rendered;
+  let instance;
+  const component = <Button onClick={onClick}/>;
+
+  beforeAll(() => {
+    rendered = renderer.create(component);
+    instance = rendered.root;
   });
 
-  it('component onClick function has to be added and work to make the count 2', () => {
-    let count = 1;
-    const onClick = () => {
-      count++;
-    };
-
-    component.setProps({ onClick: () => onClick() });
-    expect(component).toMatchSnapshot();
-
-    component.find('div').simulate('click');
+  it('Simulate onClick', () => {
+    const button = instance.find(
+      (el: any) => el.type === 'button',
+    );
+    button.props.onClick();
     expect(count).toBe(2);
   });
 });

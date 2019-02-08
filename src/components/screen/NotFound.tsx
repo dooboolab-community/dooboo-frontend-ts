@@ -1,15 +1,25 @@
 import React, { Component } from 'react';
 import Button from '../shared/Button';
+import styled from 'styled-components';
 
-class NotFound extends Component<any, any> {
+const Container = styled.div`
+  display: 'flex',
+  justify-content: 'center',
+`;
+
+interface IProps {
+  history?: any;
+}
+
+class NotFound extends Component<IProps, {}> {
   public render() {
     return (
-      <div style={{ display: 'flex', justifyContent: 'center' }}>
+      <Container>
         <Button
           onClick={() => this.props.history.goBack()}
-          btnTxt='back to tab page'
+          txt='back to tab page'
         />
-      </div>
+      </Container>
     );
   }
 }

@@ -1,32 +1,62 @@
 import React, { Component } from 'react';
+import styled from 'styled-components';
+import { WhiteButton, DarkButton } from '../ui/Buttons';
 
-const classes = require('./Button.css');
+interface IProps {
+  id?: string;
+  white?: boolean;
+  imgSrc?: any;
+  srcset?: any;
+  txt?: string;
+  onClick?: () => void;
+}
 
-export class Button extends Component<any, any> {
+const Text = styled.span`
+  font-size: 14px;
+  color: rgb(128, 109, 216);
+`;
+
+const LogoImg = styled.img`
+  position: absolute;
+  left: 16px;
+  height: 20px;
+  width: 20px;
+  object-fit: cover
+`;
+
+export class Button extends Component<IProps, {}> {
   public render() {
+    if (this.props.white) {
+      return (
+        <WhiteButton
+          onClick={() => this.props.onClick()}
+        >
+          {
+            this.props.imgSrc
+              ? <LogoImg
+                  src={this.props.imgSrc}
+                  srcSet={this.props.srcset}
+                />
+              : null
+          }
+          <Text>{this.props.txt}</Text>
+        </WhiteButton>
+      );
+    }
     return (
-      <div
-        className={classes.btn}
-        style={
-          this.props.white
-            ? { borderColor: '#fff', color: '#fff' }
-            : { borderColor: '#000', color: '#000' }
-        }
+      <DarkButton
         onClick={() => this.props.onClick()}
       >
         {
           this.props.imgSrc
-            ? <img
+            ? <LogoImg
                 src={this.props.imgSrc}
                 srcSet={this.props.srcset}
-                className={classes.logoImg}
               />
             : null
         }
-        <span
-          className={classes.txt}
-          >{this.props.txt}</span>
-      </div>
+        <Text>{this.props.txt}</Text>
+      </DarkButton>
     );
   }
 }

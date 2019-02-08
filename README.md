@@ -1,6 +1,6 @@
 # React Typescript Starter
 > Specification
-* postcss
+* styled-component
 * typescript
 * react-router-dom v4
 * test jest with typescript
@@ -43,7 +43,8 @@ app/
 │  └─ root.css // global variables for css used in compoenents
 ├─ test/
 ├─ .gitignore
-├─ .babelrc
+├─ babel.config.js
+├─ jest.config.js
 ├─ package.json
 ├─ postcss.config.js
 ├─ README.md
@@ -67,49 +68,18 @@ Typically the server runs at `http://localhost:8080`, but should be automaticall
 Testing is also just a command away:
 ```sh
 npm test
-```
-> Result
-```
-> jest -u
-
  PASS  src/components/shared/__tests__/Button.test.tsx
- › 2 snapshots updated.
  PASS  src/components/screen/__tests__/Intro.test.tsx
- › 1 snapshot written.
-
-Snapshot Summary
- › 1 snapshot written in 1 test suite.
- › 2 snapshots updated in 1 test suite.
 
 Test Suites: 2 passed, 2 total
-Tests:       3 passed, 3 total
-Snapshots:   2 updated, 1 added, 3 total
-Time:        2.745s
-Ran all test suites.
+Tests:       4 passed, 4 total
+Snapshots:   2 passed, 2 total
+Time:        2.145s, estimated 3s
 ```
 
 # Adding component
 > Copy sourcecode in /src/components/screen/NotFound.tsx
 > Create new tsx file with compnent name you will create
-> If you want to add seperate css file, add it like below
-```
-const styles = require('./NotFound.css');
-// then you can use above styles in className
-<div className={styles.container}>
-/*
-  Set "no-var-requires" to false in tslint file if you have one.
-  Otherwise you should declare each styles you defined in object to string.
-*/
-```
-Related to [LINK](https://medium.com/@sapegin/css-modules-with-typescript-and-webpack-6b221ebe5f10).
-> Above works by configuring webpack file
-```
-loader: 'css-loader',
-options: { 
-  importLoaders: 1,
-  modules: true,
-  ...
-```
 
 # Adding mobx store
 > Include as many stores as you want in src/stores directory.

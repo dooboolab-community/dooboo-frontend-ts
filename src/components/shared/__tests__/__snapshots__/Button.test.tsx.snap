@@ -1,35 +1,14 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Button shared component test component and snapshot matches 1`] = `
-<div
-  className="btn"
+<button
+  className="sc-bwzfXH idXafH"
   onClick={[Function]}
-  style={
-    Object {
-      "borderColor": "#fff",
-      "color": "#fff",
-    }
-  }
 >
   <span
-    className="txt"
-  />
-</div>
-`;
-
-exports[`Button shared component test component onClick function has to be added and work to make the count 2 1`] = `
-<div
-  className="btn"
-  onClick={[Function]}
-  style={
-    Object {
-      "borderColor": "#fff",
-      "color": "#fff",
-    }
-  }
->
-  <span
-    className="txt"
-  />
-</div>
+    className="sc-htpNat gUfFlb"
+  >
+    Button 2nd test
+  </span>
+</button>
 `;

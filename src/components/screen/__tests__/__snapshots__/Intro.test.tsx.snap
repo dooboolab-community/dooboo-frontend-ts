@@ -1,7 +1,22 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Intro page DOM rendering test Tab1 page has to be matched to snapshot 1`] = `
-<Intro
-  store={[Function]}
-/>
+exports[`Intro page DOM rendering test component and snapshot matches 1`] = `
+<div
+  className="sc-ifAKCX fgUhTV"
+>
+  <div
+    className="sc-EHOje iRMNKG"
+  >
+    <button
+      className="sc-bwzfXH idXafH"
+      onClick={[Function]}
+    >
+      <span
+        className="sc-htpNat gUfFlb"
+      >
+        Button
+      </span>
+    </button>
+  </div>
+</div>
 `;
