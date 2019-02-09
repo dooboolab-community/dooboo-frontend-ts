@@ -3,7 +3,6 @@
 exports[`Button shared component test component and snapshot matches 1`] = `
 <button
   className="sc-bwzfXH jGtnoc"
-  onPress={[Function]}
   style={
     Object {
       "height": "60px",
