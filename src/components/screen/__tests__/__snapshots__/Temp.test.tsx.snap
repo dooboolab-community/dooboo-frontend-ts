@@ -1,0 +1,30 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Temp page DOM rendering test component and snapshot matches 1`] = `
+<div
+  className="sc-EHOje bFpEPY"
+>
+  <button
+    className="sc-bdVaJa jAKSux"
+    onPress={[Function]}
+    style={
+      Object {
+        "height": "60px",
+      }
+    }
+  >
+    <div>
+      <span
+        className="sc-htpNat gUfFlb"
+        style={
+          Object {
+            "color": "white",
+          }
+        }
+      >
+        back to tab page
+      </span>
+    </div>
+  </button>
+</div>
+`;

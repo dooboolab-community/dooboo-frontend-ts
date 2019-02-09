@@ -2,13 +2,19 @@
 
 exports[`Button shared component test component and snapshot matches 1`] = `
 <button
-  className="sc-bwzfXH idXafH"
-  onClick={[Function]}
+  className="sc-bwzfXH jGtnoc"
+  style={
+    Object {
+      "height": "60px",
+    }
+  }
 >
-  <span
-    className="sc-htpNat gUfFlb"
-  >
-    Button 2nd test
-  </span>
+  <div>
+    <span
+      className="sc-htpNat gUfFlb"
+    >
+      Button 2nd test
+    </span>
+  </div>
 </button>
 `;
