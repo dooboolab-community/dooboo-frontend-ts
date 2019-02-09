@@ -81,7 +81,7 @@ Time:        2.145s, estimated 3s
 ```
 
 # Adding component
-> Copy sourcecode in /src/components/screen/NotFound.tsx
+> Copy sourcecode in /src/components/screen/Temp.tsx
 > Create new tsx file with compnent name you will create
 
 # Adding mobx store

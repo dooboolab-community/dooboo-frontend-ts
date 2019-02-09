@@ -11,7 +11,7 @@ const STRINGS = {
     PASSWORD: 'PASSWORD',
     PASSWORD_HINT: 'Write password.',
     COMPLETE: 'DONE',
-    GOTO_NOTFOUND: 'No Page',
+    GOTO_Temp: 'No Page',
     BACK: 'Back',
   },
   ko: { // Korean
@@ -26,7 +26,7 @@ const STRINGS = {
     PASSWORD: '비밀번호',
     PASSWORD_HINT: '비밀번호를 입력해주세요.',
     COMPLETE: '완료',
-    GOTO_NOTFOUND: '없는 페이지',
+    GOTO_Temp: '없는 페이지',
     BACK: '뒤로',
   },
   // ja: { // Japanese

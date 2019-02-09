@@ -11,12 +11,12 @@ interface IProps {
   history?: any;
 }
 
-class NotFound extends Component<IProps, {}> {
+class Temp extends Component<IProps, {}> {
   public render() {
     return (
       <Container>
         <Button
-          onClick={() => this.props.history.goBack()}
+          onPress={() => this.props.history.goBack()}
           txt='back to tab page'
         />
       </Container>
@@ -24,4 +24,4 @@ class NotFound extends Component<IProps, {}> {
   }
 }
 
-export default NotFound;
+export default Temp;

@@ -4,7 +4,7 @@ import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import { inject, observer } from 'mobx-react';
 
 import Intro from '../screen/Intro';
-import NotFound from '../screen/NotFound';
+import Temp from '../screen/Temp';
 
 @inject('store')
 class RootStackNavigator extends Component<any> {
@@ -18,7 +18,7 @@ class RootStackNavigator extends Component<any> {
         <div style={{ textAlign: 'center' }}>
           <Switch>
             <Route exact={true} path='/' component={Intro} />
-            <Route component={NotFound} />
+            <Route component={Temp} />
           </Switch>
         </div>
       </BrowserRouter>

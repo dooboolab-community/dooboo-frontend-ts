@@ -2,20 +2,66 @@
 
 exports[`Intro page DOM rendering test component and snapshot matches 1`] = `
 <div
-  className="sc-ifAKCX fgUhTV"
+  className="sc-EHOje bnuiUQ"
 >
   <div
-    className="sc-EHOje iRMNKG"
+    className="sc-bZQynM iahEzA"
+  >
+    <span
+      className="sc-htoDjs hdqfnc"
+    />
+    <span
+      className="sc-htoDjs hdqfnc"
+    />
+    <span
+      className="sc-htoDjs hdqfnc"
+    />
+  </div>
+  <div
+    className="sc-gzVnrw gqpNDZ"
   >
     <button
-      className="sc-bwzfXH idXafH"
-      onClick={[Function]}
+      className="sc-bdVaJa jAKSux"
+      onPress={[Function]}
+      style={
+        Object {
+          "height": "60px",
+        }
+      }
     >
-      <span
-        className="sc-htpNat gUfFlb"
-      >
-        Button
-      </span>
+      <div>
+        <img
+          className="sc-bxivhb gzWPeD"
+          src="test-file-stub"
+        />
+        <span
+          className="sc-htpNat gUfFlb"
+          style={
+            Object {
+              "color": "white",
+            }
+          }
+        >
+          LOGIN
+        </span>
+      </div>
+    </button>
+    <button
+      className="sc-bwzfXH jGtnoc"
+      onPress={[Function]}
+      style={
+        Object {
+          "height": "60px",
+        }
+      }
+    >
+      <div>
+        <span
+          className="sc-htpNat gUfFlb"
+        >
+          ...
+        </span>
+      </div>
     </button>
   </div>
 </div>
