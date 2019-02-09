@@ -70,7 +70,7 @@ export class Button extends Component<IProps, {}> {
     return (
       <TransparentButton
         style={{ height: '60px' }}
-        onPress={() => onPress()}
+        onPress={onPress}
       >
         {
           isLoading
