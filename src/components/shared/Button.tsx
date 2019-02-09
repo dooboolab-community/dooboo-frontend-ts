@@ -48,7 +48,7 @@ export class Button extends Component<IProps, {}> {
       return (
         <WhiteButton
           style={{ height: '60px' }}
-          onPress={() => onPress()}
+          onPress={onPress}
         >
           {
             this.props.isLoading
