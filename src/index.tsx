@@ -1,8 +1,10 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { Provider } from 'mobx-react';
+import { ThemeProvider } from 'styled-components';
 
-import RootStackNavigator from './components/navigation/RootStackNavigator';
+import { theme } from './theme';
+import SwitchNavigator from './components/navigation/SwitchNavigator';
 import Store from './stores/appStore';
 import Localization from './models/Localization';
 
@@ -19,7 +21,9 @@ if (navigator) {
 
 ReactDOM.render(
   <Provider store={store}>
-    <RootStackNavigator />
+    <ThemeProvider theme={theme}>
+      <SwitchNavigator />
+    </ThemeProvider>
   </Provider>,
   document.getElementById('app'),
 );

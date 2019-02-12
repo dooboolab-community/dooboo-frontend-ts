@@ -1,6 +1,0 @@
-@custom-media --tablet (min-width: 480px);
-@custom-media --desktop (min-width: 769px);
-
-:root {
-  --cooniGradient: linear-gradient(to bottom right, rgb(12, 157, 197), rgb(201, 109, 216));
-}

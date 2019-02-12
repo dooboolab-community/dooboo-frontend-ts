@@ -7,7 +7,7 @@ import Intro from '../screen/Intro';
 import Temp from '../screen/Temp';
 
 @inject('store')
-class RootStackNavigator extends Component<any> {
+class SwitchNavigator extends Component<any> {
   public componentDidMount() {
     console.log(`userLang: ${this.props.store.locale.LANG}`);
   }
@@ -26,4 +26,4 @@ class RootStackNavigator extends Component<any> {
   }
 }
 
-export default RootStackNavigator;
+export default SwitchNavigator;
