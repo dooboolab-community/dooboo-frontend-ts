@@ -42,7 +42,7 @@ exports[`Intro page DOM rendering test component and snapshot matches 1`] = `
             }
           }
         >
-          LOGIN
+          Login
         </span>
       </div>
     </button>
@@ -59,7 +59,7 @@ exports[`Intro page DOM rendering test component and snapshot matches 1`] = `
         <span
           className="sc-htpNat gUfFlb"
         >
-          ...
+          Navigate
         </span>
       </div>
     </button>

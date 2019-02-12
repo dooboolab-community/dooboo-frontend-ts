@@ -1,18 +1,19 @@
 const STRINGS = {
   en: { // English
     BUTTON: 'Button',
-    SIGNUP: 'SIGN UP',
-    LOGIN: 'LOGIN',
-    LOGOUT: 'LOGOUT',
-    GOOGLE_LOGIN: 'LOGIN WITH GOOGLE',
-    FACEBOOK_LOGIN: 'LOGIN WITH FACEBOOK',
-    EMAIL: 'EMAIL',
+    SIGNUP: 'Sign Up',
+    LOGIN: 'Login',
+    LOGOUT: 'Logout',
+    GOOGLE_LOGIN: 'Login with Google',
+    FACEBOOK_LOGIN: 'Login with Facebook',
+    EMAIL: 'Email',
     EMAIL_HINT: 'Write email address.',
-    PASSWORD: 'PASSWORD',
+    PASSWORD: 'Password',
     PASSWORD_HINT: 'Write password.',
-    COMPLETE: 'DONE',
+    COMPLETE: 'Done',
     GOTO_Temp: 'No Page',
     BACK: 'Back',
+    NAVIGATE: 'Navigate',
   },
   ko: { // Korean
     BUTTON: '버튼',
@@ -28,6 +29,7 @@ const STRINGS = {
     COMPLETE: '완료',
     GOTO_Temp: '없는 페이지',
     BACK: '뒤로',
+    NAVIGATE: '이동하기',
   },
   // ja: { // Japanese
   // },
@@ -40,75 +42,5 @@ const STRINGS = {
   // id: { // Indonesian
   // },
 };
-
-  // pt-pt: { // Portuguese
-
-  // },
-  // de-de: { // German
-
-  // },
-  // nl-nl: { // Dutch
-
-  // },
-  // vi: { // Vietnamese
-
-  // },
-  // ru: { // Russian
-
-  // },
-  // sv-se: { // Swedish
-
-  // },
-  // da: { // Danish
-
-  // },
-  // fi: { // Finnish
-
-  // },
-  // no-no: { // Norwegian, Bokmal
-
-  // },
-  // tr: { // Turkish
-
-  // },
-  // ms-my: { // Malay
-
-  // },
-  // th: { // Thai
-
-  // },
-  // hi: { // Hindi
-
-  // },
-  // hu: { // Hungarian
-
-  // },
-  // pl: { // Polish
-
-  // },
-  // cs: { // Czech
-
-  // },
-  // sk: { // Slovak
-
-  // },
-  // uk: { // Ukrainian
-
-  // },
-  // hr: { // Croatian
-
-  // },
-  // ca: { // Catalan
-
-  // },
-  // ro: { // Romanian
-
-  // },
-  // he: { // Hebrew
-
-  // },
-  // ar-eg: { // Arabic (Egypt)
-
-  // },
 
 export default STRINGS;
