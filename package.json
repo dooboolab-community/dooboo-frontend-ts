@@ -1,7 +1,7 @@
 {
   "name": "dooboo-starter",
   "version": "1.0.0",
-  "description": "starting react express app with me!",
+  "description": "Build react app with typescript.",
   "postinstall": "tsc",
   "scripts": {
     "dev": "tsc && webpack-dev-server",
