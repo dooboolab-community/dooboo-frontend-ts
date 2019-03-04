@@ -42,7 +42,7 @@ app/
 │  └─ models
 │  └─ stores
 │  └─ utils
-│  └─ index.tsx
+│  └─ App.tsx
 │  └─ root.css // global variables for css used in compoenents
 ├─ test/
 ├─ .gitignore
@@ -136,7 +136,7 @@ const STRINGS = {
   },
   ...
 ```
-In `index.tsx` when app starts it search for navigator's locale and set mobx state.
+In `App.tsx` when app starts it search for navigator's locale and set mobx state.
 ```
   const userLang: string = navigator.language;
   const localization = new Localization();

@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Button shared component test component and snapshot matches 1`] = `
+exports[`[Button] shared component test component and snapshot matches 1`] = `
 <button
   className="sc-bwzfXH jGtnoc"
   style={

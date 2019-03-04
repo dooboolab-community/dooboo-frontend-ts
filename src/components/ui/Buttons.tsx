@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-export const TransparentButton: any = styled('button')`
+export const TransparentButton = styled('button')`
   display: flex;
   width: 100%;
   height: 100%;
@@ -27,7 +27,7 @@ export const TransparentButton: any = styled('button')`
   }
 `;
 
-export const WhiteButton: any = styled('button')`
+export const WhiteButton = styled('button')`
   display: flex;
   width: 100%;
   height: 100%;

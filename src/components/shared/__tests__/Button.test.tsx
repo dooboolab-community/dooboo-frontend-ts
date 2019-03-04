@@ -1,13 +1,13 @@
 import React from 'react';
-import renderer, { ReactTestRenderer, ReactTestRendererJSON } from 'react-test-renderer';
+import Button from '../Button';
 
-import { Button } from '../Button';
+import * as renderer from 'react-test-renderer';
 import { IC_FACEBOOK_W } from '../../../utils/Icons';
 
 // test for the pure component
-describe('Button shared component test', () => {
+describe('[Button] shared component test', () => {
   let tree: any;
-  const component: any = <Button white={true} txt='Button 2nd test' />;
+  const component: any = <Button white={true} text='Button 2nd test' />;
 
   it('component and snapshot matches', () => {
     tree = renderer.create(component).toJSON();
@@ -15,18 +15,17 @@ describe('Button shared component test', () => {
   });
 });
 
-describe('Transparent Interaction', () => {
+describe('[Transparent] interaction', () => {
   let count = 1;
   const onClick = () => {
     count++;
   };
 
-  let rendered: ReactTestRenderer;
-  let root: ReactTestRenderer['root'];
-  let component: any;
+  let rendered: renderer.ReactTestRenderer;
+  let root: renderer.ReactTestInstance;
+  const component: any = <Button onClick={onClick}/>;
 
   beforeAll(() => {
-    component = <Button onPress={onClick}/>;
     rendered = renderer.create(component);
     root = rendered.root;
   });
@@ -35,40 +34,40 @@ describe('Transparent Interaction', () => {
     const button = root.find(
       (el: any) => el.type === 'button',
     );
-    button.props.onPress();
+    button.props.onClick();
     expect(count).toBe(2);
   });
 });
 
-describe('WhiteButton Interaction', () => {
+describe('[WhiteButton] interaction', () => {
   let count = 1;
   const onClick = () => {
     count++;
   };
 
-  let rendered: ReactTestRenderer;
-  let root: ReactTestRenderer['root'];
+  let rendered: renderer.ReactTestRenderer;
+  let root: renderer.ReactTestInstance;
   let component: any;
 
-  it('Simulate onClick', () => {
-    component = <Button white={true} onPress={onClick}/>;
+  it('should simulate onClick', () => {
+    component = <Button white={true} onClick={onClick}/>;
     rendered = renderer.create(component);
     root = rendered.root;
 
     const button = root.find(
       (el: any) => el.type === 'button',
     );
-    button.props.onPress();
+    button.props.onClick();
     expect(count).toBe(2);
   });
 
-  it('Render isLoading status', () => {
+  it('should render isLoading status', () => {
     component = <Button white={true} isLoading={true}/>;
     rendered = renderer.create(component);
     root = rendered.root;
   });
 
-  it('Render img status', () => {
+  it('should render img status', () => {
     component = <Button white={true} imgSrc={IC_FACEBOOK_W}/>;
     rendered = renderer.create(component);
     root = rendered.root;

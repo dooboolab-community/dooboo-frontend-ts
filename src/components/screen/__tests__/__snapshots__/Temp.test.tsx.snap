@@ -1,12 +1,12 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Temp page DOM rendering test component and snapshot matches 1`] = `
+exports[`[Temp] render renders without crashing 1`] = `
 <div
-  className="sc-EHOje bFpEPY"
+  className="sc-EHOje dSOLHa"
 >
   <button
     className="sc-bdVaJa jAKSux"
-    onPress={[Function]}
+    onClick={[Function]}
     style={
       Object {
         "height": "60px",

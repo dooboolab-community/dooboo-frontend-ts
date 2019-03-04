@@ -6,8 +6,8 @@ interface IProps {
   id?: string;
   white?: boolean;
   imgSrc?: any;
-  txt?: string;
-  onPress?: () => void;
+  text?: string;
+  onClick?: () => void;
   isLoading?: boolean;
 }
 
@@ -37,58 +37,52 @@ const Spinner = styled.div`
   }
 `;
 
-export class Button extends Component<IProps, {}> {
-  private static defaultProps: IProps = {
-    isLoading: false,
-  };
-
-  public render() {
-    const { white, onPress, imgSrc, txt, isLoading } = this.props;
-    if (white) {
-      return (
-        <WhiteButton
-          style={{ height: '60px' }}
-          onPress={onPress}
-        >
-          {
-            this.props.isLoading
-              ? <Spinner id='spinner'/>
-              : <div>
-                {
-                  imgSrc
-                    ? <LogoImg
-                      src={imgSrc}
-                    />
-                    : null
-                }
-                <Text>{txt}</Text>
-              </div>
-          }
-        </WhiteButton>
-      );
-    }
+function Button(props: IProps) {
+  const { white, onClick, imgSrc, text } = props;
+  if (props.white) {
     return (
-      <TransparentButton
+      <WhiteButton
         style={{ height: '60px' }}
-        onPress={onPress}
+        onClick={onClick}
       >
         {
-          isLoading
+          props.isLoading
             ? <Spinner id='spinner'/>
             : <div>
               {
-                imgSrc
+                props.imgSrc
                   ? <LogoImg
-                    src={imgSrc}
+                    src={props.imgSrc}
                   />
                   : null
               }
-              <Text style={{ color: 'white' }}>{txt}</Text>
+              <Text>{props.text}</Text>
             </div>
         }
-      </TransparentButton>
+      </WhiteButton>
     );
   }
+  return (
+    <TransparentButton
+      style={{ height: '60px' }}
+      onClick={onClick}
+    >
+      {
+        props.isLoading
+          ? <Spinner id='spinner'/>
+          : <div>
+            {
+              props.imgSrc
+                ? <LogoImg
+                  src={props.imgSrc}
+                />
+                : null
+            }
+            <Text style={{ color: 'white' }}>{props.text}</Text>
+          </div>
+      }
+    </TransparentButton>
+  );
 }
 
 export default Button;

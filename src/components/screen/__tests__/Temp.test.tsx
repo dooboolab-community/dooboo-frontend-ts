@@ -1,8 +1,9 @@
 import React from 'react';
-import renderer, { ReactTestRendererJSON, ReactTestRenderer, ReactTestInstance} from 'react-test-renderer';
+import * as renderer from 'react-test-renderer';
 
 import Temp from '../Temp';
 import Button from '../../shared/Button';
+import { render, fireEvent, getByTestId } from 'react-testing-library';
 
 const props = {
   history: {
@@ -10,31 +11,25 @@ const props = {
   },
 };
 
-// test for the container page in dom
-describe('Temp page DOM rendering test', () => {
-  let json: ReactTestRendererJSON;
-  const component = <Temp {...props} />;
-
-  it('component and snapshot matches', () => {
-    json = renderer.create(component).toJSON();
-    expect(json).toMatchSnapshot();
+describe('[Temp] render', () => {
+  it('renders without crashing', () => {
+    const rendered = renderer.create(<Temp />).toJSON();
+    expect(rendered).toMatchSnapshot();
+    expect(rendered).toBeTruthy();
   });
 });
 
-describe('Interaction', () => {
-  let rendered: ReactTestRenderer;
-  let root: ReactTestInstance | any;
+describe('[Temp] Interaction', () => {
   const component = <Temp {...props} />;
+  let renderResult: any;
 
-  beforeAll(() => {
-    rendered = renderer.create(component);
-    root = rendered.root;
+  beforeEach(() => {
+    renderResult = render(component);
   });
 
-  it('Simulate onClick', () => {
-    // const spy = jest.spyOn(rendered.getInstance(), 'onClick');
-    const button = root.findByType(Button);
-    button.props.onPress();
-    expect(props.history.goBack).toBeCalled();
+  it('should simulate [onClick] when [btn] has been clicked', () => {
+    const btnInstance = renderResult.getByText('back to tab page');
+    fireEvent.click(btnInstance);
+    expect(props.history.goBack).toHaveBeenCalledTimes(1);
   });
 });
