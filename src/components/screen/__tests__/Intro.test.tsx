@@ -5,7 +5,6 @@ import {render, act, fireEvent, cleanup, waitForElement, getByTestId} from 'reac
 import { AppProvider } from '../../../providers';
 import Intro from '../Intro';
 import Button from '../../shared/Button';
-import { AppContext } from './testHelpers';
 import { getString } from '../../../../STRINGS';
 
 const props = {
@@ -22,8 +21,6 @@ const component = (
     <Intro {...props} />
   </AppProvider>
 );
-
-const context = AppContext;
 
 let container;
 
@@ -42,7 +39,7 @@ describe('[Intro] screen rendering test', () => {
   let json: renderer.ReactTestRendererJSON;
 
   it('should render outer component and snapshot matches', () => {
-    json = renderer.create(component, { context }).toJSON();
+    json = renderer.create(component).toJSON();
     expect(json).toMatchSnapshot();
   });
 });
@@ -55,7 +52,7 @@ describe('[Intro] Interaction', () => {
 
   it('should simulate [onLogin] click with testing library', () => {
     jest.useFakeTimers();
-    renderResult = render(component, { context });
+    renderResult = render(component);
     fireEvent.click(renderResult.getByText(getString('LOGIN')));
     expect(setTimeout).toHaveBeenCalledTimes(1);
     // expect(context.dispatch).toHaveBeenCalledWith({ type: 'reset-user' });
@@ -65,12 +62,12 @@ describe('[Intro] Interaction', () => {
     act(() => {
       jest.runAllTimers();
     });
- 
+
     expect(clearTimeout).toHaveBeenCalledTimes(1);
   });
 
   it('should simulate [navigate] when clicked', () => {
-    rendered = renderer.create(component, { context });
+    rendered = renderer.create(component);
     root = rendered.root;
 
     const buttons = root.findAllByType(Button);

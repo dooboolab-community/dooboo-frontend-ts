@@ -6,20 +6,21 @@
 * styled-component
 * typescript
 * react-router-dom v4
-* test jest with typescript
-* import css as module
+* ts-jest
+* global state management with `context-api`
+* react-hook
 * localization
-* mobx
-* data models
 
-> More example will be found in `desktop` branch.
+> We decided to remove `mobx` from the boilerplate from `dooboo-cli@1.4.0` completely. The reason to remove `mobx` is that we thought this isn't suitable with what `react` brought up as a design pattern today. `Functional programming` has been powered by `react-hook` so we chose to remove work on `object-oriented programming` which was more suitable with `mobx`. We hope you enjoy what we've brought up today.
 
 # Gain points
 ```
 1. Typescript support. No need to run tsc because webpack is doing it for you with ts-loader.
 2. Sample of react-router-dom v4.
-3. Able to learn how to structure react app with typescript and mobx with jest-ts.
-4. Learn how to localize your project.
+3. Able to learn how to structure react app with typescript.
+4. Testing code with `ts-jest`.
+5. Linting code with `tslint`.
+6. Learn how to localize your project.
 ```
 
 # INSTALL
@@ -39,11 +40,15 @@ app/
 ├─ src/
 │  └─ apis
 │  └─ components
-│  └─ models
-│  └─ stores
+│     └─ navigation
+│     └─ screen
+│     └─ shared
 │  └─ utils
-│  └─ App.tsx
-│  └─ root.css // global variables for css used in compoenents
+│  └─ ui
+│  └─ contexts
+│  └─ providers
+│  └─ index.js
+│  └─ theme.js // global variables for theming in `styled-components`
 ├─ test/
 ├─ .gitignore
 ├─ babel.config.js
