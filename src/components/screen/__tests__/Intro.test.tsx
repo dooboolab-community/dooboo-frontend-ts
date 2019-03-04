@@ -47,7 +47,6 @@ describe('[Intro] screen rendering test', () => {
 describe('[Intro] Interaction', () => {
   let rendered: renderer.ReactTestRenderer;
   let root: renderer.ReactTestInstance;
-  let instance;
   let renderResult: any;
 
   it('should simulate [onLogin] click with testing library', () => {
