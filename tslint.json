@@ -25,6 +25,7 @@
     "jsx-no-multiline-js": false,
     "jsx-wrap-multiline": false,
     "jsx-alignment": false,
-    "jsx-curly-spacing": false
+    "jsx-curly-spacing": false,
+    "no-angle-bracket-type-assertion": false
   }
 }

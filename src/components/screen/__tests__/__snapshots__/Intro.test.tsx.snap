@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Intro page DOM rendering test component and snapshot matches 1`] = `
+exports[`[Intro] screen rendering test should render outer component and snapshot matches 1`] = `
 <div
   className="sc-EHOje bnuiUQ"
 >
@@ -9,20 +9,26 @@ exports[`Intro page DOM rendering test component and snapshot matches 1`] = `
   >
     <span
       className="sc-htoDjs hdqfnc"
-    />
+    >
+      
+    </span>
     <span
       className="sc-htoDjs hdqfnc"
-    />
+    >
+      
+    </span>
     <span
       className="sc-htoDjs hdqfnc"
-    />
+    >
+      
+    </span>
   </div>
   <div
     className="sc-gzVnrw gqpNDZ"
   >
     <button
       className="sc-bdVaJa jAKSux"
-      onPress={[Function]}
+      onClick={[Function]}
       style={
         Object {
           "height": "60px",
@@ -48,7 +54,7 @@ exports[`Intro page DOM rendering test component and snapshot matches 1`] = `
     </button>
     <button
       className="sc-bwzfXH jGtnoc"
-      onPress={[Function]}
+      onClick={[Function]}
       style={
         Object {
           "height": "60px",

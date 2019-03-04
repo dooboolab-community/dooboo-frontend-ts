@@ -1,16 +1,17 @@
-// @flow
 import React, { Component } from 'react';
 import { Redirect } from 'react-router-dom';
 import styled from 'styled-components';
 
 import Button from '../shared/Button';
 
-import { inject, observer } from 'mobx-react';
 import { device } from '../../theme';
-import Store from '../../stores/appStore';
+import { AppProvider as Provider, AppConsumer, AppContext } from '../../providers';
 
-import { IC_GOOGLE_W } from '../../utils/Icons';
-import User from '../../models/User';
+import { IC_FACEBOOK_W, IC_GOOGLE_W } from '../../utils/Icons';
+
+import { IUser } from '../../types';
+
+import { getString } from '../../../STRINGS';
 
 const Container = styled.div`
   display: flex;
@@ -70,74 +71,66 @@ const Text = styled.span`
 `;
 
 interface IProps {
-  store: Store;
   history: any;
+  store?: any;
 }
 
 interface IState {
   isLoggingIn: boolean;
 }
 
-@inject('store') @observer
-class Intro extends Component<IProps, IState> {
-  private timer: any;
+function Intro(props: IProps) {
+  let timer: any;
+  const { state, dispatch } = React.useContext(AppContext);
+  const [isLoggingIn, setIsLoggingIn] = React.useState(false);
 
-  constructor(props: IProps) {
-    super(props);
-    this.state = {
-      isLoggingIn: false,
-    };
-  }
+  const onLogin = () => {
+    dispatch({ type: 'reset-user' });
+    setIsLoggingIn(true);
+    timer = setTimeout(() => {
+      const user: IUser = {
+        displayName: 'dooboolab',
+        age: 30,
+        job: 'developer',
+      };
+      dispatch({ type: 'set-user', payload: user });
+      setIsLoggingIn(false);
+      clearTimeout(timer);
+    }, 1000);
+  };
 
-  public render() {
-    const { getString } = this.props.store.locale;
-    return (
-      <Container>
-        <ContentWrapper>
-          <Text>{this.props.store.user.displayName}</Text>
-          <Text>{this.props.store.user.age}</Text>
-          <Text>{this.props.store.user.job}</Text>
-        </ContentWrapper>
-        <ButtonWrapper>
-          <Button
-            id='btn'
-            imgSrc={IC_GOOGLE_W}
-            isLoading={this.state.isLoggingIn}
-            onPress={() => this.onLogin()}
-            // white={true}
-            txt={getString('LOGIN')}
-          />
-          <Button
-            id='btn'
-            onPress={() => this.navigate()}
-            white={true}
-            txt={getString('NAVIGATE')}
-          />
-        </ButtonWrapper>
-      </Container>
-    );
-  }
-
-  private onLogin = () => {
-    this.props.store.user = new User();
-    this.setState({ isLoggingIn: true }, () => {
-      this.timer = setTimeout(() => {
-        this.props.store.user.displayName = 'dooboolab';
-        this.props.store.user.age = 30;
-        this.props.store.user.job = 'developer';
-        this.setState({ isLoggingIn: false });
-      }, 1000);
-    });
-  }
-
-  private navigate = () => {
-    const location: any = {
+  const navigate = () => {
+    const location: object = {
       pathname: '/404',
       state: {},
     };
-    // this.props.history.replace(location);
-    this.props.history.push(location);
-  }
+    props.history.push(location);
+  };
+
+  return (
+    <Container>
+      <ContentWrapper>
+        <Text>{state.user.displayName}</Text>
+        <Text>{state.user.age ? state.user.age : ''}</Text>
+        <Text>{state.user.job}</Text>
+      </ContentWrapper>
+      <ButtonWrapper>
+        <Button
+          imgSrc={IC_GOOGLE_W}
+          isLoading={isLoggingIn}
+          onClick={() => onLogin()}
+          // white={true}
+          text={getString('LOGIN')}
+        />
+        <Button
+          data-testid='btn2'
+          onClick={() => navigate()}
+          white={true}
+          text={getString('NAVIGATE')}
+        />
+      </ButtonWrapper>
+    </Container>
+  );
 }
 
 export default Intro;

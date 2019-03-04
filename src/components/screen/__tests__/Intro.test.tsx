@@ -1,12 +1,14 @@
 import React from 'react';
-import renderer, { ReactTestRenderer } from 'react-test-renderer';
+import * as renderer from 'react-test-renderer';
+import {render, act, fireEvent, cleanup, waitForElement, getByTestId} from 'react-testing-library';
 
+import { AppProvider } from '../../../providers';
 import Intro from '../Intro';
 import Button from '../../shared/Button';
-import Store from '../../../stores/appStore';
+import { AppContext } from './testHelpers';
+import { getString } from '../../../../STRINGS';
 
 const props = {
-  store: new Store(),
   navigation: {
     navigate: jest.fn(),
   },
@@ -15,47 +17,67 @@ const props = {
   },
 };
 
-// test for the container page in dom
-describe('Intro page DOM rendering test', () => {
-  let tree;
-  const component = <Intro { ...props } />;
+const component = (
+  <AppProvider>
+    <Intro {...props} />
+  </AppProvider>
+);
 
-  it('component and snapshot matches', () => {
-    tree = renderer.create(component).toJSON();
-    expect(tree).toMatchSnapshot();
+const context = AppContext;
+
+let container;
+
+beforeEach(() => {
+  container = document.createElement('div');
+  document.body.appendChild(container);
+});
+
+afterEach(() => {
+  document.body.removeChild(container);
+  container = null;
+});
+
+// test for the container page in dom
+describe('[Intro] screen rendering test', () => {
+  let json: renderer.ReactTestRendererJSON;
+
+  it('should render outer component and snapshot matches', () => {
+    json = renderer.create(component, { context }).toJSON();
+    expect(json).toMatchSnapshot();
   });
 });
 
-describe('Interaction', () => {
-  let rendered: ReactTestRenderer;
-  let root: ReactTestRenderer['root'] | any;
-  const component = <Intro { ...props } />;
+describe('[Intro] Interaction', () => {
+  let rendered: renderer.ReactTestRenderer;
+  let root: renderer.ReactTestInstance;
+  let instance;
+  let renderResult: any;
 
-  beforeAll(() => {
-    rendered = renderer.create(component);
-    root = rendered.root;
+  it('should simulate [onLogin] click with testing library', () => {
+    jest.useFakeTimers();
+    renderResult = render(component, { context });
+    fireEvent.click(renderResult.getByText(getString('LOGIN')));
+    expect(setTimeout).toHaveBeenCalledTimes(1);
+    // expect(context.dispatch).toHaveBeenCalledWith({ type: 'reset-user' });
+    // expect(context.dispatch).toHaveBeenCalledWith({ type: 'set-user' }, expect.any(Object));
+    // expect(props.isLoading).toEqual(true); // TODO: test with useState
+
+    act(() => {
+      jest.runAllTimers();
+    });
+ 
+    expect(clearTimeout).toHaveBeenCalledTimes(1);
   });
 
-  it('Simulate onPress', () => {
-    jest.useFakeTimers();
-    const spy = jest.spyOn(root.instance.wrappedInstance, 'onLogin');
-    const buttons = root.findAllByType(Button);
-    root.instance.wrappedInstance.onLogin(); // == buttons[0].props.onPress();
-    expect(setTimeout).toHaveBeenCalledTimes(1);
-    expect(root.instance.wrappedInstance.state.isLoggingIn).toEqual(true);
+  it('should simulate [navigate] when clicked', () => {
+    rendered = renderer.create(component, { context });
+    root = rendered.root;
 
-    jest.runAllTimers();
-    expect(root.instance.wrappedInstance.state.isLoggingIn).toEqual(false);
-    expect(props.store.user.displayName).toEqual('dooboolab');
-    expect(props.store.user.age).toEqual(30);
-    expect(props.store.user.job).toEqual('developer');
-    expect(spy).toBeCalled();
-    buttons[1].props.onPress();
+    const buttons = root.findAllByType(Button);
+    buttons[1].props.onClick();
     expect(props.history.push).toBeCalledWith({
       pathname: '/404',
       state: {},
     });
-
-    buttons[0].props.onPress();
   });
 });

@@ -43,4 +43,22 @@ const STRINGS = {
   // },
 };
 
+const DEFAULT_LANG = 'en';
+let lang = DEFAULT_LANG;
+
+if (navigator) {
+  lang = navigator.language.substr(0, 2);
+}
+
+export const getString = (str: string) => {
+  str = STRINGS[lang]
+    ? STRINGS[lang][str]
+    : STRINGS[DEFAULT_LANG][str];
+
+  if (!str) {
+    str = '...';
+  }
+  return str;
+};
+
 export default STRINGS;
