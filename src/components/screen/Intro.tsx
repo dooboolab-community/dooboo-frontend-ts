@@ -75,10 +75,6 @@ interface IProps {
   store?: any;
 }
 
-interface IState {
-  isLoggingIn: boolean;
-}
-
 function Intro(props: IProps) {
   let timer: any;
   const { state, dispatch } = React.useContext(AppContext);
