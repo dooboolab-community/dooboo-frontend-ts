@@ -52,6 +52,7 @@ app/
 │  └─ index.js
 │  └─ theme.js // global variables for theming in `styled-components`
 ├─ test/
+├─ .eslintrc.js
 ├─ .gitignore
 ├─ babel.config.js
 ├─ jest.config.js
@@ -60,7 +61,6 @@ app/
 ├─ README.md
 ├─ STRINGS.js
 ├─ tsconfig.json
-├─ tslint.json
 ├─ typings.d.ts
 └─ webpack.config.js
 ```
