@@ -31,7 +31,7 @@ module.exports = {
               presets: [
                 '@babel/preset-env',
                 '@babel/preset-react',
-                '@babel/preset-flow'
+                '@babel/preset-flow',
               ],
             },
           },
@@ -39,7 +39,7 @@ module.exports = {
             loader: 'ts-loader',
           },
         ],
-        exclude: [/node_modules/]
+        exclude: [/node_modules/],
       },
       {
         test: /\.js(x?)$/,
@@ -50,22 +50,22 @@ module.exports = {
               presets: [
                 '@babel/preset-env',
                 '@babel/preset-react',
-                '@babel/preset-flow'
+                '@babel/preset-flow',
               ],
             },
           },
         ],
-        exclude: [/node_modules/]
+        exclude: [/node_modules/],
       },
       {
         test: /\.(png|jpg|gif)$/,
         use: [
           {
             loader: 'file-loader',
-            options: {}
-          }
-        ]
-      }
-    ]
+            options: {},
+          },
+        ],
+      },
+    ],
   },
 };

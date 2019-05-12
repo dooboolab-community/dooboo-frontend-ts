@@ -19,7 +19,7 @@ module.exports = {
     extensions: ['.ts', '.tsx', '.js', 'jsx'],
   },
   devServer: {
-    contentBase: __dirname + '/dist/',
+    contentBase: path.join(__dirname, '/dist'),
     inline: true,
     host: 'localhost',
     port: 8080,
@@ -49,17 +49,17 @@ module.exports = {
                   '@babel/plugin-transform-runtime',
                   {
                     'helpers': true,
-                    'regenerator': false
-                  }
-                ]
-              ]
+                    'regenerator': false,
+                  },
+                ],
+              ],
             },
           },
           {
             loader: 'ts-loader',
           },
         ],
-        exclude: [/node_modules/]
+        exclude: [/node_modules/],
       },
       {
         test: /\.js(x?)$/,
@@ -71,32 +71,32 @@ module.exports = {
               presets: [
                 '@babel/preset-env',
                 '@babel/preset-react',
-                '@babel/preset-flow'
+                '@babel/preset-flow',
               ],
               plugins: [
                 [
                   '@babel/plugin-transform-runtime',
                   {
                     'helpers': true,
-                    'regenerator': false
-                  }
-                ]
-              ]
+                    'regenerator': false,
+                  },
+                ],
+              ],
             },
           },
         ],
-        exclude: [/node_modules/]
+        exclude: [/node_modules/],
       },
       {
         test: /\.(png|jpg|gif)$/,
         use: [
           {
             loader: 'file-loader',
-            options: {}
-          }
-        ]
-      }
-    ]
+            options: {},
+          },
+        ],
+      },
+    ],
   },
   devtool: 'inline-source-map',
 };
