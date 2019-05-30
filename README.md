@@ -18,12 +18,19 @@ DO NOT MODIFY OR CHANGE THE CODE BEFORE CONFIRMED BY `DOOBOOLAB`. THIS REPOSITOR
 ### Gain points
 ```
 1. Sample of context-api with `react-hook` (`useContext`).
-2. Know how to structure react web app with flow.
+2. Know how to structure react web app with `typescript`.
 3. Know how to navigate between screens with `react-router`.
 4. Know how to write test code with `react-native-testing-library`.
 5. Know how to `lint` your project with `eslint`.
-6. Know how to localize your project.
-```
+6. [Know how to localize your project](https://github.com/dooboolab/dooboo-frontend-ts/blob/master/STRINGS.ts).
+  - [Example]()
+7. [Know how to place your `retina image` into your project](https://github.com/dooboolab/dooboo-frontend-ts/blob/master/src/utils/Icons.ts).
+8. Know how to use `styled-component`.
+9. [Know how to implement theming with styled-component](https://github.com/dooboolab/dooboo-frontend-ts/blob/master/src/theme.ts).
+  - [Dark Mode]
+    ![image](https://user-images.githubusercontent.com/27461460/58620208-815be500-8301-11e9-9a00-2ceaca7c93f5.png)
+  - [Light Mode]
+    ![image](https://user-images.githubusercontent.com/27461460/58620232-8f116a80-8301-11e9-8b55-3bb2a743dff8.png)
 
 ### INSTALL
 ```
