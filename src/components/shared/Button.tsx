@@ -1,19 +1,24 @@
-import React, { Component } from 'react';
+import React from 'react';
 import styled from 'styled-components';
-import { WhiteButton, TransparentButton } from '../ui/Buttons';
+import { ButtonPrimary, ButtonPrimaryLight } from '../ui/Buttons';
 
 interface IProps {
   id?: string;
-  white?: boolean;
+  isReverse?: boolean;
   imgSrc?: any;
   text?: string;
   onClick?: () => void;
   isLoading?: boolean;
 }
 
-const Text = styled.span`
+const PrimaryTextLight = styled.span`
   font-size: 14px;
-  color: rgb(128, 109, 216);
+  color: ${(props) => props.theme.btnPrimaryLightFont};
+`;
+
+const PrimaryText  = styled.span`
+  font-size: 14px;
+  color: ${(props) => props.theme.btnPrimaryFont};
 `;
 
 const LogoImg = styled.img`
@@ -21,7 +26,7 @@ const LogoImg = styled.img`
   left: 16px;
   height: 20px;
   width: 20px;
-  object-fit: cover
+  object-fit: cover;
 `;
 
 const Spinner = styled.div`
@@ -38,10 +43,10 @@ const Spinner = styled.div`
 `;
 
 function Button(props: IProps) {
-  const { white, onClick, imgSrc, text } = props;
-  if (props.white) {
+  const { isReverse, onClick, imgSrc, text } = props;
+  if (isReverse) {
     return (
-      <WhiteButton
+      <ButtonPrimaryLight
         style={{ height: '60px' }}
         onClick={onClick}
       >
@@ -56,14 +61,14 @@ function Button(props: IProps) {
                   />
                   : null
               }
-              <Text>{props.text}</Text>
+            <PrimaryTextLight>{props.text}</PrimaryTextLight>
             </div>
         }
-      </WhiteButton>
+      </ButtonPrimaryLight>
     );
   }
   return (
-    <TransparentButton
+    <ButtonPrimary
       style={{ height: '60px' }}
       onClick={onClick}
     >
@@ -78,10 +83,10 @@ function Button(props: IProps) {
                 />
                 : null
             }
-            <Text style={{ color: 'white' }}>{props.text}</Text>
+            <PrimaryText>{props.text}</PrimaryText>
           </div>
       }
-    </TransparentButton>
+    </ButtonPrimary>
   );
 }
 

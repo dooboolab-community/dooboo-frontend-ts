@@ -14,6 +14,7 @@ const STRINGS = {
     GOTO_Temp: 'No Page',
     BACK: 'Back',
     NAVIGATE: 'Navigate',
+    CHANGE_THEME: 'Change theme',
   },
   ko: { // Korean
     BUTTON: '버튼',
@@ -30,6 +31,7 @@ const STRINGS = {
     GOTO_Temp: '없는 페이지',
     BACK: '뒤로',
     NAVIGATE: '이동하기',
+    CHANGE_THEME: '테마 변경',
   },
   // ja: { // Japanese
   // },

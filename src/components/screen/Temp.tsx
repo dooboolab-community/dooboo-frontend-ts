@@ -7,7 +7,7 @@ const Container = styled.div`
   height: 100vh;
   justify-content: center;
   align-items: center;
-  background-color: ${(props) => props.theme.mainColor};
+  background: ${(props) => props.theme.background};
   padding: 50px;
 `;
 

@@ -4,7 +4,7 @@ import styled from 'styled-components';
 
 import Button from '../shared/Button';
 
-import { device } from '../../theme';
+import { device, ThemeType } from '../../theme';
 import { AppProvider as Provider, AppConsumer, AppContext } from '../../providers';
 
 import { IC_FACEBOOK_W, IC_GOOGLE_W } from '../../utils/Icons';
@@ -67,7 +67,7 @@ const Text = styled.span`
   font-size: 18px;
   line-height: 1.5;
   font-family: sans-serif;
-  color: #e3e3e3;
+  color: ${(props) => props.theme.fontColor};
 `;
 
 interface IProps {
@@ -103,6 +103,23 @@ function Intro(props: IProps) {
     props.history.push(location);
   };
 
+  const changeTheme = () => {
+    let payload: object;
+    if (state.theme === ThemeType.LIGHT) {
+      payload = {
+        theme: ThemeType.DARK,
+      };
+    } else {
+      payload = {
+        theme: ThemeType.LIGHT,
+      };
+    }
+    dispatch({
+      type: 'change-theme-mode',
+      payload,
+    });
+  }
+
   return (
     <Container>
       <ContentWrapper>
@@ -115,14 +132,19 @@ function Intro(props: IProps) {
           imgSrc={IC_GOOGLE_W}
           isLoading={isLoggingIn}
           onClick={() => onLogin()}
-          // white={true}
           text={getString('LOGIN')}
         />
         <Button
           data-testid='btn2'
           onClick={() => navigate()}
-          white={true}
+          isReverse={true}
           text={getString('NAVIGATE')}
+        />
+        <Button
+          data-testid='btn3'
+          onClick={() => changeTheme()}
+          isReverse={true}
+          text={getString('CHANGE_THEME')}
         />
       </ButtonWrapper>
     </Container>
