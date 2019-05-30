@@ -18,7 +18,7 @@
     "react-addons-test-utils": "^15.6.2",
     "react-dom": "^16.8.6",
     "react-router-dom": "^5.0.0",
-    "react-testing-library": "^7.0.1",
+    "react-testing-library": "^8.0.0",
     "styled-components": "^4.2.0"
   },
   "devDependencies": {
