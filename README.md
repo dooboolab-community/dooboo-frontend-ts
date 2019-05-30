@@ -16,7 +16,6 @@ DO NOT MODIFY OR CHANGE THE CODE BEFORE CONFIRMED BY `DOOBOOLAB`. THIS REPOSITOR
 * self localization
 
 ### Gain points
-```
 1. Sample of context-api with `react-hook` (`useContext`).
 2. Know how to structure react web app with `typescript`.
 3. Know how to navigate between screens with `react-router`.
