@@ -79,6 +79,8 @@ npm install && npm start
 yarn && yarn start
 ```
 
+* We recommend using `yarn`.
+
 This runs the `start` script specified in our `package.json`, and will spawn off a server which reloads the page as we save our files.
 Typically the server runs at `http://localhost:8080`, but should be automatically opened for you.
 
