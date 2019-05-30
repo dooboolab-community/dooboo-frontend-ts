@@ -1,12 +1,13 @@
 import React, { useReducer } from 'react';
 import { AppContext } from '../contexts';
 import { IUser, ILocale } from '../types';
+import { ThemeType } from '../theme';
 import STRINGS from '../../STRINGS';
 
 const AppConsumer = AppContext.Consumer;
 
 interface IAction {
-  type: 'reset-user' | 'set-user';
+  type: 'reset-user' | 'set-user' | 'change-theme-mode';
   payload: any;
 }
 
@@ -15,11 +16,13 @@ interface IProps {
 }
 
 export interface IState {
+  theme: ThemeType;
   user: IUser;
   locale?: ILocale;
 }
 
 const initialState: IState = {
+  theme: ThemeType.LIGHT,
   user: {
     displayName: '',
     age: 0,
@@ -33,6 +36,8 @@ const reducer = (state: IState, action: IAction) => {
       return { ...state, user: initialState.user };
     case 'set-user':
       return { ...state, user: action.payload };
+    case 'change-theme-mode':
+      return { ...state, theme: action.payload.theme };
     default:
       return null;
   }

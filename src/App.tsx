@@ -1,16 +1,13 @@
-import * as React from 'react';
+import React, { useContext } from 'react';
 import * as ReactDOM from 'react-dom';
-import { AppProvider as Provider } from './providers';
-import { ThemeProvider } from 'styled-components';
+import { AppProvider as Provider, AppContext } from './providers';
 
-import { theme } from './theme';
+import { createTheme, ThemeType } from './theme';
 import SwitchNavigator from './components/navigation/SwitchNavigator';
 
 ReactDOM.render(
   <Provider>
-    <ThemeProvider theme={theme}>
-      <SwitchNavigator/>
-    </ThemeProvider>
+    <SwitchNavigator/>
   </Provider>,
   document.getElementById('app'),
 );
