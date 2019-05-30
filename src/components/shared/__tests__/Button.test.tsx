@@ -7,7 +7,7 @@ import { IC_FACEBOOK_W } from '../../../utils/Icons';
 // test for the pure component
 describe('[Button] shared component test', () => {
   let tree: any;
-  const component: any = <Button white={true} text='Button 2nd test' />;
+  const component: any = <Button inverted={true} text='Button 2nd test' />;
 
   it('component and snapshot matches', () => {
     tree = renderer.create(component).toJSON();
@@ -50,7 +50,7 @@ describe('[WhiteButton] interaction', () => {
   let component: any;
 
   it('should simulate onClick', () => {
-    component = <Button white={true} onClick={onClick}/>;
+    component = <Button inverted={true} onClick={onClick}/>;
     rendered = renderer.create(component);
     root = rendered.root;
 
@@ -62,13 +62,13 @@ describe('[WhiteButton] interaction', () => {
   });
 
   it('should render isLoading status', () => {
-    component = <Button white={true} isLoading={true}/>;
+    component = <Button inverted={true} isLoading={true}/>;
     rendered = renderer.create(component);
     root = rendered.root;
   });
 
   it('should render img status', () => {
-    component = <Button white={true} imgSrc={IC_FACEBOOK_W}/>;
+    component = <Button inverted={true} imgSrc={IC_FACEBOOK_W}/>;
     rendered = renderer.create(component);
     root = rendered.root;
   });

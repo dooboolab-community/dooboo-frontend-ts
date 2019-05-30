@@ -135,15 +135,13 @@ function Intro(props: IProps) {
           text={getString('LOGIN')}
         />
         <Button
-          data-testid='btn2'
           onClick={() => navigate()}
-          isReverse={true}
+          inverted={true}
           text={getString('NAVIGATE')}
         />
         <Button
-          data-testid='btn3'
           onClick={() => changeTheme()}
-          isReverse={true}
+          inverted={true}
           text={getString('CHANGE_THEME')}
         />
       </ButtonWrapper>

@@ -49,6 +49,8 @@ describe('[Intro] Interaction', () => {
   let root: renderer.ReactTestInstance;
   let renderResult: any;
 
+  afterEach(cleanup);
+
   it('should simulate [onLogin] click with testing library', () => {
     jest.useFakeTimers();
     renderResult = render(component);
@@ -75,5 +77,14 @@ describe('[Intro] Interaction', () => {
       pathname: '/404',
       state: {},
     });
+  });
+
+  it('should change theme when [change theme] has been clicked', () => {
+    renderResult = render(component);
+    const btnChangeTheme = renderResult.getByText(getString('CHANGE_THEME'));
+    const clickResult1 = fireEvent.click(btnChangeTheme);
+    expect(clickResult1).toBe(true);
+    const clickResult2 = fireEvent.click(btnChangeTheme);
+    expect(clickResult2).toBe(true);
   });
 });
