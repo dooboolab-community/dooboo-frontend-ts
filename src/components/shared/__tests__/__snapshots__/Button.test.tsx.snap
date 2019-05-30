@@ -2,7 +2,7 @@
 
 exports[`[Button] shared component test component and snapshot matches 1`] = `
 <button
-  className="sc-bwzfXH jGtnoc"
+  className="sc-bwzfXH czrGzF"
   style={
     Object {
       "height": "60px",
@@ -11,7 +11,7 @@ exports[`[Button] shared component test component and snapshot matches 1`] = `
 >
   <div>
     <span
-      className="sc-htpNat gUfFlb"
+      className="sc-htpNat lnXBCo"
     >
       Button 2nd test
     </span>

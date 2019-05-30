@@ -4,7 +4,7 @@ import { ButtonPrimary, ButtonPrimaryLight } from '../ui/Buttons';
 
 interface IProps {
   id?: string;
-  isReverse?: boolean;
+  inverted?: boolean;
   imgSrc?: any;
   text?: string;
   onClick?: () => void;
@@ -43,8 +43,8 @@ const Spinner = styled.div`
 `;
 
 function Button(props: IProps) {
-  const { isReverse, onClick, imgSrc, text } = props;
-  if (isReverse) {
+  const { inverted, onClick, imgSrc, text } = props;
+  if (inverted) {
     return (
       <ButtonPrimaryLight
         style={{ height: '60px' }}

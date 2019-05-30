@@ -47,7 +47,7 @@ const theme = {
     btnPrimaryLight: colors.whiteGray,
     btnPrimaryLightFont: 'black',
     fontColor: 'white',
-  }
+  },
 };
 
 export const createTheme = (type = ThemeType.LIGHT) => {
