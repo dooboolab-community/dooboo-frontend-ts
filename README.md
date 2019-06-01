@@ -31,12 +31,6 @@ DO NOT MODIFY OR CHANGE THE CODE BEFORE CONFIRMED BY `DOOBOOLAB`. THIS REPOSITOR
   - [Light Mode]
     ![image](https://user-images.githubusercontent.com/27461460/58620232-8f116a80-8301-11e9-8b55-3bb2a743dff8.png)
 
-### INSTALL
-```
-1. npm install
-2. npm start
-```
-
 ### Structures
 ```text
 app/
@@ -48,15 +42,12 @@ app/
 ├─ src/
 │  └─ apis
 │  └─ components
-│     └─ navigation
-│     └─ screen
-│     └─ shared
-│  └─ utils
-│  └─ ui
 │  └─ contexts
 │  └─ providers
-│  └─ index.js
-│  └─ theme.js // global variables for theming in `styled-components`
+│  └─ types
+│  └─ utils
+│  └─ App.tsx
+│  └─ theme.ts
 ├─ test/
 ├─ .eslintrc.js
 ├─ .gitignore
@@ -71,15 +62,12 @@ app/
 └─ webpack.config.js
 ```
 
-### Running the project
-Running the project is as simple as running
+### Install and running the project
+Installing and running the project is as simple as running
 ```sh
-npm install && npm start
-// or
 yarn && yarn start
 ```
-
-* We recommend using `yarn`.
+* Note that we recommend using yarn.
 
 This runs the `start` script specified in our `package.json`, and will spawn off a server which reloads the page as we save our files.
 Typically the server runs at `http://localhost:8080`, but should be automatically opened for you.
@@ -87,7 +75,7 @@ Typically the server runs at `http://localhost:8080`, but should be automaticall
 ### Testing the project
 Testing is also just a command away:
 ```sh
-npm test
+yarn test
  PASS  src/components/shared/__tests__/Button.test.tsx
  PASS  src/components/screen/__tests__/Intro.test.tsx
 
@@ -97,38 +85,11 @@ Snapshots:   2 passed, 2 total
 Time:        2.145s, estimated 3s
 ```
 
-### Adding component
-> Copy sourcecode in /src/components/screen/Temp.tsx
-> Create new tsx file with compnent name you will create
-
-### Adding mobx store
-> Include as many stores as you want in src/stores directory.
-```
-// class in src/stores/appStore.ts
-class Store {
-  @observable public user: User;
-  @observable private locale: Localization;
-
-  constructor() {
-    this.user = new User();
-    this.locale = new Localization();
-  }
-
-  public setLocale(param: Localization) {
-    this.locale = param;
-  }
-
-  public getString = (param: string) => {
-    return this.locale.getString(param);
-  }
-}
-```
-
 ### Writing tests with Jest
-We've created test examples with jest-ts in `src/components/screen/__tests__` and `src/components/shared/__tests__`. Since react is component oriented, we've designed to focus on writing test in same level of directory with component. You can simply run `npm test` to test if it succeeds and look more closer opening the source.
+We've created test examples with jest-ts in `src/components/screen/__tests__` and `src/components/shared/__tests__`. Since react is component oriented, we've designed to focus on writing test in same level of directory with component. You can simply run `yarn test` to test if it succeeds and look more closer opening the source.
 
 ### Localization
-We've defined Localization class in `src/models/Localization.ts`. This model class is used in mobx store which is `src/stores/appStore.ts`. Localization model imports `STRINGS.ts` which handles localized strings.
+We've defined localized strings in `STRING.ts`.
 ```
 const STRINGS = {
   en: { // English
@@ -153,13 +114,47 @@ const STRINGS = {
   },
   ...
 ```
-In `App.tsx` when app starts it search for navigator's locale and set mobx state.
+
+### Theming
+We use `styled-component` to provide theming. We recommend to use color variables inside `theme.ts` and use it else where. We handle this with `context-api` with `react-hook` inside `AppProvider.tsx`.
+```ts
+const reducer = (state: IState, action: IAction) => {
+  switch (action.type) {
+    case 'reset-user':
+      return { ...state, user: initialState.user };
+    case 'set-user':
+      return { ...state, user: action.payload };
+    case 'change-theme-mode':
+      return { ...state, theme: action.payload.theme };
+    default:
+      return null;
+  }
+};
+
+const AppProvider = (props: IProps) => {
+  const [state, dispatch] = useReducer(reducer, initialState);
+  const value = { state, dispatch };
+  const ContextProvider = AppContext.Provider;
+
+  return (
+    <ContextProvider value={value}>
+      {props.children}
+    </ContextProvider>
+  );
+};
 ```
-  const userLang: string = navigator.language;
-  const localization = new Localization();
-  localization.setLocale(userLang);
-  store.setLocale(localization);
-  ...
+
+### Creating components
+> Copy sourcecode in /src/components/screen/Temp.tsx
+> Copy sourcecode in /src/components/screen/__test__/Temp.test.tsx
+> Create new tsx file with compnent name you will create
+
+To do above more easily, you can simly install [dooboo-cli](https://www.npmjs.com/package/dooboo-cli). Then you can easily create [screen] or [shared] components along with `test file` by running below commands.
+```sh
+# screen component
+dooboo screen [MyScreen]
+# shared component
+dooboo shared [MyShared]
 ```
 
 ### React version
