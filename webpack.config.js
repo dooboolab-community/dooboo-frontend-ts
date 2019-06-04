@@ -39,7 +39,7 @@ module.exports = {
                 '@babel/preset-react',
               ],
               plugins: [
-                ['@babel/plugin-proposal-decorators', { 'legacy': true }],
+                'react-hot-loader/babel',
                 '@babel/plugin-proposal-function-sent',
                 '@babel/plugin-proposal-export-namespace-from',
                 '@babel/plugin-proposal-numeric-separator',
@@ -71,7 +71,6 @@ module.exports = {
               presets: [
                 '@babel/preset-env',
                 '@babel/preset-react',
-                '@babel/preset-flow',
               ],
               plugins: [
                 [
