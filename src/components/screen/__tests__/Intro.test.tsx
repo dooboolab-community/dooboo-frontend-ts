@@ -1,6 +1,6 @@
 import React from 'react';
 import * as renderer from 'react-test-renderer';
-import {render, act, fireEvent, cleanup, waitForElement, getByTestId} from 'react-testing-library';
+import {render, act, fireEvent, cleanup, waitForElement, getByTestId} from '@testing-library/react';
 
 import { AppProvider } from '../../../providers';
 import Intro from '../Intro';
