@@ -1,13 +1,25 @@
 import React, { useContext } from 'react';
-import * as ReactDOM from 'react-dom';
+import { render, hydrate } from 'react-dom';
 import { AppProvider as Provider, AppContext } from './providers';
 
-import { createTheme, ThemeType } from './theme';
 import SwitchNavigator from './components/navigation/SwitchNavigator';
 
-ReactDOM.render(
+const rootElement = document.getElementById('app') as HTMLElement;
+
+const Component = () => (
   <Provider>
-    <SwitchNavigator/>
-  </Provider>,
-  document.getElementById('app'),
+    <SwitchNavigator />
+  </Provider>
 );
+
+const renderApp = () => {
+  if (rootElement.hasChildNodes()) {
+    hydrate(<Component />, rootElement);
+  } else {
+    render(<Component />, rootElement);
+  }
+};
+
+renderApp();
+
+if (module.hot) module.hot.accept(['./components/navigation/SwitchNavigator'], () => renderApp());
