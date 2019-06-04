@@ -3,7 +3,7 @@ import * as renderer from 'react-test-renderer';
 
 import Temp from '../Temp';
 import Button from '../../shared/Button';
-import { render, fireEvent, getByTestId } from 'react-testing-library';
+import { render, fireEvent, getByTestId } from '@testing-library/react';
 
 const props = {
   history: {
