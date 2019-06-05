@@ -55,7 +55,7 @@
     "eslint-plugin-standard": "^4.0.0",
     "eslint-plugin-typescript": "^0.14.0",
     "expect": "^24.8.0",
-    "file-loader": "^3.0.1",
+    "file-loader": "^4.0.0",
     "history": "^4.9.0",
     "identity-obj-proxy": "^3.0.0",
     "jest": "^24.8.0",
