@@ -16,7 +16,7 @@ const PrimaryTextLight = styled.span`
   color: ${(props) => props.theme.btnPrimaryLightFont};
 `;
 
-const PrimaryText  = styled.span`
+const PrimaryText = styled.span`
   font-size: 14px;
   color: ${(props) => props.theme.btnPrimaryFont};
 `;
@@ -61,7 +61,7 @@ function Button(props: IProps) {
                   />
                   : null
               }
-            <PrimaryTextLight>{props.text}</PrimaryTextLight>
+              <PrimaryTextLight>{props.text}</PrimaryTextLight>
             </div>
         }
       </ButtonPrimaryLight>
