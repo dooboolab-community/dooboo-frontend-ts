@@ -118,7 +118,7 @@ function Intro(props: IProps) {
       type: 'change-theme-mode',
       payload,
     });
-  }
+  };
 
   return (
     <Container>
