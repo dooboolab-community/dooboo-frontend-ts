@@ -9,7 +9,7 @@
     "tsc": "tsc",
     "test": "jest",
     "production": "NODE_ENV=production webpack -p --config webpack.config.prod.js",
-    "lint": "eslint src/**/**/*.ts && eslint src/**/**/*.tsx"
+    "lint": "eslint src --ext .ts,.tsx"
   },
   "author": "hyochan",
   "license": "MIT",
