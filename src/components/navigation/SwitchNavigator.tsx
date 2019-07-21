@@ -8,7 +8,7 @@ import { createTheme } from '../../theme';
 import Intro from '../screen/Intro';
 import Temp from '../screen/Temp';
 
-interface IProps {
+interface Props {
   store?: any;
 }
 
@@ -20,8 +20,14 @@ function SwitchNavigator(props: {}) {
       <BrowserRouter>
         <div style={{ textAlign: 'center' }}>
           <Switch>
-            <Route exact={true} path='/' render={(param) => <Intro {...param} {...props}/>} />
-            <Route render={(param) => <Temp {...param} {...props}/>} />
+            <Route
+              exact={true}
+              path='/'
+              render={(param) => <Intro {...param} {...props}/>}
+            />
+            <Route
+              render={(param) => <Temp {...param} {...props}/>}
+            />
           </Switch>
         </div>
       </BrowserRouter>

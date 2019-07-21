@@ -5,11 +5,11 @@ import styled from 'styled-components';
 import Button from '../shared/Button';
 
 import { device, ThemeType } from '../../theme';
-import { AppProvider as Provider, AppConsumer, AppContext } from '../../providers';
+import { AppContext } from '../../providers';
 
 import { IC_FACEBOOK_W, IC_GOOGLE_W } from '../../utils/Icons';
 
-import { IUser } from '../../types';
+import { User } from '../../types';
 
 import { getString } from '../../../STRINGS';
 
@@ -70,12 +70,12 @@ const Text = styled.span`
   color: ${(props) => props.theme.fontColor};
 `;
 
-interface IProps {
+interface Props {
   history: any;
   store?: any;
 }
 
-function Intro(props: IProps) {
+function Intro(props: Props) {
   let timer: any;
   const { state, dispatch } = React.useContext(AppContext);
   const [isLoggingIn, setIsLoggingIn] = React.useState(false);
@@ -84,7 +84,7 @@ function Intro(props: IProps) {
     dispatch({ type: 'reset-user' });
     setIsLoggingIn(true);
     timer = setTimeout(() => {
-      const user: IUser = {
+      const user: User = {
         displayName: 'dooboolab',
         age: 30,
         job: 'developer',

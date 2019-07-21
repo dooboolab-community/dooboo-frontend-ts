@@ -1,7 +1,3 @@
-interface ITheme {
-  colors: object
-};
-
 const size = {
   mobileS: '320px',
   mobileM: '375px',
@@ -33,7 +29,10 @@ const colors = {
 
 const theme = {
   light: {
-    background: `linear-gradient(to bottom right, ${colors.lightBackground}, ${colors.lightBackgroundLight})`,
+    background: `linear-gradient(
+      to bottom right,
+      ${colors.lightBackground},
+      ${colors.lightBackgroundLight})`,
     btnPrimary: colors.skyBlue,
     btnPrimaryFont: 'white',
     btnPrimaryLight: colors.whiteGray,
@@ -41,7 +40,10 @@ const theme = {
     fontColor: 'black',
   },
   dark: {
-    background: `linear-gradient(to bottom right, ${colors.darkBackground}, ${colors.darkBackgroundLight})`,
+    background: `linear-gradient(
+      to bottom right,
+      ${colors.darkBackground},
+      ${colors.darkBackgroundLight})`,
     btnPrimary: colors.skyBlue,
     btnPrimaryFont: 'white',
     btnPrimaryLight: colors.whiteGray,

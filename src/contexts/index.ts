@@ -1,11 +1,11 @@
 import * as React from 'react';
-import { IUser, ILocale } from '../types';
+import { User, Locale } from '../types';
 
-interface IAppContext {
-  user?: IUser;
-  locale?: ILocale;
+interface AppContext {
+  user?: User;
+  locale?: Locale;
   state?: any;
   dispatch?: any;
 }
 
-export const AppContext = React.createContext<IAppContext | null>(null);
+export const AppContext = React.createContext<AppContext | null>(null);
