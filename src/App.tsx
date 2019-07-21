@@ -22,4 +22,9 @@ const renderApp = () => {
 
 renderApp();
 
-if (module.hot) module.hot.accept(['./components/navigation/SwitchNavigator'], () => renderApp());
+if (module.hot) {
+  module.hot.accept(
+    ['./components/navigation/SwitchNavigator'],
+    () => renderApp(),
+  );
+}

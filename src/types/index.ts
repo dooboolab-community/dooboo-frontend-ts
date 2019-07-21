@@ -1,10 +1,10 @@
-export interface IUser {
+export interface User {
   displayName: string;
   age: number;
   job: string;
 }
 
-export interface ILocale {
+export interface Locale {
   default: string;
   current: string;
 }

@@ -118,7 +118,7 @@ const STRINGS = {
 ### Theming
 We use `styled-component` to provide theming. We recommend to use color variables inside `theme.ts` and use it else where. We handle this with `context-api` with `react-hook` inside `AppProvider.tsx`.
 ```ts
-const reducer = (state: IState, action: IAction) => {
+const reducer = (state: State, action: Action) => {
   switch (action.type) {
     case 'reset-user':
       return { ...state, user: initialState.user };
@@ -131,7 +131,7 @@ const reducer = (state: IState, action: IAction) => {
   }
 };
 
-const AppProvider = (props: IProps) => {
+const AppProvider = (props: Props) => {
   const [state, dispatch] = useReducer(reducer, initialState);
   const value = { state, dispatch };
   const ContextProvider = AppContext.Provider;

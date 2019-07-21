@@ -2,7 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import { ButtonPrimary, ButtonPrimaryLight } from '../ui/Buttons';
 
-interface IProps {
+interface Props {
   id?: string;
   inverted?: boolean;
   imgSrc?: any;
@@ -42,7 +42,7 @@ const Spinner = styled.div`
   }
 `;
 
-function Button(props: IProps) {
+function Button(props: Props) {
   const { inverted, onClick, imgSrc, text } = props;
   if (inverted) {
     return (
