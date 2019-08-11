@@ -6,7 +6,7 @@ DO NOT MODIFY OR CHANGE THE CODE BEFORE CONFIRMED BY `DOOBOOLAB`. THIS REPOSITOR
 [![CircleCI](https://circleci.com/gh/dooboolab/dooboo-frontend-ts.svg?style=svg)](https://circleci.com/gh/dooboolab/dooboo-frontend-ts) [![Greenkeeper badge](https://badges.greenkeeper.io/dooboolab/dooboo-frontend-ts.svg)](https://greenkeeper.io/)
 
 > Specification
-* [react-native](https://github.com/facebook/react-native)
+* [react](https://github.com/facebook/react)
 * [react-router](https://github.com/ReactTraining/react-router)
 * [typescript](https://github.com/Microsoft/TypeScript)
 * [styled-components](https://github.com/styled-components/styled-components)
