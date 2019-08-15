@@ -1,7 +1,7 @@
 import * as React from 'react';
-import { AppProvider } from '../AppProvider';
-
 import * as renderer from 'react-test-renderer';
+
+import { AppProvider } from '../AppProvider';
 
 describe('[AppProvider] rendering test', () => {
   let json: renderer.ReactTestRendererJSON;
@@ -16,7 +16,7 @@ describe('[AppProvider] rendering test', () => {
 describe('[AppProvider] interactions', () => {
   let rendered: renderer.ReactTestRenderer;
   let root: renderer.ReactTestInstance;
-  const component = <AppProvider/>;
+  const component = <AppProvider />;
 
   const user = {
     displayName: 'dooboolab',

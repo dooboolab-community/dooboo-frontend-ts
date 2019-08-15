@@ -1,6 +1,7 @@
+import { ButtonPrimary, ButtonPrimaryLight } from '../ui/Buttons';
+
 import React from 'react';
 import styled from 'styled-components';
-import { ButtonPrimary, ButtonPrimaryLight } from '../ui/Buttons';
 
 interface Props {
   id?: string;
@@ -37,8 +38,12 @@ const Spinner = styled.div`
   height: 24px;
   animation: spin 1s linear infinite;
   @keyframes spin {
-    0% { transform: rotate(0deg); }
-    100% { transform: rotate(360deg); }
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
   }
 `;
 
@@ -46,46 +51,28 @@ function Button(props: Props) {
   const { inverted, onClick, imgSrc, text } = props;
   if (inverted) {
     return (
-      <ButtonPrimaryLight
-        style={{ height: '60px' }}
-        onClick={onClick}
-      >
-        {
-          props.isLoading
-            ? <Spinner id='spinner'/>
-            : <div>
-              {
-                props.imgSrc
-                  ? <LogoImg
-                    src={props.imgSrc}
-                  />
-                  : null
-              }
-              <PrimaryTextLight>{props.text}</PrimaryTextLight>
-            </div>
-        }
+      <ButtonPrimaryLight style={{ height: '60px' }} onClick={onClick}>
+        {props.isLoading ? (
+          <Spinner id='spinner' />
+        ) : (
+          <div>
+            {props.imgSrc ? <LogoImg src={props.imgSrc} /> : null}
+            <PrimaryTextLight>{props.text}</PrimaryTextLight>
+          </div>
+        )}
       </ButtonPrimaryLight>
     );
   }
   return (
-    <ButtonPrimary
-      style={{ height: '60px' }}
-      onClick={onClick}
-    >
-      {
-        props.isLoading
-          ? <Spinner id='spinner'/>
-          : <div>
-            {
-              props.imgSrc
-                ? <LogoImg
-                  src={props.imgSrc}
-                />
-                : null
-            }
-            <PrimaryText>{props.text}</PrimaryText>
-          </div>
-      }
+    <ButtonPrimary style={{ height: '60px' }} onClick={onClick}>
+      {props.isLoading ? (
+        <Spinner id='spinner' />
+      ) : (
+        <div>
+          {props.imgSrc ? <LogoImg src={props.imgSrc} /> : null}
+          <PrimaryText>{props.text}</PrimaryText>
+        </div>
+      )}
     </ButtonPrimary>
   );
 }

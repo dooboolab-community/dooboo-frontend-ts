@@ -1,12 +1,11 @@
-import React, { useContext } from 'react';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
-import { ThemeProvider } from 'styled-components';
+import React, { useContext } from 'react';
 
 import { AppContext } from '../../contexts';
-
-import { createTheme } from '../../theme';
 import Intro from '../screen/Intro';
 import Temp from '../screen/Temp';
+import { ThemeProvider } from 'styled-components';
+import { createTheme } from '../../theme';
 
 interface Props {
   store?: any;
@@ -23,11 +22,9 @@ function SwitchNavigator(props: {}) {
             <Route
               exact={true}
               path='/'
-              render={(param) => <Intro {...param} {...props}/>}
+              render={(param) => <Intro {...param} {...props} />}
             />
-            <Route
-              render={(param) => <Temp {...param} {...props}/>}
-            />
+            <Route render={(param) => <Temp {...param} {...props} />} />
           </Switch>
         </div>
       </BrowserRouter>

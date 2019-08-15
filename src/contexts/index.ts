@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { User, Locale } from '../types';
+import { Locale, User } from '../types';
 
 interface AppContext {
   user?: User;

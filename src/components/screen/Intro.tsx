@@ -1,17 +1,13 @@
-import React, { Component } from 'react';
-import { Redirect } from 'react-router-dom';
-import styled from 'styled-components';
-
-import Button from '../shared/Button';
-
-import { device, ThemeType } from '../../theme';
-import { AppContext } from '../../providers';
-
 import { IC_FACEBOOK_W, IC_GOOGLE_W } from '../../utils/Icons';
+import React, { Component } from 'react';
+import { ThemeType, device } from '../../theme';
 
+import { AppContext } from '../../providers';
+import Button from '../shared/Button';
+import { Redirect } from 'react-router-dom';
 import { User } from '../../types';
-
 import { getString } from '../../../STRINGS';
+import styled from 'styled-components';
 
 const Container = styled.div`
   display: flex;

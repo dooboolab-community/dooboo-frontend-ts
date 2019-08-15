@@ -1,8 +1,9 @@
+import { Locale, User } from '../types';
 import React, { useReducer } from 'react';
+
 import { AppContext } from '../contexts';
-import { User, Locale } from '../types';
-import { ThemeType } from '../theme';
 import STRINGS from '../../STRINGS';
+import { ThemeType } from '../theme';
 
 const AppConsumer = AppContext.Consumer;
 
@@ -48,11 +49,7 @@ const AppProvider = (props: Props) => {
   const value = { state, dispatch };
   const ContextProvider = AppContext.Provider;
 
-  return (
-    <ContextProvider value={value}>
-      {props.children}
-    </ContextProvider>
-  );
+  return <ContextProvider value={value}>{props.children}</ContextProvider>;
 };
 
 export { AppConsumer, AppProvider, AppContext };
