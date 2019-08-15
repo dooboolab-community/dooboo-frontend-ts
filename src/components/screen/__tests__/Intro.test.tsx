@@ -1,15 +1,11 @@
-import React from 'react';
 import * as renderer from 'react-test-renderer';
-import {
-  render,
-  act,
-  fireEvent,
-  cleanup,
-} from '@testing-library/react';
+
+import { act, cleanup, fireEvent, render } from '@testing-library/react';
 
 import { AppProvider } from '../../../providers';
-import Intro from '../Intro';
 import Button from '../../shared/Button';
+import Intro from '../Intro';
+import React from 'react';
 import { getString } from '../../../../STRINGS';
 
 const props = {
