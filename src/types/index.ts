@@ -1,10 +1,10 @@
-export interface IUser {
+export interface User {
   displayName: string;
   age: number;
   job: string;
 }
 
-export interface ILocale {
-  default: string;
-  current: string;
+export enum ThemeType {
+  LIGHT = 'LIGHT',
+  DARK = 'DARK',
 }

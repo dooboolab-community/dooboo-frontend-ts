@@ -1,17 +1,14 @@
+import { IC_FACEBOOK_W, IC_GOOGLE_W } from '../../utils/Icons';
 import React, { Component } from 'react';
-import { Redirect } from 'react-router-dom';
-import styled from 'styled-components';
 
 import Button from '../shared/Button';
-
-import { device, ThemeType } from '../../theme';
-import { AppProvider as Provider, AppConsumer, AppContext } from '../../providers';
-
-import { IC_FACEBOOK_W, IC_GOOGLE_W } from '../../utils/Icons';
-
-import { IUser } from '../../types';
-
+import { Redirect } from 'react-router-dom';
+import { User } from '../../types';
+import { device } from '../../theme';
 import { getString } from '../../../STRINGS';
+import styled from 'styled-components';
+import { useAppContext } from '../../providers/AppProvider';
+import { useThemeContext } from '../../providers/ThemeProvider';
 
 const Container = styled.div`
   display: flex;
@@ -77,19 +74,20 @@ interface IProps {
 
 function Intro(props: IProps) {
   let timer: any;
-  const { state, dispatch } = React.useContext(AppContext);
+  const { state, setUser, resetUser } = useAppContext();
+  const { changeThemeType } = useThemeContext();
   const [isLoggingIn, setIsLoggingIn] = React.useState(false);
 
   const onLogin = () => {
-    dispatch({ type: 'reset-user' });
+    resetUser();
     setIsLoggingIn(true);
     timer = setTimeout(() => {
-      const user: IUser = {
+      const user: User = {
         displayName: 'dooboolab',
         age: 30,
         job: 'developer',
       };
-      dispatch({ type: 'set-user', payload: user });
+      setUser(user);
       setIsLoggingIn(false);
       clearTimeout(timer);
     }, 1000);
@@ -101,23 +99,6 @@ function Intro(props: IProps) {
       state: {},
     };
     props.history.push(location);
-  };
-
-  const changeTheme = () => {
-    let payload: object;
-    if (state.theme === ThemeType.LIGHT) {
-      payload = {
-        theme: ThemeType.DARK,
-      };
-    } else {
-      payload = {
-        theme: ThemeType.LIGHT,
-      };
-    }
-    dispatch({
-      type: 'change-theme-mode',
-      payload,
-    });
   };
 
   return (
@@ -140,7 +121,7 @@ function Intro(props: IProps) {
           text={getString('NAVIGATE')}
         />
         <Button
-          onClick={() => changeTheme()}
+          onClick={() => changeThemeType()}
           inverted={true}
           text={getString('CHANGE_THEME')}
         />

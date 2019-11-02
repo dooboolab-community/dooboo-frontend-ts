@@ -1,6 +1,4 @@
-interface ITheme {
-  colors: object
-};
+import { ThemeType } from './types';
 
 const size = {
   mobileS: '320px',
@@ -10,11 +8,6 @@ const size = {
   laptop: '1024px',
   laptopL: '1440px',
   desktop: '2560px',
-};
-
-export enum ThemeType {
-  LIGHT = 'LIGHT',
-  DARK = 'DARK',
 };
 
 const colors = {

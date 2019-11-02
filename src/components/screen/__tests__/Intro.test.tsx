@@ -1,10 +1,11 @@
-import React from 'react';
 import * as renderer from 'react-test-renderer';
-import {render, act, fireEvent, cleanup, waitForElement, getByTestId} from '@testing-library/react';
 
-import { AppProvider } from '../../../providers';
-import Intro from '../Intro';
+import {act, cleanup, fireEvent, getByTestId, render, waitForElement} from '@testing-library/react';
+
 import Button from '../../shared/Button';
+import Intro from '../Intro';
+import React from 'react';
+import RootProvider from '../../../providers';
 import { getString } from '../../../../STRINGS';
 
 const props = {
@@ -17,9 +18,9 @@ const props = {
 };
 
 const component = (
-  <AppProvider>
+  <RootProvider>
     <Intro {...props} />
-  </AppProvider>
+  </RootProvider>
 );
 
 let container;
