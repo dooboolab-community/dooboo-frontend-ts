@@ -137,7 +137,9 @@ const RootProvider = ({
   return (
     <AppProvider>
       <ThemeProvider
-        initialThemeType={initialThemeType ? ThemeType.LIGHT : ThemeType.DARK}
+        initialThemeType={
+          initialThemeType === ThemeType.LIGHT ? ThemeType.LIGHT : undefined
+        }
       >
         {children}
       </ThemeProvider>
@@ -163,7 +165,7 @@ function App(): React.ReactElement {
 // test files
 const component = (props): React.ReactElement => {
   return (
-    <RootProvider initialThemeType>
+    <RootProvider initialThemeType={ThemeType.LIGHT}>
       <Intro {...props} />
     </RootProvider>
   );
