@@ -1,5 +1,4 @@
 const isRetina = (first: any, second?: any, third?: any) => {
-  console.log('pixelRatio', window.devicePixelRatio);
   if (window.devicePixelRatio >= 2 && third) {
     return third;
   }

@@ -14,41 +14,27 @@ module.exports = {
     // new webpack.optimize.UglifyJsPlugin(),
   ],
   resolve: {
-    modules: [
-      './node_modules',
-      './functions',
-    ],
+    modules: ['./node_modules', './functions'],
     extensions: ['.ts', '.tsx', '.js', 'jsx'],
   },
   module: {
     rules: [
       {
-        test: /\.ts(x?)$/,
+        test: /\.(js|jsx|tsx|ts)$/,
         use: [
           {
             loader: 'babel-loader',
-            options: {
-              presets: [
-                '@babel/preset-env',
-                '@babel/preset-react',
-              ],
-            },
-          },
-          {
-            loader: 'ts-loader',
-          },
-        ],
-        exclude: [/node_modules/],
-      },
-      {
-        test: /\.js(x?)$/,
-        use: [
-          {
-            loader: 'babel-loader',
-            options: {
-              presets: [
-                '@babel/preset-env',
-                '@babel/preset-react',
+            query: {
+              cacheDirectory: true,
+              presets: ['@babel/preset-env', '@babel/preset-react'],
+              plugins: [
+                [
+                  '@babel/plugin-transform-runtime',
+                  {
+                    helpers: true,
+                    regenerator: false,
+                  },
+                ],
               ],
             },
           },

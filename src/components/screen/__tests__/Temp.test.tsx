@@ -1,9 +1,10 @@
-import React from 'react';
 import * as renderer from 'react-test-renderer';
 
-import Temp from '../Temp';
+import { fireEvent, getByTestId, render } from '@testing-library/react';
+
 import Button from '../../shared/Button';
-import { render, fireEvent, getByTestId } from '@testing-library/react';
+import React from 'react';
+import Temp from '../Temp';
 
 const props = {
   history: {

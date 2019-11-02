@@ -1,8 +1,8 @@
-import React from 'react';
-import Button from '../Button';
-
 import * as renderer from 'react-test-renderer';
+
+import Button from '../Button';
 import { IC_FACEBOOK_W } from '../../../utils/Icons';
+import React from 'react';
 
 // test for the pure component
 describe('[Button] shared component test', () => {
@@ -23,7 +23,7 @@ describe('[Transparent] interaction', () => {
 
   let rendered: renderer.ReactTestRenderer;
   let root: renderer.ReactTestInstance;
-  const component: any = <Button onClick={onClick}/>;
+  const component: any = <Button onClick={onClick} />;
 
   beforeAll(() => {
     rendered = renderer.create(component);
@@ -31,9 +31,7 @@ describe('[Transparent] interaction', () => {
   });
 
   it('Simulate onClick', () => {
-    const button = root.find(
-      (el: any) => el.type === 'button',
-    );
+    const button = root.find((el: any) => el.type === 'button');
     button.props.onClick();
     expect(count).toBe(2);
   });
@@ -50,25 +48,23 @@ describe('[WhiteButton] interaction', () => {
   let component: any;
 
   it('should simulate onClick', () => {
-    component = <Button inverted={true} onClick={onClick}/>;
+    component = <Button inverted={true} onClick={onClick} />;
     rendered = renderer.create(component);
     root = rendered.root;
 
-    const button = root.find(
-      (el: any) => el.type === 'button',
-    );
+    const button = root.find((el: any) => el.type === 'button');
     button.props.onClick();
     expect(count).toBe(2);
   });
 
   it('should render isLoading status', () => {
-    component = <Button inverted={true} isLoading={true}/>;
+    component = <Button inverted={true} isLoading={true} />;
     rendered = renderer.create(component);
     root = rendered.root;
   });
 
   it('should render img status', () => {
-    component = <Button inverted={true} imgSrc={IC_FACEBOOK_W}/>;
+    component = <Button inverted={true} imgSrc={IC_FACEBOOK_W} />;
     rendered = renderer.create(component);
     root = rendered.root;
   });

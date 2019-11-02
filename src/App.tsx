@@ -1,6 +1,6 @@
-import React, { useContext } from 'react';
 import { hydrate, render } from 'react-dom';
 
+import React from 'react';
 import RootProvider from './providers';
 import SwitchNavigator from './components/navigation/SwitchNavigator';
 
@@ -22,4 +22,8 @@ const renderApp = () => {
 
 renderApp();
 
-if (module.hot) module.hot.accept(['./components/navigation/SwitchNavigator'], () => renderApp());
+if (module.hot) {
+  module.hot.accept(['./components/navigation/SwitchNavigator'], () =>
+    renderApp(),
+  );
+}

@@ -24,23 +24,35 @@ const colors = {
   darkBackgroundLight: '#393241',
 };
 
+const light = {
+  background: `linear-gradient(
+    to bottom right,
+    ${colors.lightBackground},
+    ${colors.lightBackgroundLight})`,
+  btnPrimary: colors.skyBlue,
+  btnPrimaryFont: 'white',
+  btnPrimaryLight: colors.whiteGray,
+  btnPrimaryLightFont: 'black',
+  fontColor: 'black',
+};
+
+export type Theme = typeof light;
+
+const dark: Theme = {
+  background: `linear-gradient(
+      to bottom right,
+      ${colors.darkBackground},
+      ${colors.darkBackgroundLight})`,
+  btnPrimary: colors.skyBlue,
+  btnPrimaryFont: 'white',
+  btnPrimaryLight: colors.whiteGray,
+  btnPrimaryLightFont: 'black',
+  fontColor: 'white',
+};
+
 const theme = {
-  light: {
-    background: `linear-gradient(to bottom right, ${colors.lightBackground}, ${colors.lightBackgroundLight})`,
-    btnPrimary: colors.skyBlue,
-    btnPrimaryFont: 'white',
-    btnPrimaryLight: colors.whiteGray,
-    btnPrimaryLightFont: 'black',
-    fontColor: 'black',
-  },
-  dark: {
-    background: `linear-gradient(to bottom right, ${colors.darkBackground}, ${colors.darkBackgroundLight})`,
-    btnPrimary: colors.skyBlue,
-    btnPrimaryFont: 'white',
-    btnPrimaryLight: colors.whiteGray,
-    btnPrimaryLightFont: 'black',
-    fontColor: 'white',
-  },
+  light,
+  dark,
 };
 
 export const createTheme = (type = ThemeType.LIGHT) => {

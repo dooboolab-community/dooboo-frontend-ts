@@ -65,9 +65,6 @@ describe('[Intro] Interaction', () => {
     renderResult = render(component);
     fireEvent.click(renderResult.getByText(getString('LOGIN')));
     expect(setTimeout).toHaveBeenCalledTimes(1);
-    // expect(context.dispatch).toHaveBeenCalledWith({ type: 'reset-user' });
-    // expect(context.dispatch).toHaveBeenCalledWith({ type: 'set-user' }, expect.any(Object));
-    // expect(props.isLoading).toEqual(true); // TODO: test with useState
 
     act(() => {
       jest.runAllTimers();

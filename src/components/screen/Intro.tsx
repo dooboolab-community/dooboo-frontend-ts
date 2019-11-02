@@ -67,12 +67,12 @@ const Text = styled.span`
   color: ${(props) => props.theme.fontColor};
 `;
 
-interface IProps {
+interface Props {
   history: any;
   store?: any;
 }
 
-function Intro(props: IProps) {
+function Intro(props: Props) {
   let timer: any;
   const { state, setUser, resetUser } = useAppContext();
   const { changeThemeType } = useThemeContext();
