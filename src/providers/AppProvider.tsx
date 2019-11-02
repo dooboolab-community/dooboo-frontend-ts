@@ -1,8 +1,8 @@
+import { ILocale, IUser } from '../types';
 import React, { useReducer } from 'react';
+
 import { AppContext } from '../contexts';
-import { IUser, ILocale } from '../types';
 import { ThemeType } from '../theme';
-import STRINGS from '../../STRINGS';
 
 const AppConsumer = AppContext.Consumer;
 
