@@ -5,3 +5,6 @@ node_modules/
 !/dist/favicon.ico
 coverage/
 package-lock.json
+
+# vscode
+.vscode

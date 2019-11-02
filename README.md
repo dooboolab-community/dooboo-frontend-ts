@@ -88,61 +88,143 @@ Time:        2.145s, estimated 3s
 ### Writing tests with Jest
 We've created test examples with jest-ts in `src/components/screen/__tests__` and `src/components/shared/__tests__`. Since react is component oriented, we've designed to focus on writing test in same level of directory with component. You can simply run `yarn test` to test if it succeeds and look more closer opening the source.
 
-### Localization
-We've defined localized strings in `STRING.ts`.
+
+### Vscode prettier and eslint setup
+These are preferred settings for auto linting and validation
+- with [prettier extension](https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode) installed
+- with [eslint extension](https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint) installed
 ```
-const STRINGS = {
-  en: { // English
-    SIGNUP: 'SIGN UP',
-    LOGIN: 'LOGIN',
-    LOGOUT: 'LOGOUT',
-    GOOGLE_LOGIN: 'LOGIN WITH GOOGLE',
-    FACEBOOK_LOGIN: 'LOGIN WITH FACEBOOK',
-    EMAIL: 'EMAIL',
-    PASSWORD: 'PASSWORD',
-    COMPLETE: 'DONE',
-  },
-  ko: { // Korean
-    SIGNUP: '회원가입',
-    LOGIN: '로그인',
-    LOGOUT: '로그아웃',
-    GOOGLE_LOGIN: '구글 로그인',
-    FACEBOOK_LOGIN: '페이스북 로그인',
-    EMAIL: '이메일',
-    PASSWORD: '패스워드',
-    COMPLETE: '완료',
-  },
-  ...
+"eslint.enable": true,
+"eslint.validate": [
+    "javascript",
+    "javascriptreact",
+    "typescript",
+    "typescriptreact"
+],
+// prettier extension setting
+"editor.formatOnSave": true,
+"[javascript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+},
+"[javascriptreact]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+},
+"[typescript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+},
+"[typescriptreact]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+},
+"prettier.singleQuote": true,
+"prettier.trailingComma": "all",
+"prettier.arrowParens": "always",
+"prettier.jsxSingleQuote": true
 ```
 
-### Theming
-We use `styled-component` to provide theming. We recommend to use color variables inside `theme.ts` and use it else where. We handle this with `context-api` with `react-hook` inside `AppProvider.tsx`.
-```ts
-const reducer = (state: IState, action: IAction) => {
-  switch (action.type) {
-    case 'reset-user':
-      return { ...state, user: initialState.user };
-    case 'set-user':
-      return { ...state, user: action.payload };
-    case 'change-theme-mode':
-      return { ...state, theme: action.payload.theme };
-    default:
-      return null;
-  }
-};
 
-const AppProvider = (props: IProps) => {
-  const [state, dispatch] = useReducer(reducer, initialState);
-  const value = { state, dispatch };
-  const ContextProvider = AppContext.Provider;
+### Using Context Api
 
+Whenever you add your own Context provider you can add it to `providers/` and use it inside of `providers/index.tsx`
+
+- [Splitting provider is preferred](https://github.com/facebook/react/issues/15156#issuecomment-474590693)
+
+```tsx
+// Add providers here
+const RootProvider = ({
+  initialThemeType,
+  children,
+}: Props): React.ReactElement => {
   return (
-    <ContextProvider value={value}>
-      {props.children}
-    </ContextProvider>
+    <AppProvider>
+      <ThemeProvider
+        initialThemeType={initialThemeType ? ThemeType.LIGHT : ThemeType.DARK}
+      >
+        {children}
+      </ThemeProvider>
+    </AppProvider>
   );
 };
 ```
+
+The `RootProvider` is being used at `App.tsx` and test files easily
+
+```tsx
+// App.tsx
+function App(): React.ReactElement {
+  return (
+    <RootProvider>
+      <SwitchNavigator />
+    </RootProvider>
+  );
+}
+```
+
+```tsx
+// test files
+const component = (props): React.ReactElement => {
+  return (
+    <RootProvider initialThemeType>
+      <Intro {...props} />
+    </RootProvider>
+  );
+};
+```
+
+> using consistent theme(ThemeType.LIGHT as default) explicitly is encouraged in testing for avoiding unexpected snapshot test errors
+
+
+### Localization
+We've defined localized strings in `assets/lang/en.json and ko.json`.
+```
+// en.json
+{
+  "BUTTON": "Button",
+  "SIGNUP": "Sign Up",
+  "LOGIN": "Login",
+  "LOGOUT": "Logout",
+  "GOOGLE_LOGIN": "Login with Google",
+  "FACEBOOK_LOGIN": "Login with Facebook",
+  "EMAIL": "Email",
+  "EMAIL_HINT": "Write email address.",
+  "PASSWORD": "Password",
+  "PASSWORD_HINT": "Write password.",
+  "COMPLETE": "Done",
+  "GOTO_Temp": "No Page",
+  "BACK": "Back",
+  "NAVIGATE": "Navigate",
+  "CHANGE_THEME": "Change theme"
+}
+
+// ko.json
+ {
+  "BUTTON": "버튼",
+  "SIGNUP": "회원가입",
+  "LOGIN": "로그인",
+  "LOGOUT": "로그아웃",
+  "GOOGLE_LOGIN": "구글 로그인",
+  "FACEBOOK_LOGIN": "페이스북 로그인",
+  "EMAIL": "이메일",
+  "EMAIL_HINT": "이메일 주소를 입력해주세요.",
+  "PASSWORD": "비밀번호",
+  "PASSWORD_HINT": "비밀번호를 입력해주세요.",
+  "COMPLETE": "완료",
+  "GOTO_Temp": "없는 페이지",
+  "BACK": "뒤로",
+  "NAVIGATE": "이동하기",
+  "CHANGE_THEME": "테마 변경"
+}
+```
+
+- How it is used
+
+  > Import locales in `assets/langs`. Currently, `ko.json` and `en.json` is installed. If you want to add more languages you can add it in `STRINGS.ts` and `i18n.translations = { en, ko };` add more languages inside `i18n.translations`.
+
+  ```ts
+  import { getString } from '../../../STRINGS';
+
+  getString('LOGIN');
+  ```
+
 
 ### Creating components
 > Copy sourcecode in /src/components/screen/Temp.tsx

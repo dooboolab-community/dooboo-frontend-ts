@@ -1,7 +1,9 @@
+import {
+  DefaultTheme,
+  ThemeProvider as OriginalThemeProvider,
+} from 'styled-components';
 import React, { useState } from 'react';
 
-import { DefaultTheme } from 'styled-components';
-import { ThemeProvider as OriginalThemeProvider } from 'styled-components';
 import { ThemeType } from '../types';
 import createCtx from '../utils/createCtx';
 import { createTheme } from '../theme';
