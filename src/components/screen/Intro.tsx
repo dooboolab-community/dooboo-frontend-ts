@@ -1,8 +1,7 @@
-import { IC_FACEBOOK_W, IC_GOOGLE_W } from '../../utils/Icons';
-import React, { Component } from 'react';
+import React, { ReactElement } from 'react';
 
 import Button from '../shared/Button';
-import { Redirect } from 'react-router-dom';
+import { IC_GOOGLE_W } from '../../utils/Icons';
 import { User } from '../../types';
 import { device } from '../../theme';
 import { getString } from '../../../STRINGS';
@@ -16,7 +15,7 @@ const Container = styled.div`
   width: 100vw;
   align-self: stretch;
   overflow: scroll;
-  background: ${(props) => props.theme.background};
+  background: ${(props): string => props.theme.background};
 
   flex-direction: column;
   justify-content: flex-start;
@@ -64,7 +63,7 @@ const Text = styled.span`
   font-size: 18px;
   line-height: 1.5;
   font-family: sans-serif;
-  color: ${(props) => props.theme.fontColor};
+  color: ${(props): string => props.theme.fontColor};
 `;
 
 interface Props {
@@ -72,13 +71,13 @@ interface Props {
   store?: any;
 }
 
-function Intro(props: Props) {
+function Intro(props: Props): ReactElement {
   let timer: any;
   const { state, setUser, resetUser } = useAppContext();
   const { changeThemeType } = useThemeContext();
   const [isLoggingIn, setIsLoggingIn] = React.useState(false);
 
-  const onLogin = () => {
+  const onLogin = (): void => {
     resetUser();
     setIsLoggingIn(true);
     timer = setTimeout(() => {
@@ -93,7 +92,7 @@ function Intro(props: Props) {
     }, 1000);
   };
 
-  const navigate = () => {
+  const navigate = (): void => {
     const location: object = {
       pathname: '/404',
       state: {},
@@ -112,16 +111,16 @@ function Intro(props: Props) {
         <Button
           imgSrc={IC_GOOGLE_W}
           isLoading={isLoggingIn}
-          onClick={() => onLogin()}
+          onClick={(): void => onLogin()}
           text={getString('LOGIN')}
         />
         <Button
-          onClick={() => navigate()}
+          onClick={(): void => navigate()}
           inverted={true}
           text={getString('NAVIGATE')}
         />
         <Button
-          onClick={() => changeThemeType()}
+          onClick={(): void => changeThemeType()}
           inverted={true}
           text={getString('CHANGE_THEME')}
         />

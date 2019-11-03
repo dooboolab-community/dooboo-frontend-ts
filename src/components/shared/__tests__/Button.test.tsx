@@ -7,7 +7,7 @@ import React from 'react';
 // test for the pure component
 describe('[Button] shared component test', () => {
   let tree: any;
-  const component: any = <Button inverted={true} text='Button 2nd test' />;
+  const component: any = <Button inverted={true} text="Button 2nd test" />;
 
   it('component and snapshot matches', () => {
     tree = renderer.create(component).toJSON();
@@ -17,7 +17,7 @@ describe('[Button] shared component test', () => {
 
 describe('[Transparent] interaction', () => {
   let count = 1;
-  const onClick = () => {
+  const onClick = (): void => {
     count++;
   };
 
@@ -39,7 +39,7 @@ describe('[Transparent] interaction', () => {
 
 describe('[WhiteButton] interaction', () => {
   let count = 1;
-  const onClick = () => {
+  const onClick = (): void => {
     count++;
   };
 

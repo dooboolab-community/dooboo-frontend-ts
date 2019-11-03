@@ -1,18 +1,18 @@
+import React, { ReactElement } from 'react';
 import { hydrate, render } from 'react-dom';
 
-import React from 'react';
 import RootProvider from './providers';
 import SwitchNavigator from './components/navigation/SwitchNavigator';
 
 const rootElement = document.getElementById('app') as HTMLElement;
 
-const Component = () => (
+const Component = (): ReactElement => (
   <RootProvider>
     <SwitchNavigator />
   </RootProvider>
 );
 
-const renderApp = () => {
+const renderApp = (): void => {
   if (rootElement.hasChildNodes()) {
     hydrate(<Component />, rootElement);
   } else {

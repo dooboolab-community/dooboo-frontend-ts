@@ -1,4 +1,4 @@
-const isRetina = (first: any, second?: any, third?: any) => {
+const isRetina = (first: any, second?: any, third?: any): any => {
   if (window.devicePixelRatio >= 2 && third) {
     return third;
   }

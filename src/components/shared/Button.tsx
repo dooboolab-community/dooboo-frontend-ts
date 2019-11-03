@@ -1,6 +1,6 @@
 import { ButtonPrimary, ButtonPrimaryLight } from '../ui/Buttons';
+import React, { ReactElement } from 'react';
 
-import React from 'react';
 import styled from 'styled-components';
 
 interface Props {
@@ -14,12 +14,12 @@ interface Props {
 
 const PrimaryTextLight = styled.span`
   font-size: 14px;
-  color: ${(props) => props.theme.btnPrimaryLightFont};
+  color: ${(props): string => props.theme.btnPrimaryLightFont};
 `;
 
 const PrimaryText = styled.span`
   font-size: 14px;
-  color: ${(props) => props.theme.btnPrimaryFont};
+  color: ${(props): string => props.theme.btnPrimaryFont};
 `;
 
 const LogoImg = styled.img`
@@ -47,7 +47,7 @@ const Spinner = styled.div`
   }
 `;
 
-function Button(props: Props) {
+function Button(props: Props): ReactElement {
   const { inverted, onClick, imgSrc, text } = props;
   if (inverted) {
     return (
