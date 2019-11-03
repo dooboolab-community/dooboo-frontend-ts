@@ -1,3 +1,6 @@
+import { DefaultTheme } from 'styled-components';
+import { ThemeType } from './types';
+
 const size = {
   mobileS: '320px',
   mobileM: '375px',
@@ -7,11 +10,6 @@ const size = {
   laptopL: '1440px',
   desktop: '2560px',
 };
-
-export enum ThemeType {
-  LIGHT = 'LIGHT',
-  DARK = 'DARK',
-}
 
 const colors = {
   skyBlue: '#069ccd',
@@ -58,7 +56,7 @@ const theme = {
   dark,
 };
 
-export const createTheme = (type = ThemeType.LIGHT) => {
+export const createTheme = (type = ThemeType.LIGHT): DefaultTheme => {
   switch (type) {
     case ThemeType.LIGHT:
       return theme.light;

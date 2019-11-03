@@ -2,23 +2,23 @@
 
 exports[`[Intro] screen rendering test should render outer component and snapshot matches 1`] = `
 <div
-  className="sc-bZQynM kSqyDp"
+  className="sc-bZQynM gZLaUZ"
 >
   <div
     className="sc-gzVnrw coPpBh"
   >
     <span
-      className="sc-dnqmqq ctyQgL"
+      className="sc-dnqmqq VQuaM"
     >
       
     </span>
     <span
-      className="sc-dnqmqq ctyQgL"
+      className="sc-dnqmqq VQuaM"
     >
       
     </span>
     <span
-      className="sc-dnqmqq ctyQgL"
+      className="sc-dnqmqq VQuaM"
     >
       
     </span>
@@ -27,7 +27,7 @@ exports[`[Intro] screen rendering test should render outer component and snapsho
     className="sc-htoDjs jtOwzg"
   >
     <button
-      className="sc-bdVaJa eovVDg"
+      className="sc-bdVaJa hCovpY"
       onClick={[Function]}
       style={
         Object {
@@ -41,14 +41,14 @@ exports[`[Intro] screen rendering test should render outer component and snapsho
           src="test-file-stub"
         />
         <span
-          className="sc-bxivhb hZnkGD"
+          className="sc-bxivhb koiFyU"
         >
           Login
         </span>
       </div>
     </button>
     <button
-      className="sc-bwzfXH czrGzF"
+      className="sc-bwzfXH fzujiv"
       onClick={[Function]}
       style={
         Object {
@@ -58,14 +58,14 @@ exports[`[Intro] screen rendering test should render outer component and snapsho
     >
       <div>
         <span
-          className="sc-htpNat lnXBCo"
+          className="sc-htpNat esLJJJ"
         >
           Navigate
         </span>
       </div>
     </button>
     <button
-      className="sc-bwzfXH czrGzF"
+      className="sc-bwzfXH fzujiv"
       onClick={[Function]}
       style={
         Object {
@@ -75,7 +75,7 @@ exports[`[Intro] screen rendering test should render outer component and snapsho
     >
       <div>
         <span
-          className="sc-htpNat lnXBCo"
+          className="sc-htpNat esLJJJ"
         >
           Change theme
         </span>

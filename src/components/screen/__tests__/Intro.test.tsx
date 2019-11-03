@@ -1,11 +1,19 @@
 import * as renderer from 'react-test-renderer';
 
-import { act, cleanup, fireEvent, render } from '@testing-library/react';
+import {
+  act,
+  cleanup,
+  fireEvent,
+  getByTestId,
+  render,
+  waitForElement,
+} from '@testing-library/react';
 
-import { AppProvider } from '../../../providers';
 import Button from '../../shared/Button';
 import Intro from '../Intro';
 import React from 'react';
+import RootProvider from '../../../providers';
+import { ThemeType } from '../../../types';
 import { getString } from '../../../../STRINGS';
 
 const props = {
@@ -18,9 +26,9 @@ const props = {
 };
 
 const component = (
-  <AppProvider>
+  <RootProvider initialThemeType={ThemeType.LIGHT}>
     <Intro {...props} />
-  </AppProvider>
+  </RootProvider>
 );
 
 let container;

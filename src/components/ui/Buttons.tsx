@@ -14,7 +14,7 @@ export const ButtonPrimary = styled('button')`
   justify-content: center;
   align-items: center;
   cursor: pointer;
-  background: ${(props) => props.theme.btnPrimary};
+  background: ${(props): string => props.theme.btnPrimary};
   opacity: 1;
   // transition: opacity 0.2s;
 
@@ -38,7 +38,7 @@ export const ButtonPrimaryLight = styled('button')`
   justify-content: center;
   align-items: center;
   cursor: pointer;
-  background: ${(props) => props.theme.btnPrimaryLight};
+  background: ${(props): string => props.theme.btnPrimaryLight};
   opacity: 1;
   // transition: opacity 0.2s ease-in-out;
 

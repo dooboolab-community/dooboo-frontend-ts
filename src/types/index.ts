@@ -4,7 +4,7 @@ export interface User {
   job: string;
 }
 
-export interface Locale {
-  default: string;
-  current: string;
+export enum ThemeType {
+  LIGHT = 'LIGHT',
+  DARK = 'DARK',
 }

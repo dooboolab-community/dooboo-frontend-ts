@@ -1,4 +1,5 @@
-import React, { Component } from 'react';
+import React, { ReactElement } from 'react';
+
 import Button from '../shared/Button';
 import styled from 'styled-components';
 
@@ -7,7 +8,7 @@ const Container = styled.div`
   height: 100vh;
   justify-content: center;
   align-items: center;
-  background: ${(props) => props.theme.background};
+  background: ${(props): string => props.theme.background};
   padding: 50px;
 `;
 
@@ -15,14 +16,11 @@ interface Props {
   history?: any;
 }
 
-function Temp(props: Props) {
+function Temp(props: Props): ReactElement {
   const { history } = props;
   return (
     <Container>
-      <Button
-        onClick={() => history.goBack()}
-        text='back to tab page'
-      />
+      <Button onClick={(): void => history.goBack()} text="back to tab page" />
     </Container>
   );
 }
