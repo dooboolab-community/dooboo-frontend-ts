@@ -2,7 +2,7 @@
 
 exports[`[Intro] screen rendering test should render outer component and snapshot matches 1`] = `
 <div
-  className="sc-bZQynM grfgbi"
+  className="sc-bZQynM gZLaUZ"
 >
   <div
     className="sc-gzVnrw coPpBh"
