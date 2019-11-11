@@ -2,20 +2,23 @@
 
 exports[`[Temp] render renders without crashing 1`] = `
 <div
-  className="sc-bZQynM ZUfse"
+  className="sc-EHOje chzpEm"
 >
   <button
-    className="sc-bdVaJa eovVDg"
+    className="sc-bdVaJa hCovpY"
     onClick={[Function]}
     style={
       Object {
+        "display": "flex",
         "height": "60px",
       }
     }
   >
-    <div>
+    <div
+      className="sc-bwzfXH jccYBR"
+    >
       <span
-        className="sc-bxivhb hZnkGD"
+        className="sc-htpNat fsEAzg"
       >
         back to tab page
       </span>

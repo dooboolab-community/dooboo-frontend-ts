@@ -1,30 +1,36 @@
-import { ButtonPrimary, ButtonPrimaryLight } from '../ui/Buttons';
-import React, { ReactElement } from 'react';
+import React, { CSSProperties, ReactElement } from 'react';
 
+import { ButtonPrimary } from '../ui/Buttons';
 import styled from 'styled-components';
 
 interface Props {
   id?: string;
-  inverted?: boolean;
-  imgSrc?: any;
+  style?: CSSProperties;
+  imgSrc?: string;
   text?: string;
   onClick?: () => void;
   isLoading?: boolean;
 }
 
-const PrimaryTextLight = styled.span`
-  font-size: 14px;
-  color: ${(props): string => props.theme.btnPrimaryLightFont};
+const ButtonWrapper = styled.div`
+  flex: 1;
+  height: 100%;
+
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
 `;
 
 const PrimaryText = styled.span`
   font-size: 14px;
-  color: ${(props): string => props.theme.btnPrimaryFont};
+  color: ${({ theme }): string => theme.btnPrimaryFont};
+  margin: auto;
 `;
 
 const LogoImg = styled.img`
   position: absolute;
-  left: 16px;
+  left: 20px;
   height: 20px;
   width: 20px;
   object-fit: cover;
@@ -48,33 +54,23 @@ const Spinner = styled.div`
 `;
 
 function Button(props: Props): ReactElement {
-  const { inverted, onClick, imgSrc, text } = props;
-  if (inverted) {
-    return (
-      <ButtonPrimaryLight style={{ height: '60px' }} onClick={onClick}>
-        {props.isLoading ? (
-          <Spinner id="spinner" />
-        ) : (
-          <div>
-            {props.imgSrc ? <LogoImg src={props.imgSrc} /> : null}
-            <PrimaryTextLight>{props.text}</PrimaryTextLight>
-          </div>
-        )}
-      </ButtonPrimaryLight>
-    );
-  }
+  const { onClick, imgSrc, text, style, isLoading } = props;
   return (
-    <ButtonPrimary style={{ height: '60px' }} onClick={onClick}>
-      {props.isLoading ? (
+    <ButtonPrimary style={style} onClick={onClick}>
+      {isLoading ? (
         <Spinner id="spinner" />
       ) : (
-        <div>
-          {props.imgSrc ? <LogoImg src={props.imgSrc} /> : null}
-          <PrimaryText>{props.text}</PrimaryText>
-        </div>
+        <ButtonWrapper>
+          {imgSrc ? <LogoImg src={imgSrc} /> : null}
+          <PrimaryText>{text}</PrimaryText>
+        </ButtonWrapper>
       )}
     </ButtonPrimary>
   );
 }
+
+Button.defaultProps = {
+  style: { display: 'flex', height: '60px' },
+};
 
 export default Button;

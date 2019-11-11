@@ -1,35 +1,21 @@
 import * as renderer from 'react-test-renderer';
 
 import {
+  RenderResult,
   act,
   cleanup,
   fireEvent,
-  getByTestId,
   render,
-  waitForElement,
 } from '@testing-library/react';
+import { createTestElement, history } from '../../../../test/testUtils';
 
 import Button from '../../shared/Button';
 import Intro from '../Intro';
 import React from 'react';
-import RootProvider from '../../../providers';
-import { ThemeType } from '../../../types';
 import { getString } from '../../../../STRINGS';
 
-const props = {
-  navigation: {
-    navigate: jest.fn(),
-  },
-  history: {
-    push: jest.fn(),
-  },
-};
-
-const component = (
-  <RootProvider initialThemeType={ThemeType.LIGHT}>
-    <Intro {...props} />
-  </RootProvider>
-);
+const props = {};
+const component = createTestElement(<Intro {...props} />);
 
 let container;
 
@@ -56,7 +42,7 @@ describe('[Intro] screen rendering test', () => {
 describe('[Intro] Interaction', () => {
   let rendered: renderer.ReactTestRenderer;
   let root: renderer.ReactTestInstance;
-  let renderResult: any;
+  let renderResult: RenderResult;
 
   afterEach(cleanup);
 
@@ -74,15 +60,13 @@ describe('[Intro] Interaction', () => {
   });
 
   it('should simulate [navigate] when clicked', () => {
+    jest.spyOn(history, 'push');
     rendered = renderer.create(component);
     root = rendered.root;
 
     const buttons = root.findAllByType(Button);
     buttons[1].props.onClick();
-    expect(props.history.push).toBeCalledWith({
-      pathname: '/404',
-      state: {},
-    });
+    expect(history.push).toHaveBeenCalledTimes(1);
   });
 
   it('should change theme when [change theme] has been clicked', () => {

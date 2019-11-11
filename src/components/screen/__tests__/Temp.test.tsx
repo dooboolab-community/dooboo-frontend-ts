@@ -1,36 +1,34 @@
 import * as renderer from 'react-test-renderer';
 
-import { fireEvent, getByTestId, render } from '@testing-library/react';
+import { RenderResult, fireEvent, render } from '@testing-library/react';
+import { createTestElement, history } from '../../../../test/testUtils';
 
-import Button from '../../shared/Button';
 import React from 'react';
 import Temp from '../Temp';
 
-const props = {
-  history: {
-    goBack: jest.fn(),
-  },
-};
+const props = {};
+const component = createTestElement(<Temp {...props} />);
 
 describe('[Temp] render', () => {
   it('renders without crashing', () => {
-    const rendered = renderer.create(<Temp />).toJSON();
+    const rendered = renderer.create(component).toJSON();
     expect(rendered).toMatchSnapshot();
     expect(rendered).toBeTruthy();
   });
 });
 
 describe('[Temp] Interaction', () => {
-  const component = <Temp {...props} />;
-  let renderResult: any;
+  let renderResult: RenderResult;
 
   beforeEach(() => {
     renderResult = render(component);
   });
 
   it('should simulate [onClick] when [btn] has been clicked', () => {
+    jest.spyOn(history, 'goBack');
+
     const btnInstance = renderResult.getByText('back to tab page');
     fireEvent.click(btnInstance);
-    expect(props.history.goBack).toHaveBeenCalledTimes(1);
+    expect(history.goBack).toHaveBeenCalledTimes(1);
   });
 });

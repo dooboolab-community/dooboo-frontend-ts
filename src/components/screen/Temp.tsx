@@ -2,6 +2,7 @@ import React, { ReactElement } from 'react';
 
 import Button from '../shared/Button';
 import styled from 'styled-components';
+import { useHistory } from 'react-router-dom';
 
 const Container = styled.div`
   display: flex;
@@ -12,12 +13,10 @@ const Container = styled.div`
   padding: 50px;
 `;
 
-interface Props {
-  history?: any;
-}
+type Props = {};
 
-function Temp(props: Props): ReactElement {
-  const { history } = props;
+function Temp(): ReactElement {
+  const history = useHistory();
   return (
     <Container>
       <Button onClick={(): void => history.goBack()} text="back to tab page" />

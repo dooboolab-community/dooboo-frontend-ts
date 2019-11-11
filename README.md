@@ -61,6 +61,7 @@ app/
 ├─ .eslintrc.js
 ├─ .gitignore
 ├─ babel.config.js
+├─ environment.d.ts
 ├─ jest.config.js
 ├─ package.json
 ├─ postcss.config.js
@@ -68,7 +69,8 @@ app/
 ├─ STRINGS.js
 ├─ tsconfig.json
 ├─ typings.d.ts
-└─ webpack.config.js
+├─ webpack.config.js
+└─ webpack.config.prod.js
 ```
 
 ### Install and running the project
@@ -103,11 +105,13 @@ Time:        2.145s, estimated 3s
 
 We've created test examples with jest-ts in `src/components/screen/__tests__` and `src/components/shared/__tests__`. Since react is component oriented, we've designed to focus on writing test in same level of directory with component. You can simply run `yarn test` to test if it succeeds and look more closer opening the source.
 
-
 ### Vscode prettier and eslint setup
+
 These are preferred settings for auto linting and validation
+
 - with [prettier extension](https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode) installed
 - with [eslint extension](https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint) installed
+
 ```
 "eslint.enable": true,
 "eslint.validate": [
@@ -135,7 +139,6 @@ These are preferred settings for auto linting and validation
 "prettier.arrowParens": "always",
 "prettier.jsxSingleQuote": true
 ```
-
 
 ### Using Context Api
 
@@ -189,9 +192,10 @@ const component = (props): React.ReactElement => {
 
 > using consistent theme(ThemeType.LIGHT as default) explicitly is encouraged in testing for avoiding unexpected snapshot test errors
 
-
 ### Localization
+
 We've defined localized strings in `assets/lang/en.json and ko.json`.
+
 ```
 // en.json
 {
@@ -241,7 +245,6 @@ We've defined localized strings in `assets/lang/en.json and ko.json`.
 
   getString('LOGIN');
   ```
-
 
 ### Creating components
 
