@@ -4,19 +4,13 @@ import React, { ReactElement } from 'react';
 import Intro from '../screen/Intro';
 import Temp from '../screen/Temp';
 
-function SwitchNavigator(props: {}): ReactElement {
+function SwitchNavigator(): ReactElement {
   return (
     <BrowserRouter>
       <div style={{ textAlign: 'center' }}>
         <Switch>
-          <Route
-            exact={true}
-            path="/"
-            render={(param): ReactElement => <Intro {...param} {...props} />}
-          />
-          <Route
-            render={(param): ReactElement => <Temp {...param} {...props} />}
-          />
+          <Route exact={true} path="/" render={(): ReactElement => <Intro />} />
+          <Route render={(): ReactElement => <Temp />} />
         </Switch>
       </div>
     </BrowserRouter>

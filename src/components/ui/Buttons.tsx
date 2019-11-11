@@ -25,27 +25,3 @@ export const ButtonPrimary = styled('button')`
     opacity: 0.5;
   }
 `;
-
-export const ButtonPrimaryLight = styled('button')`
-  display: flex;
-  width: 100%;
-  height: 100%;
-  border-radius: 3px;
-  border-style: solid;
-  border-width: 1px;
-  margin-bottom: 8px;
-
-  justify-content: center;
-  align-items: center;
-  cursor: pointer;
-  background: ${(props): string => props.theme.btnPrimaryLight};
-  opacity: 1;
-  // transition: opacity 0.2s ease-in-out;
-
-  &:hover {
-    opacity: 0.5;
-  }
-  &:active {
-    opacity: 0.5;
-  }
-`;

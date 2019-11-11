@@ -7,6 +7,7 @@ import { device } from '../../theme';
 import { getString } from '../../../STRINGS';
 import styled from 'styled-components';
 import { useAppContext } from '../../providers/AppProvider';
+import { useHistory } from 'react-router-dom';
 import { useThemeContext } from '../../providers/ThemeProvider';
 
 const Container = styled.div`
@@ -66,13 +67,9 @@ const Text = styled.span`
   color: ${(props): string => props.theme.fontColor};
 `;
 
-interface Props {
-  history: any;
-  store?: any;
-}
-
-function Intro(props: Props): ReactElement {
+function Intro(): ReactElement {
   let timer: any;
+  const history = useHistory();
   const { state, setUser, resetUser } = useAppContext();
   const { changeThemeType } = useThemeContext();
   const [isLoggingIn, setIsLoggingIn] = React.useState(false);
@@ -97,7 +94,7 @@ function Intro(props: Props): ReactElement {
       pathname: '/404',
       state: {},
     };
-    props.history.push(location);
+    history.push(location);
   };
 
   return (
@@ -114,14 +111,9 @@ function Intro(props: Props): ReactElement {
           onClick={(): void => onLogin()}
           text={getString('LOGIN')}
         />
-        <Button
-          onClick={(): void => navigate()}
-          inverted={true}
-          text={getString('NAVIGATE')}
-        />
+        <Button onClick={(): void => navigate()} text={getString('NAVIGATE')} />
         <Button
           onClick={(): void => changeThemeType()}
-          inverted={true}
           text={getString('CHANGE_THEME')}
         />
       </ButtonWrapper>

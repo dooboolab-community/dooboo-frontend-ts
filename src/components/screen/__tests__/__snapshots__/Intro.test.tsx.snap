@@ -2,80 +2,89 @@
 
 exports[`[Intro] screen rendering test should render outer component and snapshot matches 1`] = `
 <div
-  className="sc-bZQynM gZLaUZ"
+  className="sc-EHOje jnQdsg"
 >
   <div
-    className="sc-gzVnrw coPpBh"
+    className="sc-bZQynM iahEzA"
   >
     <span
-      className="sc-dnqmqq VQuaM"
+      className="sc-htoDjs bfpTlg"
     >
       
     </span>
     <span
-      className="sc-dnqmqq VQuaM"
+      className="sc-htoDjs bfpTlg"
     >
       
     </span>
     <span
-      className="sc-dnqmqq VQuaM"
+      className="sc-htoDjs bfpTlg"
     >
       
     </span>
   </div>
   <div
-    className="sc-htoDjs jtOwzg"
+    className="sc-gzVnrw gqpNDZ"
   >
     <button
       className="sc-bdVaJa hCovpY"
       onClick={[Function]}
       style={
         Object {
+          "display": "flex",
           "height": "60px",
         }
       }
     >
-      <div>
+      <div
+        className="sc-bwzfXH jccYBR"
+      >
         <img
-          className="sc-ifAKCX iaWYmM"
+          className="sc-bxivhb aUweh"
           src="test-file-stub"
         />
         <span
-          className="sc-bxivhb koiFyU"
+          className="sc-htpNat fsEAzg"
         >
           Login
         </span>
       </div>
     </button>
     <button
-      className="sc-bwzfXH fzujiv"
+      className="sc-bdVaJa hCovpY"
       onClick={[Function]}
       style={
         Object {
+          "display": "flex",
           "height": "60px",
         }
       }
     >
-      <div>
+      <div
+        className="sc-bwzfXH jccYBR"
+      >
         <span
-          className="sc-htpNat esLJJJ"
+          className="sc-htpNat fsEAzg"
         >
           Navigate
         </span>
       </div>
     </button>
     <button
-      className="sc-bwzfXH fzujiv"
+      className="sc-bdVaJa hCovpY"
       onClick={[Function]}
       style={
         Object {
+          "display": "flex",
           "height": "60px",
         }
       }
     >
-      <div>
+      <div
+        className="sc-bwzfXH jccYBR"
+      >
         <span
-          className="sc-htpNat esLJJJ"
+          className="sc-htpNat fsEAzg"
         >
           Change theme
         </span>

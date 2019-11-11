@@ -1,6 +1,7 @@
 module.exports = {
   moduleNameMapper: {
-    '\\.(jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$': '<rootDir>/__mocks__/fileMock.js',
+    '\\.(jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$':
+      '<rootDir>/__mocks__/fileMock.js',
   },
   coverageDirectory: './coverage/',
   coveragePathIgnorePatterns: [
@@ -14,33 +15,21 @@ module.exports = {
     'src/ui',
   ],
   collectCoverage: true,
-  moduleDirectories: [
-    'node_modules',
-    'src',
-  ],
-  setupFiles: [
-    './test/jestSetup.ts',
-  ],
+  moduleDirectories: ['node_modules', 'src'],
+  setupFiles: ['./test/jestSetup.ts'],
   transform: {
     '^.+\\.(ts|tsx)$': 'ts-jest',
-    '\\.(jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$': '<rootDir>/test/fileTransformer.js',
+    '\\.(jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$':
+      '<rootDir>/test/fileTransformer.js',
   },
   testRegex: '(/__tests__/.*|(\\.|/)(test|spec))\\.(js?|jsx?|ts?|tsx?)$',
-  moduleFileExtensions: [
-    'ts',
-    'tsx',
-    'js',
-    'jsx',
-    'json',
-  ],
-  modulePathIgnorePatterns: [
-    'dist',
-  ],
+  moduleFileExtensions: ['ts', 'tsx', 'js', 'jsx', 'json'],
+  modulePathIgnorePatterns: ['dist'],
   globals: {
-    'window': {},
+    window: {},
     'ts-jest': {
-      'babelConfig': false,
-      'tsConfig': 'tsconfig.json',
+      babelConfig: false,
+      tsConfig: 'tsconfig.json',
     },
   },
 };

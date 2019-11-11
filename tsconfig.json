@@ -11,12 +11,7 @@
     "esModuleInterop": true,
     "importHelpers": true,
     "jsx": "react",
-    "lib": [
-      "dom",
-      "es2015",
-      "es2016",
-      "es2017"
-    ],
+    "lib": ["dom", "es2015", "es2016", "es2017"],
     "skipLibCheck": true,
     "module": "es2015",
     "moduleResolution": "node",
@@ -33,12 +28,7 @@
     // "src/**/*.tsx",
     "./src/**/*"
   ],
-  "exclude": [
-    "node_modules",
-    "**/*.spec.tsx",
-    "**/*.test.tsx"
-  ],
-  "types": [
-    "typePatches"
-  ]
+  "exclude": ["node_modules", "**/*.spec.tsx", "**/*.test.tsx"],
+  "types": ["typePatches"],
+  "files": ["environment.d.ts"]
 }
