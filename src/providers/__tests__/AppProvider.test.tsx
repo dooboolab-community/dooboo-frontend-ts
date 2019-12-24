@@ -1,10 +1,15 @@
 import * as React from 'react';
-import * as renderer from 'react-test-renderer';
 
 import { AppProvider, useAppContext } from '../AppProvider';
+import {
+  RenderResult,
+  act,
+  fireEvent,
+  render,
+} from '@testing-library/react';
 
 const FakeChild = (): React.ReactElement => {
-  const { state, resetUser } = useAppContext();
+  const { state, resetUser, callDefault } = useAppContext();
 
   return (
     <div>
@@ -15,12 +20,18 @@ const FakeChild = (): React.ReactElement => {
           resetUser();
         }}
       />
+      <button
+        data-testid="BUTTON_NOT_VALID"
+        onClick={(): void => {
+          callDefault();
+        }}
+      />
     </div>
   );
 };
 
 describe('[AppProvider] rendering test', () => {
-  let json: renderer.ReactTestRendererJSON;
+  let testingLib: RenderResult;
   const component = (
     <AppProvider>
       <FakeChild />
@@ -28,9 +39,26 @@ describe('[AppProvider] rendering test', () => {
   );
 
   it('component and snapshot matches', () => {
-    json = renderer.create(component).toJSON();
-    expect(json).toMatchSnapshot();
-    expect(json).toBeTruthy();
+    testingLib = render(component);
+    const { baseElement } = testingLib;
+    expect(baseElement).toMatchSnapshot();
+    expect(baseElement).toBeTruthy();
+  });
+
+  it('should call [resetUser] when button pressed', () => {
+    testingLib = render(component);
+    const btn = testingLib.queryByTestId('BUTTON');
+    act(() => {
+      fireEvent.click(btn);
+    });
+  });
+
+  it('should call [default] when button pressed', () => {
+    testingLib = render(component);
+    const btn = testingLib.queryByTestId('BUTTON_NOT_VALID');
+    act(() => {
+      fireEvent.click(btn);
+    });
   });
 });
 

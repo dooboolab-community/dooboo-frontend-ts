@@ -68,6 +68,7 @@ const Text = styled.span`
 `;
 
 function Intro(): ReactElement {
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   let timer: any;
   const history = useHistory();
   const { state, setUser, resetUser } = useAppContext();

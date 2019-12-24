@@ -22,8 +22,10 @@ const renderApp = (): void => {
 
 renderApp();
 
-if (module.hot) {
-  module.hot.accept(['./components/navigation/SwitchNavigator'], () =>
+/* eslint-disable */
+if ((module as any).hot) {
+  (module as any).hot.accept(['./components/navigation/SwitchNavigator'], () =>
     renderApp(),
   );
 }
+/* eslint-enable */
