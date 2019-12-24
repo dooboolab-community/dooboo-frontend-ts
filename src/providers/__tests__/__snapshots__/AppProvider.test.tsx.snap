@@ -1,21 +1,27 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`[AppProvider] rendering test component and snapshot matches 1`] = `
-<div>
-  <div
-    data-testid="TEXT"
-  >
-    {
+<body>
+  <div>
+    <div>
+      <div
+        data-testid="TEXT"
+      >
+        {
   "user": {
     "displayName": "",
     "age": 0,
     "job": ""
   }
 }
+      </div>
+      <button
+        data-testid="BUTTON"
+      />
+      <button
+        data-testid="BUTTON_NOT_VALID"
+      />
+    </div>
   </div>
-  <button
-    data-testid="BUTTON"
-    onClick={[Function]}
-  />
-</div>
+</body>
 `;
