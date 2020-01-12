@@ -33,7 +33,7 @@
     "@babel/plugin-transform-runtime": "7.8.0",
     "@babel/preset-env": "7.8.0",
     "@babel/preset-flow": "^7.8.0",
-    "@babel/preset-react": "7.7.4",
+    "@babel/preset-react": "7.8.0",
     "@babel/preset-typescript": "^7.7.7",
     "@babel/runtime": "7.7.7",
     "@dooboo/eslint-config": "^0.3.4",
