@@ -1,11 +1,13 @@
-import { AbortController } from 'abort-controller';
-import { ROOT_URL_V1 } from './urls';
+export const ROOT_URL = 'http://localhost:3000/api';
 
 export const sample = async (
-  body: object,
-  abortController: AbortController,
-): Promise<object> => {
-  const signal = abortController.signal;
+  body: object | undefined,
+  signal?: AbortSignal | undefined,
+): Promise<Response> => {
+  if (!body) {
+    throw new Error('No request object');
+  }
+
   const fetchOption: RequestInit = {
     signal,
     method: 'POST',
@@ -17,10 +19,8 @@ export const sample = async (
   };
 
   try {
-    const res: Response = await fetch(`${ROOT_URL_V1}/sample`, fetchOption);
-    const resString: string = await res.text();
-    const resJson: object = JSON.parse(resString);
-    return resJson;
+    const res: Response = await fetch(`${ROOT_URL}`, fetchOption);
+    return res;
   } catch (err) {
     throw new Error(err);
   }
