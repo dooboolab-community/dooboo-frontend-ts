@@ -2,32 +2,32 @@
 
 exports[`[Intro] screen rendering test should render outer component and snapshot matches 1`] = `
 <div
-  className="sc-AykKH kEvPvw"
+  className="sc-AxgMl jXmnMG"
 >
   <div
-    className="sc-AykKI jvsToU"
+    className="sc-AxheI ezLxAz"
   >
     <span
-      className="sc-AykKK ztLDi"
+      className="sc-AxmLO gkEgeX"
     >
       
     </span>
     <span
-      className="sc-AykKK ztLDi"
+      className="sc-AxmLO gkEgeX"
     >
       
     </span>
     <span
-      className="sc-AykKK ztLDi"
+      className="sc-AxmLO gkEgeX"
     >
       
     </span>
   </div>
   <div
-    className="sc-AykKJ dbMAGP"
+    className="sc-Axmtr TvOmY"
   >
     <button
-      className="sc-AykKC hXMJWl"
+      className="sc-AxjAm cwAnes"
       onClick={[Function]}
       style={
         Object {
@@ -37,21 +37,21 @@ exports[`[Intro] screen rendering test should render outer component and snapsho
       }
     >
       <div
-        className="sc-AykKD eXbViw"
+        className="sc-AxirZ gvdnJD"
       >
         <img
-          className="sc-AykKF eeCYSW"
+          className="sc-AxhCb doTzn"
           src="test-file-stub"
         />
         <span
-          className="sc-AykKE ekRPzN"
+          className="sc-AxiKw kvcIxV"
         >
           Login
         </span>
       </div>
     </button>
     <button
-      className="sc-AykKC hXMJWl"
+      className="sc-AxjAm cwAnes"
       onClick={[Function]}
       style={
         Object {
@@ -61,17 +61,17 @@ exports[`[Intro] screen rendering test should render outer component and snapsho
       }
     >
       <div
-        className="sc-AykKD eXbViw"
+        className="sc-AxirZ gvdnJD"
       >
         <span
-          className="sc-AykKE ekRPzN"
+          className="sc-AxiKw kvcIxV"
         >
           Navigate
         </span>
       </div>
     </button>
     <button
-      className="sc-AykKC hXMJWl"
+      className="sc-AxjAm cwAnes"
       onClick={[Function]}
       style={
         Object {
@@ -81,10 +81,10 @@ exports[`[Intro] screen rendering test should render outer component and snapsho
       }
     >
       <div
-        className="sc-AykKD eXbViw"
+        className="sc-AxirZ gvdnJD"
       >
         <span
-          className="sc-AykKE ekRPzN"
+          className="sc-AxiKw kvcIxV"
         >
           Change theme
         </span>

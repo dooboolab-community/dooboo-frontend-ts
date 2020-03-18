@@ -2,10 +2,10 @@
 
 exports[`[Temp] render renders without crashing 1`] = `
 <div
-  className="sc-AykKH fQMHDG"
+  className="sc-AxgMl cMyNWu"
 >
   <button
-    className="sc-AykKC hXMJWl"
+    className="sc-AxjAm cwAnes"
     onClick={[Function]}
     style={
       Object {
@@ -15,10 +15,10 @@ exports[`[Temp] render renders without crashing 1`] = `
     }
   >
     <div
-      className="sc-AykKD eXbViw"
+      className="sc-AxirZ gvdnJD"
     >
       <span
-        className="sc-AykKE ekRPzN"
+        className="sc-AxiKw kvcIxV"
       >
         back to tab page
       </span>
