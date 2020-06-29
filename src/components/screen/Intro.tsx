@@ -91,7 +91,7 @@ function Intro(): ReactElement {
   };
 
   const navigate = (): void => {
-    const location: object = {
+    const location: Record<string, any> = {
       pathname: '/404',
       state: {},
     };

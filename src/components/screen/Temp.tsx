@@ -13,13 +13,11 @@ const Container = styled.div`
   padding: 50px;
 `;
 
-type Props = {};
-
 function Temp(): ReactElement {
   const history = useHistory();
   return (
     <Container>
-      <Button onClick={(): void => history.goBack()} text="back to tab page" />
+      <Button onClick={(): void => history.back()} text="back to tab page" />
     </Container>
   );
 }

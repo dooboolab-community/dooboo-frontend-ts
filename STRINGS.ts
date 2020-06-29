@@ -12,7 +12,7 @@ if (navigator) {
 i18n.fallbacks = true;
 i18n.translations = { en, ko };
 
-export const getString = (param: string, mapObj?: object): string => {
+export const getString = (param: string, mapObj?: Record<string, any>): string => {
   if (mapObj) {
     i18n.t(param, mapObj);
   }

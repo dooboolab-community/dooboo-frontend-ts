@@ -25,10 +25,10 @@ describe('[Temp] Interaction', () => {
   });
 
   it('should simulate [onClick] when [btn] has been clicked', () => {
-    jest.spyOn(history, 'goBack');
+    jest.spyOn(history, 'back');
 
     const btnInstance = renderResult.getByText('back to tab page');
     fireEvent.click(btnInstance);
-    expect(history.goBack).toHaveBeenCalledTimes(1);
+    expect(history.back).toHaveBeenCalledTimes(1);
   });
 });
