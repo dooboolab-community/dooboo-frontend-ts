@@ -31,7 +31,7 @@ afterEach(() => {
 
 // test for the container page in dom
 describe('[Intro] screen rendering test', () => {
-  let json: renderer.ReactTestRendererJSON;
+  let json: any;
 
   it('should render outer component and snapshot matches', () => {
     json = renderer.create(component).toJSON();
@@ -50,13 +50,13 @@ describe('[Intro] Interaction', () => {
     jest.useFakeTimers();
     renderResult = render(component);
     fireEvent.click(renderResult.getByText(getString('LOGIN')));
-    expect(setTimeout).toHaveBeenCalledTimes(1);
+    expect(setTimeout).toHaveBeenCalled();
 
     act(() => {
       jest.runAllTimers();
     });
 
-    expect(clearTimeout).toHaveBeenCalledTimes(1);
+    expect(clearTimeout).toHaveBeenCalled();
   });
 
   it('should simulate [navigate] when clicked', () => {

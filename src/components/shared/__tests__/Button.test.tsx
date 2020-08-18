@@ -6,7 +6,7 @@ import React from 'react';
 
 // test for the pure component
 describe('[Button] shared component test', () => {
-  let tree: renderer.ReactTestRendererJSON;
+  let tree: any;
   const component: React.ReactElement = <Button text="Button 2nd test" />;
 
   it('component and snapshot matches', () => {
