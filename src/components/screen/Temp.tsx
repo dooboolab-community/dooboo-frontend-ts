@@ -15,6 +15,7 @@ const Container = styled.div`
 
 function Temp(): ReactElement {
   const history = useHistory();
+
   return (
     <Container>
       <Button onClick={(): void => history.back()} text="back to tab page" />

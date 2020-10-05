@@ -65,16 +65,21 @@ describe('[Intro] Interaction', () => {
     root = rendered.root;
 
     const buttons = root.findAllByType(Button);
+
     buttons[1].props.onClick();
     expect(history.push).toHaveBeenCalledTimes(1);
   });
 
   it('should change theme when [change theme] has been clicked', () => {
     renderResult = render(component);
+
     const btnChangeTheme = renderResult.getByText(getString('CHANGE_THEME'));
     const clickResult1 = fireEvent.click(btnChangeTheme);
+
     expect(clickResult1).toBe(true);
+
     const clickResult2 = fireEvent.click(btnChangeTheme);
+
     expect(clickResult2).toBe(true);
   });
 });

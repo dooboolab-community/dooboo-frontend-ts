@@ -17,6 +17,7 @@ describe('[Button] shared component test', () => {
 
 describe('[Transparent] interaction', () => {
   let count = 1;
+
   const onClick = (): void => {
     count++;
   };
@@ -34,6 +35,7 @@ describe('[Transparent] interaction', () => {
     const button = root.find(
       (el: renderer.ReactTestInstance) => el.type === 'button',
     );
+
     button.props.onClick();
     expect(count).toBe(2);
   });
@@ -41,6 +43,7 @@ describe('[Transparent] interaction', () => {
 
 describe('[WhiteButton] interaction', () => {
   let count = 1;
+
   const onClick = (): void => {
     count++;
   };
@@ -57,6 +60,7 @@ describe('[WhiteButton] interaction', () => {
     const button = root.find(
       (el: renderer.ReactTestInstance) => el.type === 'button',
     );
+
     button.props.onClick();
     expect(count).toBe(2);
   });

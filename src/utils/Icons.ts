@@ -9,9 +9,11 @@ const isRetina = (first: string, second?: string, third?: string): string => {
   if (window.devicePixelRatio >= 1 && third) {
     return third;
   }
+
   if (window.devicePixelRatio >= 0.5 && second) {
     return second;
   }
+
   return first;
 };
 

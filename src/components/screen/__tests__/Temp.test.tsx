@@ -12,6 +12,7 @@ const component = createTestElement(<Temp {...props} />);
 describe('[Temp] render', () => {
   it('renders without crashing', () => {
     const rendered = renderer.create(component).toJSON();
+
     expect(rendered).toMatchSnapshot();
     expect(rendered).toBeTruthy();
   });
@@ -28,6 +29,7 @@ describe('[Temp] Interaction', () => {
     jest.spyOn(history, 'back');
 
     const btnInstance = renderResult.getByText('back to tab page');
+
     fireEvent.click(btnInstance);
     expect(history.back).toHaveBeenCalledTimes(1);
   });

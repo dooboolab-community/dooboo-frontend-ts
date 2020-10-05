@@ -27,12 +27,15 @@ const checkImageExists = (
   callback: (err: Error, val: boolean) => void,
 ): void => {
   const img = new Image();
+
   img.onload = function(): void {
     callback(null, true);
   };
+
   img.onerror = function(): void {
     callback(new Error('error'), false);
   };
+
   img.src = url;
 };
 

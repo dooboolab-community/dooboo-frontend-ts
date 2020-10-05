@@ -78,12 +78,14 @@ function Intro(): ReactElement {
   const onLogin = (): void => {
     resetUser();
     setIsLoggingIn(true);
+
     timer = setTimeout(() => {
       const user: User = {
         displayName: 'dooboolab',
         age: 30,
         job: 'developer',
       };
+
       setUser(user);
       setIsLoggingIn(false);
       clearTimeout(timer);
@@ -95,6 +97,7 @@ function Intro(): ReactElement {
       pathname: '/404',
       state: {},
     };
+
     history.push(location);
   };
 

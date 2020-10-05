@@ -55,6 +55,7 @@ const Spinner = styled.div`
 
 function Button(props: Props): ReactElement {
   const { onClick, imgSrc, text, style, isLoading } = props;
+
   return (
     <ButtonPrimary style={style} onClick={onClick}>
       {isLoading ? (
