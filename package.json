@@ -4,8 +4,7 @@
   "description": "Build react app with typescript.",
   "postinstall": "tsc",
   "scripts": {
-    "dev": "webpack-dev-server",
-    "start": "webpack-dev-server -d --hot --config webpack.config.js --watch",
+    "start": "webpack serve --hot --config webpack.config.js --watch",
     "tsc": "tsc",
     "test": "jest",
     "production": "NODE_ENV=production webpack -p --config webpack.config.prod.js",
