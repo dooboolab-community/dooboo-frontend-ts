@@ -68,6 +68,6 @@ jobs:
 
 workflows:
   version: 2
-  node-android-ios:
+  node:
     jobs:
       - node
