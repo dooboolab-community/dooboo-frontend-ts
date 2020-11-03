@@ -5,6 +5,7 @@ const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 
 module.exports = {
   mode: 'development',
+  target: 'web',
   entry: {
     app: './src/App.tsx',
   },
