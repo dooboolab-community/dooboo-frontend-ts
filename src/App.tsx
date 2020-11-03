@@ -21,11 +21,3 @@ const renderApp = (): void => {
 };
 
 renderApp();
-
-/* eslint-disable */
-if ((module as any).hot) {
-  (module as any).hot.accept(['./components/navigation/SwitchNavigator'], () =>
-    renderApp(),
-  );
-}
-/* eslint-enable */

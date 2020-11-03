@@ -1,7 +1,11 @@
 const webpack = require('webpack');
 const path = require('path');
+const ReactRefreshWebpackPlugin = require('@pmmmwh/react-refresh-webpack-plugin');
+const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 
 module.exports = {
+  mode: 'development',
+  target: 'web',
   entry: {
     app: './src/App.tsx',
   },
@@ -10,7 +14,12 @@ module.exports = {
     filename: 'bundle.js',
     publicPath: '/',
   },
-  plugins: [],
+  plugins: [
+    new ReactRefreshWebpackPlugin(),
+    new CleanWebpackPlugin({
+      cleanOnceBeforeBuildPatterns: ['!dist/favicon.ico', '!dist/index.html'],
+    }),
+  ],
   resolve: {
     modules: ['./node_modules'],
     extensions: ['.ts', '.tsx', '.js', 'jsx'],
@@ -21,6 +30,7 @@ module.exports = {
     host: 'localhost',
     port: 8080,
     historyApiFallback: true,
+    hot: true,
   },
   module: {
     rules: [
@@ -29,10 +39,11 @@ module.exports = {
         use: [
           {
             loader: 'babel-loader',
-            query: {
+            options: {
               cacheDirectory: true,
               presets: ['@babel/preset-env', '@babel/preset-react'],
               plugins: [
+                'react-refresh/babel',
                 [
                   '@babel/plugin-transform-runtime',
                   {

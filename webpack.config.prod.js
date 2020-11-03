@@ -24,7 +24,7 @@ module.exports = {
         use: [
           {
             loader: 'babel-loader',
-            query: {
+            options: {
               cacheDirectory: true,
               presets: ['@babel/preset-env', '@babel/preset-react'],
               plugins: [
