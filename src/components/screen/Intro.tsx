@@ -4,7 +4,7 @@ import Button from '../shared/Button';
 import { IC_GOOGLE_W } from '../../utils/Icons';
 import { User } from '../../types';
 import { device } from '../../theme';
-import { getString } from '../../../STRINGS';
+import { fbt } from 'fbt';
 import styled from 'styled-components';
 import { useAppContext } from '../../providers/AppProvider';
 import { useHistory } from 'react-router-dom';
@@ -113,12 +113,12 @@ function Intro(): ReactElement {
           imgSrc={IC_GOOGLE_W}
           isLoading={isLoggingIn}
           onClick={(): void => onLogin()}
-          text={getString('LOGIN')}
+          text={fbt('Sign In', 'sign in')}
         />
-        <Button onClick={(): void => navigate()} text={getString('NAVIGATE')} />
+        <Button onClick={(): void => navigate()} text={fbt('Navigate', 'navigate')} />
         <Button
           onClick={(): void => changeThemeType()}
-          text={getString('CHANGE_THEME')}
+          text={fbt('Change theme', 'change theme')}
         />
       </ButtonWrapper>
     </Container>

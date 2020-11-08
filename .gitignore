@@ -1,7 +1,20 @@
 .DS_Store
 node_modules/
+build
 /dist/*
 !/dist/*.html
+!/dist/manifest.json
 !/dist/favicon.ico
 coverage/
 package-lock.json
+.env
+yarn-error*
+firebase-debug.log
+
+# fbt
+.enum_manifest.json
+.source_strings.json
+.src_manifest.json
+
+# firebase hosting
+hosting.*

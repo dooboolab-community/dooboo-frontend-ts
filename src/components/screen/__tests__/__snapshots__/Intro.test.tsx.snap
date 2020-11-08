@@ -46,7 +46,7 @@ exports[`[Intro] screen rendering test should render outer component and snapsho
         <span
           className="sc-dlfnbm fHfxuU"
         >
-          Login
+          Sign In
         </span>
       </div>
     </button>

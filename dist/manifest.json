@@ -1,0 +1,22 @@
+{
+  "name": "dooboo",
+  "short_name": "dooboo",
+  "orientation": "any",
+  "display": "standalone",
+  "start_url": "/",
+  "description": "dooboo web service",
+  "background_color": "#414d6b",
+  "theme_color": "#414d6b",
+  "icons": [
+      {
+          "src": "assets/icon192.png",
+          "sizes": "192x192",
+          "type": "image/png"
+      },
+      {
+          "src": "assets/icon.png",
+          "sizes": "512x512",
+          "type": "image/png"
+      }
+  ]
+}

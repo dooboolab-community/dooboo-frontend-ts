@@ -1,0 +1,35 @@
+{
+  "fb-locale": "ko",
+  "translations": {
+    "OuK0B3eFPD+L53gMQ+E+oA==": {
+      "tokens": [],
+      "types": [],
+      "translations": [
+        {
+          "translation": "로그인",
+          "variations": {}
+        }
+      ]
+    },
+    "KWXqPXwlrdxfUS3Fw/zGjg==": {
+      "tokens": [],
+      "types": [],
+      "translations": [
+        {
+          "translation": "화면전환",
+          "variations": {}
+        }
+      ]
+    },
+    "/9/aLrtC2wMTOdaA6+UDnQ==": {
+      "tokens": [],
+      "types": [],
+      "translations": [
+        {
+          "translation": "테마변경",
+          "variations": {}
+        }
+      ]
+    }
+  }
+}
