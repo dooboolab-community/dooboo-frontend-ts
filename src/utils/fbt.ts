@@ -1,5 +1,5 @@
 import { init } from 'fbt';
-import intl from './translatedFbts.json';
+import intl from '../../assets/translatedFbts.json';
 
 const DEFAULT_LOCALE = 'en';
 
