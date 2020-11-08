@@ -39,7 +39,7 @@ exports[`[SwitchNavigator] rendering should renders without crashing 1`] = `
               <span
                 class="sc-dlfnbm fHfxuU"
               >
-                Login
+                Sign In
               </span>
             </div>
           </button>

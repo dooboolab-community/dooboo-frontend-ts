@@ -24,12 +24,12 @@ module.exports = {
   },
   testRegex: '(/__tests__/.*|(\\.|/)(test|spec))\\.(js?|jsx?|ts?|tsx?)$',
   moduleFileExtensions: ['ts', 'tsx', 'js', 'jsx', 'json'],
-  modulePathIgnorePatterns: ['dist'],
+  modulePathIgnorePatterns: ['dist', 'build'],
   globals: {
     window: {},
     'ts-jest': {
-      babelConfig: false,
-      tsConfig: 'tsconfig.json',
+      babelConfig: true,
+      tsconfig: 'tsconfig.json',
     },
   },
 };

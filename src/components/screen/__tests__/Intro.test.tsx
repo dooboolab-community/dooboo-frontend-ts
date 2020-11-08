@@ -12,7 +12,6 @@ import { createTestElement, history } from '../../../../test/testUtils';
 import Button from '../../shared/Button';
 import Intro from '../Intro';
 import React from 'react';
-import { getString } from '../../../../STRINGS';
 
 const props = {};
 const component = createTestElement(<Intro {...props} />);
@@ -49,7 +48,7 @@ describe('[Intro] Interaction', () => {
   it('should simulate [onLogin] click with testing library', () => {
     jest.useFakeTimers();
     renderResult = render(component);
-    fireEvent.click(renderResult.getByText(getString('LOGIN')));
+    fireEvent.click(renderResult.getByText('Sign In'));
     expect(setTimeout).toHaveBeenCalled();
 
     act(() => {
@@ -73,7 +72,7 @@ describe('[Intro] Interaction', () => {
   it('should change theme when [change theme] has been clicked', () => {
     renderResult = render(component);
 
-    const btnChangeTheme = renderResult.getByText(getString('CHANGE_THEME'));
+    const btnChangeTheme = renderResult.getByText('Change theme');
     const clickResult1 = fireEvent.click(btnChangeTheme);
 
     expect(clickResult1).toBe(true);

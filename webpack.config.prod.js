@@ -1,7 +1,12 @@
-const webpack = require('webpack');
 const path = require('path');
+const manifest = require('./dist/manifest.json');
+const { GenerateSW } = require('workbox-webpack-plugin');
+const WebpackPwaManifest = require('webpack-pwa-manifest');
+const pwaPlugin = new WebpackPwaManifest(manifest);
+const Dotenv = require('dotenv-webpack');
 
 module.exports = {
+  mode: 'production',
   entry: {
     app: './src/App.tsx',
   },
@@ -11,7 +16,24 @@ module.exports = {
     publicPath: '/',
   },
   plugins: [
-    // new webpack.optimize.UglifyJsPlugin(),
+    new Dotenv({ systemvars: true }),
+    pwaPlugin,
+    new GenerateSW({
+      clientsClaim: true,
+      skipWaiting: true,
+      maximumFileSizeToCacheInBytes: 5000000,
+      exclude: [/\.(?:png|jpg|jpeg|svg)$/],
+      runtimeCaching: [{
+        urlPattern: /\.(?:png|jpg|jpeg|svg)$/,
+        handler: 'CacheFirst',
+        options: {
+          cacheName: 'images',
+          expiration: {
+            maxEntries: 10,
+          },
+        },
+      }],
+    }),
   ],
   resolve: {
     modules: ['./node_modules', './functions'],
@@ -24,19 +46,6 @@ module.exports = {
         use: [
           {
             loader: 'babel-loader',
-            options: {
-              cacheDirectory: true,
-              presets: ['@babel/preset-env', '@babel/preset-react'],
-              plugins: [
-                [
-                  '@babel/plugin-transform-runtime',
-                  {
-                    helpers: true,
-                    regenerator: false,
-                  },
-                ],
-              ],
-            },
           },
         ],
         exclude: [/node_modules/],
