@@ -41,22 +41,28 @@ jobs:
             - node_modules
 
       - run:
+          name: FBT
+          working_directory: .
+          command: |
+            yarn fbt-all
+
+      - run:
           name: Lint Test
           working_directory: .
           command: |
-            npm run lint
+            yarn lint
 
       - run:
           name: Typescript Test
           working_directory: .
           command: |
-            npm run tsc
+            yarn tsc
 
       - run:
           name: Jest Test
           command: |
             mkdir -p coverage
-            yarn run test
+            yarn test
           environment:
             JEST_JUNIT_OUTPUT: test-results/jest/junit.xml
 
