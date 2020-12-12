@@ -2,8 +2,8 @@
   "name": "dooboo-starter",
   "version": "1.0.0",
   "description": "Build react app with typescript.",
-  "postinstall": "tsc",
   "scripts": {
+    "postinstall": "yarn fbt:all",
     "start": "webpack serve --config webpack.config.js",
     "tsc": "tsc",
     "test": "jest",
@@ -16,7 +16,7 @@
     "translate-fbts-single-file": "babel-node node_modules/.bin/fbt-translate --jenkins --stdin < translation_input.json > assets/translatedFbts.json",
     "test-translate-fbts-into-output-dir": "babel-node node_modules/.bin/fbt-translate --translations assets/translations/*.json --jenkins --output-dir assets/translatedFbts",
     "clean-fbts": "rm .enum_manifest.json .src_manifest.json .source_strings.json assets/translatedFbts.json 2&> /dev/null || exit 0",
-    "fbt-all": "yarn manifest && yarn collect-fbts && yarn translate-fbts"
+    "fbt:all": "yarn manifest && yarn collect-fbts && yarn translate-fbts"
   },
   "author": "hyochan",
   "license": "MIT",
