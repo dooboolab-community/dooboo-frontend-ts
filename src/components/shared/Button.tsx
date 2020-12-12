@@ -58,14 +58,13 @@ function Button(props: Props): ReactElement {
 
   return (
     <ButtonPrimary style={style} onClick={onClick}>
-      {isLoading ? (
-        <Spinner id="spinner" />
-      ) : (
-        <ButtonWrapper>
+      {isLoading
+        ? <Spinner id="spinner" />
+        : <ButtonWrapper>
           {imgSrc ? <LogoImg src={imgSrc} /> : null}
           <PrimaryText>{text}</PrimaryText>
         </ButtonWrapper>
-      )}
+      }
     </ButtonPrimary>
   );
 }
