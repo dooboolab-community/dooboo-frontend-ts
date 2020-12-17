@@ -1,38 +1,50 @@
 const path = require('path');
-const manifest = require('./dist/manifest.json');
-const { GenerateSW } = require('workbox-webpack-plugin');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
+const CopyPlugin = require('copy-webpack-plugin');
 const WebpackPwaManifest = require('webpack-pwa-manifest');
-const pwaPlugin = new WebpackPwaManifest(manifest);
 const Dotenv = require('dotenv-webpack');
 
 module.exports = {
   mode: 'production',
   entry: {
     app: './src/App.tsx',
+    'service-worker': './src/service-worker.ts',
   },
   output: {
     path: path.resolve(__dirname, './dist'),
-    filename: 'bundle.js',
+    filename: '[name].js',
     publicPath: '/',
   },
   plugins: [
+    new CopyPlugin({
+      patterns: [
+        { from: './public', to: './' },
+      ],
+    }),
+    new HtmlWebpackPlugin({
+      inject: true,
+      template: './src/index.html',
+    }),
     new Dotenv({ systemvars: true }),
-    pwaPlugin,
-    new GenerateSW({
-      clientsClaim: true,
-      skipWaiting: true,
-      maximumFileSizeToCacheInBytes: 5000000,
-      exclude: [/\.(?:png|jpg|jpeg|svg)$/],
-      runtimeCaching: [{
-        urlPattern: /\.(?:png|jpg|jpeg|svg)$/,
-        handler: 'CacheFirst',
-        options: {
-          cacheName: 'images',
-          expiration: {
-            maxEntries: 10,
-          },
+    new WebpackPwaManifest({
+      name: 'dooboo',
+      short_name: 'dooboo',
+      orientation: 'any',
+      display: 'standalone',
+      start_url: '/',
+      description: 'dooboo web service',
+      background_color: '#414d6b',
+      theme_color: '#414d6b',
+      icons: [
+        {
+          src: path.resolve('assets/icon192.png'),
+          size: '192x192',
         },
-      }],
+        {
+          src: path.resolve('assets/icon.png'),
+          size: '512x512',
+        },
+      ],
     }),
   ],
   resolve: {
@@ -43,6 +55,7 @@ module.exports = {
     rules: [
       {
         test: /\.(js|jsx|tsx|ts)$/,
+        include: path.resolve('src'),
         use: [
           {
             loader: 'babel-loader',
