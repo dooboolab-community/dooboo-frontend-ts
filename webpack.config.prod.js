@@ -8,11 +8,10 @@ module.exports = {
   mode: 'production',
   entry: {
     app: './src/App.tsx',
-    'service-worker': './src/service-worker.ts',
   },
   output: {
     path: path.resolve(__dirname, './dist'),
-    filename: '[name].js',
+    filename: 'bundle.js',
     publicPath: '/',
   },
   plugins: [
