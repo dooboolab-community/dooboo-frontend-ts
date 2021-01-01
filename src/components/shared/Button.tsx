@@ -1,6 +1,6 @@
-import React, { CSSProperties, ReactElement } from 'react';
+import React, {CSSProperties, ReactElement} from 'react';
 
-import { ButtonPrimary } from '../ui/Buttons';
+import {ButtonPrimary} from '../ui/Buttons';
 import styled from 'styled-components';
 
 interface Props {
@@ -24,7 +24,7 @@ const ButtonWrapper = styled.div`
 
 const PrimaryText = styled.span`
   font-size: 14px;
-  color: ${({ theme }): string => theme.btnPrimaryFont};
+  color: ${({theme}): string => theme.btnPrimaryFont};
   margin: auto;
 `;
 
@@ -54,23 +54,24 @@ const Spinner = styled.div`
 `;
 
 function Button(props: Props): ReactElement {
-  const { onClick, imgSrc, text, style, isLoading } = props;
+  const {onClick, imgSrc, text, style, isLoading} = props;
 
   return (
     <ButtonPrimary style={style} onClick={onClick}>
-      {isLoading
-        ? <Spinner id="spinner" />
-        : <ButtonWrapper>
+      {isLoading ? (
+        <Spinner id="spinner" />
+      ) : (
+        <ButtonWrapper>
           {imgSrc ? <LogoImg src={imgSrc} /> : null}
           <PrimaryText>{text}</PrimaryText>
         </ButtonWrapper>
-      }
+      )}
     </ButtonPrimary>
   );
 }
 
 Button.defaultProps = {
-  style: { display: 'flex', height: '60px' },
+  style: {display: 'flex', height: '60px'},
 };
 
 export default Button;

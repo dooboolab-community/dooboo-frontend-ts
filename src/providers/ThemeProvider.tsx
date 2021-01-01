@@ -2,11 +2,11 @@ import {
   DefaultTheme,
   ThemeProvider as OriginalThemeProvider,
 } from 'styled-components';
-import React, { useState } from 'react';
+import React, {useState} from 'react';
 
-import { ThemeType } from '../types';
+import {ThemeType} from '../types';
 import createCtx from '../utils/createCtx';
-import { createTheme } from '../theme';
+import {createTheme} from '../theme';
 
 interface Context {
   theme: DefaultTheme;
@@ -45,11 +45,10 @@ function ThemeProvider({
         changeThemeType,
         themeType,
         theme,
-      }}
-    >
+      }}>
       <OriginalThemeProvider theme={theme}>{children}</OriginalThemeProvider>
     </Provider>
   );
 }
 
-export { useCtx as useThemeContext, ThemeProvider };
+export {useCtx as useThemeContext, ThemeProvider};

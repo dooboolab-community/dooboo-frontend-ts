@@ -28,11 +28,11 @@ const checkImageExists = (
 ): void => {
   const img = new Image();
 
-  img.onload = function(): void {
+  img.onload = (): void => {
     callback(null, true);
   };
 
-  img.onerror = function(): void {
+  img.onerror = (): void => {
     callback(new Error('error'), false);
   };
 

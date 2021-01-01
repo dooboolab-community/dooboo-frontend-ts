@@ -7,7 +7,7 @@ import {
   fireEvent,
   render,
 } from '@testing-library/react';
-import { createTestElement, history } from '../../../../test/testUtils';
+import {createTestElement, history} from '../../../../test/testUtils';
 
 import Button from '../../shared/Button';
 import Intro from '../Intro';

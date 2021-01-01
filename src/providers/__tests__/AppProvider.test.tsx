@@ -1,15 +1,10 @@
 import * as React from 'react';
 
-import { AppProvider, useAppContext } from '../AppProvider';
-import {
-  RenderResult,
-  act,
-  fireEvent,
-  render,
-} from '@testing-library/react';
+import {AppProvider, useAppContext} from '../AppProvider';
+import {RenderResult, act, fireEvent, render} from '@testing-library/react';
 
 const FakeChild = (): React.ReactElement => {
-  const { state, resetUser, callDefault } = useAppContext();
+  const {state, resetUser, callDefault} = useAppContext();
 
   return (
     <div>
@@ -42,7 +37,7 @@ describe('[AppProvider] rendering test', () => {
   it('component and snapshot matches', () => {
     testingLib = render(component);
 
-    const { baseElement } = testingLib;
+    const {baseElement} = testingLib;
 
     expect(baseElement).toMatchSnapshot();
     expect(baseElement).toBeTruthy();

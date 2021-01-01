@@ -1,5 +1,5 @@
-import { DefaultTheme } from 'styled-components';
-import { ThemeType } from './types';
+import {DefaultTheme} from 'styled-components';
+import {ThemeType} from './types';
 
 const size = {
   mobileS: '320px',

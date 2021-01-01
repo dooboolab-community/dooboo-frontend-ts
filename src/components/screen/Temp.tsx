@@ -1,8 +1,8 @@
-import React, { ReactElement } from 'react';
+import React, {ReactElement} from 'react';
 
 import Button from '../shared/Button';
 import styled from 'styled-components';
-import { useHistory } from 'react-router-dom';
+import {useHistory} from 'react-router-dom';
 
 const Container = styled.div`
   display: flex;

@@ -1,7 +1,7 @@
 import * as renderer from 'react-test-renderer';
 
 import Button from '../Button';
-import { IC_FACEBOOK_W } from '../../../utils/Icons';
+import {IC_FACEBOOK_W} from '../../../utils/Icons';
 import React from 'react';
 
 // test for the pure component

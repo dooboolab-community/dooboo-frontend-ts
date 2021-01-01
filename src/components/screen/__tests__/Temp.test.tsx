@@ -1,7 +1,7 @@
 import * as renderer from 'react-test-renderer';
 
-import { RenderResult, fireEvent, render } from '@testing-library/react';
-import { createTestElement, history } from '../../../../test/testUtils';
+import {RenderResult, fireEvent, render} from '@testing-library/react';
+import {createTestElement, history} from '../../../../test/testUtils';
 
 import React from 'react';
 import Temp from '../Temp';

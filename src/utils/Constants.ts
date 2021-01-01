@@ -8,6 +8,4 @@ const STATUS_CODE = {
   UNAUTHORIZED: 401, // 401
 };
 
-export {
-  STATUS_CODE as statusCode,
-};
+export {STATUS_CODE as statusCode};

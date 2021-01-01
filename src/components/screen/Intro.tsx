@@ -1,14 +1,14 @@
-import React, { ReactElement } from 'react';
+import React, {ReactElement} from 'react';
 
 import Button from '../shared/Button';
-import { IC_GOOGLE_W } from '../../utils/Icons';
-import { User } from '../../types';
-import { device } from '../../theme';
-import { fbt } from 'fbt';
+import {IC_GOOGLE_W} from '../../utils/Icons';
+import {User} from '../../types';
+import {device} from '../../theme';
+import {fbt} from 'fbt';
 import styled from 'styled-components';
-import { useAppContext } from '../../providers/AppProvider';
-import { useHistory } from 'react-router-dom';
-import { useThemeContext } from '../../providers/ThemeProvider';
+import {useAppContext} from '../../providers/AppProvider';
+import {useHistory} from 'react-router-dom';
+import {useThemeContext} from '../../providers/ThemeProvider';
 
 const Container = styled.div`
   display: flex;
@@ -68,11 +68,11 @@ const Text = styled.span`
 `;
 
 function Intro(): ReactElement {
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  // eslint-disable-next-line
   let timer: any;
   const history = useHistory();
-  const { state, setUser, resetUser } = useAppContext();
-  const { changeThemeType } = useThemeContext();
+  const {state, setUser, resetUser} = useAppContext();
+  const {changeThemeType} = useThemeContext();
   const [isLoggingIn, setIsLoggingIn] = React.useState(false);
 
   const onLogin = (): void => {
@@ -115,7 +115,10 @@ function Intro(): ReactElement {
           onClick={(): void => onLogin()}
           text={fbt('Sign In', 'sign in')}
         />
-        <Button onClick={(): void => navigate()} text={fbt('Navigate', 'navigate')} />
+        <Button
+          onClick={(): void => navigate()}
+          text={fbt('Navigate', 'navigate')}
+        />
         <Button
           onClick={(): void => changeThemeType()}
           text={fbt('Change theme', 'change theme')}

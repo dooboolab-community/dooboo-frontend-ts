@@ -1,4 +1,4 @@
-import { AbortController } from 'abort-controller';
+import {AbortController} from 'abort-controller';
 
 export interface RequestInitCustom extends RequestInit {
   signal: AbortController['signal'];
