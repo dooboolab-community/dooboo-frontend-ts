@@ -16,11 +16,8 @@ const Component = (): ReactElement => (
 );
 
 const renderApp = (): void => {
-  if (rootElement.hasChildNodes()) {
-    hydrate(<Component />, rootElement);
-  } else {
-    render(<Component />, rootElement);
-  }
+  if (rootElement.hasChildNodes()) hydrate(<Component />, rootElement);
+  else render(<Component />, rootElement);
 };
 
 renderApp();
