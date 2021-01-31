@@ -1,8 +1,8 @@
 import {BrowserRouter, Route, Switch} from 'react-router-dom';
 import React, {ReactElement} from 'react';
 
-import Intro from '../screen/Intro';
-import Temp from '../screen/Temp';
+import Intro from '../pages/Intro';
+import Temp from '../pages/Temp';
 
 function SwitchNavigator(): ReactElement {
   return (

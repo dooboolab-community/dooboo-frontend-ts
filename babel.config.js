@@ -13,7 +13,7 @@ module.exports = {
       'babel-plugin-fbt',
       {
         fbtEnumPath: path.join(__dirname, '.enum_manifest.json'),
-        extraOptions: { __self: true },
+        extraOptions: {__self: true},
       },
     ],
   ],

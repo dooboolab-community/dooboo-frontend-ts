@@ -9,7 +9,7 @@ import {
 } from '@testing-library/react';
 import {createTestElement, history} from '../../../../test/testUtils';
 
-import Button from '../../shared/Button';
+import Button from '../../UI/molecules/Button';
 import Intro from '../Intro';
 import React from 'react';
 

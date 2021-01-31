@@ -7,65 +7,65 @@ exports[`[SwitchNavigator] rendering should renders without crashing 1`] = `
       style="text-align: center;"
     >
       <div
-        class="sc-jSgupP iDsCtU"
+        class="sc-iBPRYJ ekgJal"
       >
         <div
-          class="sc-gKsewC dZzsBy"
+          class="sc-jSgupP jJyShf"
         >
           <span
-            class="sc-fubCfw jgawlN"
+            class="sc-gKsewC iVLrk"
           />
           <span
-            class="sc-fubCfw jgawlN"
+            class="sc-gKsewC iVLrk"
           />
           <span
-            class="sc-fubCfw jgawlN"
+            class="sc-gKsewC iVLrk"
           />
         </div>
         <div
-          class="sc-iBPRYJ cPrbWS"
+          class="sc-fubCfw bLJVPb"
         >
           <button
-            class="sc-bdfBwQ XCHcN"
+            class="sc-gsTCUz chpcOx"
             style="display: flex; height: 60px;"
           >
             <div
-              class="sc-gsTCUz inbwCB"
+              class="sc-dlfnbm EHnXe"
             >
               <img
-                class="sc-hKgILt dyiMjo"
+                class="sc-eCssSg ivfBrb"
                 src="test-file-stub"
               />
               <span
-                class="sc-dlfnbm fHfxuU"
+                class="sc-hKgILt gqkJgm"
               >
                 Sign In
               </span>
             </div>
           </button>
           <button
-            class="sc-bdfBwQ XCHcN"
+            class="sc-gsTCUz chpcOx"
             style="display: flex; height: 60px;"
           >
             <div
-              class="sc-gsTCUz inbwCB"
+              class="sc-dlfnbm EHnXe"
             >
               <span
-                class="sc-dlfnbm fHfxuU"
+                class="sc-hKgILt gqkJgm"
               >
                 Navigate
               </span>
             </div>
           </button>
           <button
-            class="sc-bdfBwQ XCHcN"
+            class="sc-gsTCUz chpcOx"
             style="display: flex; height: 60px;"
           >
             <div
-              class="sc-gsTCUz inbwCB"
+              class="sc-dlfnbm EHnXe"
             >
               <span
-                class="sc-dlfnbm fHfxuU"
+                class="sc-hKgILt gqkJgm"
               >
                 Change theme
               </span>

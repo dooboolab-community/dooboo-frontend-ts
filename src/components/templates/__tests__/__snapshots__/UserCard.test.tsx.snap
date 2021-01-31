@@ -1,0 +1,23 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`[Temp] render renders without crashing 1`] = `
+<div
+  className="sc-bdfBwQ kDbjGU"
+>
+  <span
+    className="sc-gsTCUz kmxNoe"
+  >
+    
+  </span>
+  <span
+    className="sc-gsTCUz kmxNoe"
+  >
+    
+  </span>
+  <span
+    className="sc-gsTCUz kmxNoe"
+  >
+    
+  </span>
+</div>
+`;

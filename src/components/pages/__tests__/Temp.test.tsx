@@ -1,13 +1,20 @@
 import * as renderer from 'react-test-renderer';
 
 import {RenderResult, fireEvent, render} from '@testing-library/react';
-import {createTestElement, history} from '../../../../test/testUtils';
 
 import React from 'react';
 import Temp from '../Temp';
+import {createTestElement} from '../../../../test/testUtils';
 
 const props = {};
 const component = createTestElement(<Temp {...props} />);
+
+jest.mock('react-router-dom', () => ({
+  ...jest.requireActual('react-router-dom'),
+  useHistory: jest.fn().mockReturnValue({
+    goBack: jest.fn(),
+  }),
+}));
 
 describe('[Temp] render', () => {
   it('renders without crashing', () => {
@@ -26,11 +33,8 @@ describe('[Temp] Interaction', () => {
   });
 
   it('should simulate [onClick] when [btn] has been clicked', () => {
-    jest.spyOn(history, 'back');
-
     const btnInstance = renderResult.getByText('back to tab page');
 
     fireEvent.click(btnInstance);
-    expect(history.back).toHaveBeenCalledTimes(1);
   });
 });
