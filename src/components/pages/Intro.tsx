@@ -1,8 +1,9 @@
 import React, {ReactElement} from 'react';
 
-import Button from '../shared/Button';
+import Button from '../UI/molecules/Button';
 import {IC_GOOGLE_W} from '../../utils/Icons';
 import {User} from '../../types';
+import UserCard from '../templates/UserCard';
 import {device} from '../../theme';
 import {fbt} from 'fbt';
 import styled from 'styled-components';
@@ -24,24 +25,6 @@ const Container = styled.div`
   overflow: hidden;
 `;
 
-const ContentWrapper = styled.div`
-  display: flex;
-  flex-direction: column;
-  @media ${device.mobileS} {
-    max-width: 768px;
-    height: 100vh;
-    width: 100vw;
-    justify-content: center;
-    align-items: center;
-  }
-
-  @media ${device.tablet} {
-    justify-content: flex-start;
-    align-items: flex-start;
-    margin-top: 400px;
-  }
-`;
-
 const ButtonWrapper = styled.div`
   position: absolute;
   flex-direction: column;
@@ -60,18 +43,11 @@ const ButtonWrapper = styled.div`
   }
 `;
 
-const Text = styled.span`
-  font-size: 18px;
-  line-height: 1.5;
-  font-family: sans-serif;
-  color: ${(props): string => props.theme.fontColor};
-`;
-
 function Intro(): ReactElement {
   // eslint-disable-next-line
   let timer: any;
   const history = useHistory();
-  const {state, setUser, resetUser} = useAppContext();
+  const {setUser, resetUser} = useAppContext();
   const {changeThemeType} = useThemeContext();
   const [isLoggingIn, setIsLoggingIn] = React.useState(false);
 
@@ -103,11 +79,7 @@ function Intro(): ReactElement {
 
   return (
     <Container>
-      <ContentWrapper>
-        <Text>{state.user.displayName}</Text>
-        <Text>{state.user.age ? state.user.age : ''}</Text>
-        <Text>{state.user.job}</Text>
-      </ContentWrapper>
+      <UserCard />
       <ButtonWrapper>
         <Button
           imgSrc={IC_GOOGLE_W}

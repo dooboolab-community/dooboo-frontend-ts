@@ -1,6 +1,7 @@
 import React, {CSSProperties, ReactElement} from 'react';
 
-import {ButtonPrimary} from '../ui/Buttons';
+import ButtonLoading from '../atoms/ButtonLoading';
+import {ButtonPrimary} from '../Styles';
 import styled from 'styled-components';
 
 interface Props {
@@ -36,30 +37,13 @@ const LogoImg = styled.img`
   object-fit: cover;
 `;
 
-const Spinner = styled.div`
-  border: 4px solid #f3f3f3; /* Light grey */
-  border-top: 4px solid #3498db; /* Blue */
-  border-radius: 50%;
-  width: 24px;
-  height: 24px;
-  animation: spin 1s linear infinite;
-  @keyframes spin {
-    0% {
-      transform: rotate(0deg);
-    }
-    100% {
-      transform: rotate(360deg);
-    }
-  }
-`;
-
 function Button(props: Props): ReactElement {
   const {onClick, imgSrc, text, style, isLoading} = props;
 
   return (
     <ButtonPrimary style={style} onClick={onClick}>
       {isLoading ? (
-        <Spinner id="spinner" />
+        <ButtonLoading />
       ) : (
         <ButtonWrapper>
           {imgSrc ? <LogoImg src={imgSrc} /> : null}

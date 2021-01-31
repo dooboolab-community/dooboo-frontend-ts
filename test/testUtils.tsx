@@ -1,9 +1,9 @@
-import React, { ReactElement } from 'react';
-import { Router, Switch } from 'react-router-dom';
+import React, {ReactElement} from 'react';
+import {Router, Switch} from 'react-router-dom';
 
 import RootProvider from '../src/providers';
-import { ThemeType } from '../src/types';
-import { createMemoryHistory } from 'history';
+import {ThemeType} from '../src/types';
+import {createMemoryHistory} from 'history';
 
 export const history = createMemoryHistory();
 

@@ -2,7 +2,7 @@ import React, {ReactElement} from 'react';
 import {hydrate, render} from 'react-dom';
 
 import RootProvider from './providers';
-import SwitchNavigator from './components/navigation/SwitchNavigator';
+import SwitchNavigator from './components/navigations/SwitchNavigator';
 import {initFbt} from './utils/fbt';
 
 initFbt();

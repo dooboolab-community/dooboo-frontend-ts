@@ -1,6 +1,6 @@
 import React, {ReactElement} from 'react';
 
-import Button from '../shared/Button';
+import Button from '../UI/molecules/Button';
 import styled from 'styled-components';
 import {useHistory} from 'react-router-dom';
 
@@ -18,7 +18,7 @@ function Temp(): ReactElement {
 
   return (
     <Container>
-      <Button onClick={(): void => history.back()} text="back to tab page" />
+      <Button onClick={(): void => history.goBack()} text="back to tab page" />
     </Container>
   );
 }
