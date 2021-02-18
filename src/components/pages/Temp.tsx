@@ -1,6 +1,6 @@
 import React, {ReactElement} from 'react';
 
-import Button from '../UI/molecules/Button';
+import Button from '../uis/Button';
 import styled from 'styled-components';
 import {useHistory} from 'react-router-dom';
 

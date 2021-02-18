@@ -1,9 +1,9 @@
 import React, {ReactElement} from 'react';
 
-import Button from '../UI/molecules/Button';
+import Button from '../uis/Button';
 import {IC_GOOGLE_W} from '../../utils/Icons';
 import {User} from '../../types';
-import UserCard from '../templates/UserCard';
+import UserCard from '../uis/UserCard';
 import {device} from '../../theme';
 import {fbt} from 'fbt';
 import styled from 'styled-components';

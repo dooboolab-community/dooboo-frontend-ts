@@ -1,6 +1,6 @@
 import React, {CSSProperties, ReactElement} from 'react';
 
-import ButtonLoading from '../atoms/ButtonLoading';
+import ButtonLoading from './ButtonLoading';
 import {ButtonPrimary} from '../Styles';
 import styled from 'styled-components';
 
