@@ -5,8 +5,8 @@ import styled from 'styled-components';
 import {useHistory} from 'react-router-dom';
 
 const Container = styled.div`
-  display: flex;
-  height: 100vh;
+  flex: 1;
+  align-self: stretch;
   justify-content: center;
   align-items: center;
   background: ${(props): string => props.theme.background};

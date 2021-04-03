@@ -25,6 +25,8 @@
         vertical-align:baseline;
         background:transparent;
         overflow-x: hidden;
+
+        display: flex;
       }
 
       body {
@@ -94,16 +96,22 @@
 
       /* change border colour to suit your needs */
       hr {
-        display:grid;
         height:1px;
         border:0;   
         border-top:1px solid #cccccc;
         margin:1em 0;
         padding:0;
+
+        display:flex;
       }
 
       input, select {
         vertical-align:middle;
+      }
+
+      div {
+        align-self: stretch;
+        display: flex;
       }
     </style>
   </head>
