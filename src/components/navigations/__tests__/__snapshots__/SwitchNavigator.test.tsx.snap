@@ -4,68 +4,68 @@ exports[`[SwitchNavigator] rendering should renders without crashing 1`] = `
 <body>
   <div>
     <div
-      style="text-align: center;"
+      style="text-align: center; flex: 1;"
     >
       <div
-        class="sc-iBPRYJ ekgJal"
+        class="sc-iCfLBT jmkFdP"
       >
         <div
-          class="sc-jSgupP jJyShf"
+          class="sc-jRQAMF hyNlNF"
         >
           <span
-            class="sc-gKsewC iVLrk"
+            class="sc-gKckTs cRfCbT"
           />
           <span
-            class="sc-gKsewC iVLrk"
+            class="sc-gKckTs cRfCbT"
           />
           <span
-            class="sc-gKsewC iVLrk"
+            class="sc-gKckTs cRfCbT"
           />
         </div>
         <div
-          class="sc-fubCfw bLJVPb"
+          class="sc-furvIG eyNmWD"
         >
           <button
-            class="sc-gsTCUz chpcOx"
+            class="sc-gsDJrp nsoVv"
             style="display: flex; height: 60px;"
           >
             <div
-              class="sc-dlfnbm EHnXe"
+              class="sc-dkPtyc cmwPJO"
             >
               <img
-                class="sc-eCssSg ivfBrb"
+                class="sc-eCImvq hKBrPS"
                 src="test-file-stub"
               />
               <span
-                class="sc-hKgILt gqkJgm"
+                class="sc-hKwCoD ixcHR"
               >
                 Sign In
               </span>
             </div>
           </button>
           <button
-            class="sc-gsTCUz chpcOx"
+            class="sc-gsDJrp nsoVv"
             style="display: flex; height: 60px;"
           >
             <div
-              class="sc-dlfnbm EHnXe"
+              class="sc-dkPtyc cmwPJO"
             >
               <span
-                class="sc-hKgILt gqkJgm"
+                class="sc-hKwCoD ixcHR"
               >
                 Navigate
               </span>
             </div>
           </button>
           <button
-            class="sc-gsTCUz chpcOx"
+            class="sc-gsDJrp nsoVv"
             style="display: flex; height: 60px;"
           >
             <div
-              class="sc-dlfnbm EHnXe"
+              class="sc-dkPtyc cmwPJO"
             >
               <span
-                class="sc-hKgILt gqkJgm"
+                class="sc-hKwCoD ixcHR"
               >
                 Change theme
               </span>
