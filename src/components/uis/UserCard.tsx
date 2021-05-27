@@ -7,6 +7,7 @@ import {useAppContext} from '../../providers/AppProvider';
 const ContentWrapper = styled.div`
   display: flex;
   flex-direction: column;
+  align-self: center;
   @media ${device.mobileS} {
     max-width: 768px;
     height: 100vh;
