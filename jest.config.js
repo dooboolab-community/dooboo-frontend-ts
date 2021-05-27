@@ -25,6 +25,7 @@ module.exports = {
   testRegex: '(/__tests__/.*|(\\.|/)(test|spec))\\.(js?|jsx?|ts?|tsx?)$',
   moduleFileExtensions: ['ts', 'tsx', 'js', 'jsx', 'json'],
   modulePathIgnorePatterns: ['dist', 'build'],
+  testEnvironment: 'jsdom',
   globals: {
     window: {},
     'ts-jest': {

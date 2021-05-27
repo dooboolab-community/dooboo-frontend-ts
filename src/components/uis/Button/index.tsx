@@ -5,6 +5,7 @@ import {ButtonPrimary} from '../Styles';
 import styled from 'styled-components';
 
 interface Props {
+  testID?: string;
   id?: string;
   style?: CSSProperties;
   imgSrc?: string;
@@ -38,10 +39,10 @@ const LogoImg = styled.img`
 `;
 
 function Button(props: Props): ReactElement {
-  const {onClick, imgSrc, text, style, isLoading} = props;
+  const {testID, onClick, imgSrc, text, style, isLoading} = props;
 
   return (
-    <ButtonPrimary style={style} onClick={onClick}>
+    <ButtonPrimary data-testid={testID} style={style} onClick={onClick}>
       {isLoading ? (
         <ButtonLoading />
       ) : (

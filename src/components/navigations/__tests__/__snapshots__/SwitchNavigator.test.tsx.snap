@@ -7,68 +7,64 @@ exports[`[SwitchNavigator] rendering should renders without crashing 1`] = `
       style="text-align: center; flex: 1;"
     >
       <div
-        class="sc-iCfLBT jmkFdP"
+        class="sc-iCoGMd gwxGLM"
       >
         <div
-          class="sc-jRQAMF hyNlNF"
+          class="sc-jSFjdj cuQAFr"
         >
           <span
-            class="sc-gKckTs cRfCbT"
+            class="sc-gKAaRy kCUEjt"
           />
           <span
-            class="sc-gKckTs cRfCbT"
+            class="sc-gKAaRy kCUEjt"
           />
           <span
-            class="sc-gKckTs cRfCbT"
+            class="sc-gKAaRy kCUEjt"
           />
         </div>
         <div
-          class="sc-furvIG eyNmWD"
+          class="sc-fujyAs jygmDW"
         >
           <button
-            class="sc-gsDJrp nsoVv"
+            class="sc-gtsrHT hhjOfX"
+            data-testid="SIGN_IN"
             style="display: flex; height: 60px;"
           >
             <div
-              class="sc-dkPtyc cmwPJO"
+              class="sc-dlnjwi hoXjOf"
             >
               <img
-                class="sc-eCImvq hKBrPS"
+                class="sc-eCApnc leeSbz"
                 src="test-file-stub"
               />
               <span
-                class="sc-hKwCoD ixcHR"
-              >
-                Sign In
-              </span>
+                class="sc-hKFxyN kniJqB"
+              />
             </div>
           </button>
           <button
-            class="sc-gsDJrp nsoVv"
+            class="sc-gtsrHT hhjOfX"
             style="display: flex; height: 60px;"
           >
             <div
-              class="sc-dkPtyc cmwPJO"
+              class="sc-dlnjwi hoXjOf"
             >
               <span
-                class="sc-hKwCoD ixcHR"
-              >
-                Navigate
-              </span>
+                class="sc-hKFxyN kniJqB"
+              />
             </div>
           </button>
           <button
-            class="sc-gsDJrp nsoVv"
+            class="sc-gtsrHT hhjOfX"
+            data-testid="CHANGE_THEME"
             style="display: flex; height: 60px;"
           >
             <div
-              class="sc-dkPtyc cmwPJO"
+              class="sc-dlnjwi hoXjOf"
             >
               <span
-                class="sc-hKwCoD ixcHR"
-              >
-                Change theme
-              </span>
+                class="sc-hKFxyN kniJqB"
+              />
             </div>
           </button>
         </div>

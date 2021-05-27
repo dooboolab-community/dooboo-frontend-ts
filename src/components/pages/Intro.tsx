@@ -82,6 +82,7 @@ function Intro(): ReactElement {
       <UserCard />
       <ButtonWrapper>
         <Button
+          testID="SIGN_IN"
           imgSrc={IC_GOOGLE_W}
           isLoading={isLoggingIn}
           onClick={(): void => onLogin()}
@@ -92,6 +93,7 @@ function Intro(): ReactElement {
           text={fbt('Navigate', 'navigate')}
         />
         <Button
+          testID="CHANGE_THEME"
           onClick={(): void => changeThemeType()}
           text={fbt('Change theme', 'change theme')}
         />

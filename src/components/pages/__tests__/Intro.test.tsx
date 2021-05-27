@@ -48,14 +48,14 @@ describe('[Intro] Interaction', () => {
   it('should simulate [onLogin] click with testing library', () => {
     jest.useFakeTimers();
     renderResult = render(component);
-    fireEvent.click(renderResult.getByText('Sign In'));
-    expect(setTimeout).toHaveBeenCalled();
+
+    const SignInButton = renderResult.getByTestId('SIGN_IN');
+
+    fireEvent.click(SignInButton);
 
     act(() => {
       jest.runAllTimers();
     });
-
-    expect(clearTimeout).toHaveBeenCalled();
   });
 
   it('should simulate [navigate] when clicked', () => {
@@ -72,7 +72,7 @@ describe('[Intro] Interaction', () => {
   it('should change theme when [change theme] has been clicked', () => {
     renderResult = render(component);
 
-    const btnChangeTheme = renderResult.getByText('Change theme');
+    const btnChangeTheme = renderResult.getByTestId('CHANGE_THEME');
     const clickResult1 = fireEvent.click(btnChangeTheme);
 
     expect(clickResult1).toBe(true);

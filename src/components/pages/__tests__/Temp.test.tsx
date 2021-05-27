@@ -1,3 +1,4 @@
+import * as ReactRouterDom from 'react-router-dom';
 import * as renderer from 'react-test-renderer';
 
 import {RenderResult, fireEvent, render} from '@testing-library/react';
@@ -10,7 +11,7 @@ const props = {};
 const component = createTestElement(<Temp {...props} />);
 
 jest.mock('react-router-dom', () => ({
-  ...jest.requireActual('react-router-dom'),
+  ...(jest.requireActual('react-router-dom') as typeof ReactRouterDom),
   useHistory: jest.fn().mockReturnValue({
     goBack: jest.fn(),
   }),

@@ -6,7 +6,7 @@
     "postinstall": "yarn fbt:all",
     "start": "webpack serve --config webpack.config.js",
     "tsc": "tsc",
-    "test": "jest",
+    "test": "jest --runInBand",
     "production": "NODE_ENV=production webpack -p --config webpack.config.prod.js",
     "lint": "eslint src --ext .ts,.tsx,.js,.jsx",
     "manifest": "babel-node node_modules/.bin/fbt-manifest --src src",
