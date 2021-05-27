@@ -2,9 +2,10 @@ import React, {CSSProperties, ReactElement} from 'react';
 
 import ButtonLoading from './ButtonLoading';
 import {ButtonPrimary} from '../Styles';
-import styled from 'styled-components';
+import styled from '@emotion/styled';
 
 interface Props {
+  testID?: string;
   id?: string;
   style?: CSSProperties;
   imgSrc?: string;
@@ -25,7 +26,7 @@ const ButtonWrapper = styled.div`
 
 const PrimaryText = styled.span`
   font-size: 14px;
-  color: ${({theme}): string => theme.btnPrimaryFont};
+  color: ${({theme}) => theme.btnPrimaryFont};
   margin: auto;
 `;
 
@@ -38,10 +39,10 @@ const LogoImg = styled.img`
 `;
 
 function Button(props: Props): ReactElement {
-  const {onClick, imgSrc, text, style, isLoading} = props;
+  const {testID, onClick, imgSrc, text, style, isLoading} = props;
 
   return (
-    <ButtonPrimary style={style} onClick={onClick}>
+    <ButtonPrimary data-testid={testID} style={style} onClick={onClick}>
       {isLoading ? (
         <ButtonLoading />
       ) : (

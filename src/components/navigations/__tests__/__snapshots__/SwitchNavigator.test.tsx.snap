@@ -7,68 +7,64 @@ exports[`[SwitchNavigator] rendering should renders without crashing 1`] = `
       style="text-align: center; flex: 1;"
     >
       <div
-        class="sc-iCfLBT jmkFdP"
+        class="css-1nvx4il"
       >
         <div
-          class="sc-jRQAMF hyNlNF"
+          class="css-1vx0ptc"
         >
           <span
-            class="sc-gKckTs cRfCbT"
+            class="css-1l2m8ze"
           />
           <span
-            class="sc-gKckTs cRfCbT"
+            class="css-1l2m8ze"
           />
           <span
-            class="sc-gKckTs cRfCbT"
+            class="css-1l2m8ze"
           />
         </div>
         <div
-          class="sc-furvIG eyNmWD"
+          class="css-1j4jnb0"
         >
           <button
-            class="sc-gsDJrp nsoVv"
+            class="css-wnig0z"
+            data-testid="SIGN_IN"
             style="display: flex; height: 60px;"
           >
             <div
-              class="sc-dkPtyc cmwPJO"
+              class="css-qfy95"
             >
               <img
-                class="sc-eCImvq hKBrPS"
+                class="css-1oidkpf"
                 src="test-file-stub"
               />
               <span
-                class="sc-hKwCoD ixcHR"
-              >
-                Sign In
-              </span>
+                class="css-6apmke"
+              />
             </div>
           </button>
           <button
-            class="sc-gsDJrp nsoVv"
+            class="css-wnig0z"
             style="display: flex; height: 60px;"
           >
             <div
-              class="sc-dkPtyc cmwPJO"
+              class="css-qfy95"
             >
               <span
-                class="sc-hKwCoD ixcHR"
-              >
-                Navigate
-              </span>
+                class="css-6apmke"
+              />
             </div>
           </button>
           <button
-            class="sc-gsDJrp nsoVv"
+            class="css-wnig0z"
+            data-testid="CHANGE_THEME"
             style="display: flex; height: 60px;"
           >
             <div
-              class="sc-dkPtyc cmwPJO"
+              class="css-qfy95"
             >
               <span
-                class="sc-hKwCoD ixcHR"
-              >
-                Change theme
-              </span>
+                class="css-6apmke"
+              />
             </div>
           </button>
         </div>

@@ -1,7 +1,7 @@
 import React, {ReactElement} from 'react';
 
 import Button from '../uis/Button';
-import styled from 'styled-components';
+import styled from '@emotion/styled';
 import {useHistory} from 'react-router-dom';
 
 const Container = styled.div`
@@ -9,7 +9,7 @@ const Container = styled.div`
   align-self: stretch;
   justify-content: center;
   align-items: center;
-  background: ${(props): string => props.theme.background};
+  background: ${(props) => props.theme.background};
   padding: 50px;
 `;
 
@@ -18,7 +18,7 @@ function Temp(): ReactElement {
 
   return (
     <Container>
-      <Button onClick={(): void => history.goBack()} text="back to tab page" />
+      <Button onClick={(): void => history.back()} text="back to tab page" />
     </Container>
   );
 }

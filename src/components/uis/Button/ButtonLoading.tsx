@@ -1,8 +1,9 @@
 import type {FC} from 'react';
 import React from 'react';
-import styled from 'styled-components';
+import styled from '@emotion/styled';
 
 const Spinner = styled.div`
+  align-self: center;
   border: 4px solid #f3f3f3; /* Light grey */
   border-top: 4px solid #3498db; /* Blue */
   border-radius: 50%;

@@ -2,32 +2,33 @@
 
 exports[`[Intro] screen rendering test should render outer component and snapshot matches 1`] = `
 <div
-  className="sc-iCfLBT jmkFdP"
+  className="css-1nvx4il"
 >
   <div
-    className="sc-jRQAMF hyNlNF"
+    className="css-1vx0ptc"
   >
     <span
-      className="sc-gKckTs cRfCbT"
+      className="css-1l2m8ze"
     >
       
     </span>
     <span
-      className="sc-gKckTs cRfCbT"
+      className="css-1l2m8ze"
     >
       
     </span>
     <span
-      className="sc-gKckTs cRfCbT"
+      className="css-1l2m8ze"
     >
       
     </span>
   </div>
   <div
-    className="sc-furvIG eyNmWD"
+    className="css-1j4jnb0"
   >
     <button
-      className="sc-gsDJrp nsoVv"
+      className="css-wnig0z"
+      data-testid="SIGN_IN"
       onClick={[Function]}
       style={
         Object {
@@ -37,21 +38,19 @@ exports[`[Intro] screen rendering test should render outer component and snapsho
       }
     >
       <div
-        className="sc-dkPtyc cmwPJO"
+        className="css-qfy95"
       >
         <img
-          className="sc-eCImvq hKBrPS"
+          className="css-1oidkpf"
           src="test-file-stub"
         />
         <span
-          className="sc-hKwCoD ixcHR"
-        >
-          Sign In
-        </span>
+          className="css-6apmke"
+        />
       </div>
     </button>
     <button
-      className="sc-gsDJrp nsoVv"
+      className="css-wnig0z"
       onClick={[Function]}
       style={
         Object {
@@ -61,17 +60,16 @@ exports[`[Intro] screen rendering test should render outer component and snapsho
       }
     >
       <div
-        className="sc-dkPtyc cmwPJO"
+        className="css-qfy95"
       >
         <span
-          className="sc-hKwCoD ixcHR"
-        >
-          Navigate
-        </span>
+          className="css-6apmke"
+        />
       </div>
     </button>
     <button
-      className="sc-gsDJrp nsoVv"
+      className="css-wnig0z"
+      data-testid="CHANGE_THEME"
       onClick={[Function]}
       style={
         Object {
@@ -81,13 +79,11 @@ exports[`[Intro] screen rendering test should render outer component and snapsho
       }
     >
       <div
-        className="sc-dkPtyc cmwPJO"
+        className="css-qfy95"
       >
         <span
-          className="sc-hKwCoD ixcHR"
-        >
-          Change theme
-        </span>
+          className="css-6apmke"
+        />
       </div>
     </button>
   </div>

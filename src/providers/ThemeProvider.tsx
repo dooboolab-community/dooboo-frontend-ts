@@ -1,7 +1,8 @@
 import {
-  DefaultTheme,
+  Theme as DefaultTheme,
   ThemeProvider as OriginalThemeProvider,
-} from 'styled-components';
+  withTheme,
+} from '@emotion/react';
 import React, {useState} from 'react';
 
 import {ThemeType} from '../types';
@@ -37,7 +38,7 @@ function ThemeProvider({
     setThemeType(newThemeType);
   };
 
-  const theme = createTheme(themeType);
+  const theme = createTheme(themeType) as DefaultTheme;
 
   return (
     <Provider
@@ -46,9 +47,10 @@ function ThemeProvider({
         themeType,
         theme,
       }}>
+      {/* @ts-ignore */}
       <OriginalThemeProvider theme={theme}>{children}</OriginalThemeProvider>
     </Provider>
   );
 }
 
-export {useCtx as useThemeContext, ThemeProvider};
+export {useCtx as useThemeContext, ThemeProvider, withTheme};

@@ -6,7 +6,7 @@ import {User} from '../../types';
 import UserCard from '../uis/UserCard';
 import {device} from '../../theme';
 import {fbt} from 'fbt';
-import styled from 'styled-components';
+import styled from '@emotion/styled';
 import {useAppContext} from '../../providers/AppProvider';
 import {useHistory} from 'react-router-dom';
 import {useThemeContext} from '../../providers/ThemeProvider';
@@ -17,7 +17,7 @@ const Container = styled.div`
   width: 100vw;
   align-self: stretch;
   overflow: scroll;
-  background: ${(props): string => props.theme.background};
+  background: ${(props) => props.theme.background};
 
   flex-direction: column;
   justify-content: flex-start;
@@ -82,6 +82,7 @@ function Intro(): ReactElement {
       <UserCard />
       <ButtonWrapper>
         <Button
+          testID="SIGN_IN"
           imgSrc={IC_GOOGLE_W}
           isLoading={isLoggingIn}
           onClick={(): void => onLogin()}
@@ -92,6 +93,7 @@ function Intro(): ReactElement {
           text={fbt('Navigate', 'navigate')}
         />
         <Button
+          testID="CHANGE_THEME"
           onClick={(): void => changeThemeType()}
           text={fbt('Change theme', 'change theme')}
         />
