@@ -23,7 +23,7 @@ DO NOT MODIFY OR CHANGE THE CODE BEFORE CONFIRMED BY `DOOBOOLAB`. THIS REPOSITOR
 
 1. Sample of context-api with `react-hook` (`useContext`).
 2. Know how to structure react web app with `typescript`.
-3. Know how to navigate between screens with `react-router`.
+3. Know how to navigate between pages with `react-router`.
 4. Know how to write test code with `react-native-testing-library`.
 5. Know how to `lint` your project with `eslint`.
 6. [Know how to localize your project](https://github.com/dooboolab/dooboo-frontend-ts/blob/master/STRINGS.ts).
@@ -92,8 +92,8 @@ Testing is also just a command away:
 
 ```sh
 yarn test
- PASS  src/components/shared/__tests__/Button.test.tsx
- PASS  src/components/screen/__tests__/Intro.test.tsx
+ PASS  src/components/ui/__tests__/Button.test.tsx
+ PASS  src/components/page/__tests__/Intro.test.tsx
 
 Test Suites: 2 passed, 2 total
 Tests:       4 passed, 4 total
@@ -103,7 +103,7 @@ Time:        2.145s, estimated 3s
 
 ### Writing tests with Jest
 
-We've created test examples with jest-ts in `src/components/screen/__tests__` and `src/components/shared/__tests__`. Since react is component oriented, we've designed to focus on writing test in same level of directory with component. You can simply run `yarn test` to test if it succeeds and look more closer opening the source.
+We've created test examples with jest-ts in `src/components/page/__tests__` and `src/components/ui/__tests__`. Since react is component oriented, we've designed to focus on writing test in same level of directory with component. You can simply run `yarn test` to test if it succeeds and look more closer opening the source.
 
 ### Vscode prettier and eslint setup
 
@@ -204,27 +204,23 @@ If you find trouble using it, we've wrote an article, [Localizing react app with
 
 ### Creating components
 
-> Copy sourcecode in /src/components/screen/Temp.tsx
-> Copy sourcecode in /src/components/screen/**test**/Temp.test.tsx
+> Copy sourcecode in /src/components/page/Temp.tsx
+> Copy sourcecode in /src/components/page/**test**/Temp.test.tsx
 > Create new tsx file with compnent name you will create
 
-To do above more easily, you can simly install [dooboo-cli](https://www.npmjs.com/package/dooboo-cli). Then you can easily create [screen] or [shared] components along with `test file` by running below commands.
+To do above more easily, you can simly install [dooboo-cli](https://www.npmjs.com/package/dooboo-cli). Then you can easily create [page] or [ui] components along with `test file` by running below commands.
 
 ```sh
-# screen component
-dooboo screen [MyScreen]
-# shared component
-dooboo shared [MyShared]
+# page component
+dooboo page [PageComponentName]
+# ui component
+dooboo ui [UIComponentName]
 ```
 
 ### React version
 
-16.9
-
-### React-router-dom version
-
-5
+17
 
 ### Typescript
 
-3
+4
