@@ -2,7 +2,7 @@ import React, {CSSProperties, ReactElement} from 'react';
 
 import ButtonLoading from './ButtonLoading';
 import {ButtonPrimary} from '../Styles';
-import styled from 'styled-components';
+import styled from '@emotion/styled';
 
 interface Props {
   testID?: string;
@@ -26,7 +26,7 @@ const ButtonWrapper = styled.div`
 
 const PrimaryText = styled.span`
   font-size: 14px;
-  color: ${({theme}): string => theme.btnPrimaryFont};
+  color: ${({theme}) => theme.btnPrimaryFont};
   margin: auto;
 `;
 

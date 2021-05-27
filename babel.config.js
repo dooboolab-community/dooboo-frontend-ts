@@ -7,6 +7,7 @@ module.exports = {
     '@babel/preset-typescript',
   ],
   plugins: [
+    '@emotion',
     '@babel/plugin-transform-runtime',
     'babel-plugin-fbt-runtime',
     [

@@ -1,7 +1,7 @@
 import React, {ReactElement} from 'react';
 
 import {device} from '../../theme';
-import styled from 'styled-components';
+import styled from '@emotion/styled';
 import {useAppContext} from '../../providers/AppProvider';
 
 const ContentWrapper = styled.div`
@@ -27,7 +27,7 @@ const Text = styled.span`
   font-size: 18px;
   line-height: 1.5;
   font-family: sans-serif;
-  color: ${(props): string => props.theme.fontColor};
+  color: ${(props) => props.theme.fontColor};
 `;
 
 function UserCard(): ReactElement {

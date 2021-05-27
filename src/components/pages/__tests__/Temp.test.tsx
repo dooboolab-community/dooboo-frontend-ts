@@ -13,7 +13,7 @@ const component = createTestElement(<Temp {...props} />);
 jest.mock('react-router-dom', () => ({
   ...(jest.requireActual('react-router-dom') as typeof ReactRouterDom),
   useHistory: jest.fn().mockReturnValue({
-    goBack: jest.fn(),
+    back: jest.fn(),
   }),
 }));
 

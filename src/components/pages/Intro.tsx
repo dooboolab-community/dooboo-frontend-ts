@@ -6,7 +6,7 @@ import {User} from '../../types';
 import UserCard from '../uis/UserCard';
 import {device} from '../../theme';
 import {fbt} from 'fbt';
-import styled from 'styled-components';
+import styled from '@emotion/styled';
 import {useAppContext} from '../../providers/AppProvider';
 import {useHistory} from 'react-router-dom';
 import {useThemeContext} from '../../providers/ThemeProvider';
@@ -17,7 +17,7 @@ const Container = styled.div`
   width: 100vw;
   align-self: stretch;
   overflow: scroll;
-  background: ${(props): string => props.theme.background};
+  background: ${(props) => props.theme.background};
 
   flex-direction: column;
   justify-content: flex-start;

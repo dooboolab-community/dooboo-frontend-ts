@@ -2,32 +2,32 @@
 
 exports[`[Intro] screen rendering test should render outer component and snapshot matches 1`] = `
 <div
-  className="sc-iCoGMd gwxGLM"
+  className="css-1nvx4il"
 >
   <div
-    className="sc-jSFjdj cuQAFr"
+    className="css-1vx0ptc"
   >
     <span
-      className="sc-gKAaRy kCUEjt"
+      className="css-1l2m8ze"
     >
       
     </span>
     <span
-      className="sc-gKAaRy kCUEjt"
+      className="css-1l2m8ze"
     >
       
     </span>
     <span
-      className="sc-gKAaRy kCUEjt"
+      className="css-1l2m8ze"
     >
       
     </span>
   </div>
   <div
-    className="sc-fujyAs jygmDW"
+    className="css-1j4jnb0"
   >
     <button
-      className="sc-gtsrHT hhjOfX"
+      className="css-wnig0z"
       data-testid="SIGN_IN"
       onClick={[Function]}
       style={
@@ -38,19 +38,19 @@ exports[`[Intro] screen rendering test should render outer component and snapsho
       }
     >
       <div
-        className="sc-dlnjwi hoXjOf"
+        className="css-qfy95"
       >
         <img
-          className="sc-eCApnc leeSbz"
+          className="css-1oidkpf"
           src="test-file-stub"
         />
         <span
-          className="sc-hKFxyN kniJqB"
+          className="css-6apmke"
         />
       </div>
     </button>
     <button
-      className="sc-gtsrHT hhjOfX"
+      className="css-wnig0z"
       onClick={[Function]}
       style={
         Object {
@@ -60,15 +60,15 @@ exports[`[Intro] screen rendering test should render outer component and snapsho
       }
     >
       <div
-        className="sc-dlnjwi hoXjOf"
+        className="css-qfy95"
       >
         <span
-          className="sc-hKFxyN kniJqB"
+          className="css-6apmke"
         />
       </div>
     </button>
     <button
-      className="sc-gtsrHT hhjOfX"
+      className="css-wnig0z"
       data-testid="CHANGE_THEME"
       onClick={[Function]}
       style={
@@ -79,10 +79,10 @@ exports[`[Intro] screen rendering test should render outer component and snapsho
       }
     >
       <div
-        className="sc-dlnjwi hoXjOf"
+        className="css-qfy95"
       >
         <span
-          className="sc-hKFxyN kniJqB"
+          className="css-6apmke"
         />
       </div>
     </button>

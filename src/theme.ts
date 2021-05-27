@@ -1,4 +1,3 @@
-import {DefaultTheme} from 'styled-components';
 import {ThemeType} from './types';
 
 const size = {
@@ -37,9 +36,9 @@ const light = {
   fontColor: 'black',
 };
 
-export type Theme = typeof light;
+export type DoobooTheme = typeof light;
 
-const dark: Theme = {
+const dark: DoobooTheme = {
   background: `linear-gradient(
       to bottom right,
       ${colors.darkBackground},
@@ -56,7 +55,7 @@ const theme = {
   dark,
 };
 
-export const createTheme = (type = ThemeType.LIGHT): DefaultTheme => {
+export const createTheme = (type = ThemeType.LIGHT): DoobooTheme => {
   switch (type) {
     case ThemeType.LIGHT:
       return theme.light;

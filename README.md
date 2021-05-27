@@ -12,7 +12,7 @@ DO NOT MODIFY OR CHANGE THE CODE BEFORE CONFIRMED BY `DOOBOOLAB`. THIS REPOSITOR
 - [react](https://github.com/facebook/react)
 - [react-router](https://github.com/ReactTraining/react-router)
 - [typescript](https://github.com/Microsoft/TypeScript)
-- [styled-components](https://github.com/styled-components/styled-components)
+- [emotion](https://emotion.sh)
 - [ts-jest](https://github.com/kulshekhar/ts-jest)
 - [react-testing-library](https://github.com/kentcdodds/react-testing-library)
 - [react-hook](https://reactjs.org/docs/hooks-intro.html)
@@ -31,8 +31,8 @@ DO NOT MODIFY OR CHANGE THE CODE BEFORE CONFIRMED BY `DOOBOOLAB`. THIS REPOSITOR
 - [Example]()
 
 7. [Know how to place your `retina image` into your project](https://github.com/dooboolab/dooboo-frontend-ts/blob/master/src/utils/Icons.ts).
-8. Know how to use `styled-component`.
-9. [Know how to implement theming with styled-component](https://github.com/dooboolab/dooboo-frontend-ts/blob/master/src/theme.ts).
+8. Know how to use `emotion`.
+9. [Know how to implement theming with emotion](https://github.com/dooboolab/dooboo-frontend-ts/blob/master/src/theme.ts).
 
 - [Dark Mode]
   ![image](https://user-images.githubusercontent.com/27461460/58620208-815be500-8301-11e9-9a00-2ceaca7c93f5.png)

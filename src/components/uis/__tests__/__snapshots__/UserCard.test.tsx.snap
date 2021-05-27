@@ -2,20 +2,20 @@
 
 exports[`[Temp] render renders without crashing 1`] = `
 <div
-  className="sc-bdnxRM hWpOGP"
+  className="css-1vx0ptc"
 >
   <span
-    className="sc-gtsrHT jmVESE"
+    className="css-1l2m8ze"
   >
     
   </span>
   <span
-    className="sc-gtsrHT jmVESE"
+    className="css-1l2m8ze"
   >
     
   </span>
   <span
-    className="sc-gtsrHT jmVESE"
+    className="css-1l2m8ze"
   >
     
   </span>
