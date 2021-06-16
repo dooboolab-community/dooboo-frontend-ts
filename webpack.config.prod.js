@@ -16,15 +16,13 @@ module.exports = {
   },
   plugins: [
     new CopyPlugin({
-      patterns: [
-        { from: './public', to: './' },
-      ],
+      patterns: [{from: './public', to: './'}],
     }),
     new HtmlWebpackPlugin({
       inject: true,
       template: './src/index.html',
     }),
-    new Dotenv({ systemvars: true }),
+    new Dotenv({systemvars: true}),
     new WebpackPwaManifest({
       name: 'dooboo',
       short_name: 'dooboo',
