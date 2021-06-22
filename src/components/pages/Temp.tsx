@@ -2,7 +2,7 @@ import React, {ReactElement} from 'react';
 
 import Button from '../uis/Button';
 import styled from '@emotion/styled';
-import {useHistory} from 'react-router-dom';
+import {useNavigate} from 'react-router-dom';
 
 const Container = styled.div`
   flex: 1;
@@ -14,11 +14,11 @@ const Container = styled.div`
 `;
 
 function Temp(): ReactElement {
-  const history = useHistory();
+  const navigate = useNavigate();
 
   return (
     <Container>
-      <Button onClick={(): void => history.back()} text="back to tab page" />
+      <Button onClick={(): void => navigate(-1)} text="back to tab page" />
     </Container>
   );
 }

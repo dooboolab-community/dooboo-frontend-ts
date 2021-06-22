@@ -8,7 +8,7 @@ import {device} from '../../theme';
 import {fbt} from 'fbt';
 import styled from '@emotion/styled';
 import {useAppContext} from '../../providers/AppProvider';
-import {useHistory} from 'react-router-dom';
+import {useNavigate} from 'react-router-dom';
 import {useThemeContext} from '../../providers/ThemeProvider';
 
 const Container = styled.div`
@@ -46,7 +46,7 @@ const ButtonWrapper = styled.div`
 function Intro(): ReactElement {
   // eslint-disable-next-line
   let timer: any;
-  const history = useHistory();
+  const navigate = useNavigate();
   const {setUser, resetUser} = useAppContext();
   const {changeThemeType} = useThemeContext();
   const [isLoggingIn, setIsLoggingIn] = React.useState(false);
@@ -68,15 +68,6 @@ function Intro(): ReactElement {
     }, 1000);
   };
 
-  const navigate = (): void => {
-    const location: Record<string, any> = {
-      pathname: '/404',
-      state: {},
-    };
-
-    history.push(location);
-  };
-
   return (
     <Container>
       <UserCard />
@@ -89,7 +80,7 @@ function Intro(): ReactElement {
           text={fbt('Sign In', 'sign in')}
         />
         <Button
-          onClick={(): void => navigate()}
+          onClick={(): void => navigate('/temp', {})}
           text={fbt('Navigate', 'navigate')}
         />
         <Button
