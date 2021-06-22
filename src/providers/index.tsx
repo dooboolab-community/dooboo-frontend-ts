@@ -15,10 +15,7 @@ const RootProvider = ({
 }: Props): React.ReactElement => {
   return (
     <AppProvider>
-      <ThemeProvider
-        initialThemeType={
-          initialThemeType === ThemeType.LIGHT ? ThemeType.LIGHT : undefined
-        }>
+      <ThemeProvider initialThemeType={initialThemeType || 'light'}>
         {children}
       </ThemeProvider>
     </AppProvider>

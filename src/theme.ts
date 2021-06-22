@@ -1,5 +1,3 @@
-import {ThemeType} from './types';
-
 const size = {
   mobileS: '320px',
   mobileM: '375px',
@@ -55,12 +53,12 @@ const theme = {
   dark,
 };
 
-export const createTheme = (type = ThemeType.LIGHT): DoobooTheme => {
+export const createTheme = (type = 'light'): DoobooTheme => {
   switch (type) {
-    case ThemeType.LIGHT:
-      return theme.light;
-    case ThemeType.DARK:
+    case 'dark':
       return theme.dark;
+    default:
+      return theme.light;
   }
 };
 

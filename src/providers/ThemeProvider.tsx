@@ -17,7 +17,7 @@ interface Context {
 
 const [useCtx, Provider] = createCtx<Context>();
 
-export const defaultThemeType: ThemeType = ThemeType.LIGHT;
+export const defaultThemeType: ThemeType = 'light';
 
 interface Props {
   children?: React.ReactElement;
@@ -32,8 +32,7 @@ function ThemeProvider({
   const [themeType, setThemeType] = useState(initialThemeType);
 
   const changeThemeType = (): void => {
-    const newThemeType =
-      themeType === ThemeType.LIGHT ? ThemeType.DARK : ThemeType.LIGHT;
+    const newThemeType = themeType === 'light' ? 'dark' : 'light';
 
     setThemeType(newThemeType);
   };

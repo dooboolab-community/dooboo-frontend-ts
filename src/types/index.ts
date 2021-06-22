@@ -4,7 +4,4 @@ export interface User {
   job: string;
 }
 
-export enum ThemeType {
-  LIGHT = 'LIGHT',
-  DARK = 'DARK',
-}
+export type ThemeType = 'light' | 'dark';
