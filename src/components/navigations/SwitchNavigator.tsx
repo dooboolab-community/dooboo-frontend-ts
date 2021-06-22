@@ -1,4 +1,4 @@
-import {BrowserRouter, Route, Switch} from 'react-router-dom';
+import {BrowserRouter, Route, Routes} from 'react-router-dom';
 import React, {ReactElement} from 'react';
 
 import Intro from '../pages/Intro';
@@ -13,10 +13,10 @@ function SwitchNavigator(): ReactElement {
           flex: 1,
           width: '100vw',
         }}>
-        <Switch>
-          <Route exact={true} path="/" render={(): ReactElement => <Intro />} />
-          <Route render={(): ReactElement => <Temp />} />
-        </Switch>
+        <Routes>
+          <Route path="/" element={<Intro />} />
+          <Route path="*" element={<Temp />} />
+        </Routes>
       </div>
     </BrowserRouter>
   );

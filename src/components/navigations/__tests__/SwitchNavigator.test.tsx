@@ -1,11 +1,16 @@
 import {RenderResult, render} from '@testing-library/react';
 
 import React from 'react';
+import RootProvider from '../../../providers/index';
 import SwitchNavigator from '../SwitchNavigator';
-import {createTestElement} from '../../../../test/testUtils';
 
 const props = {};
-const component = createTestElement(<SwitchNavigator {...props} />);
+
+const component = (
+  <RootProvider initialThemeType="light">
+    <SwitchNavigator {...props} />
+  </RootProvider>
+);
 
 describe('[SwitchNavigator] rendering', () => {
   let testingLib: RenderResult;

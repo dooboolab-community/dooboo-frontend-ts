@@ -155,9 +155,7 @@ const RootProvider = ({
   return (
     <AppProvider>
       <ThemeProvider
-        initialThemeType={
-          initialThemeType === ThemeType.LIGHT ? ThemeType.LIGHT : undefined
-        }
+        initialThemeType={initialThemeType || 'light'}
       >
         {children}
       </ThemeProvider>
@@ -183,14 +181,14 @@ function App(): React.ReactElement {
 // test files
 const component = (props): React.ReactElement => {
   return (
-    <RootProvider initialThemeType={ThemeType.LIGHT}>
+    <RootProvider initialThemeType="light">
       <Intro {...props} />
     </RootProvider>
   );
 };
 ```
 
-> using consistent theme(ThemeType.LIGHT as default) explicitly is encouraged in testing for avoiding unexpected snapshot test errors
+> using consistent theme('light') explicitly is encouraged in testing for avoiding unexpected snapshot test errors
 
 ### Localization
 
