@@ -7,7 +7,12 @@ import Temp from '../pages/Temp';
 function SwitchNavigator(): ReactElement {
   return (
     <BrowserRouter>
-      <div style={{textAlign: 'center', flex: 1}}>
+      <div
+        style={{
+          textAlign: 'center',
+          flex: 1,
+          width: '100vw',
+        }}>
         <Switch>
           <Route exact={true} path="/" render={(): ReactElement => <Intro />} />
           <Route render={(): ReactElement => <Temp />} />
