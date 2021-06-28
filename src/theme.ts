@@ -31,7 +31,7 @@ const light = {
   btnPrimaryFont: 'white',
   btnPrimaryLight: colors.whiteGray,
   btnPrimaryLightFont: 'black',
-  fontColor: 'black',
+  text: 'black',
 };
 
 export type DoobooTheme = typeof light;
@@ -45,7 +45,7 @@ const dark: DoobooTheme = {
   btnPrimaryFont: 'white',
   btnPrimaryLight: colors.whiteGray,
   btnPrimaryLightFont: 'black',
-  fontColor: 'white',
+  text: 'white',
 };
 
 const theme = {

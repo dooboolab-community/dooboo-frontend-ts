@@ -27,7 +27,7 @@ const Text = styled.span`
   font-size: 18px;
   line-height: 1.5;
   font-family: sans-serif;
-  color: ${(props) => props.theme.fontColor};
+  color: ${({theme}) => theme.text};
 `;
 
 function UserCard(): ReactElement {
