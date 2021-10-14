@@ -54,12 +54,15 @@ module.exports = {
     extensions: ['.ts', '.tsx', '.js', 'jsx'],
   },
   devServer: {
-    hot: true,
-    contentBase: path.join(__dirname, '/dist'),
-    inline: true,
+    static: {
+      directory: path.join(__dirname, '/src'),
+    },
+    devMiddleware: {
+      publicPath: 'https://localhost:8080/',
+    },
+    hot: 'only',
     host: 'localhost',
     port: 8080,
-    historyApiFallback: true,
   },
   module: {
     rules: [

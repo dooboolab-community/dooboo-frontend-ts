@@ -1,4 +1,4 @@
-import {BrowserRouter, Routes} from 'react-router-dom';
+import {BrowserRouter, Route, Routes} from 'react-router-dom';
 import React, {ReactElement} from 'react';
 
 import RootProvider from '../src/providers';
@@ -10,7 +10,16 @@ export const createTestElement = (
 ): ReactElement => (
   <RootProvider initialThemeType={themeType}>
     <BrowserRouter>
-      <Routes>{child}</Routes>
+      <div
+        style={{
+          textAlign: 'center',
+          flex: 1,
+          width: '100vw',
+        }}>
+        <Routes>
+          <Route path="/" element={child} />
+        </Routes>
+      </div>
     </BrowserRouter>
   </RootProvider>
 );

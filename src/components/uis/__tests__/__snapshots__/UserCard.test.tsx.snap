@@ -2,22 +2,32 @@
 
 exports[`[Temp] render renders without crashing 1`] = `
 <div
-  className="css-1vx0ptc"
+  style={
+    Object {
+      "flex": 1,
+      "textAlign": "center",
+      "width": "100vw",
+    }
+  }
 >
-  <span
-    className="css-1l2m8ze"
+  <div
+    className="css-1vx0ptc"
   >
-    
-  </span>
-  <span
-    className="css-1l2m8ze"
-  >
-    
-  </span>
-  <span
-    className="css-1l2m8ze"
-  >
-    
-  </span>
+    <span
+      className="css-1l2m8ze"
+    >
+      
+    </span>
+    <span
+      className="css-1l2m8ze"
+    >
+      
+    </span>
+    <span
+      className="css-1l2m8ze"
+    >
+      
+    </span>
+  </div>
 </div>
 `;

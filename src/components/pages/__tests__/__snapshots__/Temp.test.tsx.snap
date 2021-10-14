@@ -2,27 +2,37 @@
 
 exports[`[Temp] render renders without crashing 1`] = `
 <div
-  className="css-10njcwo"
->
-  <button
-    className="css-wnig0z"
-    onClick={[Function]}
-    style={
-      Object {
-        "display": "flex",
-        "height": "60px",
-      }
+  style={
+    Object {
+      "flex": 1,
+      "textAlign": "center",
+      "width": "100vw",
     }
+  }
+>
+  <div
+    className="css-10njcwo"
   >
-    <div
-      className="css-qfy95"
+    <button
+      className="css-wnig0z"
+      onClick={[Function]}
+      style={
+        Object {
+          "display": "flex",
+          "height": "60px",
+        }
+      }
     >
-      <span
-        className="css-6apmke"
+      <div
+        className="css-qfy95"
       >
-        back to tab page
-      </span>
-    </div>
-  </button>
+        <span
+          className="css-6apmke"
+        >
+          back to tab page
+        </span>
+      </div>
+    </button>
+  </div>
 </div>
 `;
