@@ -8,7 +8,9 @@ export const viewerContext = {
 };
 
 export const initFbt = (): void => {
-  if (navigator) viewerContext.locale = navigator.language.substr(0, 2);
+  if (navigator) {
+    viewerContext.locale = navigator.language.substr(0, 2);
+  }
 
   init({
     translations: intl,
@@ -39,7 +41,9 @@ export const changeLocale = (locale: Locale): void => {
 
   const html = document.getElementsByTagName('html')[0];
 
-  if (html != null) html.lang = LOCALES[locale].bcp47;
+  if (html != null) {
+    html.lang = LOCALES[locale].bcp47;
+  }
 
   document.body.className = LOCALES[locale].rtl ? 'rtl' : 'ltr';
 };

@@ -12,7 +12,8 @@ function SwitchNavigator(): ReactElement {
           textAlign: 'center',
           flex: 1,
           width: '100vw',
-        }}>
+        }}
+      >
         <Routes>
           <Route path="/" element={<Intro />} />
           <Route path="*" element={<Temp />} />

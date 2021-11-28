@@ -45,7 +45,8 @@ function ThemeProvider({
         changeThemeType,
         themeType,
         theme,
-      }}>
+      }}
+    >
       {/* @ts-ignore */}
       <OriginalThemeProvider theme={theme}>{children}</OriginalThemeProvider>
     </Provider>
