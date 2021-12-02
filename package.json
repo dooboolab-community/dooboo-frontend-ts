@@ -1,5 +1,6 @@
 {
-  "name": "dooboo-starter",
+  "name": "dooboo-frontend-ts",
+  "packageManager": "yarn@3.1.1",
   "version": "1.0.0",
   "description": "Build react app with typescript.",
   "scripts": {
@@ -58,6 +59,7 @@
     "@types/react-router-dom": "^5.3.2",
     "@types/react-test-renderer": "^17.0.1",
     "@types/webpack-env": "^1.16.3",
+    "@typescript-eslint/eslint-plugin": "^5.5.0",
     "abort-controller": "^3.0.0",
     "babel-core": "^7.0.0-bridge.0",
     "babel-loader": "^8.2.3",
