@@ -19,8 +19,6 @@ firebase-debug.log
 # firebase hosting
 hosting.*
 
-scripts/**/*.csv.env
-
 # yarn2
 .pnp.*
 .yarn/*
