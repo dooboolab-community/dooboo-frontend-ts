@@ -14,7 +14,7 @@ describe('testing sample api', () => {
 
     fetchMock.mockResponseOnce(mockedResult);
 
-    return sample({zoyi: 'zoyi'}).then(async (res) => {
+    return sample({user: 'hyo'}).then(async (res) => {
       const result = await res.text();
 
       expect(result).toEqual(mockedResult);
