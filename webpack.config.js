@@ -6,6 +6,8 @@ const Dotenv = require('dotenv-webpack');
 const ReactRefreshWebpackPlugin = require('@pmmmwh/react-refresh-webpack-plugin');
 const {CleanWebpackPlugin} = require('clean-webpack-plugin');
 
+const isDevelopment = !process.env.NODE_ENV !== 'production';
+
 module.exports = {
   mode: 'development',
   target: 'web',
@@ -27,7 +29,6 @@ module.exports = {
       template: './src/index.html',
     }),
     new Dotenv(),
-    new ReactRefreshWebpackPlugin(),
     new WebpackPwaManifest({
       name: 'dooboo',
       short_name: 'dooboo',
@@ -48,6 +49,7 @@ module.exports = {
         },
       ],
     }),
+    ...[isDevelopment && new ReactRefreshWebpackPlugin()].filter(Boolean),
   ],
   resolve: {
     modules: ['./node_modules'],
@@ -66,6 +68,18 @@ module.exports = {
   },
   module: {
     rules: [
+      {
+        test: /\.[jt]sx?$/,
+        exclude: /node_modules/,
+        use: [
+          {
+            loader: require.resolve('babel-loader'),
+            options: {
+              plugins: [isDevelopment && require.resolve('react-refresh/babel')].filter(Boolean),
+            },
+          },
+        ],
+      },
       {
         test: /\.(js|jsx|tsx|ts)$/,
         include: path.resolve('src'),

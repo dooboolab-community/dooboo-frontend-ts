@@ -15,19 +15,13 @@ exports[`[Temp] render renders without crashing 1`] = `
   >
     <span
       className="css-1l2m8ze"
-    >
-      
-    </span>
+    />
     <span
       className="css-1l2m8ze"
-    >
-      
-    </span>
+    />
     <span
       className="css-1l2m8ze"
-    >
-      
-    </span>
+    />
   </div>
 </div>
 `;
