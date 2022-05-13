@@ -5,7 +5,7 @@ DO NOT MODIFY OR CHANGE THE CODE BEFORE CONFIRMED BY `DOOBOOLAB`. THIS REPOSITOR
 # React Typescript Boilerplate
 
 [![CI](https://github.com/dooboolab/dooboo-frontend-ts/actions/workflows/ci.yml/badge.svg)](https://github.com/dooboolab/dooboo-frontend-ts/actions/workflows/ci.yml)
-[![codecov](https://codecov.io/gh/dooboolab/dooboo-frontend-ts/branch/master/graph/badge.svg)](https://codecov.io/gh/dooboolab/dooboo-frontend-ts)
+[![codecov](https://codecov.io/gh/dooboolab/dooboo-frontend-ts/branch/main/graph/badge.svg)](https://codecov.io/gh/dooboolab/dooboo-frontend-ts)
 
 > Specification
 
@@ -26,13 +26,13 @@ DO NOT MODIFY OR CHANGE THE CODE BEFORE CONFIRMED BY `DOOBOOLAB`. THIS REPOSITOR
 3. Know how to navigate between pages with `react-router`.
 4. Know how to write test code with `react-native-testing-library`.
 5. Know how to `lint` your project with `eslint`.
-6. [Know how to localize your project](https://github.com/dooboolab/dooboo-frontend-ts/blob/master/STRINGS.ts).
+6. [Know how to localize your project](https://github.com/dooboolab/dooboo-frontend-ts/blob/main/STRINGS.ts).
 
 - [Example]()
 
-7. [Know how to place your `retina image` into your project](https://github.com/dooboolab/dooboo-frontend-ts/blob/master/src/utils/Icons.ts).
+7. [Know how to place your `retina image` into your project](https://github.com/dooboolab/dooboo-frontend-ts/blob/main/src/utils/Icons.ts).
 8. Know how to use `emotion`.
-9. [Know how to implement theming with emotion](https://github.com/dooboolab/dooboo-frontend-ts/blob/master/src/theme.ts).
+9. [Know how to implement theming with emotion](https://github.com/dooboolab/dooboo-frontend-ts/blob/main/src/theme.ts).
 
 - [Dark Mode]
   ![image](https://user-images.githubusercontent.com/27461460/58620208-815be500-8301-11e9-9a00-2ceaca7c93f5.png)
