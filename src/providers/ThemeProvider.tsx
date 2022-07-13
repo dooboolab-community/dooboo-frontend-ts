@@ -37,6 +37,19 @@ function ThemeProvider({
     setThemeType(newThemeType);
   };
 
+  document.addEventListener('keydown', (event) => {
+    if (event.ctrlKey) {
+      switch (event.key) {
+        case '.':
+          changeThemeType();
+          break;
+        // case 't':
+        //   changeLocale();
+        //   break;
+      }
+    }
+  });
+
   const theme = createTheme(themeType) as DefaultTheme;
 
   return (
@@ -47,7 +60,6 @@ function ThemeProvider({
         theme,
       }}
     >
-      {/* @ts-ignore */}
       <OriginalThemeProvider theme={theme}>{children}</OriginalThemeProvider>
     </Provider>
   );
