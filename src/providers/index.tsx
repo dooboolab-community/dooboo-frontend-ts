@@ -1,5 +1,5 @@
-import {AppProvider} from './AppProvider';
 import {ReactElement} from 'react';
+import {RecoilRoot} from 'recoil';
 import {ThemeProvider} from './ThemeProvider';
 import {ThemeType} from '../types';
 
@@ -11,11 +11,11 @@ interface Props {
 // Add providers here
 const RootProvider = ({initialThemeType, children}: Props): ReactElement => {
   return (
-    <AppProvider>
+    <RecoilRoot>
       <ThemeProvider initialThemeType={initialThemeType || 'light'}>
         {children}
       </ThemeProvider>
-    </AppProvider>
+    </RecoilRoot>
   );
 };
 

@@ -3260,6 +3260,15 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@types/recoil@npm:^0.0.9":
+  version: 0.0.9
+  resolution: "@types/recoil@npm:0.0.9"
+  dependencies:
+    recoil: "*"
+  checksum: f4209a72dbbef74f3ba128678b0e9a24752273e5ae468c8ed51a6e5562561c214c250218224664410ca4d7f5f3764c1f657264bca0e09e63d52bfb53412e7cac
+  languageName: node
+  linkType: hard
+
 "@types/retry@npm:0.12.0":
   version: 0.12.0
   resolution: "@types/retry@npm:0.12.0"
@@ -5407,6 +5416,7 @@ __metadata:
     "@types/react-dom": ^18.0.6
     "@types/react-router-dom": ^5.3.3
     "@types/react-test-renderer": ^18.0.0
+    "@types/recoil": ^0.0.9
     "@types/webpack-env": ^1.17.0
     "@typescript-eslint/eslint-plugin": ^5.30.6
     abort-controller: ^3.0.0
@@ -5440,6 +5450,7 @@ __metadata:
     react-refresh: ^0.14.0
     react-router-dom: ^6.3.0
     react-test-renderer: ^18.2.0
+    recoil: ^0.7.4
     script-loader: ^0.7.2
     style-loader: ^3.3.1
     ts-jest: ^28.0.5
@@ -6744,6 +6755,13 @@ __metadata:
   version: 4.2.10
   resolution: "graceful-fs@npm:4.2.10"
   checksum: 3f109d70ae123951905d85032ebeae3c2a5a7a997430df00ea30df0e3a6c60cf6689b109654d6fdacd28810a053348c4d14642da1d075049e6be1ba5216218da
+  languageName: node
+  linkType: hard
+
+"hamt_plus@npm:1.0.2":
+  version: 1.0.2
+  resolution: "hamt_plus@npm:1.0.2"
+  checksum: af26ea32db03009019cc83dfa9411521a2fa16079443de1a502c9be46d8b3c975acda8ed93fc5750ef08d3186d35901e2d8cfe717dd54bea67b358601fa74e4c
   languageName: node
   linkType: hard
 
@@ -9886,6 +9904,22 @@ __metadata:
   dependencies:
     resolve: ^1.9.0
   checksum: 2a04aab4e28c05fcd6ee6768446bc8b859d8f108e71fc7f5bcbc5ef25e53330ce2c11d10f82a24591a2df4c49c4f61feabe1fd11f844c66feedd4cd7bb61146a
+  languageName: node
+  linkType: hard
+
+"recoil@npm:*, recoil@npm:^0.7.4":
+  version: 0.7.4
+  resolution: "recoil@npm:0.7.4"
+  dependencies:
+    hamt_plus: 1.0.2
+  peerDependencies:
+    react: ">=16.13.1"
+  peerDependenciesMeta:
+    react-dom:
+      optional: true
+    react-native:
+      optional: true
+  checksum: 797b97ee74b2fbbb8e4dda8a951b13569d45a3440cfc05e870056255ff22c73aa816de70d66168a5b9ebe16c14d262777947dd752c8cb9559ef8ae3fbb586472
   languageName: node
   linkType: hard
 

@@ -17,11 +17,12 @@ DO NOT MODIFY OR CHANGE THE CODE BEFORE CONFIRMED BY `DOOBOOLAB`. THIS REPOSITOR
 - [react-testing-library](https://github.com/kentcdodds/react-testing-library)
 - [react-hook](https://reactjs.org/docs/hooks-intro.html)
 - [prettier](https://prettier.io)
-- self localization
+- [fbt](https://github.com/facebook/fbt)
+- [recoil](https://github.com/facebookexperimental/Recoil)
 
 ### Gain points
 
-1. Sample of context-api with `react-hook` (`useContext`).
+1. State management with `recoil`.
 2. Know how to structure react web app with `typescript`.
 3. Know how to navigate between pages with `react-router`.
 4. Know how to write test code with `react-native-testing-library`.

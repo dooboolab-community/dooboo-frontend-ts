@@ -1,7 +1,8 @@
 import {ReactElement} from 'react';
 import {device} from '../../theme';
 import styled from '@emotion/styled';
-import {useAppContext} from '../../providers/AppProvider';
+import {useRecoilValue} from 'recoil';
+import {userRecoilState} from '../../recoil/atoms';
 
 const ContentWrapper = styled.div`
   display: flex;
@@ -30,13 +31,13 @@ const Text = styled.span`
 `;
 
 function UserCard(): ReactElement {
-  const {state} = useAppContext();
+  const user = useRecoilValue(userRecoilState);
 
   return (
     <ContentWrapper>
-      <Text>{state.user.displayName}</Text>
-      <Text>{state.user.age ? state.user.age : ''}</Text>
-      <Text>{state.user.job}</Text>
+      <Text>{user?.displayName}</Text>
+      <Text>{user?.age || ''}</Text>
+      <Text>{user?.job}</Text>
     </ContentWrapper>
   );
 }

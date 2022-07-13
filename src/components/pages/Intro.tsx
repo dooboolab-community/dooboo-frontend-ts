@@ -7,9 +7,10 @@ import UserCard from '../uis/UserCard';
 import {device} from '../../theme';
 import {fbt} from 'fbt';
 import styled from '@emotion/styled';
-import {useAppContext} from '../../providers/AppProvider';
 import {useNavigate} from 'react-router-dom';
+import {useRecoilState} from 'recoil';
 import {useThemeContext} from '../../providers/ThemeProvider';
+import {userRecoilState} from '../../recoil/atoms';
 
 const Container = styled.div`
   display: flex;
@@ -47,22 +48,23 @@ function Intro(): ReactElement {
   // eslint-disable-next-line
   let timer: any;
   const navigate = useNavigate();
-  const {setUser, resetUser} = useAppContext();
+  const [_, setUser] = useRecoilState(userRecoilState);
   const {changeThemeType} = useThemeContext();
   const [isLoggingIn, setIsLoggingIn] = useState(false);
 
   const onLogin = (): void => {
-    resetUser();
     setIsLoggingIn(true);
 
+    setUser(null);
+
     timer = setTimeout(() => {
-      const user: User = {
+      const newUser: User = {
         displayName: 'dooboolab',
         age: 30,
         job: 'developer',
       };
 
-      setUser(user);
+      setUser(newUser);
       setIsLoggingIn(false);
       clearTimeout(timer);
     }, 1000);
