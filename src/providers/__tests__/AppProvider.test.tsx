@@ -1,7 +1,7 @@
-import * as React from 'react';
-
 import {AppProvider, useAppContext} from '../AppProvider';
 import {RenderResult, act, fireEvent, render} from '@testing-library/react';
+
+import React from 'react';
 
 const FakeChild = (): React.ReactElement => {
   const {state, resetUser, callDefault} = useAppContext();

@@ -1,6 +1,5 @@
-import React, {ReactElement} from 'react';
-
 import Button from '../uis/Button';
+import {ReactElement} from 'react';
 import styled from '@emotion/styled';
 import {useNavigate} from 'react-router-dom';
 

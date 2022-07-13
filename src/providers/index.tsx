@@ -1,18 +1,15 @@
 import {AppProvider} from './AppProvider';
-import React from 'react';
+import {ReactElement} from 'react';
 import {ThemeProvider} from './ThemeProvider';
 import {ThemeType} from '../types';
 
 interface Props {
   initialThemeType?: ThemeType;
-  children?: React.ReactElement;
+  children?: ReactElement;
 }
 
 // Add providers here
-const RootProvider = ({
-  initialThemeType,
-  children,
-}: Props): React.ReactElement => {
+const RootProvider = ({initialThemeType, children}: Props): ReactElement => {
   return (
     <AppProvider>
       <ThemeProvider initialThemeType={initialThemeType || 'light'}>

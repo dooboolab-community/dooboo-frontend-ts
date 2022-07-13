@@ -15,7 +15,8 @@ export const createTestElement = (
           textAlign: 'center',
           flex: 1,
           width: '100vw',
-        }}>
+        }}
+      >
         <Routes>
           <Route path="/" element={child} />
         </Routes>

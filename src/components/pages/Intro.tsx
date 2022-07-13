@@ -1,4 +1,4 @@
-import React, {ReactElement} from 'react';
+import {ReactElement, useState} from 'react';
 
 import Button from '../uis/Button';
 import {IC_GOOGLE_W} from '../../utils/Icons';
@@ -49,7 +49,7 @@ function Intro(): ReactElement {
   const navigate = useNavigate();
   const {setUser, resetUser} = useAppContext();
   const {changeThemeType} = useThemeContext();
-  const [isLoggingIn, setIsLoggingIn] = React.useState(false);
+  const [isLoggingIn, setIsLoggingIn] = useState(false);
 
   const onLogin = (): void => {
     resetUser();

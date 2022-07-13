@@ -1,13 +1,14 @@
 import * as renderer from 'react-test-renderer';
 
+import React, {ReactElement} from 'react';
+
 import Button from '../Button';
 import {IC_FACEBOOK_W} from '../../../utils/Icons';
-import React from 'react';
 
 // test for the pure component
 describe('[Button] shared component test', () => {
   let tree: any;
-  const component: React.ReactElement = <Button text="Button 2nd test" />;
+  const component: ReactElement = <Button text="Button 2nd test" />;
 
   it('component and snapshot matches', () => {
     tree = renderer.create(component).toJSON();
@@ -24,7 +25,7 @@ describe('[Transparent] interaction', () => {
 
   let rendered: renderer.ReactTestRenderer;
   let root: renderer.ReactTestInstance;
-  const component: React.ReactElement = <Button onClick={onClick} />;
+  const component: ReactElement = <Button onClick={onClick} />;
 
   beforeAll(() => {
     rendered = renderer.create(component);

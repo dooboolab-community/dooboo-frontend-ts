@@ -1,5 +1,4 @@
-import React, {ReactElement} from 'react';
-
+import {ReactElement} from 'react';
 import {device} from '../../theme';
 import styled from '@emotion/styled';
 import {useAppContext} from '../../providers/AppProvider';
