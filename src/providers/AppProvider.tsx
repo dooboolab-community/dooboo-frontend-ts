@@ -1,4 +1,4 @@
-import React, {useReducer} from 'react';
+import {Dispatch, ReactElement, useReducer} from 'react';
 
 import {User} from '../types';
 import createCtx from '../utils/createCtx';
@@ -46,19 +46,19 @@ interface GetStateAction {
 type Action = SetUserAction | ResetUserAction | GetStateAction;
 
 interface Props {
-  children?: React.ReactElement;
+  children?: ReactElement;
 }
 
 type Reducer = (state: State, action: Action) => State;
 
-const callDefault = (dispatch: React.Dispatch<GetStateAction>) => (): void => {
+const callDefault = (dispatch: Dispatch<GetStateAction>) => (): void => {
   dispatch({
     type: ActionType.CallDefault,
   });
 };
 
 const setUser =
-  (dispatch: React.Dispatch<SetUserAction>) =>
+  (dispatch: Dispatch<SetUserAction>) =>
   (user: User): void => {
     dispatch({
       type: ActionType.SetUser,
@@ -66,7 +66,7 @@ const setUser =
     });
   };
 
-const resetUser = (dispatch: React.Dispatch<ResetUserAction>) => (): void => {
+const resetUser = (dispatch: Dispatch<ResetUserAction>) => (): void => {
   dispatch({
     type: ActionType.ResetUser,
   });

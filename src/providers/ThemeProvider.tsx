@@ -3,7 +3,7 @@ import {
   ThemeProvider as OriginalThemeProvider,
   withTheme,
 } from '@emotion/react';
-import React, {useState} from 'react';
+import {ReactElement, useState} from 'react';
 
 import {ThemeType} from '../types';
 import createCtx from '../utils/createCtx';
@@ -20,7 +20,7 @@ const [useCtx, Provider] = createCtx<Context>();
 export const defaultThemeType: ThemeType = 'light';
 
 interface Props {
-  children?: React.ReactElement;
+  children?: ReactElement;
   // using initial ThemeType is essential while testing apps with consistent ThemeType
   initialThemeType?: ThemeType;
 }
@@ -28,7 +28,7 @@ interface Props {
 function ThemeProvider({
   children,
   initialThemeType = defaultThemeType,
-}: Props): React.ReactElement {
+}: Props): ReactElement {
   const [themeType, setThemeType] = useState(initialThemeType);
 
   const changeThemeType = (): void => {

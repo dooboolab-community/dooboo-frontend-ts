@@ -1,6 +1,6 @@
-import React, {ReactElement} from 'react';
-import {hydrate, render} from 'react-dom';
+import {createRoot, hydrateRoot} from 'react-dom/client';
 
+import {ReactElement} from 'react';
 import RootProvider from './providers';
 import SwitchNavigator from './components/navigations/SwitchNavigator';
 import {initFbt} from './utils/fbt';
@@ -8,6 +8,7 @@ import {initFbt} from './utils/fbt';
 initFbt();
 
 const rootElement = document.getElementById('app') as HTMLElement;
+const root = createRoot(rootElement);
 
 const Component = (): ReactElement => (
   <RootProvider>
@@ -17,9 +18,9 @@ const Component = (): ReactElement => (
 
 const renderApp = (): void => {
   if (rootElement.hasChildNodes()) {
-    hydrate(<Component />, rootElement);
+    hydrateRoot(rootElement, <Component />);
   } else {
-    render(<Component />, rootElement);
+    root.render(<Component />);
   }
 };
 

@@ -1,5 +1,4 @@
-import type {FC} from 'react';
-import React from 'react';
+import type {ReactElement} from 'react';
 import styled from '@emotion/styled';
 
 const Spinner = styled.div`
@@ -20,7 +19,7 @@ const Spinner = styled.div`
   }
 `;
 
-const ButtonLoading: FC = () => {
+const ButtonLoading = (): ReactElement => {
   return <Spinner id="spinner" />;
 };
 

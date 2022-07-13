@@ -5,6 +5,7 @@ const WebpackPwaManifest = require('webpack-pwa-manifest');
 const Dotenv = require('dotenv-webpack');
 const ReactRefreshWebpackPlugin = require('@pmmmwh/react-refresh-webpack-plugin');
 const {CleanWebpackPlugin} = require('clean-webpack-plugin');
+const webpack = require('webpack');
 
 const isDevelopment = !process.env.NODE_ENV !== 'production';
 
@@ -49,6 +50,9 @@ module.exports = {
         },
       ],
     }),
+    new webpack.ProvidePlugin({
+      React: 'react',
+    }),
     ...[isDevelopment && new ReactRefreshWebpackPlugin()].filter(Boolean),
   ],
   resolve: {
@@ -75,7 +79,9 @@ module.exports = {
           {
             loader: require.resolve('babel-loader'),
             options: {
-              plugins: [isDevelopment && require.resolve('react-refresh/babel')].filter(Boolean),
+              plugins: [
+                isDevelopment && require.resolve('react-refresh/babel'),
+              ].filter(Boolean),
             },
           },
         ],
