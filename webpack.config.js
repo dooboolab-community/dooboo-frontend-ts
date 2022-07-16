@@ -60,6 +60,7 @@ module.exports = {
     extensions: ['.ts', '.tsx', '.js', 'jsx'],
   },
   devServer: {
+    historyApiFallback: true,
     static: {
       directory: path.join(__dirname, '/src'),
     },
