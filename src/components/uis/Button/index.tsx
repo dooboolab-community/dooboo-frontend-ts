@@ -9,7 +9,7 @@ interface Props {
   id?: string;
   style?: CSSProperties;
   imgSrc?: string;
-  text?: string;
+  text?: string | ReactElement;
   onClick?: () => void;
   isLoading?: boolean;
 }

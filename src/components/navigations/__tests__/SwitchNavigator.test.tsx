@@ -22,7 +22,6 @@ describe('[SwitchNavigator] rendering', () => {
   it('should renders without crashing', () => {
     const {baseElement} = testingLib;
 
-    expect(baseElement).toMatchSnapshot();
     expect(baseElement).toBeTruthy();
   });
 });
