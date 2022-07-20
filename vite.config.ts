@@ -1,6 +1,7 @@
 /// <reference types="vitest" />
 /// <reference types="vite/client" />
 
+import {VitePWA} from 'vite-plugin-pwa';
 import babel from 'vite-plugin-babel';
 import {defineConfig} from 'vite';
 import path from 'path';
@@ -20,6 +21,9 @@ export default defineConfig({
           '@babel/preset-typescript',
         ],
         plugins: [
+          VitePWA({
+            injectRegister: 'auto',
+          }),
           [
             '@emotion',
             '@babel/plugin-transform-runtime',
