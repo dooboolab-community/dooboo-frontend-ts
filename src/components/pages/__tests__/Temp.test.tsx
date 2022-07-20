@@ -25,7 +25,6 @@ describe('[Temp] Interaction', () => {
     renderResult = render(component);
   });
 
-  // eslint-disable-next-line jest/expect-expect
   it('should simulate [onClick] when [btn] has been clicked', () => {
     const btnInstance = renderResult.getByText('back to tab page');
 

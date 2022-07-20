@@ -39,7 +39,6 @@ describe('[Intro] Interaction', () => {
 
   afterEach(cleanup);
 
-  // eslint-disable-next-line jest/expect-expect
   it('should simulate [onLogin] click with testing library', () => {
     renderResult = render(component);
 
