@@ -1,9 +1,9 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
+// Vitest Snapshot v1
 
-exports[`[Temp] render renders without crashing 1`] = `
+exports[`[Temp] render > renders without crashing 1`] = `
 <div
   style={
-    Object {
+    {
       "flex": 1,
       "textAlign": "center",
       "width": "100vw",

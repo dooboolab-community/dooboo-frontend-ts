@@ -1,4 +1,3 @@
-import * as ReactRouterDom from 'react-router-dom';
 import * as renderer from 'react-test-renderer';
 
 import {RenderResult, fireEvent, render} from '@testing-library/react';
@@ -9,11 +8,6 @@ import {createTestElement} from '../../../../test/testUtils';
 
 const props = {};
 const component = createTestElement(<Temp {...props} />);
-
-jest.mock('react-router-dom', () => ({
-  ...(jest.requireActual('react-router-dom') as typeof ReactRouterDom),
-  useNavigate: () => jest.fn(),
-}));
 
 describe('[Temp] render', () => {
   it('renders without crashing', () => {
@@ -31,6 +25,7 @@ describe('[Temp] Interaction', () => {
     renderResult = render(component);
   });
 
+  // eslint-disable-next-line jest/expect-expect
   it('should simulate [onClick] when [btn] has been clicked', () => {
     const btnInstance = renderResult.getByText('back to tab page');
 

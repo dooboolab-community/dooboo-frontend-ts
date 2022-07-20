@@ -13,27 +13,23 @@ DO NOT MODIFY OR CHANGE THE CODE BEFORE CONFIRMED BY `DOOBOOLAB`. THIS REPOSITOR
 - [react-router](https://github.com/ReactTraining/react-router)
 - [typescript](https://github.com/Microsoft/TypeScript)
 - [emotion](https://emotion.sh)
-- [ts-jest](https://github.com/kulshekhar/ts-jest)
 - [react-testing-library](https://github.com/kentcdodds/react-testing-library)
+- [vitest](https://vitest.dev)
 - [react-hook](https://reactjs.org/docs/hooks-intro.html)
 - [prettier](https://prettier.io)
-- [fbt](https://github.com/facebook/fbt)
 - [recoil](https://github.com/facebookexperimental/Recoil)
+- [fbt](https://github.com/facebook/fbt)
 
 ### Gain points
 
 1. State management with `recoil`.
 2. Know how to structure react web app with `typescript`.
 3. Know how to navigate between pages with `react-router`.
-4. Know how to write test code with `react-native-testing-library`.
+4. Know how to write test code with `react-testing-library`.
 5. Know how to `lint` your project with `eslint`.
-6. [Know how to localize your project](https://github.com/dooboolab/dooboo-frontend-ts/blob/main/STRINGS.ts).
-
-- [Example]()
-
-7. [Know how to place your `retina image` into your project](https://github.com/dooboolab/dooboo-frontend-ts/blob/main/src/utils/Icons.ts).
-8. Know how to use `emotion`.
-9. [Know how to implement theming with emotion](https://github.com/dooboolab/dooboo-frontend-ts/blob/main/src/theme.ts).
+6. [Know how to localize your project with fbt](https://medium.com/dooboolab/localizing-react-app-with-fbt-instead-of-i18n-90822e0cb373).
+7. Know how to use `emotion`.
+8. [Know how to implement theming with emotion](https://github.com/dooboolab/dooboo-frontend-ts/blob/main/src/theme.ts).
 
 - [Dark Mode]
   ![image](https://user-images.githubusercontent.com/27461460/58620208-815be500-8301-11e9-9a00-2ceaca7c93f5.png)
@@ -63,7 +59,6 @@ app/
 ├─ .gitignore
 ├─ babel.config.js
 ├─ environment.d.ts
-├─ jest.config.js
 ├─ package.json
 ├─ postcss.config.js
 ├─ README.md
@@ -102,9 +97,9 @@ Snapshots:   2 passed, 2 total
 Time:        2.145s, estimated 3s
 ```
 
-### Writing tests with Jest
+### Writing tests with [vitest](https://vitest.dev) and [testing-library](https://testing-library.com/docs/react-testing-library)
 
-We've created test examples with jest-ts in `src/components/page/__tests__` and `src/components/ui/__tests__`. Since react is component oriented, we've designed to focus on writing test in same level of directory with component. You can simply run `yarn test` to test if it succeeds and look more closer opening the source.
+We've created test examples with vitest in `src/components/pages/__tests__` and `src/components/uis/__tests__`. Since react is component oriented, we've designed to focus on writing test in same level of directory with component. You can simply run `yarn test` to test if it succeeds and look more closer opening the source.
 
 ### Vscode prettier and eslint setup
 
@@ -192,8 +187,6 @@ const component = (props): React.ReactElement => {
 > using consistent theme('light') explicitly is encouraged in testing for avoiding unexpected snapshot test errors
 
 ### Localization
-
-We've defined localized strings in `assets/lang/en.json` for English and `assets/lang/ko.json` for Korean. Since the `en` is default locale setup in current project, you do not need to localize this file. However, you still should not delete this if you don't want to see missing localization warning messages when you are running jest.
 
 We are using [fbt](https://github.com/facebook/fbt) to localize our app which is maintained by Facebook team. Simply running `yarn fbt:all` will generate `assets/translatedFbts.json` which has all the localized strings.
 

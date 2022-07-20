@@ -51,7 +51,7 @@ jobs:
             yarn tsc
 
       - run:
-          name: Jest Test
+          name: Vitest Test
           command: |
             mkdir -p coverage
             yarn test

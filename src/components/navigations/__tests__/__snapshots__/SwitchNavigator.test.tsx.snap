@@ -1,6 +1,6 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
+// Vitest Snapshot v1
 
-exports[`[SwitchNavigator] rendering should renders without crashing 1`] = `
+exports[`[SwitchNavigator] rendering > should renders without crashing 1`] = `
 <body>
   <div>
     <div
@@ -35,7 +35,7 @@ exports[`[SwitchNavigator] rendering should renders without crashing 1`] = `
             >
               <img
                 class="css-1oidkpf"
-                src="test-file-stub"
+                src="/assets/icons/ic-google-white@3x.png"
               />
               <span
                 class="css-6apmke"

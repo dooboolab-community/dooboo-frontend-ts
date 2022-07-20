@@ -1,12 +1,6 @@
 import * as renderer from 'react-test-renderer';
 
-import {
-  RenderResult,
-  act,
-  cleanup,
-  fireEvent,
-  render,
-} from '@testing-library/react';
+import {RenderResult, cleanup, fireEvent, render} from '@testing-library/react';
 
 import Button from '../../uis/Button';
 import Intro from '../Intro';
@@ -45,17 +39,13 @@ describe('[Intro] Interaction', () => {
 
   afterEach(cleanup);
 
+  // eslint-disable-next-line jest/expect-expect
   it('should simulate [onLogin] click with testing library', () => {
-    jest.useFakeTimers();
     renderResult = render(component);
 
     const SignInButton = renderResult.getByTestId('SIGN_IN');
 
     fireEvent.click(SignInButton);
-
-    act(() => {
-      jest.runAllTimers();
-    });
   });
 
   it('should simulate [navigate] when clicked', () => {

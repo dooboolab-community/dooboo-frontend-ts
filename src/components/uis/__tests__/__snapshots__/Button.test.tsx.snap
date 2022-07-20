@@ -1,10 +1,10 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
+// Vitest Snapshot v1
 
-exports[`[Button] shared component test component and snapshot matches 1`] = `
+exports[`[Button] shared component test > component and snapshot matches 1`] = `
 <button
   className="css-1iagyjb"
   style={
-    Object {
+    {
       "display": "flex",
       "height": "60px",
     }

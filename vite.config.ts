@@ -1,3 +1,6 @@
+/// <reference types="vitest" />
+/// <reference types="vite/client" />
+
 import babel from 'vite-plugin-babel';
 import {defineConfig} from 'vite';
 import path from 'path';
