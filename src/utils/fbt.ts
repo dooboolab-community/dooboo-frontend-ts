@@ -15,6 +15,7 @@ export const initFbt = (): void => {
   init({
     translations: intl,
     hooks: {
+      // @ts-ignore
       getViewerContext: (): {locale: string} => viewerContext,
     },
   });
