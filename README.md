@@ -43,7 +43,6 @@ app/
 ├─ assets
 │  └─ icons // app icons
 │  └─ images // app images like background images
-├─ docs // explanation for dev stack we used. (Sorry for Korean)
 ├─ node_modules/
 ├─ src/
 │  └─ apis
@@ -65,8 +64,8 @@ app/
 ├─ STRINGS.js
 ├─ tsconfig.json
 ├─ typings.d.ts
-├─ webpack.config.js
-└─ webpack.config.prod.js
+├─ vite.config.ts
+└─ vitest.config.ts
 ```
 
 ### Install and running the project

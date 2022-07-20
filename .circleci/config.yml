@@ -55,8 +55,6 @@ jobs:
           command: |
             mkdir -p coverage
             yarn test
-          environment:
-            JEST_JUNIT_OUTPUT: test-results/jest/junit.xml
 
       - store_test_results:
           path: coverage

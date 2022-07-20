@@ -6,12 +6,10 @@
   "scripts": {
     "postinstall": "yarn fbt:all",
     "dev": "vite",
-    "build": "tsc && vite build",
+    "build": "fbt:all && tsc && vite build",
     "preview": "vite preview",
-    "dev:webpack": "webpack serve --config webpack.config.js",
     "tsc": "tsc",
     "test": "vitest",
-    "production": "NODE_ENV=production webpack --config webpack.config.prod.js",
     "lint": "eslint src --ext .ts,.tsx,.js,.jsx",
     "manifest": "babel-node node_modules/.bin/fbt-manifest --src src",
     "collect-fbts": "babel-node node_modules/.bin/fbt-collect --pretty --manifest < .src_manifest.json > .source_strings.json",
