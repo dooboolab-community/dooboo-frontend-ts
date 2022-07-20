@@ -21,12 +21,7 @@ export default defineConfig({
           '@babel/preset-typescript',
         ],
         plugins: [
-          VitePWA({
-            injectRegister: 'auto',
-          }),
           [
-            '@emotion',
-            '@babel/plugin-transform-runtime',
             'babel-plugin-fbt',
             {
               // We can also provide the fbt enum manifest directly as a JS variable
@@ -35,6 +30,9 @@ export default defineConfig({
             },
           ],
           'babel-plugin-fbt-runtime',
+          '@emotion',
+          '@babel/plugin-transform-runtime',
+          VitePWA({injectRegister: 'auto'}),
         ],
       },
     }),

@@ -5,11 +5,15 @@ import {IC_GOOGLE_W} from '../../utils/Icons';
 import {User} from '../../types';
 import UserCard from '../uis/UserCard';
 import {device} from '../../theme';
+import {fbt} from 'fbt';
 import styled from '@emotion/styled';
 import {useNavigate} from 'react-router-dom';
 import {useRecoilState} from 'recoil';
 import {useThemeContext} from '../../providers/ThemeProvider';
 import {userRecoilState} from '../../recoil/atoms';
+
+// eslint-disable-next-line
+fbt;
 
 const Container = styled.div`
   display: flex;
