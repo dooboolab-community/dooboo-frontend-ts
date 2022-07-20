@@ -14,7 +14,10 @@ jobs:
       - uses: actions/checkout@v2
 
       - name: Install modules
-        run: yarn
+        run: YARN_CHECKSUM_BEHAVIOR=update yarn --immutable
+
+      - name: Generate FBT
+        run: yarn fbt:all
 
       - name: Check linting
         run: yarn lint
