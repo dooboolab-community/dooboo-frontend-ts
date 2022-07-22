@@ -32,9 +32,9 @@ export default defineConfig({
           'babel-plugin-fbt-runtime',
           '@emotion',
           '@babel/plugin-transform-runtime',
-          VitePWA({injectRegister: 'auto'}),
         ],
       },
     }),
+    VitePWA({injectRegister: 'auto'}),
   ],
 });
