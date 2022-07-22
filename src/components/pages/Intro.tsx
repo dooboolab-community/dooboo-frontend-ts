@@ -86,7 +86,7 @@ function Intro(): ReactElement {
         />
         <Button
           onClick={(): void => navigate('/temp', {})}
-          text={<fbt desc="navigate">Navigate</fbt>}
+          text={fbt('Navigate', 'navigate')}
         />
         <Button
           testID="CHANGE_THEME"
