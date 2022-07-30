@@ -1,6 +1,6 @@
 {
   "name": "dooboo-frontend-ts",
-  "packageManager": "yarn@3.1.1",
+  "packageManager": "yarn@3.2.2",
   "version": "1.0.0",
   "description": "Build react app with typescript.",
   "scripts": {
@@ -32,7 +32,6 @@
     "recoil": "^0.7.4"
   },
   "devDependencies": {
-    "prettier": "^2.7.1",
     "@babel/cli": "7.18.6",
     "@babel/core": "^7.18.6",
     "@babel/node": "^7.18.6",
@@ -47,7 +46,7 @@
     "@babel/preset-react": "7.18.6",
     "@babel/preset-typescript": "^7.18.6",
     "@babel/runtime": "7.18.6",
-    "@dooboo/eslint-config": "^1.4.0",
+    "@dooboo/eslint-config-react": "^1.0.0",
     "@emotion/babel-plugin": "^11.9.2",
     "@fbtjs/default-collection-transform": "^1.0.0",
     "@pmmmwh/react-refresh-webpack-plugin": "^0.5.7",
@@ -84,6 +83,7 @@
     "jest": "^28.1.2",
     "jest-environment-jsdom": "^28.1.2",
     "jest-fetch-mock": "^3.0.3",
+    "prettier": "^2.7.1",
     "react-addons-test-utils": "^15.6.2",
     "react-refresh": "^0.14.0",
     "react-test-renderer": "^18.2.0",
