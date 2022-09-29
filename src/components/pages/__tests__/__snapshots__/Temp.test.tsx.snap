@@ -3,7 +3,7 @@
 exports[`[Temp] render renders without crashing 1`] = `
 <div
   style={
-    Object {
+    {
       "flex": 1,
       "textAlign": "center",
       "width": "100vw",
@@ -17,7 +17,7 @@ exports[`[Temp] render renders without crashing 1`] = `
       className="css-wnig0z"
       onClick={[Function]}
       style={
-        Object {
+        {
           "display": "flex",
           "height": "60px",
         }

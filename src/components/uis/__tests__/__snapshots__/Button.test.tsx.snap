@@ -4,7 +4,7 @@ exports[`[Button] shared component test component and snapshot matches 1`] = `
 <button
   className="css-1iagyjb"
   style={
-    Object {
+    {
       "display": "flex",
       "height": "60px",
     }

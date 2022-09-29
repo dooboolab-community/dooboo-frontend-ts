@@ -3,7 +3,7 @@
 exports[`[Intro] screen rendering test should render outer component and snapshot matches 1`] = `
 <div
   style={
-    Object {
+    {
       "flex": 1,
       "textAlign": "center",
       "width": "100vw",
@@ -34,7 +34,7 @@ exports[`[Intro] screen rendering test should render outer component and snapsho
         data-testid="SIGN_IN"
         onClick={[Function]}
         style={
-          Object {
+          {
             "display": "flex",
             "height": "60px",
           }
@@ -56,7 +56,7 @@ exports[`[Intro] screen rendering test should render outer component and snapsho
         className="css-wnig0z"
         onClick={[Function]}
         style={
-          Object {
+          {
             "display": "flex",
             "height": "60px",
           }
@@ -75,7 +75,7 @@ exports[`[Intro] screen rendering test should render outer component and snapsho
         data-testid="CHANGE_THEME"
         onClick={[Function]}
         style={
-          Object {
+          {
             "display": "flex",
             "height": "60px",
           }
