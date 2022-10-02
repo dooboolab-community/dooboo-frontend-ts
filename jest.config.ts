@@ -32,9 +32,5 @@ module.exports = {
   testEnvironment: 'jsdom',
   globals: {
     window: {},
-    'ts-jest': {
-      babelConfig: true,
-      tsconfig: 'tsconfig.json',
-    },
   },
 };
