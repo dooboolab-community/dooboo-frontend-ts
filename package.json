@@ -1,6 +1,6 @@
 {
   "name": "dooboo-frontend-ts",
-  "packageManager": "yarn@3.2.2",
+  "packageManager": "yarn@3.2.4",
   "version": "1.0.0",
   "description": "Build react app with typescript.",
   "scripts": {
