@@ -1,6 +1,6 @@
 import {ROOT_URL, sample} from '../sample';
 
-import {FetchMock} from 'jest-fetch-mock';
+import type {FetchMock} from 'jest-fetch-mock';
 
 const fetchMock = fetch as FetchMock;
 

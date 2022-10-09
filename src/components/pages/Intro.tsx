@@ -1,8 +1,9 @@
-import {ReactElement, useState} from 'react';
+import type {ReactElement} from 'react';
+import {useState} from 'react';
 
 import Button from '../uis/Button';
 import {IC_GOOGLE_W} from '../../utils/Icons';
-import {User} from '../../types';
+import type {User} from '../../types';
 import UserCard from '../uis/UserCard';
 import {device} from '../../theme';
 import {fbt} from 'fbt';

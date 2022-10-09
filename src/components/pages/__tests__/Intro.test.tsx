@@ -1,12 +1,7 @@
 import * as renderer from 'react-test-renderer';
 
-import {
-  RenderResult,
-  act,
-  cleanup,
-  fireEvent,
-  render,
-} from '@testing-library/react';
+import type {RenderResult} from '@testing-library/react';
+import {act, cleanup, fireEvent, render} from '@testing-library/react';
 
 import Button from '../../uis/Button';
 import Intro from '../Intro';

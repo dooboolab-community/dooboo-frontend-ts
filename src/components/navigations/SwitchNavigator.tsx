@@ -1,7 +1,7 @@
 import {BrowserRouter, Route, Routes} from 'react-router-dom';
 
 import Intro from '../pages/Intro';
-import {ReactElement} from 'react';
+import type {ReactElement} from 'react';
 import Temp from '../pages/Temp';
 
 function SwitchNavigator(): ReactElement {

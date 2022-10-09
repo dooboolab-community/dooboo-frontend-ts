@@ -1,4 +1,4 @@
-import {ReactElement} from 'react';
+import type {ReactElement} from 'react';
 import {device} from '../../theme';
 import styled from '@emotion/styled';
 import {useRecoilValue} from 'recoil';

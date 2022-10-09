@@ -1,4 +1,4 @@
-import {User} from '../types';
+import type {User} from '../types';
 import {atom} from 'recoil';
 
 export const userRecoilState = atom<User | null>({

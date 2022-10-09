@@ -1,6 +1,7 @@
 import * as renderer from 'react-test-renderer';
 
-import React, {ReactElement} from 'react';
+import type {ReactElement} from 'react';
+import React from 'react';
 
 import Button from '../Button';
 import {IC_FACEBOOK_W} from '../../../utils/Icons';

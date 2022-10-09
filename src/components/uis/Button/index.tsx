@@ -1,4 +1,4 @@
-import {CSSProperties, ReactElement} from 'react';
+import type {CSSProperties, ReactElement} from 'react';
 
 import ButtonLoading from './ButtonLoading';
 import {ButtonPrimary} from '../Styles';

@@ -1,4 +1,5 @@
-import {RenderResult, render} from '@testing-library/react';
+import type {RenderResult} from '@testing-library/react';
+import {render} from '@testing-library/react';
 
 import React from 'react';
 import RootProvider from '../../../providers/index';

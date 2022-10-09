@@ -1,11 +1,12 @@
+import type {Theme as DefaultTheme} from '@emotion/react';
 import {
-  Theme as DefaultTheme,
   ThemeProvider as OriginalThemeProvider,
   withTheme,
 } from '@emotion/react';
-import {ReactElement, useState} from 'react';
+import type {ReactElement} from 'react';
+import {useState} from 'react';
 
-import {ThemeType} from '../types';
+import type {ThemeType} from '../types';
 import createCtx from '../utils/createCtx';
 import {createTheme} from '../theme';
 
