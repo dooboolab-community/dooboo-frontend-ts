@@ -1,12 +1,12 @@
 import * as renderer from 'react-test-renderer';
 
-import type {RenderResult} from '@testing-library/react';
 import {act, cleanup, fireEvent, render} from '@testing-library/react';
 
-import Button from '../../uis/Button';
-import Intro from '../Intro';
+import Button from '../../../src/components/uis/Button';
+import Intro from '../../../src/components/pages/Intro';
 import React from 'react';
-import {createTestElement} from '../../../../test/testUtils';
+import type {RenderResult} from '@testing-library/react';
+import {createTestElement} from '../../utils/testUtils';
 
 const props = {};
 const component = createTestElement(<Intro {...props} />);

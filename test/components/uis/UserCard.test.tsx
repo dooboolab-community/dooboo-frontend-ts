@@ -1,8 +1,8 @@
 import * as renderer from 'react-test-renderer';
 
 import React from 'react';
-import UserCard from '../UserCard';
-import {createTestElement} from '../../../../test/testUtils';
+import UserCard from '../../../src/components/uis/UserCard';
+import {createTestElement} from '../../utils/testUtils';
 
 const props = {};
 const component = createTestElement(<UserCard {...props} />);

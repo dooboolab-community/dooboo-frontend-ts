@@ -1,5 +1,5 @@
 import dotenv from 'dotenv';
-import { initFbt } from '../src/utils/fbt';
+import {initFbt} from '../../src/utils/fbt';
 
 dotenv.config();
 
