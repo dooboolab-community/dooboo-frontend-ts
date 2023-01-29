@@ -1,15 +1,13 @@
-import type {ReactElement} from 'react';
-import {useState} from 'react';
-
 import Button from '../uis/Button';
 import {IC_GOOGLE_W} from '../../utils/Icons';
+import type {ReactElement} from 'react';
 import type {User} from '../../types';
 import UserCard from '../uis/UserCard';
 import {device} from '../../theme';
-import {fbt} from 'fbt';
 import styled from '@emotion/styled';
 import {useNavigate} from 'react-router-dom';
 import {useRecoilState} from 'recoil';
+import {useState} from 'react';
 import {useThemeContext} from '../../providers/ThemeProvider';
 import {userRecoilState} from '../../recoil/atoms';
 
@@ -80,16 +78,13 @@ function Intro(): ReactElement {
           imgSrc={IC_GOOGLE_W}
           isLoading={isLoggingIn}
           onClick={(): void => onLogin()}
-          text={fbt('Sign In', 'sign in')}
+          text="sign in"
         />
-        <Button
-          onClick={(): void => navigate('/temp', {})}
-          text={fbt('Navigate', 'navigate')}
-        />
+        <Button onClick={(): void => navigate('/temp', {})} text="navigate" />
         <Button
           testID="CHANGE_THEME"
           onClick={(): void => changeThemeType()}
-          text={fbt('Change theme', 'change theme')}
+          text="change theme"
         />
       </ButtonWrapper>
     </Container>
