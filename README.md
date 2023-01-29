@@ -17,7 +17,6 @@ DO NOT MODIFY OR CHANGE THE CODE BEFORE CONFIRMED BY `DOOBOOLAB`. THIS REPOSITOR
 - [react-testing-library](https://github.com/kentcdodds/react-testing-library)
 - [react-hook](https://reactjs.org/docs/hooks-intro.html)
 - [prettier](https://prettier.io)
-- [fbt](https://github.com/facebook/fbt)
 - [recoil](https://github.com/facebookexperimental/Recoil)
 
 ### Gain points
@@ -70,8 +69,7 @@ app/
 ├─ STRINGS.js
 ├─ tsconfig.json
 ├─ typings.d.ts
-├─ webpack.config.js
-└─ webpack.config.prod.js
+├─ vite.config.ts
 ```
 
 ### Install and running the project
