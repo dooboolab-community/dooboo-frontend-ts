@@ -1,6 +1,7 @@
 import type * as ReactRouterDom from 'react-router-dom';
 import * as renderer from 'react-test-renderer';
 
+import {beforeEach, expect, it, test, vi} from 'vitest';
 import {fireEvent, render} from '@testing-library/react';
 
 import React from 'react';
@@ -11,12 +12,19 @@ import {createTestElement} from '../../utils/testUtils';
 const props = {};
 const component = createTestElement(<Temp {...props} />);
 
-jest.mock('react-router-dom', () => ({
-  ...(jest.requireActual('react-router-dom') as typeof ReactRouterDom),
-  useNavigate: () => jest.fn(),
-}));
+// vi.mock('react-router-dom', async () => {
+//     vi.importActual('react-router-dom') as typeof ReactRouterDom)
+// }));
 
-describe('[Temp] render', () => {
+vi.mock('react-router-dom', async () => {
+  const lib = (await vi.importActual(
+    'react-router-dom',
+  )) as typeof ReactRouterDom;
+
+  return {...lib, useNavigate: vi.fn()};
+});
+
+test('[Temp] render', () => {
   it('renders without crashing', () => {
     const rendered = renderer.create(component).toJSON();
 
@@ -25,7 +33,7 @@ describe('[Temp] render', () => {
   });
 });
 
-describe('[Temp] Interaction', () => {
+test('[Temp] Interaction', () => {
   let renderResult: RenderResult;
 
   beforeEach(() => {

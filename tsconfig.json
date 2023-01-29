@@ -17,7 +17,7 @@
     "typeRoots": ["./node_modules/@types"],
     "types": ["vite/client", "@emotion/react/types/css-prop"]
   },
-  "include": ["src"],
+  "include": ["src", "test"],
   "references": [{"path": "./tsconfig.node.json"}],
   "exclude": ["node_modules", "**/*.spec.tsx", "**/*.test.tsx"],
   "types": ["typePatches"],

@@ -1,9 +1,9 @@
 import {BrowserRouter, Route, Routes} from 'react-router-dom';
 
-import React from 'react';
 import type {ReactElement} from 'react';
 import RootProvider from '../../src/providers';
 import type {ThemeType} from '../../src/types';
+import {vi} from 'vitest';
 
 export const createTestElement = (
   child: ReactElement,
@@ -30,8 +30,8 @@ export const createTestProps = (
   obj?: Record<string, unknown>,
 ): Record<string, unknown> | unknown | any => ({
   navigation: {
-    navigate: jest.fn(),
-    goBack: jest.fn(),
+    navigate: vi.fn(),
+    goBack: vi.fn(),
   },
   ...obj,
 });

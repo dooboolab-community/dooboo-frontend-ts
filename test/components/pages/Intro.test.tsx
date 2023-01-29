@@ -1,6 +1,7 @@
 import * as renderer from 'react-test-renderer';
 
 import {act, cleanup, fireEvent, render} from '@testing-library/react';
+import {afterEach, beforeEach, expect, it, test} from 'vitest';
 
 import Button from '../../../src/components/uis/Button';
 import Intro from '../../../src/components/pages/Intro';
@@ -24,7 +25,7 @@ afterEach(() => {
 });
 
 // test for the container page in dom
-describe('[Intro] screen rendering test', () => {
+test('[Intro] screen rendering test', () => {
   let json: any;
 
   it('should render outer component and snapshot matches', () => {
@@ -33,7 +34,7 @@ describe('[Intro] screen rendering test', () => {
   });
 });
 
-describe('[Intro] Interaction', () => {
+test('[Intro] Interaction', () => {
   let rendered: renderer.ReactTestRenderer;
   let root: renderer.ReactTestInstance;
   let renderResult: RenderResult;

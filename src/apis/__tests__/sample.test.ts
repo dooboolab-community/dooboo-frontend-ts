@@ -1,14 +1,7 @@
 import {ROOT_URL, sample} from '../sample';
-
-import type {FetchMock} from 'jest-fetch-mock';
-
-const fetchMock = fetch as FetchMock;
+import {describe, expect, it, vi} from 'vitest';
 
 describe('testing sample api', () => {
-  beforeEach(() => {
-    fetchMock.resetMocks();
-  });
-
   it('calls google and returns data to me', () => {
     const mockedResult = JSON.stringify({data: '12345'});
 
@@ -25,8 +18,8 @@ describe('testing sample api', () => {
   });
 
   it('throws an error if object is undefined', () => {
-    const onResponse = jest.fn();
-    const onError = jest.fn();
+    const onResponse = vi.fn();
+    const onError = vi.fn();
 
     sample(undefined)
       .then(onResponse)
@@ -40,11 +33,8 @@ describe('testing sample api', () => {
   it('throws an error if error occurs', () => {
     fetchMock.mockRejectedValue(new Error('error'));
 
-    // fetchMock.mockResponseOnce(() =>
-    //   sample(null).then(() => Promise.reject(new Error())),
-    // );
-    const onResponse = jest.fn();
-    const onError = jest.fn();
+    const onResponse = vi.fn();
+    const onError = vi.fn();
 
     sample({})
       .then(onResponse)

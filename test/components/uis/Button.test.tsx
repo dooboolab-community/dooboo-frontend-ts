@@ -1,12 +1,14 @@
 import * as renderer from 'react-test-renderer';
 
+import {beforeAll, expect, it, test} from 'vitest';
+
 import Button from '../../../src/components/uis/Button';
 import {IC_FACEBOOK_W} from '../../../src/utils/Icons';
 import React from 'react';
 import type {ReactElement} from 'react';
 
 // test for the pure component
-describe('[Button] shared component test', () => {
+test('[Button] shared component test', () => {
   let tree: any;
   const component: ReactElement = <Button text="Button 2nd test" />;
 
@@ -16,7 +18,7 @@ describe('[Button] shared component test', () => {
   });
 });
 
-describe('[Transparent] interaction', () => {
+test('[Transparent] interaction', () => {
   let count = 1;
 
   const onClick = (): void => {
@@ -42,7 +44,7 @@ describe('[Transparent] interaction', () => {
   });
 });
 
-describe('[WhiteButton] interaction', () => {
+test('[WhiteButton] interaction', () => {
   let count = 1;
 
   const onClick = (): void => {
