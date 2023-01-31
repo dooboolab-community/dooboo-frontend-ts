@@ -1,28 +1,16 @@
-import {BrowserRouter, Route, Routes} from 'react-router-dom';
-
 import type {ReactElement} from 'react';
 import RootProvider from '../../src/providers';
+import {StaticRouter} from 'react-router-dom/server';
 import type {ThemeType} from '../../src/types';
 import {vi} from 'vitest';
 
 export const createTestElement = (
   child: ReactElement,
   themeType?: ThemeType,
+  location = '/',
 ): ReactElement => (
   <RootProvider initialThemeType={themeType}>
-    <BrowserRouter>
-      <div
-        style={{
-          textAlign: 'center',
-          flex: 1,
-          width: '100vw',
-        }}
-      >
-        <Routes>
-          <Route path="/" element={child} />
-        </Routes>
-      </div>
-    </BrowserRouter>
+    <StaticRouter location={location}>{child}</StaticRouter>
   </RootProvider>
 );
 

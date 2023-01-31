@@ -1,14 +1,14 @@
-import type {Theme as DefaultTheme} from '@emotion/react';
 import {
   ThemeProvider as OriginalThemeProvider,
   withTheme,
 } from '@emotion/react';
-import type {ReactElement} from 'react';
-import {useState} from 'react';
 
+import type {Theme as DefaultTheme} from '@emotion/react';
+import type {ReactElement} from 'react';
 import type {ThemeType} from '../types';
 import createCtx from '../utils/createCtx';
 import {createTheme} from '../theme';
+import {useState} from 'react';
 
 interface Context {
   theme: DefaultTheme;
@@ -37,19 +37,6 @@ function ThemeProvider({
 
     setThemeType(newThemeType);
   };
-
-  document.addEventListener('keydown', (event) => {
-    if (event.ctrlKey) {
-      switch (event.key) {
-        case '.':
-          changeThemeType();
-          break;
-        // case 't':
-        //   changeLocale();
-        //   break;
-      }
-    }
-  });
 
   const theme = createTheme(themeType) as DefaultTheme;
 

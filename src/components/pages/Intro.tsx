@@ -80,7 +80,11 @@ function Intro(): ReactElement {
           onClick={(): void => onLogin()}
           text="sign in"
         />
-        <Button onClick={(): void => navigate('/temp', {})} text="navigate" />
+        <Button
+          testID="NAVIGATE"
+          onClick={(): void => navigate('/temp', {})}
+          text="navigate"
+        />
         <Button
           testID="CHANGE_THEME"
           onClick={(): void => changeThemeType()}

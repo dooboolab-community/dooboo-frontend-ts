@@ -10,13 +10,11 @@ function SwitchNavigator(): ReactElement {
   const {changeThemeType} = useThemeContext();
 
   useEffect(() => {
-    (() => {
-      document.addEventListener('keydown', (event) => {
-        if (event.ctrlKey && event.key === '.') {
-          changeThemeType();
-        }
-      });
-    })();
+    document.addEventListener('keydown', (event) => {
+      if (event.ctrlKey && event.key === '.') {
+        changeThemeType();
+      }
+    });
 
     return () => {
       document.removeEventListener('keydown', () => {});

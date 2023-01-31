@@ -1,4 +1,4 @@
-import {ROOT_URL, sample} from '../sample';
+import {ROOT_URL, sample} from '../../src/apis/sample';
 import {describe, expect, it, vi} from 'vitest';
 
 describe('testing sample api', () => {
