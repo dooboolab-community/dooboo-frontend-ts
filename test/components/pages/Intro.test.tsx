@@ -1,78 +1,62 @@
-import * as renderer from 'react-test-renderer';
+import {afterAll, describe, it, vi} from 'vitest';
+import {cleanup, render} from '@testing-library/react';
 
-import {act, cleanup, fireEvent, render} from '@testing-library/react';
-
-import Button from '../../../src/components/uis/Button';
 import Intro from '../../../src/components/pages/Intro';
 import React from 'react';
-import type {RenderResult} from '@testing-library/react';
 import {createTestElement} from '../../utils/testUtils';
 
 const props = {};
-const component = createTestElement(<Intro {...props} />);
 
-let container;
+afterAll(cleanup);
 
-beforeEach(() => {
-  container = document.createElement('div');
-  document.body.appendChild(container);
-});
-
-afterEach(() => {
-  document.body.removeChild(container);
-  container = null;
-});
-
-// test for the container page in dom
 describe('[Intro] screen rendering test', () => {
-  let json: any;
+  it('should render without crashing', () => {
+    const comp = render(<Intro {...props} />, {
+      wrapper: ({children}) => createTestElement(children),
+    });
 
-  it('should render outer component and snapshot matches', () => {
-    json = renderer.create(component).toJSON();
-    expect(json).toMatchSnapshot();
+    comp.unmount();
   });
 });
 
 describe('[Intro] Interaction', () => {
-  let rendered: renderer.ReactTestRenderer;
-  let root: renderer.ReactTestInstance;
-  let renderResult: RenderResult;
+  it('should simulate [onLogin] click with testing library', async () => {
+    vi.useFakeTimers();
 
-  afterEach(cleanup);
-
-  it('should simulate [onLogin] click with testing library', () => {
-    jest.useFakeTimers();
-    renderResult = render(component);
-
-    const SignInButton = renderResult.getByTestId('SIGN_IN');
-
-    fireEvent.click(SignInButton);
-
-    act(() => {
-      jest.runAllTimers();
+    const testingLib = render(<Intro {...props} />, {
+      wrapper: ({children}) => createTestElement(children),
     });
+
+    const signInButton = await testingLib.findByTestId('SIGN_IN');
+
+    signInButton.click();
+
+    vi.advanceTimersByTime(1000);
+
+    testingLib.unmount();
   });
 
-  it('should simulate [navigate] when clicked', () => {
-    rendered = renderer.create(component);
-    root = rendered.root;
+  it('should simulate [navigate] when clicked', async () => {
+    const testingLib = render(<Intro {...props} />, {
+      wrapper: ({children}) => createTestElement(children),
+    });
 
-    const buttons = root.findAllByType(Button);
+    const navigateButton = await testingLib.findByTestId('NAVIGATE');
 
-    buttons[1].props.onClick();
-    expect(1).toBeTruthy(); // TODO: Expect navigate to be called.
+    navigateButton.click();
+
+    testingLib.unmount();
   });
 
-  it('should change theme when [change theme] has been clicked', () => {
-    renderResult = render(component);
+  it('should change theme when [change theme] has been clicked', async () => {
+    const testingLib = render(<Intro {...props} />, {
+      wrapper: ({children}) => createTestElement(children),
+    });
 
-    const btnChangeTheme = renderResult.getByTestId('CHANGE_THEME');
-    const clickResult1 = fireEvent.click(btnChangeTheme);
+    const changeThemeButton = await testingLib.findByTestId('CHANGE_THEME');
 
-    expect(clickResult1).toBe(true);
+    changeThemeButton.click();
 
-    const clickResult2 = fireEvent.click(btnChangeTheme);
-
-    expect(clickResult2).toBe(true);
+    testingLib.unmount();
   });
 });

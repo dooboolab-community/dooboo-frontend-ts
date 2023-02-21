@@ -24,7 +24,7 @@ const destroySessionStorage = (key: string): void => {
 
 const checkImageExists = (
   url: string,
-  callback: (err: Error, val: boolean) => void,
+  callback: (err: Error | null, val: boolean) => void,
 ): void => {
   const img = new Image();
 

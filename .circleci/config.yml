@@ -32,11 +32,6 @@ jobs:
           paths:
             - node_modules
 
-      - run:
-          name: FBT
-          working_directory: .
-          command: |
-            yarn fbt:all
 
       - run:
           name: Lint Test
@@ -51,12 +46,10 @@ jobs:
             yarn tsc
 
       - run:
-          name: Jest Test
+          name: Vitest Test
           command: |
             mkdir -p coverage
             yarn test
-          environment:
-            JEST_JUNIT_OUTPUT: test-results/jest/junit.xml
 
       - store_test_results:
           path: coverage

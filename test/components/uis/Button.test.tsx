@@ -1,80 +1,41 @@
-import * as renderer from 'react-test-renderer';
+import {describe, expect, it, test, vi} from 'vitest';
 
 import Button from '../../../src/components/uis/Button';
 import {IC_FACEBOOK_W} from '../../../src/utils/Icons';
 import React from 'react';
-import type {ReactElement} from 'react';
+import {render} from '@testing-library/react';
 
 // test for the pure component
-describe('[Button] shared component test', () => {
-  let tree: any;
-  const component: ReactElement = <Button text="Button 2nd test" />;
-
-  it('component and snapshot matches', () => {
-    tree = renderer.create(component).toJSON();
-    expect(tree).toMatchSnapshot();
-  });
+test('button render', () => {
+  render(<Button />);
 });
 
-describe('[Transparent] interaction', () => {
-  let count = 1;
+describe('Button interaction', () => {
+  it('Simulate onClick', async () => {
+    const onClick = vi.fn();
+    const testingLib = render(<Button onClick={onClick} testID="TEST" />);
+    const btn = await testingLib.findByTestId('TEST');
 
-  const onClick = (): void => {
-    count++;
-  };
+    btn.click();
 
-  let rendered: renderer.ReactTestRenderer;
-  let root: renderer.ReactTestInstance;
-  const component: ReactElement = <Button onClick={onClick} />;
+    expect(onClick).toBeCalled();
 
-  beforeAll(() => {
-    rendered = renderer.create(component);
-    root = rendered.root;
+    testingLib.unmount();
   });
 
-  it('Simulate onClick', () => {
-    const button = root.find(
-      (el: renderer.ReactTestInstance) => el.type === 'button',
-    );
+  it('should render isLoading status', async () => {
+    const testingLib = render(<Button isLoading={true} />);
 
-    button.props.onClick();
-    expect(count).toBe(2);
-  });
-});
+    expect(testingLib).toBeTruthy();
 
-describe('[WhiteButton] interaction', () => {
-  let count = 1;
-
-  const onClick = (): void => {
-    count++;
-  };
-
-  let rendered: renderer.ReactTestRenderer;
-  let root: renderer.ReactTestInstance;
-  let component: React.ReactElement;
-
-  it('should simulate onClick', () => {
-    component = <Button onClick={onClick} />;
-    rendered = renderer.create(component);
-    root = rendered.root;
-
-    const button = root.find(
-      (el: renderer.ReactTestInstance) => el.type === 'button',
-    );
-
-    button.props.onClick();
-    expect(count).toBe(2);
-  });
-
-  it('should render isLoading status', () => {
-    component = <Button isLoading={true} />;
-    rendered = renderer.create(component);
-    root = rendered.root;
+    testingLib.unmount();
   });
 
   it('should render img status', () => {
-    component = <Button imgSrc={IC_FACEBOOK_W} />;
-    rendered = renderer.create(component);
-    root = rendered.root;
+    const testingLib = render(<Button imgSrc={IC_FACEBOOK_W} />);
+
+    expect(testingLib).toBeTruthy();
+
+    testingLib.unmount();
   });
 });

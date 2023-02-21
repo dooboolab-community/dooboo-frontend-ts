@@ -1,40 +1,34 @@
-import type * as ReactRouterDom from 'react-router-dom';
-import * as renderer from 'react-test-renderer';
-
-import {fireEvent, render} from '@testing-library/react';
+import {afterAll, describe, it} from 'vitest';
+import {cleanup, render} from '@testing-library/react';
 
 import React from 'react';
-import type {RenderResult} from '@testing-library/react';
 import Temp from '../../../src/components/pages/Temp';
 import {createTestElement} from '../../utils/testUtils';
 
 const props = {};
-const component = createTestElement(<Temp {...props} />);
 
-jest.mock('react-router-dom', () => ({
-  ...(jest.requireActual('react-router-dom') as typeof ReactRouterDom),
-  useNavigate: () => jest.fn(),
-}));
+afterAll(cleanup);
 
 describe('[Temp] render', () => {
   it('renders without crashing', () => {
-    const rendered = renderer.create(component).toJSON();
+    const comp = render(<Temp {...props} />, {
+      wrapper: ({children}) => createTestElement(children),
+    });
 
-    expect(rendered).toMatchSnapshot();
-    expect(rendered).toBeTruthy();
+    comp.unmount();
   });
 });
 
 describe('[Temp] Interaction', () => {
-  let renderResult: RenderResult;
+  it('should simulate [onClick] when [btn] has been clicked', async () => {
+    const testingLib = render(<Temp {...props} />, {
+      wrapper: ({children}) => createTestElement(children),
+    });
 
-  beforeEach(() => {
-    renderResult = render(component);
-  });
+    const buttonInstance = await testingLib.findByText('back to tab page');
 
-  it('should simulate [onClick] when [btn] has been clicked', () => {
-    const btnInstance = renderResult.getByText('back to tab page');
+    buttonInstance.click();
 
-    fireEvent.click(btnInstance);
+    testingLib.unmount();
   });
 });

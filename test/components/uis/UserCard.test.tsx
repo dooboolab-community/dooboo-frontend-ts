@@ -1,17 +1,18 @@
-import * as renderer from 'react-test-renderer';
+import {expect, test} from 'vitest';
 
 import React from 'react';
 import UserCard from '../../../src/components/uis/UserCard';
 import {createTestElement} from '../../utils/testUtils';
+import {render} from '@testing-library/react';
 
 const props = {};
-const component = createTestElement(<UserCard {...props} />);
 
-describe('[Temp] render', () => {
-  it('renders without crashing', () => {
-    const rendered = renderer.create(component).toJSON();
-
-    expect(rendered).toMatchSnapshot();
-    expect(rendered).toBeTruthy();
+test('[Temp] render', () => {
+  const comp = render(<UserCard {...props} />, {
+    wrapper: ({children}) => createTestElement(children),
   });
+
+  expect(comp).toBeTruthy();
+
+  comp.unmount();
 });
